@@ -1,0 +1,358 @@
+{
+    "key": "group_58b6969297bde",
+    "title": "Player Stats",
+    "fields": [
+        {
+            "key": "field_58b6979dec5d8",
+            "label": "Role",
+            "name": "role",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "all-rounder": "All Rounder",
+                "batsman": "Batsman",
+                "bowler": "Bowler",
+                "wicket-keeper": "Wicket Keeper",
+                "captain": "Captain",
+                "physiotherapist": "Physiotherapist",
+                "2nd-xi-coach": "2nd XI Coach",
+                "bowling-coach-assistant-coach": "Bowling Coach & Assistant Coach",
+                "strength-conditioning-coach": "Strength & Conditioning Coach",
+                "director-of-cricket": "Director of Cricket"
+            },
+            "default_value": [
+
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 1,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_58b698edec5d9",
+            "label": "Bats",
+            "name": "bats",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "left-hand": "Left Hand",
+                "right-hand": "Right Hand",
+                "ambidextrous": "Ambidextrous",
+                "none": "N\/A"
+            },
+            "default_value": [
+
+            ],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 1,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_58b69aeb1807f",
+            "label": "Bowls",
+            "name": "bowls",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "left-arm": "Left Arm",
+                "right-arm": "Right Arm",
+                "slow": "Slow",
+                "medium": "Medium",
+                "medium-fast": "Medium Fast",
+                "fast": "Fast",
+                "orthodox": "Orthodox",
+                "off-spin": "Off Spin",
+                "off-break": "Off Break",
+                "leg-spin": "Leg Spin",
+                "none": "N\/A"
+            },
+            "default_value": [
+
+            ],
+            "allow_null": 0,
+            "multiple": 1,
+            "ui": 1,
+            "ajax": 1,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_58b69c3735746",
+            "label": "Shirt Number",
+            "name": "shirt_number",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_58b6b5e47a158",
+            "label": "Qualifications",
+            "name": "qualifications",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58b6979dec5d8",
+                        "operator": "==",
+                        "value": "physiotherapist"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_58b6979dec5d8",
+                        "operator": "==",
+                        "value": "2nd-xi-coach"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_58b6979dec5d8",
+                        "operator": "==",
+                        "value": "bowling-coach-assistant-coach"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_58b6979dec5d8",
+                        "operator": "==",
+                        "value": "strength-conditioning-coach"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_58b6979dec5d8",
+                        "operator": "==",
+                        "value": "director-of-cricket"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_58b69f821f78a",
+            "label": "Place of Birth",
+            "name": "place_of_birth",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58b69f921f78b",
+            "label": "Date of Birth",
+            "name": "date_of_birth",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y",
+            "return_format": "Ymd",
+            "first_day": 1
+        },
+        {
+            "key": "field_58b69fb81f78c",
+            "label": "Height",
+            "name": "height",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "cm",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_58b69ff91f78d",
+            "label": "Weight",
+            "name": "weight",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "kg",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_58b6a00f1f78e",
+            "label": "Nickname",
+            "name": "nickname",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58b6a0811f790",
+            "label": "Bat Used (inc Weight)",
+            "name": "bat_used_weight",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58b6a0b21f791",
+            "label": "Colour Number",
+            "name": "colour_number",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_58b6a0bf1f792",
+            "label": "WCCC Debut",
+            "name": "wccc_debut",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "players"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1488369215
+}

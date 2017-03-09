@@ -11,16 +11,30 @@
 
 ?>
 
-	</div><!-- #content -->
+	</div>
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wccc' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'wccc' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'wccc' ), 'wccc', '<a href="https://automattic.com/" rel="designer">Martin Greenwood</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+		<div class="site-info container">
+			
+			<div class="row">
+				<div class="menu span12">
+					<?php wp_nav_menu( array( 'theme_location' => 'menu-4', 'menu_id' => 'footer-menu' ) ); ?>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="copyright span6">
+					<p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All rights reserved.</p>
+				</div>
+				<div class="creditwhereitsdue span6">
+					<p class="alignright">Designed &amp; Built by <a rel="credit follow" target="_blank" href="http://wearebeard.com/">We are Beard</a>.</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+
+</div>
 
 <?php wp_footer(); ?>
 

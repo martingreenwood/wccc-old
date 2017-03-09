@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The front page template file
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -10,19 +10,19 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area container">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main animated fadeIn delay" role="main">
 
 		<?php
-		if ( have_posts() ) : ?>
+		if ( have_posts() ) :
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+			if ( is_home() && ! is_front_page() ) : ?>
+				<header>
+					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				</header>
 
 			<?php
+			endif;
+
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 
@@ -44,8 +44,8 @@ get_header(); ?>
 		endif; ?>
 
 		</main><!-- #main -->
+
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

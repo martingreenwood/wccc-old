@@ -45,6 +45,9 @@ function wccc_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Primary', 'wccc' ),
+		'menu-2' => esc_html__( 'Secondary', 'wccc' ),
+		'menu-3' => esc_html__( 'Top', 'wccc' ),
+		'menu-4' => esc_html__( 'Footer', 'wccc' ),
 	) );
 
 	/*

@@ -2,10 +2,9 @@
 	overflow: hidden;
 }
 
-// Container
 .container {
 	@include outer-container();
-	padding: 0 20px;
+	padding: 0 40px;
 }
 
 .row {
@@ -17,7 +16,47 @@
 	}
 }
 
+.animated {
+	-webkit-animation-duration: 0.8s;
+	animation-duration: 0.8s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
 
+.fadeIn{
+	-webkit-animation-name:fadeIn;
+	animation-name:fadeIn
+}
+
+.zoomInDown{
+	-webkit-animation-name:zoomInDown;
+	animation-name:zoomInDown;
+	animation-duration:1.4s
+}
+
+.delay, .delay0 {
+	animation-delay: 0.2s;
+}
+
+.delay1 {
+	animation-delay: 0.25s;
+}
+
+.delay2 {
+	animation-delay: 0.3s;
+}
+
+.delay3 {
+	animation-delay: 0.35s;
+}
+
+.delay4 {
+	animation-delay: 0.4s;
+}
+
+.delay5 {
+	animation-delay: 0.45s;
+}
 
 // Sticly Fix
 .sticky {
@@ -42,5 +81,48 @@
 
 	&.middle {
 		vertical-align: middle;
+	}
+	&.bottom {
+		vertical-align: bottom;
+	}
+	&.top {
+		vertical-align: top;
+	}
+}
+
+
+.span12 {
+	@include span-columns(1);
+
+	@include media($medium-screen-up) {
+		@include span-columns(8);
+	}
+
+	@include media($large-screen-up) {
+		@include span-columns(12);
+	}
+}
+
+.span4 {
+	@include span-columns(1);
+
+	@include media($medium-screen-up) {
+		@include span-columns(2.66);
+	}
+
+	@include media($large-screen-up) {
+		@include span-columns(4);
+	}
+}
+
+.span6 {
+	@include span-columns(1);
+
+	@include media($medium-screen-up) {
+		@include span-columns(4);
+	}
+
+	@include media($large-screen-up) {
+		@include span-columns(6);
 	}
 }

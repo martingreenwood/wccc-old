@@ -1,0 +1,68 @@
+
+#masthead {
+
+	.row {
+		margin: 0;
+	}
+
+	.topbar {
+		background: $brand-primary;
+		padding: rem(20px);
+
+		.menu-top-container {
+
+			li {
+				margin-right: 20px;
+
+				&:last-of-type {
+					margin-right: 0;
+				}
+
+				.sub-menu {
+					background: $brand-primary;
+					top: 26px; // temporary depending on how drop nav with work and look....
+				}
+			}
+
+			a {
+				color: white;
+			}
+		}
+	}
+
+	.site-header {
+
+		#secondary-menu {
+			float: right;
+				
+			li {
+				margin-left: 20px;
+
+				&:first-of-type {
+					margin-left: 0;
+				}
+
+				.sub-menu {
+					top: 26px; // temporary depending on how drop nav with work and look....
+				}
+			}
+		}
+
+		#primary-menu {
+			float: left;
+				
+			li {
+				margin-right: 20px;
+
+				&:last-of-type {
+					margin-right: 0;
+				}
+
+				.sub-menu {
+					top: 26px; // temporary depending on how drop nav with work and look....
+				}
+			}
+		}
+	}
+}
+

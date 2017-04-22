@@ -18,35 +18,73 @@
 
 <?php wp_head(); ?>
 </head>
-
-<body <?php body_class(); ?>>
+<?php $enable_t20_mode = null; if (get_field( 'enable_t20_mode', 'option' )): $enable_t20_mode = 't20'; endif; ?>
+<body <?php body_class($enable_t20_mode); ?>>
 <div id="page" class="site">
 
 	<header id="masthead">
 
-		<div class="topbar">
-			<div class="container">
-				<div class="span12">
-					<?php wp_nav_menu( array( 'theme_location' => 'menu-3', 'menu_id' => 'top-menu' ) ); ?>
+		<div class="site-header container">
+			<div class="row">
+			
+				<div class="branding">
+					<a href="<?php echo home_url('/'); ?>">
+						<?php if (get_field( 'enable_t20_mode', 'option' )): ?>
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/rapids-logo.svg" width="133" alt="Rapds Logo">
+						<?php else: ?>
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" width="415" alt="WCCC Logo">
+						<?php endif; ?>
+					</a>
 				</div>
-			</div>
-		</div>
 
-		<div class="site-header">
-			<div class="container">
-				<nav id="primary-navigation" class="primary-navigation span4" role="navigation">
-					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
-				</nav><!-- #site-navigation -->
+				
 
-				<div class="branding span4">
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				</div><!-- .site-branding -->
+				<nav id="site-navigation" class="main-navigation" role="navigation">
+					
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">MENU</button>
+					<a class="live-view">LIVE VIEW</a>
 
-				<nav id="secondary-navigation" class="secondary-navigation span4" role="navigation">
-					<?php wp_nav_menu( array( 'theme_location' => 'menu-2', 'menu_id' => 'secondary-menu' ) ); ?>
+					<div class="main-menu-container">
+						<div class="container">
+							<ul class="menu" id="primary-menu">
+								
+								<li>
+									<a id="livescroe" href="<?php echo home_url('live-score'); ?>">Live Score</a>
+								</li>
+
+								<li>
+									<a id="teams" href="<?php echo home_url('teams'); ?>">Teams</a>
+								</li>
+
+								<li>
+									<a id="news" href="<?php echo home_url('news'); ?>">News</a>
+								</li>
+
+								<li>
+									<a id="members" href="<?php echo home_url('memberships'); ?>">Memberships</a>
+								</li>
+
+								<li>
+									<a id="hospitality" href="<?php echo home_url('hospitality'); ?>">Hospitality</a>
+								</li>
+
+								<li>
+									<a id="tickets" href="<?php echo home_url('tickets'); ?>">Tickets</a>
+								</li>
+
+								<li>
+									<a id="commercal" href="<?php echo home_url('commercial'); ?>">Commercial</a> 
+								</li>
+
+							</div>
+						</div>
+					</div>
+
 				</nav>
+
 			</div>
 		</div>
+
 	</header>
 
 	<div id="content" class="site-content">

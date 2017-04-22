@@ -1,0 +1,136 @@
+.t20 {
+
+	.main-menu-container {
+		background: $brand-primary-dark-t20;
+	}
+
+	.slick-prev {
+		background-image: url(assets/images/slide-prev-blue.svg);
+	}
+
+	.slick-next {
+		background-image: url(assets/images/slide-next-blue.svg);
+	}
+
+	.live-view {
+		background: $brand-primary-t20;
+
+		&:after {
+			background-color: $brand-primary-t20;
+		}
+	}
+
+	#jumbrotron {
+		background-color: $brand-primary-dark-t20;
+
+		.info {
+
+			h2 {
+
+				span {
+					color: $brand-primary-t20;
+				}
+			}
+
+			a {
+				border-color: $brand-primary-t20;
+			}
+		}
+
+		.news {
+			.slide {
+				h2, h3, h4, a {
+					color: $brand-primary-t20;
+				}
+			}
+		}
+	}
+
+	#colophon {
+		background: $brand-primary-dark-t20;
+
+		h3 {
+			color: $brand-primary-t20;
+		}
+	}
+
+	#copyright {
+		background: $brand-primary-t20;	
+	}
+
+	#vs {
+
+		.tab {
+			background-color: $brand-primary-t20;
+
+			&:before, &:after {
+				background-color: $brand-primary-t20;
+			}
+		}
+
+		.team {
+
+			.name {
+				h3 {
+					color: $brand-primary-dark-t20;
+				}
+				h4 {
+					color: $brand-primary-t20;
+				}
+			}
+		}
+
+		.link {
+
+			a {
+				color: $brand-primary-t20;
+			}
+		}
+	}
+
+	#twitter {
+
+		h2 {
+			color: $brand-primary-t20;
+		}
+
+		a {
+			color: $brand-primary-t20;
+		}
+	}
+
+	&.single {
+
+		#jumbrotron {
+
+			h3 {
+				color: $brand-primary-t20;
+			}
+		}
+
+		#primary {
+
+			article {
+				h2, h3, h4, h5 {
+					color: $brand-primary-dark-t20;
+				}
+			}
+		}
+	}
+
+	.widget {
+
+		h2 {
+			border-color: $brand-primary-t20;
+			color: $brand-primary-dark-t20;
+		}
+
+		ul {
+
+			li {
+				border-color: $brand-primary-t20;
+			}
+		}
+	}
+}
+

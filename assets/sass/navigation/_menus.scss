@@ -1,0 +1,133 @@
+.main-menu-container {
+	display: none;
+
+	position: absolute;
+	z-index: -1;
+	height: 100vh;
+	left: 0;
+	width: 100%;
+	top: 0;
+	padding-top: 150px;
+	background: $brand-primary-dark;
+
+	&.toggled {
+		display: block;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+		width: 100%;
+		display: inline-block;
+		text-align: left;
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+		}
+	}
+
+	li {
+		position: relative;
+		float: left;
+		margin: 0 20px 0 0;
+		text-transform: uppercase;
+		font-size: 14px;
+		font-weight: 500;
+	
+		&:hover > a,
+		&.focus > a {
+			color: $brand-primary;
+		}
+	}
+	a {
+		display: block;
+		text-decoration: none;
+		color: white;
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+		color: $brand-primary;
+	}
+}
+
+.live-view, .menu-toggle {
+	float: right;
+	border: 2px solid #fff;
+	color: white;
+	font-size: 12px;
+	text-transform: uppercase;
+	padding: 5px 10px;
+	font-weight: 600;
+	margin-top: 16px;
+}
+
+.live-view {
+	background: $brand-primary;
+	position: relative;
+	margin-right: 33px;
+	cursor: pointer;
+	color: white;
+
+	&:hover {
+		color: white;
+	}
+
+	&:after {
+		content: "";
+		background: url('assets/images/arrow.svg');
+		background-color: green;
+		background-position: 50%;
+		background-repeat: no-repeat;
+		background-size: 13px;
+		width: 25px;
+		position: absolute;
+		right: -25px;
+		height: 100%;
+		top: -2px;
+		border: 2px solid white;
+		border-left: 0;
+		box-sizing: content-box;
+	}
+}
+
+.menu-toggle {
+	background: black;
+	color: white;
+	cursor: pointer;
+
+	&:hover {
+		color: white;
+	}
+}
+
+.toggled {
+	.main-menu-container {
+		display: block;
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		@include rem(margin, 0 0 15px);
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}

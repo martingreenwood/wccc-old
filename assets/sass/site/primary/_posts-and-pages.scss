@@ -1,0 +1,156 @@
+/*--------------------------------------------------------------
+## GLOBAL
+--------------------------------------------------------------*/
+
+#twitter {
+	text-align: center;
+	padding: 40px 0;
+
+	h2 {
+		color: $brand-primary;
+		font-size: 30px;
+		margin: 0 0 20px 0;
+	}
+
+	p {
+		margin: 20px 0 0 0;
+	}
+
+	a {
+		color: $brand-primary;
+	}
+
+	.tweets {
+
+		.tweet {
+			padding: 0 150px;
+			
+			h4 {
+				margin: 0;
+				color: $brand-primary-dark-t20;
+				font-size: 22px;
+			}
+		}
+	}
+}
+
+#famousfour {
+	padding-bottom: 40px;
+
+	.item {
+
+		img {
+			display: block;
+		}
+
+		.info {
+			background-color: $brand-primary-dark-t20;
+			border-top: 2px solid white;
+			padding: 20px;
+
+			h3 {
+				color: white;
+				font-size: 25px;
+				line-height: 1;
+			}
+			
+			a {
+				color: white;
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+#sponsors {
+
+	.sponsors {
+		float: left;
+
+		border-top: 1px solid #ccc;
+		margin-top: 30px;
+		position: relative;
+		padding-top: 30px;
+
+		header{
+			position: absolute;
+			width: 100%;
+			margin-top: -43px;
+
+			h3 {
+				background-color: white;
+				padding: 0 15px;
+				display: table;
+				text-transform: uppercase;
+				color: #202020;
+				margin: 0 auto;
+			}
+		}
+
+		.sponsor {
+			float: left;
+			
+			img {
+				display:block;
+			}
+		}
+
+		&.official {
+			border-top: 0;
+			width: 18.146%; // 225px for large 
+
+			.sponsor {
+				border-right: 1px solid#ccc;
+				padding-right: 20px;
+			}
+			
+			header{
+
+				h3 {
+					padding: 0 15px 0 0;
+				}
+			}
+		}
+
+		&.main {
+			width: 81.856%; // 1015px for large 
+
+			.sponsor {
+				width: 15%;
+				margin-right: 20px;
+
+				&:last-of-type {
+					margin-right: 0;
+				}
+			}
+		}
+
+		&.club {
+
+			.sponsor {
+				width: 12.67%;
+				margin: 0 10px 20px;
+
+				&:last-of-type {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+## Home
+--------------------------------------------------------------*/
+@import "pages/home";
+
+
+/*--------------------------------------------------------------
+## Single Post
+--------------------------------------------------------------*/
+@import "pages/singe-post";
+
+/*--------------------------------------------------------------
+## Archive
+--------------------------------------------------------------*/
+@import "pages/archive";

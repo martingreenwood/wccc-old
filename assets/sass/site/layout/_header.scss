@@ -1,0 +1,30 @@
+#masthead {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	padding: 40px 0;
+	z-index: 1;
+
+	.row {
+		margin: 0;
+	}
+
+	.site-header {
+
+		.branding {
+			float: left;
+			width: 415px;
+			height: 92px;
+
+			img {
+				display: block;
+			}
+
+			a {
+				display: block;
+			}
+		}
+	}
+}
+

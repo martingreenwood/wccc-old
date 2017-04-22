@@ -10,9 +10,10 @@
 ?>
 
 <section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'wccc' ); ?></h1>
-	</header><!-- .page-header -->
+
+
+	<h2>Four oh Fucking Four</h2>
+
 
 	<div class="page-content">
 		<?php
@@ -33,5 +34,5 @@
 				get_search_form();
 
 		endif; ?>
-	</div><!-- .page-content -->
-</section><!-- .no-results -->
+	</div>
+</section>

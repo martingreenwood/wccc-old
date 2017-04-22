@@ -1,0 +1,91 @@
+#jumbrotron {
+	background-color: $brand-primary-dark;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-position: right top;
+	max-height: 890px;
+	height: 890px;
+	overflow: hidden;
+	position: relative;
+
+	.overlay {
+		position: absolute;
+		left: 50%;
+		width: 50%;
+		height: 100%;
+		background-size: cover;
+	}
+
+	.info {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+
+		h2 {
+			font-size: 60px;
+			line-height: 0.875;
+			font-weight: 900;
+			color: white;
+
+			span {
+				color: $brand-primary;
+			}
+
+			small {
+				font-size: 50%;
+			}
+		}
+
+		p {
+			color: white;
+		}
+
+		a {
+			border: 1px solid $brand-primary;
+			color: white;
+			text-transform: uppercase;
+			padding: 8px 32px;
+			font-weight: 600;
+			font-size: 14px;
+		}
+	}
+
+	.news {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		background-position: 50%;
+		background-repeat: no-repeat;
+
+		.slide {
+			background: white;
+			border: 2px solid white;
+			box-sizing: border-box;
+
+			h2, h3, h4, a {
+				text-transform: uppercase;
+				color: $brand-primary;
+			}
+
+			a {
+				position: relative;
+				font-size: 13px;
+				font-weight: 600;
+			}
+
+			.image {
+				float: left;
+				width: 50%;
+			}
+
+			.content {
+				float: left;
+				width: 50%;
+				padding: 10px;
+			}
+		}
+	}
+}
+

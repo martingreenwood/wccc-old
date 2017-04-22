@@ -1,0 +1,59 @@
+
+#colophon {
+	background: $brand-primary-dark;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	p {
+		color: white;
+	}
+
+	h3 {
+		color: $brand-primary;
+		text-transform: uppercase;
+		font-size: 20px;
+		margin-bottom: 25px;
+	}
+
+	.site-info {
+
+		.menu {
+
+			ul {
+				list-style: none;
+				margin: 0;
+
+				li {
+
+					a {
+						color: white;
+						text-transform: uppercase;
+						font-size: 13px;
+						font-weight: 600;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+#copyright {
+	background: $brand-primary;
+	padding-top: 25px;
+	padding-bottom: 25px;
+
+	p {
+		color: white;
+		margin: 0;
+	}
+
+	.creditwhereitsdue {
+		
+		a {
+			color: inherit;
+			font-weight: 600;
+		}
+	}
+}
+

@@ -29,7 +29,7 @@ get_header(); ?>
 				</div>
 			</div></div>
 		</div>
-		<div class="news">
+		<div class="stories">
 			<div class="container">
 				<div class="slides">
 				<?php 

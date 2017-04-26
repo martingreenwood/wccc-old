@@ -2992,6 +2992,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/assets\/sass\/site\/primary\/_opta.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/site\/primary\/_opta.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/assets\/sass\/site\/primary\/_posts-and-pages.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -3027,6 +3040,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/assets\/sass\/site\/primary\/pages\/_home.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/site\/primary\/pages\/_pages.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/site\/primary\/pages\/_pages.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -3203,6 +3229,18 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/LICENSE",
+		"oF": 0
+		},
+	"\/page-1st-xi-fixtures.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-1st-xi-fixtures.php",
+		"oF": 0
+		},
+	"\/page-results.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-results.php",
 		"oF": 0
 		},
 	"\/page.php": {

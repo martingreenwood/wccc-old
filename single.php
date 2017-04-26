@@ -18,6 +18,7 @@ get_header(); ?>
 
 	if (get_field( 'top_image' )) {
 		$top_image = get_field( 'top_image' ); 
+		$top_image = $top_image['url']; 
 	} else {
 		$top_image = get_template_directory_uri() ."/assets/images/player.png";
 	}
@@ -26,7 +27,7 @@ get_header(); ?>
 	<section id="jumbrotron">
 		<div class="overlay" style="background-image: url(<?php echo $bannerimage; ?>)"></div>
 
-		<div class="news" style="background-image: url(<?php echo $top_image['url']; ?>)">
+		<div class="news" style="background-image: url(<?php echo $top_image; ?>)">
 			<div class="table"><div class="cell middle">
 				<div class="container">
 					<div class="span6">

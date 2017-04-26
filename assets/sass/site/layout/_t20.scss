@@ -46,6 +46,10 @@
 		}
 	}
 
+	#fixtures {
+		background: linear-gradient(90deg, $brand-primary-t20 50%, $brand-primary-dark-t20 50%);
+	}
+
 	#colophon {
 		background: $brand-primary-dark-t20;
 

@@ -84,8 +84,25 @@ get_header(); ?>
 		</div>
 	</section>
 
-	<section style="background-color: black; padding: 200px 0;">
-		<p style="text-align-last: center; color: white; font-weight: 600;">OPTA WIDGET</p>
+	<section id="fixtures">
+
+		<div class="container">
+
+			<div class="span6 fixture">
+				<h2>NEXT MATCH</h2>
+				<opta-widget sport="cricket" widget="fixtures" fixtures_type="e" competition="1969,1970,1971" season="0" team="56" template="grid" live="false" show_venue="false" match_status="fixture" grouping="date" show_grouping="false" default_nav="1" start_on_current="true" switch_current="0" sub_grouping="date" show_subgrouping="false" order_by="date_ascending" show_crests="false" show_competition_name="true" date_format="ddd Do MMM" month_date_format="MMMM" competition_naming="full" team_naming="full" match_link="<?php echo home_url('results'); ?>" pre_match="false" show_live="false" show_logo="false" show_title="false" breakpoints="400"></opta-widget>
+				<hr>
+				<a href="<?php echo home_url('fixtures'); ?>">SEE ALL UPCOMING FIXTURES</a>
+			</div>
+			<div class="span6 result">
+				<h2>RESULTS</h2>
+				<opta-widget sport="cricket" widget="fixtures" fixtures_type="e" competition="1969,1970,1971" season="0" team="56" template="grid" live="false" show_venue="false" match_status="result" grouping="date" show_grouping="false" default_nav="1" start_on_current="true" switch_current="0" sub_grouping="date" show_subgrouping="false" order_by="date_ascending" show_crests="false" show_competition_name="false" date_format="ddd Do MMM" month_date_format="MMMM" competition_naming="full" team_naming="full" match_link="<?php echo home_url('results'); ?>" pre_match="false" show_live="false" show_logo="false" show_title="false" breakpoints="400"></opta-widget>
+				<hr>
+				<a href="<?php echo home_url('fixtures'); ?>">SEE ALL Results</a>
+			</div>
+
+		</div>
+
 	</section>
 
 	<?php 

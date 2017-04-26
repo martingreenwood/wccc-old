@@ -1,0 +1,19 @@
+.Opta {
+	font-family: $heading-font-family;
+
+	.Opta-MatchHeader {
+
+		table {
+
+			tr {
+
+				.Opta-Team {
+					font-family: $heading-font-family;
+					font-size: 22px;
+					text-transform: uppercase;
+					font-weight: 800;
+				}
+			}
+		}
+	}
+}

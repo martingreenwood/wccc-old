@@ -115,10 +115,14 @@ add_action( 'widgets_init', 'wccc_widgets_init' );
  */
 function wccc_scripts() {
 	wp_enqueue_style( 'wccc-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'wccc-opta-css', '//widget.cloud.opta.net/v3/css/v3.cricket.opta-widgets.css' );
+
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'wccc-modernizr', get_template_directory_uri() . '/assets/js/modernizr.js', array(), '', true );
-	wp_enqueue_script( 'wccc-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '', true );
-	wp_enqueue_script( 'wccc-app', get_template_directory_uri() . '/assets/js/app-min.js', array(), '', true );
+
+	wp_enqueue_script( 'wccc_opta', '//widget.cloud.opta.net/v3/v3.opta-widgets.js', '', '', false);
+	wp_enqueue_script( 'wccc-modernizr', get_template_directory_uri() . '/assets/js/modernizr.js', '', '', true );
+	wp_enqueue_script( 'wccc-navigation', get_template_directory_uri() . '/assets/js/navigation.js', '', '', true );
+	wp_enqueue_script( 'wccc-app', get_template_directory_uri() . '/assets/js/app-min.js', '', '', true );
 }
 add_action( 'wp_enqueue_scripts', 'wccc_scripts' );
 
@@ -139,6 +143,41 @@ function typekit_me() {
 </script><?php
 }
 add_action( 'wp_head', 'typekit_me', 99 );
+
+/*================================
+=            ADD OPTA            =
+================================*/
+
+function opta_me() {
+?><script>
+var opta_settings = {
+	subscription_id: '7f86c9ef2677acc7481e8ea18f9d16b8',
+	language: 'en_GB',
+	timezone: 'Europe/London'
+};
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script><?php
+}
+add_action( 'wp_head', 'opta_me', 100 );
 
 
 /*====================================

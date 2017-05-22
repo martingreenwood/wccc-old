@@ -93,7 +93,7 @@ if ( !empty($fixture_array) ) {
 		<div class="container">
 			<div class="row">
 				<div class="tab">LIVE SCORE</div>
-				<div class="mid"><p>VS</p></div>
+				
 				<div class="link">
 				<span class="status"><?php echo game_status($status_id); ?></span>
 					<?php $args = array( 'post_type' => 'matches', 'meta_query' => array( array('key' => '_wcc_feed_id', 'value' => $last_match_id, 'compare' => '=' )));
@@ -107,16 +107,26 @@ if ( !empty($fixture_array) ) {
 
 				<?php if (is_array($innings) && array_key_exists('0', $innings)): // multiple innings ?>
 
-				<?php foreach ($innings as $inning):
+				<?php 
+				$innings_count = 0;
+				$innings_counter = 0;
+				foreach ($innings as $inning):
 					$batting_team_id = $inning['@attributes']['batting_team_id']; 
 					if ($batting_team_id === $home_team_id) {
 						$side = 'home';
 					} else {
 						$side = 'away';
 					}
-				?>
+					
+					++$innings_counter;
+					if($innings_counter == 1) {  
+						echo "<div class='row'>";
+					}
+	        	?>
 				<div class="team <?php echo $side; ?>">
+					<?php if($innings_count <= 1): ?>
 					<img src="<?php echo team_image($batting_team_id); ?>">
+					<?php endif; ?>
 					<div class="name">
 						<h3>
 							<?php echo team_name($batting_team_id, $competition_id); ?>
@@ -140,7 +150,22 @@ if ( !empty($fixture_array) ) {
 						</h4>
 					</div>
 				</div>
-				<?php endforeach; ?>
+				
+				<?php if ($innings_count == 1): ?>
+				<div class="mid"><p>FIRST INNINGS</p></div>
+				<?php endif; ?>
+				<?php if ($innings_count == 2): ?>
+				<div class="mid"><p>SECOND INNINGS</p></div>
+				<?php endif; ?>
+
+				<?php 
+				if ($innings_counter == 2) {
+					echo "</div>";
+					$innings_counter = 0;
+				}
+				?>
+
+				<?php $innings_count++; endforeach; ?>
 
 				<?php else: // innings are not in array with [0[] key ?>
 				<div class="team one">
@@ -165,6 +190,7 @@ if ( !empty($fixture_array) ) {
 						<?php endif; ?>
 					</div>
 				</div>
+				<div class="mid"><p>VS</p></div>
 				<div class="team two">
 					<div class="name">
 						<h3><?php echo $away_team; ?></h3>

@@ -126,8 +126,11 @@ get_header(); ?>
 					<?php echo $result; ?>
 				</div>
 
-				<?php if (is_array($innings) && array_key_exists('0', $innings)):
+				<?php if (is_array($innings) && array_key_exists('0', $innings)): ?>
 
+				<?php
+				$innings_count = 0;
+				$innings_counter = 0;
 				foreach ($innings as $inning):
 					$batting_team_id = $inning['@attributes']['batting_team_id']; 
 					if ($batting_team_id === $home_team_id) {
@@ -135,9 +138,16 @@ get_header(); ?>
 					} else {
 						$side = 'away';
 					}
-				?>
+
+					++$innings_counter;
+					if($innings_counter == 1) {  
+						echo "<div class='row'>";
+					}
+        		?>
 				<div class="team <?php echo $side; ?>">
+					<?php if($innings_count <= 1): ?>
 					<img src="<?php echo team_image($batting_team_id); ?>">
+					<?php endif; ?>
 					<div class="name">
 						<h3>
 							<?php echo team_name($batting_team_id, $competition_id); ?>
@@ -161,7 +171,22 @@ get_header(); ?>
 						</h4>
 					</div>
 				</div>
-				<?php endforeach; ?>
+
+				<?php if ($innings_count == 1): ?>
+				<div class="mid"><p>FIRST INNINGS</p></div>
+				<?php endif; ?>
+				<?php if ($innings_count == 2): ?>
+				<div class="mid"><p>SECOND INNINGS</p></div>
+				<?php endif; ?>
+
+				<?php 
+				if ($innings_counter == 2) {
+					echo "</div>";
+					$innings_counter = 0;
+				}
+				?>
+
+				<?php $innings_count++; endforeach; ?>
 
 				<?php else: ?>
 				<?php $batting_team_id = $innings['@attributes']['batting_team_id']; ?>
@@ -499,7 +524,7 @@ var CountDown = (function ($) {
         Resume: Resume,
         Start: Start
     };
-    
+
 })(jQuery);
 
 jQuery('#pause').on('click',CountDown.Pause);

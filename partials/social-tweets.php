@@ -24,10 +24,10 @@
 						//	$counter++;
 						$created = $tweet->created_at;
 						$text = $tweet->text;
-						$tweet_url = $tweet->entities->media[0]->url;
-						$media = $tweet->entities->media[0];
-						$media_url = $media->media_url;
-						$media_image = str_replace("http","https", $media_url);
+						//$tweet_url = $tweet->entities->media[0]->url;
+						//$media = $tweet->entities->media[0];
+						//$media_url = $media->media_url;
+						//$media_image = str_replace("http","https", $media_url);
 						$posted_date = date('l jS F Y G:i', strtotime($created));
 						?>
 						<div class="tweet">
@@ -41,6 +41,6 @@
 					</div>
 					<p>Follow us on twitter: <a href="https://twitter.com/WORCSCCC" target="_blank">@WORCSCCC</a></p>
 				</div>
-			</p>
+			</div>
 		</div>
 	</section>

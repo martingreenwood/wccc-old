@@ -1,5 +1,53 @@
+aside {
+	margin-bottom: 40px;
+}
+
 .widget {
 	@include rem(margin, 0 0 40px);
+
+	i {
+		color: darkred;
+		font-size: 23px;
+		display: inline-block;
+		margin-right: 8px;
+	}
+
+	.tab-links {
+		margin: 0;
+		border: 0;
+
+		li {
+			margin: 0;
+			padding-bottom: 0;
+			border: 0;
+
+			&.active a, &.active a:hover {
+				background: $brand-primary-dark;
+				color: white;
+			}
+		}
+		
+		a {
+			width: 90px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: inline-block;
+			white-space: nowrap;
+			color: #333;
+			padding: 10px;
+			background-color: transparent;
+			border-radius: 0;
+		}
+	}
+
+	.tab-content {
+		padding: 15px;
+		margin-top: -3px;
+		border-radius: 0;
+		background: transparent;
+		box-sizing: border-box;
+		border: 1px solid $brand-primary-dark;
+	}
 
 	/* Make sure select elements fit in widgets. */
 	select {

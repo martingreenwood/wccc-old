@@ -22,6 +22,13 @@
 <body <?php body_class($enable_t20_mode); ?>>
 <div id="page" class="site">
 
+	<div id="loader">
+		<div id="loading">
+			<div id="progstat"></div>
+			<div id="progress"></div>
+		</div>
+	</div>
+
 	<header id="masthead">
 
 		<div class="site-header container">
@@ -40,7 +47,9 @@
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">MENU</button>
-					<a class="live-view">LIVE VIEW</a>
+					<?php if (!is_page( 'pitchview' )): ?>
+						<a href="<?php echo home_url( 'pitchview' ); ?>" class="live-view">LIVE VIEW</a>
+					<?php endif ?>
 
 					<div class="main-menu-container">
 						<div class="container">
@@ -48,62 +57,93 @@
 							<ul class="menu" id="primary-menu">
 								
 								<li>
-									<a id="livescroe" href="<?php echo home_url('live-score'); ?>">Live Score</a>
+									<a id="home" href="<?php echo home_url(); ?>">Home</a>
 								</li>
 
 								<li>
-									<a id="teams" href="<?php echo home_url('teams'); ?>">Teams</a>
+									<a id="cricket" data-tab="cricket" href="<?php echo home_url('cricket'); ?>">Cricket</a>
 								</li>
 
 								<li>
-									<a id="news" href="<?php echo home_url('news'); ?>">News</a>
+									<a id="news" data-tab="news" href="<?php echo home_url('news'); ?>">News</a>
 								</li>
 
 								<li>
-									<a id="members" href="<?php echo home_url('memberships'); ?>">Memberships</a>
+									<a id="club" data-tab="club" href="<?php echo home_url('the-club'); ?>">The Club</a>
 								</li>
 
 								<li>
-									<a id="hospitality" href="<?php echo home_url('hospitality'); ?>">Hospitality</a>
+									<a id="visitors" data-tab="visitors" href="<?php echo home_url('visitor-info'); ?>">Visitors</a>
 								</li>
 
 								<li>
-									<a id="tickets" href="<?php echo home_url('tickets'); ?>">Tickets</a>
+									<a id="members" data-tab="members" href="<?php echo home_url('memberships'); ?>">Memberships</a>
 								</li>
 
 								<li>
-									<a id="commercal" href="<?php echo home_url('commercial'); ?>">Commercial</a> 
+									<a id="commercal" data-tab="commercal" href="<?php echo home_url('commercial'); ?>">Commercial</a> 
+								</li>
+
+								<li>
+									<a id="shop" data-tab="shop" href="https://www.hogeweb1002.co.uk/event_listing.aspx" target="_blank">Shop</a> 
+								</li>
+
+								<li>
+									<a id="whatson" data-tab="whatson" href="<?php echo home_url('whats-on'); ?>">Whats On</a>
+								</li>
+
+								<li>
+									<a id="contact" data-tab="contact" href="<?php echo home_url('contact'); ?>">Contact</a>
+								</li>
+
+								<li>
+									<a id="newroad" data-tab="newroad" href="//www.wccc.co.uk/newroadevents/" target="_blank">New Road</a>
 								</li>
 
 							</ul>
 
 							<div class="menu-childs">
 
-								<div class="child open">
+								<div id="home" class="child open">
 									
-									<div class="fixtures">
+									<div class="fixtures span6">
+										<h2>Tables</h2>
 
 										<div class="tabs">
 											<ul class="tab-links">
-												<li class="active"><a href="#tab1">Specsavers County Championship Division Two 2017</a></li>
-												<li><a href="#tab2">Royal London One-Day Cup 2017</a></li>
-												<li><a href="#tab3">NatWest T20 Blast 2017</a></li>
+												<li class="active"><a href="#tab1">County Championship</a></li>
+												<li><a href="#tab2">One Day Cup</a></li>
+												<li><a href="#tab3">T20 Blast</a></li>
 											</ul>
 
 											<div class="tab-content">
 												<div id="tab1" class="tab active">
-													<opta-widget sport="cricket" widget="standings" template="normal" live="false" competition="1969" season="0" team="56" navigation="none" default_nav="1" show_key="true" show_crests="true" points_in_first_column="true" competition_naming="full" team_naming="full" sorting="false" show_live="true" show_logo="true" show_title="false" breakpoints="400, 700"></opta-widget>
+													<opta-widget sport="cricket" widget="standings" template="normal" live="false" competition="1969" season="0" team="56" navigation="none" default_nav="1" show_key="false" show_crests="false" points_in_first_column="true" competition_naming="full" team_naming="full" sorting="false" show_live="true" show_logo="false" show_title="false" breakpoints="400, 700"></opta-widget>
 												</div>
 
 												<div id="tab2" class="tab">
-													<opta-widget sport="cricket" widget="standings" template="normal" live="false" competition="1970" season="0" team="56" navigation="none" default_nav="1" show_key="true" show_crests="true" points_in_first_column="true" competition_naming="full" team_naming="full" sorting="false" show_live="true" show_logo="true" show_title="false" breakpoints="400, 700"></opta-widget>
+													<opta-widget sport="cricket" widget="standings" template="normal" live="false" competition="1970" season="0" team="56" navigation="none" default_nav="1" show_key="false" show_crests="false" points_in_first_column="true" competition_naming="full" team_naming="full" sorting="false" show_live="true" show_logo="false" show_title="false" breakpoints="400, 700"></opta-widget>
 												</div>
 
 												<div id="tab3" class="tab">
-													<opta-widget sport="cricket" widget="standings" template="normal" live="false" competition="1971" season="0" team="56" navigation="none" default_nav="1" show_key="true" show_crests="true" points_in_first_column="true" competition_naming="full" team_naming="full" sorting="false" show_live="true" show_logo="true" show_title="false" breakpoints="400, 700"></opta-widget>
+													<opta-widget sport="cricket" widget="standings" template="normal" live="false" competition="1971" season="0" team="56" navigation="none" default_nav="1" show_key="false" show_crests="false" points_in_first_column="true" competition_naming="full" team_naming="full" sorting="false" show_live="true" show_logo="false" show_title="false" breakpoints="400, 700"></opta-widget>
 												</div>
 											</div>
 										</div>
+
+									</div>
+
+									<div class="results span3">
+										
+										<h2>Results</h2>
+										<!-- RESULTS -->
+
+									</div>
+
+									<div class="latest-news span3">
+										
+										<h2>News</h2>
+										<!-- NEWS -->
 
 									</div>
 

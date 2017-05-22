@@ -5,8 +5,9 @@
 .home {
 
 	#jumbrotron {
-		height: 200%;
-		height: 100vh;
+		height: 670px;
+		max-height: 670px;
+		min-height: 670px;
 	}
 
 	#fixtures {
@@ -22,22 +23,6 @@
 						display: none;
 
 						&:first-of-type {
-							display: block;
-						}
-					}
-				}
-			}
-		}
-
-		.result {
-			padding-left: 20px;
-
-			.Opta {
-				.Opta-Flex {
-					.Opta-fixture {
-						display: none;
-
-						&:last-of-type {
 							display: block;
 						}
 					}
@@ -62,60 +47,111 @@
 				text-transform: uppercase;
 			}
 
-			.Opta {
-				font-family: $heading-font-family;
+			.match-info {
+				border-top: 1px solid white;
+				border-bottom: 1px solid white;
+				margin-bottom: 20px;
+				padding: 20px 0;
+				position: relative;
 
-				>.Opta_W {
-					background: transparent;
+				.date-time {
 					margin: 0;
+					color: white;
+					font-weight: 900;
+					font-family: $heading-font-family;
+					font-size: 19px;
+					position: absolute;
+					top: -10px;
+					padding: 0 10px 0 0;
+
+					span {
+						float: left;
+						line-height: 1;
+
+						&:first-of-type {
+							padding-right: 10px;
+							margin-right: 10px;
+							border-right: 1px solid white;
+					
+						}
+					}
 				}
-			}
 
-			.Opta>.Opta_W>div {
-				background: transparent;
-				padding: 0;
-			}
+				.comp {
+					color: black;
+					text-transform: uppercase;
+					font-weight: 900;
+					font-family: $heading-font-family;
+					font-size: 19px;
+					margin: 0;
+					line-height: 1;
+					margin-top: 20px;
+					font-style: italic;
+				}
 
-			.Opta_C_F_G .Opta-fixture {
-				float: left;
-				width: 100%;
-				margin: 0;
-				background: transparent;
-				color: white;
-			}
+				.match {
+					span {
+						color: black;
+					}
+				}
 
-			.Opta_C_F_G .Opta-fixture h3 {
-			    height: auto;
-			    position: relative;
-			    background: transparent;
-			    border: 0;
-			    font-weight: inherit;
-			    line-height: inherit;
-			    color: white;
-			}
+				.links {
 
-			 .Opta_C_F_G .Opta-fixture h3>span {
-			    height: inherit;
-			    font-size: inherit;
-			    line-height: inherit;
-			    padding: 0;
-			    float: left;
-			    width: auto;
-			}
+					a {
+						background: $brand-primary;
+						padding: 8px 16px;
+						display: inline-block;
+						margin-left: 9px;
+						border: 1px solid white;
+						color: white;
+						
+						&:first-of-type {
+							margin-left: 0;
+						}
 
-			.Opta_C_F_G .Opta-fixture .Opta-Fixture-Header {
-				padding: 0;
-				height: auto;
-				text-transform: uppercase;
-				font-family: $heading-font-family;
+						&.tickets {
+							background-color: black;
+						}
+					}
+				}
 			}
 		}
 
+		.result {
+
+			.match-info {
+
+				.date-time {
+					background: $brand-primary;
+				}
+			}
+		}
+
+		.fixture {
+			padding-left: 20px;
+
+			.match-info {
+
+				.date-time {
+					background: $brand-primary-dark;
+				}
+
+				.comp {
+					color: $brand-primary;
+				}
+
+				.match {
+					span {
+						color: $brand-primary;
+					}
+				}
+			}
+		}
 	}
 
 	#vs {
 		position: relative;
-		padding:0 0 20px 0;
+		padding:0 0 38px 0;
 
 		.tab {
 			position: relative;
@@ -157,6 +193,10 @@
 			width: 50%;
 			position: relative;
 
+			img {
+				height: 96px;
+			}
+
 			.name {
 				width: 300px;
 				text-align: center;
@@ -172,12 +212,21 @@
 					font-size: 20px;
 					color: $brand-primary-dark-t20;
 				}
+
 				h4 {
 					font-size: 34px;
 					color: $brand-primary;
+					position: relative;
+
+					small {
+						font-size: 15px;
+						position: absolute;
+						bottom: -17px;
+						left: 0;
+						width: 100%;
+					}
 				}
 			}
-
 
 			&.one {
 				padding-right: 150px;
@@ -227,11 +276,21 @@
 			left: 0;
 			bottom: 20px;
 
+				.status {
+					font-weight: 800;
+					color: #333;
+					text-transform: uppercase;
+					line-height: 1;
+					display: block;
+				}
+
 			a {
 				color: $brand-primary;
 				font-weight: 600;
 				text-transform: uppercase;
 				font-size: 14px;
+
+
 			}
 		}
 	}

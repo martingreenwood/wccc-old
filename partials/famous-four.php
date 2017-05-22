@@ -21,7 +21,7 @@
 						}
 						?>
 						<div class="item span3">
-							<img src="<?php echo $image[sizes][poster]; ?>">
+							<img src="<?php echo $image['sizes']['poster']; ?>">
 							<div class="info">
 								<h3><?php echo $name; ?></h3>
 								<a href="<?php echo $link; ?>">Details &amp; Tickets &raquo;</a>

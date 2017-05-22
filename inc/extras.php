@@ -37,3 +37,16 @@ function wccc_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'wccc_pingback_header' );
+
+
+function get_xml($xml_url)
+{
+	$curl = curl_init();
+	$options = array(
+		CURLOPT_URL => $xml_url,
+		CURLOPT_RETURNTRANSFER => 1,
+	);
+	curl_setopt_array($curl, $options);
+	$string = curl_exec($curl);
+	return $string;
+}

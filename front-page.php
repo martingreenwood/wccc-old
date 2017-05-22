@@ -12,17 +12,25 @@ get_header(); ?>
 	<?php 
 	if (get_field( 'enable_t20_mode', 'option' )):
 		$bannerimage = get_template_directory_uri() . "/assets/images/rapids-banner.png";
+		$top_image = get_field( 'top_t20_image', 'option' ); 
+		$top_image = $top_image['url']; 
 	else: 
 		$bannerimage = get_template_directory_uri() ."/assets/images/banner.png";
+		$top_image = get_field( 'top_image', 'option' ); 
+		$top_image = $top_image['url']; 
 	endif; 
+
 	?>
-	<section id="jumbrotron" style="background-image: url(<?php echo $bannerimage; ?>)">
-		<div class="info">
+
+	<section id="jumbrotron">
+		<div class="overlay" style="background-image: url(<?php echo $bannerimage; ?>)"></div>
+
+		<div class="info" style="background-image: url(<?php echo $top_image; ?>)">
 			<div class="table"><div class="cell middle">
 				<div class="container">
 					<div class="span6">
 						<h2><span>WCCC</span> <small>VS</small><br>
-						ORTHANTS</h2>
+						NORTHANTS</h2>
 						<p>Day 2 saw Worcestershire facing a stubborn tail end of Northants still at the crease but boweler friendly conditions in front of them.</p>
 						<a href="#">Read More</a>
 					</div>
@@ -37,14 +45,15 @@ get_header(); ?>
 				while ( $loop->have_posts() ) : $loop->the_post(); 
 					?>
 					<div class="slide">
-						<div class="image">
-							<?php the_post_thumbnail( 'slide-thumb' ); ?>
-						</div>
-						<div class="content">
-							<h3><?php the_title( ); ?></h3>
-							<p><?php echo substr(get_the_excerpt(), 0, 80); ?></p>
-							<a href="<?php the_permalink(); ?>">Read More</a>
-						</div>
+						<a href="<?php the_permalink(); ?>">
+							<div class="image">
+								<?php the_post_thumbnail( 'slide-thumb' ); ?>
+							</div>
+							<div class="content">
+								<h3><?php the_title( ); ?></h3>
+								<a class="more" href="<?php the_permalink(); ?>">Read More</a>
+							</div>
+						</a>
 					</div>
 					<?php 
 				endwhile; 
@@ -55,55 +64,13 @@ get_header(); ?>
 		</div>
 	</section>
 
-	<section id="vs">
-		<div class="container">
-			<div class="row">
-				<div class="tab">Larest Score</div>
+	<?php 
+		get_template_part( 'partials/home', 'latest-score' ); 
+	?>
 
-				<div class="team one">
-					<img src="http://placehold.it/96x96" alt="">
-					<div class="name">
-						<h3>Yorkshire Vikings</h3>
-						<h4>170 All Out</h4>
-					</div>
-				</div>
-				<div class="mid">
-					<p>VS</p>
-				</div>
-				<div class="team two">
-					<div class="name">
-						<h3>Worcestershire Rapids</h3>
-						<h4>170 / 3</h4>
-					</div>
-					<img src="http://placehold.it/96x96" alt="">
-				</div>
-
-				<div class="link"><a href="#">View Scorecard</a></div>
-
-			</div>
-		</div>
-	</section>
-
-	<section id="fixtures">
-
-		<div class="container">
-
-			<div class="span6 fixture">
-				<h2>NEXT MATCH</h2>
-				<opta-widget sport="cricket" widget="fixtures" fixtures_type="e" competition="1969,1970,1971" season="0" team="56" template="grid" live="false" show_venue="false" match_status="fixture" grouping="date" show_grouping="false" default_nav="1" start_on_current="true" switch_current="0" sub_grouping="date" show_subgrouping="false" order_by="date_ascending" show_crests="false" show_competition_name="true" date_format="ddd Do MMM" month_date_format="MMMM" competition_naming="full" team_naming="full" match_link="<?php echo home_url('results'); ?>" pre_match="false" show_live="false" show_logo="false" show_title="false" breakpoints="400"></opta-widget>
-				<hr>
-				<a href="<?php echo home_url('fixtures'); ?>">SEE ALL UPCOMING FIXTURES</a>
-			</div>
-			<div class="span6 result">
-				<h2>RESULTS</h2>
-				<opta-widget sport="cricket" widget="fixtures" fixtures_type="e" competition="1969,1970,1971" season="0" team="56" template="grid" live="false" show_venue="false" match_status="result" grouping="date" show_grouping="false" default_nav="1" start_on_current="true" switch_current="0" sub_grouping="date" show_subgrouping="false" order_by="date_ascending" show_crests="false" show_competition_name="false" date_format="ddd Do MMM" month_date_format="MMMM" competition_naming="full" team_naming="full" match_link="<?php echo home_url('results'); ?>" pre_match="false" show_live="false" show_logo="false" show_title="false" breakpoints="400"></opta-widget>
-				<hr>
-				<a href="<?php echo home_url('fixtures'); ?>">SEE ALL Results</a>
-			</div>
-
-		</div>
-
-	</section>
+	<?php 
+		get_template_part( 'partials/home', 'next-prev' ); 
+	?>
 
 	<?php 
 		get_template_part( 'partials/social', 'tweets' );

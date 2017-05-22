@@ -18,22 +18,6 @@ address {
 	@include rem(margin, 0 0 15px);
 }
 
-pre {
-	background: $background-pre;
-	font-family: $font-pre;
-	@include rem(font-size, 12px);
-	line-height: $line-height-pre;
-	@include rem(margin-bottom, 15px);
-	max-width: 100%;
-	overflow: auto;
-	@include rem(padding, 20px);
-}
-
-code, kbd, tt, var {
-	font-family: $font-code;
-	@include rem(font-size, 12px);
-}
-
 abbr, acronym {
 	border-bottom: 1px dotted $border-abbr;
 	cursor: help;

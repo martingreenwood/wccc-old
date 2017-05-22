@@ -89,6 +89,38 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"\/acf-json\/group_590b3faf90948.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/acf-json\/group_590b3faf90948-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/acf-json\/group_590b4830d41db.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/acf-json\/group_590b4830d41db-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/acf-json\/group_590c40b4ee117.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/acf-json\/group_590c40b4ee117-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/acf-json\/group_591adc87e10c1.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/acf-json\/group_591adc87e10c1-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"\/archive.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -130,6 +162,47 @@
 		"oA": 2,
 		"oAP": "\/assets\/fonts\/slick.woff",
 		"oF": 0
+		},
+	"\/assets\/images\/001-cricket.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/001-cricket.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/images\/002-cricket-helmet.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/002-cricket-helmet.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/images\/arrow-down.png": {
+		"ft": 32768,
+		"iS": 3340,
+		"oA": 0,
+		"oAP": "\/assets\/images\/arrow-down.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/images\/arrow-down.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/arrow-down.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"\/assets\/images\/arrow.png": {
 		"ft": 32768,
@@ -174,6 +247,48 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/assets\/images\/captain.png": {
+		"ft": 32768,
+		"iS": 527,
+		"oA": 0,
+		"oAP": "\/assets\/images\/captain.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/images\/captain.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/captain.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/images\/logo-dark.png": {
+		"ft": 32768,
+		"iS": 8768,
+		"oA": 0,
+		"oAP": "\/assets\/images\/logo-dark.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/images\/logo-dark.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/logo-dark.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/assets\/images\/logo.png": {
 		"ft": 32768,
 		"iS": 8469,
@@ -203,6 +318,17 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/images\/player-hom.png": {
+		"ft": 32768,
+		"iS": 676767,
+		"oA": 0,
+		"oAP": "\/assets\/images\/player-hom.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -388,6 +514,49 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/assets\/images\/top-image-home-t20.png": {
+		"ft": 32768,
+		"iS": 865140,
+		"oA": 0,
+		"oAP": "\/assets\/images\/top-image-home-t20.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/images\/top-image-home.png": {
+		"ft": 32768,
+		"iS": 461625,
+		"oA": 0,
+		"oAP": "\/assets\/images\/top-image-home.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/images\/wicket.png": {
+		"ft": 32768,
+		"iS": 604,
+		"oA": 0,
+		"oAP": "\/assets\/images\/wicket.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/images\/wicket.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/wicket.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/assets\/js\/app-min.js": {
 		"ft": 64,
 		"mi": 1,
@@ -409,27 +578,45 @@
 	"\/assets\/js\/customizer.js": {
 		"ft": 64,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/assets\/js\/customizer-min.js",
+		"oF": 1,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/assets\/js\/jquery.accordion.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/jquery.accordion-min.js",
 		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/assets\/js\/map.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/assets\/js\/map-min.js",
+		"oF": 1,
 		"sC": 0,
 		"tS": 0
 		},
 	"\/assets\/js\/modernizr.js": {
 		"ft": 64,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/assets\/js\/modernizr-min.js",
-		"oF": 0,
+		"oF": 1,
 		"sC": 0,
 		"tS": 0
 		},
 	"\/assets\/js\/navigation.js": {
 		"ft": 64,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/assets\/js\/navigation-min.js",
-		"oF": 0,
+		"oF": 1,
 		"sC": 1,
 		"tS": 0
 		},
@@ -2368,6 +2555,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/assets\/sass\/elements\/_accordion.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/elements\/_accordion.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/assets\/sass\/elements\/_elements.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -3044,6 +3244,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/assets\/sass\/site\/primary\/pages\/_matches.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/site\/primary\/pages\/_matches.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/assets\/sass\/site\/primary\/pages\/_pages.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -3171,6 +3384,12 @@
 		"oAP": "\/inc\/cpts.php",
 		"oF": 0
 		},
+	"\/inc\/cricket.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cricket.php",
+		"oF": 0
+		},
 	"\/inc\/customizer.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -3231,16 +3450,22 @@
 		"oAP": "\/LICENSE",
 		"oF": 0
 		},
-	"\/page-1st-xi-fixtures.php": {
+	"\/page-fixtures.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/page-1st-xi-fixtures.php",
+		"oAP": "\/page-fixtures.php",
 		"oF": 0
 		},
-	"\/page-results.php": {
+	"\/page-hours-of-play.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/page-results.php",
+		"oAP": "\/page-hours-of-play.php",
+		"oF": 0
+		},
+	"\/page-visitor-info.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-visitor-info.php",
 		"oF": 0
 		},
 	"\/page.php": {
@@ -3253,6 +3478,18 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/partials\/famous-four.php",
+		"oF": 0
+		},
+	"\/partials\/home-latest-score.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/partials\/home-latest-score.php",
+		"oF": 0
+		},
+	"\/partials\/home-next-prev.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/partials\/home-next-prev.php",
 		"oF": 0
 		},
 	"\/partials\/social-tweets.php": {
@@ -3318,10 +3555,28 @@
 		"oAP": "\/search.php",
 		"oF": 0
 		},
+	"\/sidebar-archive.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/sidebar-archive.php",
+		"oF": 0
+		},
+	"\/sidebar-pages.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/sidebar-pages.php",
+		"oF": 0
+		},
 	"\/sidebar.php": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/sidebar.php",
+		"oF": 0
+		},
+	"\/single-matches.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/single-matches.php",
 		"oF": 0
 		},
 	"\/single.php": {
@@ -3344,6 +3599,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/style.css.map",
+		"oF": 0
+		},
+	"\/template-parts\/content-box.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/template-parts\/content-box.php",
 		"oF": 0
 		},
 	"\/template-parts\/content-none.php": {
@@ -3377,8 +3638,8 @@
 	},
 "projectAttributes": {
 	"creationDate": 509976836,
-	"displayValue": "wccc",
-	"displayValueWasSetByUser": 0,
+	"displayValue": "WCCC",
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "meme-cryingJordan"
 	},
 "projectSettings": {

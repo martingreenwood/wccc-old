@@ -48,6 +48,50 @@
 
 	#fixtures {
 		background: linear-gradient(90deg, $brand-primary-t20 50%, $brand-primary-dark-t20 50%);
+
+		.result, .fixture {
+			
+			.match-info {
+
+				.links {
+
+					a {
+						background: $brand-primary-t20;
+					}
+				}
+			}
+		}
+
+		.result {
+
+			.match-info {
+
+				.date-time {
+					background: $brand-primary-t20;
+				}
+
+				.comp {
+					color: $brand-primary-t20;
+				}
+
+				.match {
+					span {
+						color: $brand-primary-t20;
+					}
+				}
+			}
+		}
+
+		.fixture {
+
+			.match-info {
+
+				.date-time {
+					background: $brand-primary-dark-t20;
+				}
+			}
+		}
+
 	}
 
 	#colophon {
@@ -135,6 +179,48 @@
 				border-color: $brand-primary-t20;
 			}
 		}
+
+		.tab-links {
+
+			li {
+
+				&.active a, &.active a:hover {
+					background-color: $brand-primary-dark-t20;
+				}
+			}
+		}
+
+		.tab-content {
+			border-color: $brand-primary-dark-t20;
+		}
 	}
+
+	&.archive, &.blog {
+
+		#jumbrotron {
+
+			h3 {
+				color: $brand-primary-t20;
+			}
+		}
+
+		#primary {
+
+			article {
+
+				header {
+
+					h1 {
+						background: $brand-primary-t20;
+
+						&:hover {
+							background: $brand-primary-dark-t20;
+						}
+					}
+				}
+			}
+		}
+	}
+
 }
 

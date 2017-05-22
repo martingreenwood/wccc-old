@@ -73,15 +73,28 @@
 			border: 2px solid white;
 			box-sizing: border-box;
 
+			a {
+				display: block;
+			}
+
 			h2, h3, h4, a {
 				text-transform: uppercase;
 				color: $brand-primary;
 			}
 
-			a {
-				position: relative;
+			// h3 {
+			// 	width: 171px;
+			// 	white-space: nowrap;
+			// 	text-overflow: ellipsis;
+			// 	overflow: hidden;
+			// }
+
+			.more {
+				position: absolute;
 				font-size: 13px;
 				font-weight: 600;
+				bottom: 7px;
+				color: $brand-primary;
 			}
 
 			.image {

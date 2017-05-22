@@ -14,45 +14,69 @@
 
 get_header(); ?>
 
+	<?php 
+	if (get_field( 'enable_t20_mode', 'option' )):
+		$bannerimage = get_template_directory_uri() . "/assets/images/rapids-banner.png";
+	else: 
+		$bannerimage = get_template_directory_uri() ."/assets/images/banner.png";
+	endif; 
+
+	//if (get_field( 'top_image' )) {
+		//$top_image = get_field( 'top_image', get_the_id() ); 
+	//} else {
+		$top_image = get_template_directory_uri() ."/assets/images/player.png";
+	//}
+
+	?>
+	<section id="jumbrotron">
+		<div class="overlay" style="background-image: url(<?php echo $bannerimage; ?>)"></div>
+
+		<div class="news" style="background-image: url(<?php echo $top_image; ?>)">
+			<div class="table"><div class="cell bottom
+			.">
+				<div class="container">
+					<div class="span6">
+						<h1><span>Latest</span><br>
+						News</h1>
+					</div>
+				</div>
+			</div></div>
+		</div>
+	</section>
+
 	<div id="primary" class="content-area container">
-		<main id="main" class="site-main" role="main">
+		
+		<div class="row">
+			<?php get_sidebar('archive'); ?>
+		</div>
 
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+		<div class="row">
+			<main id="main" class="site-main span12" role="main">
 
 			<?php
-			endif;
-
-			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+				get_template_part( 'template-parts/content', 'box' );
 
-			endwhile;
+			endwhile; // End of the loop.
+			?>
 
-			the_posts_navigation();
+			</main>
+		</div>
 
-		else :
+	</div>
 
-			get_template_part( 'template-parts/content', 'none' );
+	<?php 
+		get_template_part( 'partials/social', 'tweets' );
+	?>
 
-		endif; ?>
+	<?php 
+		get_template_part( 'partials/famous', 'four' );
+	?>
 
-		</main><!-- #main -->
-
-		<?php get_sidebar();?>
-		
-	</div><!-- #primary -->
+	<?php 
+		get_template_part( 'partials/sponsor', 'boxes' );
+	?>
 
 <?php
 get_footer();

@@ -39,29 +39,25 @@ get_header(); ?>
 	</section>
 
 	<div id="primary" class="content-area container">
-		<main id="main" class="site-main span9" role="main">
 
-		<?php
-		while ( have_posts() ) : the_post();
+		<div class="row">
+			<?php get_sidebar('archive'); ?>
+		</div>
+		
+		<div class="row">
+			<main id="main" class="site-main span12" role="main">
 
-			get_template_part( 'template-parts/content', get_post_format() );
+			<?php
+			while ( have_posts() ) : the_post();
 
-			if ( function_exists( 'sharing_display' ) ) {
-			sharing_display( '', true );
-			}
+				get_template_part( 'template-parts/content', 'box' );
 
-			the_post_navigation();
+			endwhile; // End of the loop.
+			?>
 
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+			</main>
+		</div>
 
-		endwhile; // End of the loop.
-		?>
-
-		</main><!-- #main -->
-
-		<?php get_sidebar(); ?>
 	</div>
 
 	<?php 

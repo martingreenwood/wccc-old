@@ -47,6 +47,13 @@
 		}
 	}
 
+	#location {
+
+		.map {
+			
+		}
+	}
+
 	#primary {
 		margin-top: 50px;
 
@@ -56,6 +63,39 @@
 				font-size: 20px;
 				margin-bottom: 20px;
 				line-height: 1.2;
+			}
+		}
+
+		.hours {
+
+			table {
+
+				tr {
+
+					td {
+						vertical-align: top;
+						padding: 20px;
+						border-bottom: 0;
+
+						&.title {
+							background-color: $brand-primary-dark;
+							color: white;
+							font-family: $heading-font-family;
+							font-weight: 800;
+							width: 30%;
+							border-top: 1px solid $brand-primary-dark;
+							border-bottom: 1px solid white;
+							border-left: 1px solid $brand-primary-dark;
+						}
+
+						&.info {
+							width: 70%;
+							border-top: 1px solid #ccc;
+							border-bottom: 1px solid #ccc;
+							border-right: 1px solid #ccc;
+						}
+					}
+				}
 			}
 		}
 	}

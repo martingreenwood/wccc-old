@@ -3,12 +3,14 @@
 
 	position: absolute;
 	z-index: -1;
-	height: 100vh;
+	//height: 100vh;
 	left: 0;
 	width: 100%;
 	top: 0;
-	padding-top: 150px;
-	background: $brand-primary-dark;
+	padding-top: 120px;
+	padding-bottom: 50px;
+	background: rgba(17, 50, 33, 0.8);
+	overflow: hidden;
 
 	&.toggled {
 		display: block;
@@ -25,6 +27,25 @@
 		li:hover > ul,
 		li.focus > ul {
 			left: auto;
+		}
+
+		&.nav-menu {
+			border-top: 1px solid white;
+			border-bottom: 1px solid white;
+			float: left;
+			width: 100%;
+			margin-bottom: 20px;
+
+			li {
+
+				a {
+					padding: 10px 0;
+				}
+
+				&:last-of-type {
+
+				}
+			}
 		}
 	}
 
@@ -108,6 +129,95 @@
 .toggled {
 	.main-menu-container {
 		display: block;
+	}
+}
+
+.menu-childs {
+
+	.child {
+
+		h2 {
+			color: white;
+			border-bottom: 2px solid $brand-primary;
+			margin-bottom: 30px;
+			text-transform: uppercase;
+			font-size: 20px;
+			margin-top: 10px;
+			display: inline-block;
+			padding-right: 100px;
+		}
+
+		.tabs {
+			border: 2px solid $brand-primary;
+
+			.tab-links {
+
+				li {
+					border-bottom: 2px solid $brand-primary;
+					border-left: 2px solid $brand-primary;
+					margin: 0;
+					width: 25%;
+
+					a, a:hover {
+						background: transparent;
+						color: white;
+					}
+
+					&.active {
+						border-bottom: 0;
+
+						a {
+							border-bottom: 0;
+						}
+					}
+
+					&:first-of-type {
+						width: 50%;
+						border-left: none;
+					}
+				}
+			}
+			
+			.tab-content {
+				background-color: transparent;;
+				padding: 0 10px 10px;
+				border-radius: 0;
+				box-shadow: none;
+
+				.Opta td:first-child, .Opta th:first-child {
+					width: 2%;
+				}
+
+				.Opta td:nth-child(2), .Opta th:nth-child(2) {
+					width: 8%;
+				}
+
+				.Opta>.Opta_W {
+					margin: 0;
+					background: transparent;
+				}
+
+				.Opta .Opta-Odd td, .Opta .Opta-Odd th, .Opta .Opta-Striped li:nth-child(odd), .Opta .Opta-Striped tbody tr:nth-child(odd) td, .Opta .Opta-Striped tbody tr:nth-child(odd) th, .Opta div.Opta-Odd {
+					background-color: transparent;
+				}
+
+				.Opta .Opta-Even td, .Opta .Opta-Even th, .Opta .Opta-Striped li:nth-child(even), .Opta .Opta-Striped tbody tr:nth-child(even) td, .Opta .Opta-Striped tbody tr:nth-child(even) th, .Opta div.Opta-Even {
+					background-color: transparent;
+				}
+
+				.Opta>.Opta_W>div {
+					background: transparent;
+					color: white;
+				}
+
+				.Opta tfoot th, .Opta thead th {
+					color: white;
+					text-transform: uppercase;
+					background: transparent;
+					border-bottom: 1px solid $brand-primary;
+				}
+			}
+		}
 	}
 }
 

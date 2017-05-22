@@ -107,6 +107,26 @@ function wccc_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar [Archive]', 'wccc' ),
+		'id'            => 'sidebar-2',
+		'description'   => esc_html__( 'Add widgets here.', 'wccc' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar [Pages]', 'wccc' ),
+		'id'            => 'sidebar-3',
+		'description'   => esc_html__( 'Add widgets here.', 'wccc' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'wccc_widgets_init' );
 
@@ -119,10 +139,13 @@ function wccc_scripts() {
 
 	wp_enqueue_script( 'jquery' );
 
-	wp_enqueue_script( 'wccc_opta', '//widget.cloud.opta.net/v3/v3.opta-widgets.js', '', '', false);
-	wp_enqueue_script( 'wccc-modernizr', get_template_directory_uri() . '/assets/js/modernizr.js', '', '', true );
-	wp_enqueue_script( 'wccc-navigation', get_template_directory_uri() . '/assets/js/navigation.js', '', '', true );
-	wp_enqueue_script( 'wccc-app', get_template_directory_uri() . '/assets/js/app-min.js', '', '', true );
+	wp_enqueue_script( 'wccc_opt', '//widget.cloud.opta.net/v3/v3.opta-widgets.js', '', '', false);
+	wp_enqueue_script( 'wccc_ggl', '//maps.googleapis.com/maps/api/js?key=AIzaSyAT5vS9U3S5QkN-f2cwPN-Am4C1vc7zElE', '', '', false);
+	wp_enqueue_script( 'wccc-mod', get_template_directory_uri() . '/assets/js/modernizr.js', '', '', true );
+	wp_enqueue_script( 'wccc-acc', get_template_directory_uri() . '/assets/js/jquery.accordion.js', '', '', true );
+	wp_enqueue_script( 'wccc-nav', get_template_directory_uri() . '/assets/js/navigation.js', '', '', true );
+	wp_enqueue_script( 'wccc-map', get_template_directory_uri() . '/assets/js/map.js', '', '', true );
+	wp_enqueue_script( 'wccc-app', get_template_directory_uri() . '/assets/js/app.js', '', '', true );
 }
 add_action( 'wp_enqueue_scripts', 'wccc_scripts' );
 
@@ -194,6 +217,26 @@ function jptweak_remove_share() {
  
 add_action( 'loop_start', 'jptweak_remove_share' );
 
+
+/*================================
+=            FILTERS§            =
+================================*/
+
+function makePretty($value) 
+{
+    $value = str_replace("_"," ",$value);
+    $value = str_replace("-"," ",$value);
+    return ucwords($value);
+}
+
+function wccc_acf_init() {
+	
+	acf_update_setting('google_api_key', 'AIzaSyAT5vS9U3S5QkN-f2cwPN-Am4C1vc7zElE');
+}
+
+add_action('acf/init', 'wccc_acf_init');
+
+
 /*================================
 =            INCLUDES            =
 ================================*/
@@ -202,6 +245,11 @@ add_action( 'loop_start', 'jptweak_remove_share' );
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/cricket.php';
 
 /**
  * Custom post types

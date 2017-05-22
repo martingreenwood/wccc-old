@@ -1,6 +1,21 @@
 .Opta {
 	font-family: $heading-font-family;
 
+	.Opta_C_S {
+		
+		table {
+			
+			tr {
+				
+				td.Opta-Strong {
+					font-weight: 700;
+					border-top: 1px solid $brand-primary;
+					border-bottom: 1px solid $brand-primary;
+				}
+			}
+		}
+	}
+
 	.Opta-MatchHeader {
 
 		table {

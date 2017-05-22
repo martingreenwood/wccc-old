@@ -120,7 +120,6 @@ get_header(); ?>
 		<div class="container">
 			<div class="row">
 				<div class="tab"><?php echo $competition_name; ?></div>
-				<div class="mid"><p>VS</p></div>
 				<div class="link">
 					<span class="status"><?php echo $game_status; ?></span>
 					<?php echo $result; ?>
@@ -257,11 +256,14 @@ get_header(); ?>
 					<li><a href="#reports">Reports</a></li>
 					<?php endif; ?>
 					<li><a href="#matchinfo">Match Information</a></li>
+					<?php if ($game_status != "Pre Game"): ?>
 					<li><a href="#scorecard">Scorecard</a></li>
 					<li><a href="#wagonwheel">Wagon Wheel</a></li>
 					<li><a href="#manhattan">Manhattan</a></li>
+					<?php endif; ?>
 				</ul>
 	
+				<?php if ($game_status != "Result" && $game_status != "Pre Game"): ?>
 				<div class="time">
 					<div id="pause"><i class="fa fa-pause" aria-hidden="true"></i></div>
 					<div id="resume"><i class="fa fa-play" aria-hidden="true"></i></div>
@@ -270,13 +272,12 @@ get_header(); ?>
 					<div id="progressBar">
 						<div></div>
 					</div>
-
-
 				</div>
 
 				<div class="live" style="margin-top: 30px;">
 					<a>LIVE VIEW</a>
 				</div>
+				<?php endif; ?>
 
 			</nav>
 		</aside>
@@ -435,6 +436,8 @@ get_header(); ?>
 
 			</div>
 
+			<?php if ($game_status != "Pre Game"): ?>
+
 			<div class="data-feed" id="scorecard">
 				<h1>SCORECARD</h1>
 				<opta-widget sport="cricket" widget="score_card" template="normal" live="true" competition="<?php echo $competition_id; ?>" season="1" match="<?php echo $feedID; ?>" show_match_header="false" show_crests="false" show_competition_name="true" show_match_description="true" show_date="true" date_format="dddd D MMMM YYYY HH:mm" show_venue="true" show_officials="on_field" show_toss="true" show_innings_breakdown="true" show_current_batting="true" show_best_batting="1" show_best_bowling="1" show_state_of_play="true" navigation="tabs" default_nav="1" show_batting="true" show_mins_batted="true" show_fours="false" show_sixes="false" show_strike_rate="false" show_bowling="true" show_economy="false" show_dot_balls="false" show_bowling_extras="false" show_fow="true" show_partnerships="true" show_unfinished_partnerships="true" team_naming="full" player_naming="last_name" show_logo="false" show_title="false" breakpoints="400, 700"></opta-widget>
@@ -450,6 +453,8 @@ get_header(); ?>
 				<opta-widget sport="cricket" widget="manhattan" template="normal" competition="<?php echo $competition_id; ?>" season="0" match="<?php echo $feedID; ?>" live="true" show_match_header="false" show_crests="true" show_competition_name="true" show_state_of_play="true" show_graphs="all" side="both" show_key="true" show_innings="both" show_tooltips="true" show_officials="on_field" show_axis_labels="true" show_timecontrols="true" team_naming="full" player_naming="full" show_live="true" show_logo="true" show_title="false" breakpoints="400, 700"></opta-widget>
 			</div>
 
+			<?php endif; ?>
+
 		</main>
 
 	</div>
@@ -458,6 +463,7 @@ get_header(); ?>
 		
 	</section>	
 
+<?php if ($game_status != "Result" || $game_status != "Pre Game"): ?>
 <script>
 
 var CountDown = (function ($) {
@@ -545,9 +551,8 @@ function progress(timeleft, timetotal, $element) {
 
 progress(90, 90, jQuery('#progressBar'));
 
-
-
 </script>
+<?php endif; ?>
 
 <?php
 get_footer();

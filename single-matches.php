@@ -129,9 +129,7 @@ get_header(); ?>
 				<?php if (is_array($innings) && array_key_exists('0', $innings)):
 
 				foreach ($innings as $inning):
-					$batting_team_id = $inning['@attributes']['batting_team_id'];  
-					
-					// home or away
+					$batting_team_id = $inning['@attributes']['batting_team_id']; 
 					if ($batting_team_id === $home_team_id) {
 						$side = 'home';
 					} else {
@@ -139,14 +137,6 @@ get_header(); ?>
 					}
 				?>
 				<div class="team <?php echo $side; ?>">
-					<?php 
-						$wickets = $inning['Total']['@attributes']['wickets']; 
-						if ($wickets < 10) {
-							$wickets_str = "/ " . $wickets;
-						} else if ($wickets === 10) {
-							$wickets_str = $wickets;
-						}
-					?>
 					<img src="<?php echo team_image($batting_team_id); ?>">
 					<div class="name">
 						<h3>
@@ -160,7 +150,14 @@ get_header(); ?>
 						}
 						?>
 						<h4>
-							<?php echo $inning['Total']['@attributes']['runs_scored']; ?> <?php echo $wickets_str; ?>
+							<?php echo $inning['Total']['@attributes']['runs_scored']; ?>
+							<?php 
+							if ($inning['Total']['@attributes']['wickets'] < 10) {
+								echo "/ " . $inning['Total']['@attributes']['wickets'];
+							} else {
+								echo "All Out";
+							}
+							?>
 						</h4>
 					</div>
 				</div>
@@ -172,21 +169,20 @@ get_header(); ?>
 				<div class="team home">
 					<img src="<?php echo team_image($home_team_id); ?>">
 					<div class="name">
-						<?php 
-							$wickets = $innings['Total']['@attributes']['wickets']; 
-							if ($wickets < 10) {
-								$wickets_str = "/ " . $wickets;
-							} else if ($wickets === 10) {
-								$wickets_str = $wickets;
-							}
-						?>
 						<h3>
 							<?php echo team_name($home_team_id, $competition_id); ?>
 						</h3>
 						<?php if (array_key_exists('Innings', $matchinfo)): ?>
 						<?php if ($home_team_id == $batting_team_id): ?>
 							<h4>
-								<?php echo $innings['Total']['@attributes']['runs_scored']; ?> <?php echo $wickets_str; ?>
+								<?php echo $innings['Total']['@attributes']['runs_scored']; ?>
+								<?php 
+								if ($inning['Total']['@attributes']['wickets'] < 10) {
+									echo "/ " . $inning['Total']['@attributes']['wickets'];
+								} else {
+									echo "All Out";
+								}
+								?>
 							</h4>
 						<?php else: ?>
 							<h4>YET TO BAT</h4>
@@ -198,21 +194,20 @@ get_header(); ?>
 				<div class="team away">
 					<img src="<?php echo team_image($away_team_id); ?>">
 					<div class="name">
-						<?php 
-							$wickets = $innings['Total']['@attributes']['wickets']; 
-							if ($wickets < 10) {
-								$wickets_str = "/ " . $wickets;
-							} else if ($wickets === 10) {
-								$wickets_str = $wickets;
-							}
-						?>
 						<h3>
 							<?php echo team_name($away_team_id, $competition_id); ?>
 						</h3>
 						<?php if (array_key_exists('Innings', $matchinfo)): ?>
 						<?php if ($away_team_id == $batting_team_id): ?>
 							<h4>
-								<?php echo $innings['Total']['@attributes']['runs_scored']; ?> <?php echo $wickets_str; ?>
+								<?php echo $innings['Total']['@attributes']['runs_scored']; ?>
+								<?php 
+								if ($inning['Total']['@attributes']['wickets'] < 10) {
+									echo "/ " . $inning['Total']['@attributes']['wickets'];
+								} else {
+									echo "All Out";
+								}
+								?>
 							</h4>
 						<?php else: ?>
 							<h4>YET TO BAT</h4>
@@ -329,17 +324,17 @@ get_header(); ?>
 				<?php if (is_array($innings) && array_key_exists('0', $innings)): ?>
 
 					<?php foreach ($innings as $inning): ?>
-					<?php 
-						$wickets = $inning['Total']['@attributes']['wickets']; 
-						if ($wickets < 10) {
-							$wickets_str = "/ " . $wickets;
-						} else if ($wickets === 10) {
-							$wickets_str = $wickets;
-						}
-					?>
 					<dl>
 						<dt><?php echo team_name($inning['@attributes']['batting_team_id'], $competition_id); ?></dt>
-						<dd><?php echo $inning['Total']['@attributes']['runs_scored']; ?> <?php echo $wickets_str; ?> (<?php echo $inning['Total']['@attributes']['overs']; ?> overs)</dd>
+						<dd><?php echo $inning['Total']['@attributes']['runs_scored']; ?> 
+							<?php 
+							if ($inning['Total']['@attributes']['wickets'] < 10) {
+								echo "/ " . $inning['Total']['@attributes']['wickets'];
+							} else {
+								echo "All Out";
+							}
+							?>
+							(<?php echo $inning['Total']['@attributes']['overs']; ?> overs)</dd>
 					</dl>
 					<?php endforeach; ?>
 
@@ -349,15 +344,15 @@ get_header(); ?>
 						<dt><?php echo team_name($home_team_id, $competition_id); ?></dt>
 						<dd>
 						<?php if ($home_team_id == $batting_team_id): ?>
+							<?php echo $innings['Total']['@attributes']['runs_scored']; ?>
 							<?php 
-								$wickets = $innings['Total']['@attributes']['wickets']; 
-								if ($wickets < 10) {
-									$wickets_str = "/ " . $wickets;
-								} else if ($wickets === 10) {
-									$wickets_str = $wickets;
-								}
+							if ($innings['Total']['@attributes']['wickets'] < 10) {
+								echo "/ " . $innings['Total']['@attributes']['wickets'];
+							} else {
+								echo "All Out";
+							}
 							?>
-							<?php echo $innings['Total']['@attributes']['runs_scored']; ?> <?php echo $wickets_str; ?> (<?php echo $innings['Total']['@attributes']['overs']; ?> overs)
+							(<?php echo $innings['Total']['@attributes']['overs']; ?> overs)
 						<?php else: ?>
 							<h4>YET TO BAT</h4>
 						<?php endif; ?>
@@ -367,15 +362,15 @@ get_header(); ?>
 						<dt><?php echo team_name($away_team_id, $competition_id); ?></dt>
 						<dd>
 						<?php if ($away_team_id == $batting_team_id): ?>
+							<?php echo $innings['Total']['@attributes']['runs_scored']; ?>
 							<?php 
-								$wickets = $innings['Total']['@attributes']['wickets']; 
-								if ($wickets < 10) {
-									$wickets_str = "/ " . $wickets;
-								} else if ($wickets === 10) {
-									$wickets_str = $wickets;
-								}
+							if ($innings['Total']['@attributes']['wickets'] < 10) {
+								echo "/ " . $innings['Total']['@attributes']['wickets'];
+							} else {
+								echo "All Out";
+							}
 							?>
-							<?php echo $innings['Total']['@attributes']['runs_scored']; ?> <?php echo $wickets_str; ?> (<?php echo $innings['Total']['@attributes']['overs']; ?> overs)
+							(<?php echo $innings['Total']['@attributes']['overs']; ?> overs)
 						<?php else: ?>
 							<h4>YET TO BAT</h4>
 						<?php endif; ?>

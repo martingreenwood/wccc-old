@@ -41,10 +41,10 @@ if (file_exists(FEED_DIR .'/crml-'.$last_match_id.'.xml')):
 	$fixture_xml = simplexml_load_file(FEED_DIR .'/crml-'. $last_match_id.'.xml');
 	$fixture_json = json_encode($fixture_xml);
 	$fixture_array = json_decode($fixture_json,TRUE);
-	// $fixture_SessionUpdates = $fixture_array['SessionUpdates']['session']['@attributes'];
 	
 	// live / trea / dinner
 	$status_id = $fixture_array['MatchDetail']['@attributes']['status_id'];
+	$game_id = $fixture_array['MatchDetail']['@attributes']['game_id'];
 	$match_game_date = str_replace("-","",$fixture_array['MatchDetail']['@attributes']['game_date']); 
 	$days_since_game = $today - $match_game_date;
 
@@ -53,19 +53,30 @@ if (file_exists(FEED_DIR .'/crml-'.$last_match_id.'.xml')):
 	$away_team_id = $fixture_array['MatchDetail']['@attributes']['away_team_id'];
 	$home_team = $fixture_array['MatchDetail']['@attributes']['home_team'];
 	$home_team_id = $fixture_array['MatchDetail']['@attributes']['home_team_id'];
+
+	$competition_id = $fixture_array['MatchDetail']['@attributes']['competition_id']; 
 	
 
 	$result = $fixture_array['MatchDetail']['@attributes']['result'];
 	$number_days = $fixture_array['MatchDetail']['@attributes']['number_days'];
+
+	// $batting_team_id 
+	if (array_key_exists('Innings', $fixture_array)) {
+		$innings = $fixture_array['Innings'];
+	} else {
+		$innings = null;
+	}
+	if (array_key_exists('PlayerDetail', $fixture_array)) {
+		$PlayerDetail = $fixture_array['PlayerDetail'];
+	} else {
+		$PlayerDetail = null;
+	}
 
 	if (array_key_exists('Innings', $fixture_array)):
 	
 	// batting team	
 	$bowling_team_id = $fixture_array['Innings']['@attributes']['bowling_team_id'];
 	$batting_team_id = $fixture_array['Innings']['@attributes']['batting_team_id'];
-
-	// if $home_team_id == $batting_team_id show a score
-	// if $home_team_id == $bowling_team_id show yet to bat
 
 	$runs_scored = $fixture_array['Innings']['Total']['@attributes']['runs_scored'];
 	$wickets = $fixture_array['Innings']['Total']['@attributes']['wickets'];
@@ -78,7 +89,7 @@ endif;
 if ( !empty($fixture_array) ) {
 
 	if ($days_since_game < $number_days ): ?>
-	<section id="vs">
+	<section id="vs" data-game-id="<?php echo $game_id; ?>">
 		<div class="container">
 			<div class="row">
 				<div class="tab">LIVE SCORE</div>
@@ -94,14 +105,58 @@ if ( !empty($fixture_array) ) {
 					<?php endwhile; wp_reset_postdata(); endif; ?>
 				</div>
 
+				<?php if (is_array($innings) && array_key_exists('0', $innings)): // multiple innings ?>
 
+				<?php foreach ($innings as $inning):
+					$batting_team_id = $inning['@attributes']['batting_team_id']; 
+					if ($batting_team_id === $home_team_id) {
+						$side = 'home';
+					} else {
+						$side = 'away';
+					}
+				?>
+				<div class="team <?php echo $side; ?>">
+					<img src="<?php echo team_image($batting_team_id); ?>">
+					<div class="name">
+						<h3>
+							<?php echo team_name($batting_team_id, $competition_id); ?>
+						</h3>
+						<?php 
+						if ($batting_team_id === $home_team_id) {
+							$side = 'home';
+						} else {
+							$side = 'away';
+						}
+						?>
+						<h4>
+							<?php echo $inning['Total']['@attributes']['runs_scored']; ?>
+							<?php 
+							if ($inning['Total']['@attributes']['wickets'] < 10) {
+								echo "/ " . $inning['Total']['@attributes']['wickets'];
+							} else {
+								echo "All Out";
+							}
+							?>
+						</h4>
+					</div>
+				</div>
+				<?php endforeach; ?>
+
+				<?php else: // innings are not in array with [0[] key ?>
 				<div class="team one">
 					<img src="<?php echo team_image($home_team_id); ?>">
 					<div class="name">
 						<h3><?php echo $home_team; ?></h3>
 						<?php if (array_key_exists('Innings', $fixture_array)): ?>
 						<?php if ($home_team_id == $batting_team_id): ?>
-							<h4><?php echo $runs_scored; ?> / <?php echo $wickets; ?>
+							<h4><?php echo $runs_scored; ?> 
+								<?php 
+								if ($wickets < 10) {
+									echo "/ " . $wickets;
+								} else {
+									echo "All Out";
+								}
+								?>
 								<br><small><?php echo $overs; ?> overs bowled</small>
 							</h4>
 						<?php else: ?>
@@ -115,7 +170,14 @@ if ( !empty($fixture_array) ) {
 						<h3><?php echo $away_team; ?></h3>
 						<?php if (array_key_exists('Innings', $fixture_array)): ?>
 						<?php if ($away_team_id == $batting_team_id): ?>
-							<h4><?php echo $runs_scored; ?> / <?php echo $wickets; ?>
+							<h4><?php echo $runs_scored; ?>
+								<?php 
+								if ($wickets < 10) {
+									echo "/ " . $wickets;
+								} else {
+									echo "All Out";
+								}
+								?>
 								<br><small><?php echo $overs; ?> overs bowled</small>
 							</h4>
 						<?php else: ?>
@@ -125,6 +187,7 @@ if ( !empty($fixture_array) ) {
 					</div>
 					<img src="<?php echo team_image($away_team_id); ?>">
 				</div>
+				<?php endif; ?>
 
 			</div>
 		</div>

@@ -228,6 +228,33 @@
 				}
 			}
 
+			&.home {
+				float: left;
+				padding-right: 150px;
+
+				img {
+					float: left;
+				}
+
+				.name {
+					float: right;
+				}
+
+			}
+			&.away {
+				float: right;
+				padding-left: 150px;
+
+				img {
+					float: right;
+				}
+
+				.name {
+					float: left;
+				}
+
+			}
+
 			&.one {
 				padding-right: 150px;
 

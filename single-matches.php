@@ -143,7 +143,7 @@ get_header(); ?>
 						$wickets = $inning['Total']['@attributes']['wickets']; 
 						if ($wickets < 10) {
 							$wickets_str = "/ " . $wickets;
-						} else if ($wickets = 10) {
+						} else if ($wickets === 10) {
 							$wickets_str = $wickets;
 						}
 					?>
@@ -173,10 +173,10 @@ get_header(); ?>
 					<img src="<?php echo team_image($home_team_id); ?>">
 					<div class="name">
 						<?php 
-							$wickets = $inning['Total']['@attributes']['wickets']; 
+							$wickets = $innings['Total']['@attributes']['wickets']; 
 							if ($wickets < 10) {
 								$wickets_str = "/ " . $wickets;
-							} else if ($wickets = 10) {
+							} else if ($wickets === 10) {
 								$wickets_str = $wickets;
 							}
 						?>
@@ -199,10 +199,10 @@ get_header(); ?>
 					<img src="<?php echo team_image($away_team_id); ?>">
 					<div class="name">
 						<?php 
-							$wickets = $inning['Total']['@attributes']['wickets']; 
+							$wickets = $innings['Total']['@attributes']['wickets']; 
 							if ($wickets < 10) {
 								$wickets_str = "/ " . $wickets;
-							} else if ($wickets = 10) {
+							} else if ($wickets === 10) {
 								$wickets_str = $wickets;
 							}
 						?>
@@ -333,7 +333,7 @@ get_header(); ?>
 						$wickets = $inning['Total']['@attributes']['wickets']; 
 						if ($wickets < 10) {
 							$wickets_str = "/ " . $wickets;
-						} else if ($wickets = 10) {
+						} else if ($wickets === 10) {
 							$wickets_str = $wickets;
 						}
 					?>
@@ -345,19 +345,18 @@ get_header(); ?>
 
 				<?php else: ?>
 
-					<?php 
-						$wickets = $inning['Total']['@attributes']['wickets']; 
-						if ($wickets < 10) {
-							$wickets_str = "/ " . $wickets;
-						} else if ($wickets = 10) {
-							$wickets_str = $wickets;
-						}
-					?>
-
 					<dl>
 						<dt><?php echo team_name($home_team_id, $competition_id); ?></dt>
 						<dd>
 						<?php if ($home_team_id == $batting_team_id): ?>
+							<?php 
+								$wickets = $innings['Total']['@attributes']['wickets']; 
+								if ($wickets < 10) {
+									$wickets_str = "/ " . $wickets;
+								} else if ($wickets === 10) {
+									$wickets_str = $wickets;
+								}
+							?>
 							<?php echo $innings['Total']['@attributes']['runs_scored']; ?> <?php echo $wickets_str; ?> (<?php echo $innings['Total']['@attributes']['overs']; ?> overs)
 						<?php else: ?>
 							<h4>YET TO BAT</h4>
@@ -368,6 +367,14 @@ get_header(); ?>
 						<dt><?php echo team_name($away_team_id, $competition_id); ?></dt>
 						<dd>
 						<?php if ($away_team_id == $batting_team_id): ?>
+							<?php 
+								$wickets = $innings['Total']['@attributes']['wickets']; 
+								if ($wickets < 10) {
+									$wickets_str = "/ " . $wickets;
+								} else if ($wickets === 10) {
+									$wickets_str = $wickets;
+								}
+							?>
 							<?php echo $innings['Total']['@attributes']['runs_scored']; ?> <?php echo $wickets_str; ?> (<?php echo $innings['Total']['@attributes']['overs']; ?> overs)
 						<?php else: ?>
 							<h4>YET TO BAT</h4>

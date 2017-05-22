@@ -517,6 +517,17 @@ function progress(timeleft, timetotal, $element) {
 
 progress(90, 90, jQuery('#progressBar'));
 
+jQuery(window).scroll(function() {
+  sessionStorage.scrollTop = jQuery(this).scrollTop();
+});
+
+jQuery(document).ready(function() {
+  if (sessionStorage.scrollTop != "undefined") {
+    jQuery(window).scrollTop(sessionStorage.scrollTop);
+  }
+});
+
+
 </script>
 
 <?php

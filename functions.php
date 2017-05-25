@@ -145,6 +145,9 @@ function wccc_scripts() {
 	wp_enqueue_script( 'wccc-acc', get_template_directory_uri() . '/assets/js/jquery.accordion.js', '', '', true );
 	wp_enqueue_script( 'wccc-nav', get_template_directory_uri() . '/assets/js/navigation.js', '', '', true );
 	wp_enqueue_script( 'wccc-map', get_template_directory_uri() . '/assets/js/map.js', '', '', true );
+	if (is_front_page()) {
+		wp_enqueue_script( 'wccc-ctd', get_template_directory_uri() . '/assets/js/countdown.js' );
+	}
 	wp_enqueue_script( 'wccc-app', get_template_directory_uri() . '/assets/js/app.js', '', '', true );
 }
 add_action( 'wp_enqueue_scripts', 'wccc_scripts' );

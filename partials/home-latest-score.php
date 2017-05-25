@@ -2,6 +2,8 @@
 
 $today = date('Ymd', strtotime('now')); 
 $dates = array();
+$fm_dates = array();
+$fm_matches = array();
 
 $fixture_files = preg_grep('~^EDC.*\.(xml)$~', scandir(FEED_DIR));
 $fixture_file = array_pop($fixture_files);
@@ -22,11 +24,22 @@ foreach ($fixtures as $fixture):
 	$match_home_team = $fixture['@attributes']['home_team'];
 	$match_away_team_name = $fixture['@attributes']['away_team_name']; 
 	$match_home_team_name = $fixture['@attributes']['home_team_name'];
-	$number_days = $fixture['@attributes']['number_days'];
+	if (isset($fixture['@attributes']['number_days'])) {
+		$number_days = $fixture['@attributes']['number_days'];
+	}
 
+	// previous game
 	if ( $match_game_date <= $today ) {
 		if ($match_away_team == '56' || $match_home_team == '56' ) {
 			$dates[] = $match_game_date .'_'. $match_id;
+		}
+	}
+
+	// next game
+	if ( $match_game_date > $today ) {
+		if ($match_away_team == '56' || $match_home_team == '56' ) {
+			$fm_matches[] = $fixture;
+			$fm_dates[] = $match_game_date .'_'. $match_id;
 		}
 	}
 
@@ -55,10 +68,12 @@ if (file_exists(FEED_DIR .'/crml-'.$last_match_id.'.xml')):
 	$home_team_id = $fixture_array['MatchDetail']['@attributes']['home_team_id'];
 
 	$competition_id = $fixture_array['MatchDetail']['@attributes']['competition_id']; 
-	
+	$competition_name = $fixture_array['MatchDetail']['@attributes']['competition_name']; 
 
 	$result = $fixture_array['MatchDetail']['@attributes']['result'];
-	$number_days = $fixture_array['MatchDetail']['@attributes']['number_days'];
+	if (isset($fixture_array['MatchDetail']['@attributes']['number_days'])) {
+		$number_days = $fixture_array['MatchDetail']['@attributes']['number_days'];
+	}
 
 	// $batting_team_id 
 	if (array_key_exists('Innings', $fixture_array)) {
@@ -72,21 +87,19 @@ if (file_exists(FEED_DIR .'/crml-'.$last_match_id.'.xml')):
 		$PlayerDetail = null;
 	}
 
-	if (array_key_exists('Innings', $fixture_array)):
-	
-	// batting team	
-	$bowling_team_id = $fixture_array['Innings']['@attributes']['bowling_team_id'];
-	$batting_team_id = $fixture_array['Innings']['@attributes']['batting_team_id'];
+	if (array_key_exists('Innings', $fixture_array)):	
+		// batting team	
+		$bowling_team_id = $fixture_array['Innings']['@attributes']['bowling_team_id'];
+		$batting_team_id = $fixture_array['Innings']['@attributes']['batting_team_id'];
 
-	$runs_scored = $fixture_array['Innings']['Total']['@attributes']['runs_scored'];
-	$wickets = $fixture_array['Innings']['Total']['@attributes']['wickets'];
-	$overs = $fixture_array['Innings']['Total']['@attributes']['overs'];
-	
+		$runs_scored = $fixture_array['Innings']['Total']['@attributes']['runs_scored'];
+		$wickets = $fixture_array['Innings']['Total']['@attributes']['wickets'];
+		$overs = $fixture_array['Innings']['Total']['@attributes']['overs'];
 	endif;
 
 endif;
 
-if ( !empty($fixture_array) ) {
+ if ( !empty($fixture_array) ) {
 
 	if ($days_since_game < $number_days ): ?>
 	<section id="vs" data-game-id="<?php echo $game_id; ?>">
@@ -128,9 +141,13 @@ if ( !empty($fixture_array) ) {
 					<img src="<?php echo team_image($batting_team_id); ?>">
 					<?php endif; ?>
 					<div class="name">
-						<h3>
-							<?php echo team_name($batting_team_id, $competition_id); ?>
-						</h3>
+						
+						<?php if (strpos($competition_name, 'T20') !== false): ?>
+						<h3><?php echo t20_name(team_name($home_team_id, $competition_id)); ?></h3>
+						<?php else: ?>
+						<h3><?php echo team_name($home_team_id, $competition_id); ?></h3>
+						<?php endif; ?>
+
 						<?php 
 						if ($batting_team_id === $home_team_id) {
 							$side = 'home';
@@ -171,7 +188,13 @@ if ( !empty($fixture_array) ) {
 				<div class="team one">
 					<img src="<?php echo team_image($home_team_id); ?>">
 					<div class="name">
-						<h3><?php echo $home_team; ?></h3>
+						
+						<?php if (strpos($competition_name, 'T20') !== false): ?>
+						<h3><?php echo t20_name(team_name($home_team_id, $competition_id)); ?></h3>
+						<?php else: ?>
+						<h3><?php echo team_name($home_team_id, $competition_id); ?></h3>
+						<?php endif; ?>
+
 						<?php if (array_key_exists('Innings', $fixture_array)): ?>
 						<?php if ($home_team_id == $batting_team_id): ?>
 							<h4><?php echo $runs_scored; ?> 
@@ -193,7 +216,13 @@ if ( !empty($fixture_array) ) {
 				<div class="mid"><p>VS</p></div>
 				<div class="team two">
 					<div class="name">
-						<h3><?php echo $away_team; ?></h3>
+
+						<?php if (strpos($competition_name, 'T20') !== false): ?>
+						<h3><?php echo t20_name(team_name($away_team_id, $competition_id)); ?></h3>
+						<?php else: ?>
+						<h3><?php echo team_name($away_team_id, $competition_id); ?></h3>
+						<?php endif; ?>
+
 						<?php if (array_key_exists('Innings', $fixture_array)): ?>
 						<?php if ($away_team_id == $batting_team_id): ?>
 							<h4><?php echo $runs_scored; ?>
@@ -222,11 +251,46 @@ if ( !empty($fixture_array) ) {
 	<?php 
 	endif; 
 } else {
+
+$next_match = current($fm_matches);
+$next_match_date = $next_match['@attributes']['game_date_time'];
 ?>
 	<section id="vs">
 		<div class="container">
-			<div class="row">
-				<h1>SOMETHING HERE</h1>
+			<div class="row" style="padding-top: 30px">
+				<div class="span8">
+
+					<h3>Sign pp to our Newsletter</h3>
+					<form action="https://ventutec.createsend.com/t/r/s/tdtutid/" method="post" id="subForm">
+						<p>
+							<input id="fieldName" name="cm-name" type="text" placeholder="Your name" />
+						</p>
+						<p>
+							<input id="fieldEmail" name="cm-tdtutid-tdtutid" type="email" required placeholder="Your email" />
+						</p>
+						<p>
+							<button type="submit">Sign Up</button>
+						</p>
+					</form>
+				</div>
+				<div class="span4">
+					
+					<div>
+						<?php 
+							$match_date_time = strtotime($next_match_date) + 60*60;
+							$match_date_countdown = date("Y/m/d H:i", $match_date_time);
+						?>
+						<h3>Time until next game</h3>
+						<div id="getting-started"></div>
+						<script type="text/javascript">
+							jQuery("#getting-started").countdown("<?php echo $match_date_countdown; ?>", function(event) {
+								jQuery(this).text(
+									event.strftime('%D Days %H hours %M Mins %S Secs')
+								);
+							});
+						</script>
+					</div>
+				</div>
 			</div>
 		</div>
 </section>

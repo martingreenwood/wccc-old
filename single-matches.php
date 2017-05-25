@@ -7,76 +7,77 @@
  * @package wccc
  */
 
-get_header(); ?>
+if (get_field( 'enable_t20_mode', 'option' )):
+	$bannerimage = get_template_directory_uri() . "/assets/images/rapids-banner.png";
+else: 
+	$bannerimage = get_template_directory_uri() ."/assets/images/banner.png";
+endif; 
 
-	<?php 
-	if (get_field( 'enable_t20_mode', 'option' )):
-		$bannerimage = get_template_directory_uri() . "/assets/images/rapids-banner.png";
-	else: 
-		$bannerimage = get_template_directory_uri() ."/assets/images/banner.png";
-	endif; 
+if (get_field( 'top_image' )) {
+	$top_image = get_field( 'top_image' ); 
+	$top_image = $top_image['url']; 
+} else {
+	$top_image = get_template_directory_uri() ."/assets/images/player.png";
+}
 
-	if (get_field( 'top_image' )) {
-		$top_image = get_field( 'top_image' ); 
-		$top_image = $top_image['url']; 
+$feedID = get_post_meta($post->ID,'_wcc_feed_id',true);
+
+if (file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')):
+	$xml = simplexml_load_file(FEED_DIR . '/crml-'.$feedID.'.xml');
+	$json = json_encode($xml);
+	$matchinfo = json_decode($json,TRUE);
+	
+	$game_status = game_status($matchinfo['MatchDetail']['@attributes']['status_id']);
+	$toss = $matchinfo['MatchDetail']['@attributes']['toss'];
+	$game_date_time = $matchinfo['MatchDetail']['@attributes']['game_date'];
+	$game_time = $matchinfo['MatchDetail']['@attributes']['game_time'];
+	$game_date = date("d M Y", strtotime($game_date_time));
+
+	$venue_name = $matchinfo['MatchDetail']['Venue']['@attributes']['venue_name'];
+	$venue_city = $matchinfo['MatchDetail']['Venue']['@attributes']['venue_city'];
+	
+	$official_1_first_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_1_first_name'];
+	$official_1_last_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_1_last_name'];
+	$official_1_name = $official_1_first_name. ' ' .$official_1_last_name;
+
+	$official_2_first_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_2_first_name'];
+	$official_2_last_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_2_last_name'];
+	$official_2_name = $official_2_first_name. ' ' .$official_2_last_name;
+
+	$match_id = $matchinfo['MatchDetail']['@attributes']['game_id']; 
+	$result = $matchinfo['MatchDetail']['@attributes']['result']; 
+	$competition_id = $matchinfo['MatchDetail']['@attributes']['competition_id']; 
+	$competition_name = $matchinfo['MatchDetail']['@attributes']['competition_name']; 
+	
+	$home_team = $matchinfo['MatchDetail']['@attributes']['home_team']; 
+	// if ($home_team == "Worcestershire") {
+	// 	$home_team = "WCCC";
+	// }
+	$home_team_id = $matchinfo['MatchDetail']['@attributes']['home_team_id']; 
+
+	$away_team = $matchinfo['MatchDetail']['@attributes']['away_team']; 
+	// if ($away_team == "Worcestershire") {
+	// 	$away_team = "WCCC";
+	// }
+	$away_team_id = $matchinfo['MatchDetail']['@attributes']['away_team_id']; 
+
+	// $batting_team_id 
+	if (array_key_exists('Innings', $matchinfo)) {
+		$innings = $matchinfo['Innings'];
 	} else {
-		$top_image = get_template_directory_uri() ."/assets/images/player.png";
+		$innings = null;
+	}
+	if (array_key_exists('PlayerDetail', $matchinfo)) {
+		$PlayerDetail = $matchinfo['PlayerDetail'];
+	} else {
+		$PlayerDetail = null;
 	}
 
-	?>
+endif; 
 
-	<?php 
-	
-	$feedID = get_post_meta($post->ID,'_wcc_feed_id',true);
+get_header();
 
-	if (file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')):
-		$xml = simplexml_load_file(FEED_DIR . '/crml-'.$feedID.'.xml');
-		$json = json_encode($xml);
-		$matchinfo = json_decode($json,TRUE);
-		
-		$game_status = game_status($matchinfo['MatchDetail']['@attributes']['status_id']);
-		$toss = $matchinfo['MatchDetail']['@attributes']['toss'];
-		$game_date_time = $matchinfo['MatchDetail']['@attributes']['game_date'];
-		$game_time = $matchinfo['MatchDetail']['@attributes']['game_time'];
-		$game_date = date("d M Y", strtotime($game_date_time));
-	
-		$venue_name = $matchinfo['MatchDetail']['Venue']['@attributes']['venue_name'];
-		$venue_city = $matchinfo['MatchDetail']['Venue']['@attributes']['venue_city'];
-		
-		$official_1_first_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_1_first_name'];
-		$official_1_last_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_1_last_name'];
-		$official_1_name = $official_1_first_name. ' ' .$official_1_last_name;
-
-		$official_2_first_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_2_first_name'];
-		$official_2_last_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_2_last_name'];
-		$official_2_name = $official_2_first_name. ' ' .$official_2_last_name;
-
-		$match_id = $matchinfo['MatchDetail']['@attributes']['game_id']; 
-		$result = $matchinfo['MatchDetail']['@attributes']['result']; 
-		$competition_id = $matchinfo['MatchDetail']['@attributes']['competition_id']; 
-		$competition_name = $matchinfo['MatchDetail']['@attributes']['competition_name']; 
-		
-		$home_team = $matchinfo['MatchDetail']['@attributes']['home_team']; 
-		$home_team_id = $matchinfo['MatchDetail']['@attributes']['home_team_id']; 
-
-		$away_team = $matchinfo['MatchDetail']['@attributes']['away_team']; 
-		$away_team_id = $matchinfo['MatchDetail']['@attributes']['away_team_id']; 
-
-		// $batting_team_id 
-		if (array_key_exists('Innings', $matchinfo)) {
-			$innings = $matchinfo['Innings'];
-		} else {
-			$innings = null;
-		}
-		if (array_key_exists('PlayerDetail', $matchinfo)) {
-			$PlayerDetail = $matchinfo['PlayerDetail'];
-		} else {
-			$PlayerDetail = null;
-		}
-
-	?>
-
-	<?php endif; ?>
+?>
 
 	<section id="jumbrotron">
 		<div class="overlay" style="background-image: url(<?php echo $bannerimage; ?>)"></div>
@@ -89,6 +90,7 @@ get_header(); ?>
 						$title = get_the_title( ); 
 						$title = explode(" ", $title);
 						?>
+						<?php if (file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')): ?>
 						<h1>
 							<?php if ($home_team === "Worcestershire"): ?>
 							<span>
@@ -107,7 +109,11 @@ get_header(); ?>
 							<?php if ($away_team === "Worcestershire"): ?>
 							</span>
 							<?php endif; ?>
+							<?php if($game_status == "Result"): ?>
+							<br><small style="font-size: 40%"><?php echo $result; ?></small>
+							<?php endif; ?>
 						</h1>
+						<?php endif; ?>
 					</div>
 					<div class="span6">
 					</div>
@@ -115,6 +121,16 @@ get_header(); ?>
 			</div></div>
 		</div>
 	</section>
+
+	<?php if (!file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')): ?>
+	<section id="no-feed">
+		<div class="table">
+			<div class="cell middle">
+				<h1>Sorry, this match has no data yet, please return on the day of the match.</h1>
+			</div>
+		</div>
+	</section>
+	<?php endif; ?>
 
 	<section id="vs">
 		<div class="container">
@@ -148,9 +164,13 @@ get_header(); ?>
 					<img src="<?php echo team_image($batting_team_id); ?>">
 					<?php endif; ?>
 					<div class="name">
-						<h3>
-							<?php echo team_name($batting_team_id, $competition_id); ?>
-						</h3>
+						
+						<?php if (strpos($competition_name, 'T20') !== false): ?>
+						<h3><?php echo t20_name(team_name($batting_team_id, $competition_id)); ?></h3>
+						<?php else: ?>
+						<h3><?php echo team_name($batting_team_id, $competition_id); ?></h3>
+						<?php endif; ?>
+
 						<?php 
 						if ($batting_team_id === $home_team_id) {
 							$side = 'home';
@@ -193,9 +213,14 @@ get_header(); ?>
 				<div class="team home">
 					<img src="<?php echo team_image($home_team_id); ?>">
 					<div class="name">
-						<h3>
-							<?php echo team_name($home_team_id, $competition_id); ?>
-						</h3>
+						
+						<?php echo $home_team; ?>
+						<?php if (strpos($competition_name, 'T20') !== false): ?>
+						<h3><?php echo t20_name($home_team); echo $home_team ?></h3>
+						<?php else: ?>
+						<h3><?php echo $home_team; ?></h3>
+						<?php endif; ?>
+
 						<?php if (array_key_exists('Innings', $matchinfo)): ?>
 						<?php if ($home_team_id == $batting_team_id): ?>
 							<h4>
@@ -218,9 +243,13 @@ get_header(); ?>
 				<div class="team away">
 					<img src="<?php echo team_image($away_team_id); ?>">
 					<div class="name">
-						<h3>
-							<?php echo team_name($away_team_id, $competition_id); ?>
-						</h3>
+						
+						<?php if (strpos($competition_name, 'T20') !== false): ?>
+						<h3><?php echo t20_name(team_name($away_team_id, $competition_id)); ?></h3>
+						<?php else: ?>
+						<h3><?php echo team_name($away_team_id, $competition_id); ?></h3>
+						<?php endif; ?>
+
 						<?php if (array_key_exists('Innings', $matchinfo)): ?>
 						<?php if ($away_team_id == $batting_team_id): ?>
 							<h4>
@@ -256,13 +285,16 @@ get_header(); ?>
 					<li><a href="#reports">Reports</a></li>
 					<?php endif; ?>
 					<li><a href="#matchinfo">Match Information</a></li>
+					<?php if (file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')): ?>
 					<?php if ($game_status != "Pre Game"): ?>
 					<li><a href="#scorecard">Scorecard</a></li>
 					<li><a href="#wagonwheel">Wagon Wheel</a></li>
 					<li><a href="#manhattan">Manhattan</a></li>
 					<?php endif; ?>
+					<?php endif; ?>
 				</ul>
 	
+				<?php if (file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')): ?>
 				<?php if ($game_status != "Result" && $game_status != "Pre Game"): ?>
 				<div class="time">
 					<div id="pause"><i class="fa fa-pause" aria-hidden="true"></i></div>
@@ -278,9 +310,11 @@ get_header(); ?>
 					<a>LIVE VIEW</a>
 				</div>
 				<?php endif; ?>
+				<?php endif; ?>
 
 			</nav>
 		</aside>
+		
 		<main id="main" class="site-main span9" role="main">
 			<?php
 			while ( have_posts() ) : the_post();
@@ -436,6 +470,7 @@ get_header(); ?>
 
 			</div>
 
+			<?php if (file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')): ?>
 			<?php if ($game_status != "Pre Game"): ?>
 
 			<div class="data-feed" id="scorecard">
@@ -452,106 +487,112 @@ get_header(); ?>
 				<h1>MANHATTAN</h1>
 				<opta-widget sport="cricket" widget="manhattan" template="normal" competition="<?php echo $competition_id; ?>" season="0" match="<?php echo $feedID; ?>" live="true" show_match_header="false" show_crests="true" show_competition_name="true" show_state_of_play="true" show_graphs="all" side="both" show_key="true" show_innings="both" show_tooltips="true" show_officials="on_field" show_axis_labels="true" show_timecontrols="true" team_naming="full" player_naming="full" show_live="true" show_logo="true" show_title="false" breakpoints="400, 700"></opta-widget>
 			</div>
-
 			<?php endif; ?>
+			<?php endif; ?>
+			
 
 		</main>
 
 	</div>
 
-	<section id="timer">
-		
-	</section>	
-
-<?php if ($game_status != "Result" || $game_status != "Pre Game"): ?>
-<script>
-
-var CountDown = (function ($) {
-    // Length ms 
-    var TimeOut = 90000;
-    // Interval ms
-    var TimeGap = 1000;
-
-    var CurrentTime = ( new Date() ).getTime();
-    var EndTime = ( new Date() ).getTime() + TimeOut;
-
-    var GuiTimer = $('.countdown');
-    var GuiPause = $('#pause');
-    var GuiResume = $('#resume').css('display', 'none');
-
-    var Running = true;
-
-    var UpdateTimer = function() {
-        // Run till timeout
-        if( CurrentTime + TimeGap < EndTime ) {
-            setTimeout( UpdateTimer, TimeGap );
-        }
-        // Countdown if running
-        if( Running ) {
-            CurrentTime += TimeGap;
-            if( CurrentTime >= EndTime ) {
-                GuiTimer.css('color','red');
-                location.reload(true);
-            }
-        }
-        // Update Gui
-        var Time = new Date();
-        Time.setTime( EndTime - CurrentTime );
-        var Minutes = Time.getMinutes();
-        var Seconds = Time.getSeconds();
-
-        GuiTimer.html( 
-            (Minutes < 10 ? '0' : '') + Minutes 
-            + ':' 
-            + (Seconds < 10 ? '0' : '') + Seconds );
-    };
-
-    var Pause = function() {
-        Running = false;
-        GuiPause.css('display', 'none');
-        GuiResume.css('display', 'inline-block');;
-    };
-
-    var Resume = function() {
-        Running = true;
-        GuiPause.css('display', 'inline-block');;
-        GuiResume.css('display', 'none');;
-    };
-
-    var Start = function( Timeout ) {
-        TimeOut = Timeout;
-        CurrentTime = ( new Date() ).getTime();
-        EndTime = ( new Date() ).getTime() + TimeOut;
-        UpdateTimer();
-    };
-
-    return {
-        Pause: Pause,
-        Resume: Resume,
-        Start: Start
-    };
-
-})(jQuery);
-
-jQuery('#pause').on('click',CountDown.Pause);
-jQuery('#resume').on('click',CountDown.Resume);
-
-// ms
-CountDown.Start(90000);
-
-function progress(timeleft, timetotal, $element) {
-    var progressBarWidth = timeleft * $element.width() / timetotal;
-    $element.find('div').animate({ width: progressBarWidth }, timeleft == timetotal ? 0 : 1000, 'linear').html();
-    if(timeleft > 0) {
-        setTimeout(function() {
-            progress(timeleft - 1, timetotal, $element);
-        }, 1000);
-    }
-};
-
-progress(90, 90, jQuery('#progressBar'));
-
+<?php if (!file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')): ?>
+<script type="text/javascript">
+jQuery('#vs').addClass('blur');
+jQuery('#primary').addClass('blur');
 </script>
+<?php endif; ?>
+
+<?php if (file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')): ?>
+	<?php if ($game_status != "Result" && $game_status != "Pre Game"): ?>
+	<script type="text/javascript">
+
+	var CountDown = (function ($) {
+	    // Length ms 
+	    var TimeOut = 90000;
+	    // Interval ms
+	    var TimeGap = 1000;
+
+	    var CurrentTime = ( new Date() ).getTime();
+	    var EndTime = ( new Date() ).getTime() + TimeOut;
+
+	    var GuiTimer = $('.countdown');
+	    var GuiPause = $('#pause');
+	    var GuiResume = $('#resume').css('display', 'none');
+
+	    var Running = true;
+
+	    var UpdateTimer = function() {
+	        // Run till timeout
+	        if( CurrentTime + TimeGap < EndTime ) {
+	            setTimeout( UpdateTimer, TimeGap );
+	        }
+	        // Countdown if running
+	        if( Running ) {
+	            CurrentTime += TimeGap;
+	            if( CurrentTime >= EndTime ) {
+	                GuiTimer.css('color','red');
+	                location.reload(true);
+	            }
+	        }
+	        // Update Gui
+	        var Time = new Date();
+	        Time.setTime( EndTime - CurrentTime );
+	        var Minutes = Time.getMinutes();
+	        var Seconds = Time.getSeconds();
+
+	        GuiTimer.html( 
+	            (Minutes < 10 ? '0' : '') + Minutes 
+	            + ':' 
+	            + (Seconds < 10 ? '0' : '') + Seconds );
+	    };
+
+	    var Pause = function() {
+	        Running = false;
+	        GuiPause.css('display', 'none');
+	        GuiResume.css('display', 'inline-block');;
+	    };
+
+	    var Resume = function() {
+	        Running = true;
+	        GuiPause.css('display', 'inline-block');;
+	        GuiResume.css('display', 'none');;
+	    };
+
+	    var Start = function( Timeout ) {
+	        TimeOut = Timeout;
+	        CurrentTime = ( new Date() ).getTime();
+	        EndTime = ( new Date() ).getTime() + TimeOut;
+	        UpdateTimer();
+	    };
+
+	    return {
+	        Pause: Pause,
+	        Resume: Resume,
+	        Start: Start
+	    };
+
+	})(jQuery);
+
+	jQuery('#pause').on('click',CountDown.Pause);
+	jQuery('#resume').on('click',CountDown.Resume);
+
+	// ms
+	CountDown.Start(90000);
+
+	function progress(timeleft, timetotal, $element) {
+	    var progressBarWidth = timeleft * $element.width() / timetotal;
+	    $element.find('div').animate({ width: progressBarWidth }, timeleft == timetotal ? 0 : 1000, 'linear').html();
+	    if(timeleft > 0) {
+	        setTimeout(function() {
+	            progress(timeleft - 1, timetotal, $element);
+	        }, 1000);
+	    }
+	};
+
+	progress(90, 90, jQuery('#progressBar'));
+
+	</script>
+	<?php endif; ?>
 <?php endif; ?>
 
 <?php

@@ -575,6 +575,15 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"\/assets\/js\/countdown.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/countdown-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/assets\/js\/customizer.js": {
 		"ft": 64,
 		"mi": 1,
@@ -3370,6 +3379,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/functions.php",
+		"oF": 0
+		},
+	"\/header-blur.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/header-blur.php",
 		"oF": 0
 		},
 	"\/header.php": {

@@ -20,6 +20,7 @@
 </head>
 <?php $enable_t20_mode = null; if (get_field( 'enable_t20_mode', 'option' )): $enable_t20_mode = 't20'; endif; ?>
 <body <?php body_class($enable_t20_mode); ?>>
+
 <div id="page" class="site">
 
 	<div id="loader">
@@ -134,132 +135,20 @@
 									</div>
 
 									<div class="results span3">
-
-										<?php
-										// oldest fixture file
-										$today = date('Ymd', strtotime('now')); 
-										$past_dates = array();
-										$past_matches = array();
-										$past_fixture_files = preg_grep('~^EDC.*\.(xml)$~', scandir(FEED_DIR, SCANDIR_SORT_ASCENDING));
-										$past_fixture_file = current($past_fixture_files);
-
-										// read fixtures file and assign to arrays
-										if (file_exists(FEED_DIR .'/'. $past_fixture_file)):
-											$p_fixtures_xml = simplexml_load_file(FEED_DIR .'/'. $past_fixture_file);
-											$p_fixtures_json = json_encode($p_fixtures_xml);
-											$p_fixtures_array = json_decode($p_fixtures_json,TRUE);
-											$p_fixtures = $p_fixtures_array['fixture'];
-										endif;
-
-										foreach ($p_fixtures as $p_fixture):
-
-											if ( $p_fixture['@attributes']['game_date'] < $today ) {
-												if ($p_fixture['@attributes']['away_team'] == '56' || $p_fixture['@attributes']['home_team'] == '56' ) {
-													$past_matches[] = $p_fixture;
-													$past_dates[] = $p_fixture['@attributes']['game_date'] .'_'. $p_fixture['@attributes']['id'];
-												}
-											}
-
-										endforeach;
-										?>
 										
 										<h2>Results</h2>
-
-										<?php foreach ($past_matches as $past_match): ?>
-										<div class="match-info">
-											<p class="date-time">
-												<?php echo date("d/m/Y", strtotime($past_match['@attributes']['game_date'])); ?>
-											</p>
-
-											<p class="match">
-												<?php echo $past_match['@attributes']['home_team_name']; ?> <span>VS</span> <?php echo $past_match['@attributes']['away_team_name']; ?>
-											</p>
-
-											<p class="links">
-												<?php $args = array( 'post_type' => 'matches', 'meta_query' => array( array('key' => '_wcc_feed_id', 'value' => $past_match['@attributes']['id'], 'compare' => '=' )));
-												$match_query = new WP_Query( $args );
-												if ( $match_query->have_posts() ) : while ( $match_query->have_posts() ):
-												$match_query->the_post();
-												?>
-												<a class="info" href="<?php echo the_permalink(); ?>#report">
-													<?php 
-													if (file_exists(FEED_DIR . '/crml-'.$past_match['@attributes']['id'] .'.xml')){
-														$xml = simplexml_load_file(FEED_DIR . '/crml-'.$past_match['@attributes']['id'].'.xml');
-														$json = json_encode($xml);
-														$matchinfo = json_decode($json,TRUE);
-														$result = $matchinfo['MatchDetail']['@attributes']['result']; 
-													}
-													else {
-														$result = "Match Report";
-													}
-													echo $result;
-													?>
-												</a>
-												<?php endwhile; wp_reset_postdata(); endif; ?>
-											</p>
-											
-										</div>
-										<?php endforeach; ?>
+										<!-- RESULTS -->
 
 									</div>
 
 									<div class="latest-news span3">
 										
 										<h2>News</h2>
-										<?php 
-										$loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 4 ) );
-										while ( $loop->have_posts() ) : $loop->the_post(); 
-											?>
-											<div class="match-info">
-												<p class="date-time">
-													<?php echo the_date( ); ?>
-												</p>
-
-												<p class="match">
-													<?php the_title( ); ?>
-												</p>
-
-												<p class="links">
-													<a class="info" href="<?php echo the_permalink(); ?>">Read More</a>
-												</p>
-												
-											</div>
-											<?php 
-										endwhile; 
-										wp_reset_query(); 
-										?>
-
+										<!-- NEWS -->
 
 									</div>
 
-								</div><!-- END TAB -->
-
-								<div id="cricket" class="child">
-								</div><!-- END TAB -->
-
-								<div id="news" class="child">
-								</div><!-- END TAB -->
-
-								<div id="theclub" class="child">
-								</div><!-- END TAB -->
-
-								<div id="visitors" class="child">
-								</div><!-- END TAB -->
-
-								<div id="memberships" class="child">
-								</div><!-- END TAB -->
-
-								<div id="commercial" class="child">
-								</div><!-- END TAB -->
-
-								<div id="shop" class="child">
-								</div><!-- END TAB -->
-
-								<div id="whatson" class="child">
-								</div><!-- END TAB -->
-
-								<div id="contact" class="child">
-								</div><!-- END TAB -->
+								</div>
 
 							</div>
 
@@ -273,4 +162,4 @@
 
 	</header>
 
-	<div id="content" class="site-content">
+	<div id="content" class="site-content blur">

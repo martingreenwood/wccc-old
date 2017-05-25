@@ -7,6 +7,66 @@
  * @package wccc
  */
 
+function t20_name($teamname) {
+	switch ($teamname) {
+		case "Essex":
+			$team_name = "Essex Eagles";
+			break;
+		case "Yorkshire":
+			$team_name = "Yorkshire Vikings";
+			break;
+		case "Lancashire":
+			$team_name = "Lancashire Lightning";
+			break;
+		case "Warwickshire":
+			$team_name = "Birmingahm Bears";
+			break;
+		case "Hampshire":
+			$team_name = "Hampshire";
+			break;
+		case "Middlesex":
+			$team_name = "Middlesex";
+			break;
+		case "Surrey":
+			$team_name = "Surrey";
+			break;
+		case "Somerset":
+			$team_name = "Somerset";
+			break;
+		case "Sussex":
+			$team_name = "Sussex";
+			break;
+		case "Northamptonshire":
+			$team_name = "Northants Steelbacks";
+			break;
+		case "Derbyshire":
+			$team_name = "Derbyshire Falcons";
+			break;
+		case "Durham":
+			$team_name = "Durham Jets";
+			break;
+		case "Glamorgan":
+			$team_name = "Glamorgan";
+			break;
+		case "Nottinghamshire":
+			$team_name = "Notts Outlaws";
+			break;
+		case "Gloucestershire":
+			$team_name = "Gloucestershire";
+			break;
+		case "Leicestershire":
+			$team_name = "Leicestershire Foxes";
+			break;
+		case "Worcestershire":
+			$team_name = "Worcestershire Rapids";
+			break;
+		case "Kent":
+			$team_name = "Kent Spifires";
+			break;
+	}
+	return $team_name;
+}
+
 function game_status($status_id) {
 	switch ($status_id) {
 		case 1:

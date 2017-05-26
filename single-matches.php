@@ -229,8 +229,8 @@ get_header();
 							<h4>
 								<?php echo $innings['Total']['@attributes']['runs_scored']; ?>
 								<?php 
-								if ($inning['Total']['@attributes']['wickets'] < 10) {
-									echo "/ " . $inning['Total']['@attributes']['wickets'];
+								if ($innings['Total']['@attributes']['wickets'] < 10) {
+									echo "/ " . $innings['Total']['@attributes']['wickets'];
 								} else {
 									echo "All Out";
 								}
@@ -258,8 +258,8 @@ get_header();
 							<h4>
 								<?php echo $innings['Total']['@attributes']['runs_scored']; ?>
 								<?php 
-								if ($inning['Total']['@attributes']['wickets'] < 10) {
-									echo "/ " . $inning['Total']['@attributes']['wickets'];
+								if ($innings['Total']['@attributes']['wickets'] < 10) {
+									echo "/ " . $innings['Total']['@attributes']['wickets'];
 								} else {
 									echo "All Out";
 								}

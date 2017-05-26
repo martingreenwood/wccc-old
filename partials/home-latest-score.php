@@ -99,201 +99,151 @@ if (file_exists(FEED_DIR .'/crml-'.$last_match_id.'.xml')):
 
 endif;
 
- if ( !empty($fixture_array) ) {
+if ($days_since_game < $number_days ): ?>
+<section id="vs" data-game-id="<?php echo $game_id; ?>">
+	<div class="container">
+		<div class="row">
+			<div class="tab">LIVE SCORE</div>
+			
+			<div class="link">
+			<span class="status"><?php echo game_status($status_id); ?></span>
+				<?php $args = array( 'post_type' => 'matches', 'meta_query' => array( array('key' => '_wcc_feed_id', 'value' => $last_match_id, 'compare' => '=' )));
+				$match_query = new WP_Query( $args );
+				if ( $match_query->have_posts() ) : while ( $match_query->have_posts() ):
+				$match_query->the_post();
+				?>
+				<a class="info" href="<?php echo the_permalink(); ?>">Match Report</a>
+				<?php endwhile; wp_reset_postdata(); endif; ?>
+			</div>
 
-	if ($days_since_game < $number_days ): ?>
-	<section id="vs" data-game-id="<?php echo $game_id; ?>">
-		<div class="container">
-			<div class="row">
-				<div class="tab">LIVE SCORE</div>
+			<?php if (is_array($innings) && array_key_exists('0', $innings)): // multiple innings ?>
+
+			<?php 
+			$innings_count = 0;
+			$innings_counter = 0;
+			foreach ($innings as $inning):
+				$batting_team_id = $inning['@attributes']['batting_team_id']; 
+				if ($batting_team_id === $home_team_id) {
+					$side = 'home';
+				} else {
+					$side = 'away';
+				}
 				
-				<div class="link">
-				<span class="status"><?php echo game_status($status_id); ?></span>
-					<?php $args = array( 'post_type' => 'matches', 'meta_query' => array( array('key' => '_wcc_feed_id', 'value' => $last_match_id, 'compare' => '=' )));
-					$match_query = new WP_Query( $args );
-					if ( $match_query->have_posts() ) : while ( $match_query->have_posts() ):
-					$match_query->the_post();
-					?>
-					<a class="info" href="<?php echo the_permalink(); ?>">Match Report</a>
-					<?php endwhile; wp_reset_postdata(); endif; ?>
-				</div>
+				++$innings_counter;
+				if($innings_counter == 1) {  
+					echo "<div class='row'>";
+				}
+        	?>
+			<div class="team <?php echo $side; ?>">
+				<?php if($innings_count <= 1): ?>
+				<img src="<?php echo team_image($batting_team_id); ?>">
+				<?php endif; ?>
+				<div class="name">
+					
+					<?php if (strpos($competition_name, 'T20') !== false): ?>
+					<h3><?php echo t20_name(team_name($home_team_id, $competition_id)); ?></h3>
+					<?php else: ?>
+					<h3><?php echo team_name($home_team_id, $competition_id); ?></h3>
+					<?php endif; ?>
 
-				<?php if (is_array($innings) && array_key_exists('0', $innings)): // multiple innings ?>
-
-				<?php 
-				$innings_count = 0;
-				$innings_counter = 0;
-				foreach ($innings as $inning):
-					$batting_team_id = $inning['@attributes']['batting_team_id']; 
+					<?php 
 					if ($batting_team_id === $home_team_id) {
 						$side = 'home';
 					} else {
 						$side = 'away';
 					}
-					
-					++$innings_counter;
-					if($innings_counter == 1) {  
-						echo "<div class='row'>";
-					}
-	        	?>
-				<div class="team <?php echo $side; ?>">
-					<?php if($innings_count <= 1): ?>
-					<img src="<?php echo team_image($batting_team_id); ?>">
-					<?php endif; ?>
-					<div class="name">
-						
-						<?php if (strpos($competition_name, 'T20') !== false): ?>
-						<h3><?php echo t20_name(team_name($home_team_id, $competition_id)); ?></h3>
-						<?php else: ?>
-						<h3><?php echo team_name($home_team_id, $competition_id); ?></h3>
-						<?php endif; ?>
-
+					?>
+					<h4>
+						<?php echo $inning['Total']['@attributes']['runs_scored']; ?>
 						<?php 
-						if ($batting_team_id === $home_team_id) {
-							$side = 'home';
+						if ($inning['Total']['@attributes']['wickets'] < 10) {
+							echo "/ " . $inning['Total']['@attributes']['wickets'];
 						} else {
-							$side = 'away';
+							echo "All Out";
 						}
 						?>
-						<h4>
-							<?php echo $inning['Total']['@attributes']['runs_scored']; ?>
+					</h4>
+				</div>
+			</div>
+			
+			<?php if ($innings_count == 1): ?>
+			<div class="mid"><p>FIRST INNINGS</p></div>
+			<?php endif; ?>
+			<?php if ($innings_count == 2): ?>
+			<div class="mid"><p>SECOND INNINGS</p></div>
+			<?php endif; ?>
+
+			<?php 
+			if ($innings_counter == 2) {
+				echo "</div>";
+				$innings_counter = 0;
+			}
+			?>
+
+			<?php $innings_count++; endforeach; ?>
+
+			<?php else: // innings are not in array with [0[] key ?>
+			<div class="team one">
+				<img src="<?php echo team_image($home_team_id); ?>">
+				<div class="name">
+					
+					<?php if (strpos($competition_name, 'T20') !== false): ?>
+					<h3><?php echo t20_name(team_name($home_team_id, $competition_id)); ?></h3>
+					<?php else: ?>
+					<h3><?php echo team_name($home_team_id, $competition_id); ?></h3>
+					<?php endif; ?>
+
+					<?php if (array_key_exists('Innings', $fixture_array)): ?>
+					<?php if ($home_team_id == $batting_team_id): ?>
+						<h4><?php echo $runs_scored; ?> 
 							<?php 
-							if ($inning['Total']['@attributes']['wickets'] < 10) {
-								echo "/ " . $inning['Total']['@attributes']['wickets'];
+							if ($wickets < 10) {
+								echo "/ " . $wickets;
 							} else {
 								echo "All Out";
 							}
 							?>
+							<br><small><?php echo $overs; ?> overs bowled</small>
 						</h4>
-					</div>
-				</div>
-				
-				<?php if ($innings_count == 1): ?>
-				<div class="mid"><p>FIRST INNINGS</p></div>
-				<?php endif; ?>
-				<?php if ($innings_count == 2): ?>
-				<div class="mid"><p>SECOND INNINGS</p></div>
-				<?php endif; ?>
-
-				<?php 
-				if ($innings_counter == 2) {
-					echo "</div>";
-					$innings_counter = 0;
-				}
-				?>
-
-				<?php $innings_count++; endforeach; ?>
-
-				<?php else: // innings are not in array with [0[] key ?>
-				<div class="team one">
-					<img src="<?php echo team_image($home_team_id); ?>">
-					<div class="name">
-						
-						<?php if (strpos($competition_name, 'T20') !== false): ?>
-						<h3><?php echo t20_name(team_name($home_team_id, $competition_id)); ?></h3>
-						<?php else: ?>
-						<h3><?php echo team_name($home_team_id, $competition_id); ?></h3>
-						<?php endif; ?>
-
-						<?php if (array_key_exists('Innings', $fixture_array)): ?>
-						<?php if ($home_team_id == $batting_team_id): ?>
-							<h4><?php echo $runs_scored; ?> 
-								<?php 
-								if ($wickets < 10) {
-									echo "/ " . $wickets;
-								} else {
-									echo "All Out";
-								}
-								?>
-								<br><small><?php echo $overs; ?> overs bowled</small>
-							</h4>
-						<?php else: ?>
-							<h4>YET TO BAT</h4>
-						<?php endif; ?>
-						<?php endif; ?>
-					</div>
-				</div>
-				<div class="mid"><p>VS</p></div>
-				<div class="team two">
-					<div class="name">
-
-						<?php if (strpos($competition_name, 'T20') !== false): ?>
-						<h3><?php echo t20_name(team_name($away_team_id, $competition_id)); ?></h3>
-						<?php else: ?>
-						<h3><?php echo team_name($away_team_id, $competition_id); ?></h3>
-						<?php endif; ?>
-
-						<?php if (array_key_exists('Innings', $fixture_array)): ?>
-						<?php if ($away_team_id == $batting_team_id): ?>
-							<h4><?php echo $runs_scored; ?>
-								<?php 
-								if ($wickets < 10) {
-									echo "/ " . $wickets;
-								} else {
-									echo "All Out";
-								}
-								?>
-								<br><small><?php echo $overs; ?> overs bowled</small>
-							</h4>
-						<?php else: ?>
-							<h4>YET TO BAT</h4>
-						<?php endif; ?>
-						<?php endif; ?>
-					</div>
-					<img src="<?php echo team_image($away_team_id); ?>">
-				</div>
-				<?php endif; ?>
-
-			</div>
-		</div>
-	</section>
-
-	<?php 
-	endif; 
-} else {
-
-$next_match = current($fm_matches);
-$next_match_date = $next_match['@attributes']['game_date_time'];
-?>
-	<section id="vs">
-		<div class="container">
-			<div class="row" style="padding-top: 30px">
-				<div class="span8">
-
-					<h3>Sign pp to our Newsletter</h3>
-					<form action="https://ventutec.createsend.com/t/r/s/tdtutid/" method="post" id="subForm">
-						<p>
-							<input id="fieldName" name="cm-name" type="text" placeholder="Your name" />
-						</p>
-						<p>
-							<input id="fieldEmail" name="cm-tdtutid-tdtutid" type="email" required placeholder="Your email" />
-						</p>
-						<p>
-							<button type="submit">Sign Up</button>
-						</p>
-					</form>
-				</div>
-				<div class="span4">
-					
-					<div>
-						<?php 
-							$match_date_time = strtotime($next_match_date) + 60*60;
-							$match_date_countdown = date("Y/m/d H:i", $match_date_time);
-						?>
-						<h3>Time until next game</h3>
-						<div id="getting-started"></div>
-						<script type="text/javascript">
-							jQuery("#getting-started").countdown("<?php echo $match_date_countdown; ?>", function(event) {
-								jQuery(this).text(
-									event.strftime('%D Days %H hours %M Mins %S Secs')
-								);
-							});
-						</script>
-					</div>
+					<?php else: ?>
+						<h4>YET TO BAT</h4>
+					<?php endif; ?>
+					<?php endif; ?>
 				</div>
 			</div>
+			<div class="mid"><p>VS</p></div>
+			<div class="team two">
+				<div class="name">
+
+					<?php if (strpos($competition_name, 'T20') !== false): ?>
+					<h3><?php echo t20_name(team_name($away_team_id, $competition_id)); ?></h3>
+					<?php else: ?>
+					<h3><?php echo team_name($away_team_id, $competition_id); ?></h3>
+					<?php endif; ?>
+
+					<?php if (array_key_exists('Innings', $fixture_array)): ?>
+					<?php if ($away_team_id == $batting_team_id): ?>
+						<h4><?php echo $runs_scored; ?>
+							<?php 
+							if ($wickets < 10) {
+								echo "/ " . $wickets;
+							} else {
+								echo "All Out";
+							}
+							?>
+							<br><small><?php echo $overs; ?> overs bowled</small>
+						</h4>
+					<?php else: ?>
+						<h4>YET TO BAT</h4>
+					<?php endif; ?>
+					<?php endif; ?>
+				</div>
+				<img src="<?php echo team_image($away_team_id); ?>">
+			</div>
+			<?php endif; ?>
+
 		</div>
+	</div>
 </section>
-<?php
-}
-?>
+
+<?php endif; ?>

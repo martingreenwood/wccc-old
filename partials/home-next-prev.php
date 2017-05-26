@@ -66,7 +66,7 @@ $last_match = end($past_matches);
 				<div class="match-info">
 					<p class="date-time">
 						<span class="date">
-							<?php echo $last_match['@attributes']['game_date']; ?>
+							<?php echo date("d/m/Y", strtotime($last_match['@attributes']['game_date'])); ?>
 						</span>
 						<span class="time">
 							<?php echo $last_match['@attributes']['time']; ?>
@@ -96,15 +96,37 @@ $last_match = end($past_matches);
 				<a href="<?php echo home_url('fixtures'); ?>">SEE ALL UPCOMING FIXTURES</a>
 			</div>
 			<div class="span6 fixture">
+				<?php 
+					$next_match_date = $next_match['@attributes']['game_date_time'];
+					$match_date_time = strtotime($next_match_date) + 60*60;
+					$match_date_countdown = date("Y/m/d H:i", $match_date_time);
+				?>
 				<h2>NEXT MATCH</h2>
 				<div class="match-info">
 					<p class="date-time">
 						<span class="date">
-							<?php echo $next_match['@attributes']['game_date']; ?>
+							<?php echo date("d/m/Y", strtotime($next_match['@attributes']['game_date'])); ?>
 						</span>
 						<span class="time">
 							<?php echo $next_match['@attributes']['time']; ?>
 						</span>
+						<span class="timetomatch"></span>
+						<script type="text/javascript">
+							jQuery('.timetomatch').countdown('<?php echo $match_date_countdown; ?>', function(event) {
+								var $this = jQuery(this).html(event.strftime(''
+									// + '<span>%w</span> weeks '
+									+ '<span>%D</span> day%!D '
+									+ '<span>%H</span> hr%!H '
+									+ '<span>%M</span> min%!M '
+								));
+							});
+
+							//jQuery(".timetomatch").countdown("<?php echo $match_date_countdown; ?>", function(event) {
+							//	jQuery(this).text(
+							//		event.strftime('%D Days %H Hours %M Mins')
+							//	);
+							//});
+						</script>
 					</p>
 
 					<p class="comp">

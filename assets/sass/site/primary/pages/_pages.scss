@@ -100,3 +100,142 @@
 		}
 	}
 }
+
+/*--------------------------------------------------------------
+## Fixtures
+--------------------------------------------------------------*/
+
+.page-template-page-fixtures {
+
+	#vs {
+		position: relative;
+		margin-bottom: 40px;
+
+		h2 {
+			color: $brand-primary-dark-t20;
+			font-size: 30px;
+			line-height: 1;
+			margin: 60px 0 20px 0;
+			text-transform: uppercase;
+			font-weight: 900;
+			display: inline-block;
+			padding-right: 100px;
+
+			&:first-of-type {
+				margin-top: 0;
+			}
+		}
+
+		.row {
+			margin-bottom: 0;
+			padding: 20px;
+			position: relative;
+
+			&:nth-child(even) {
+				background: #f9f9f9;
+			}
+
+			h3 {
+				color: $brand-primary;
+				font-size: 30px;
+				margin: 0 0 20px 0;
+				text-transform: uppercase;
+				background: transparent;
+				font-weight: 900;
+				border: 0;
+				height: auto;
+			}
+		}
+
+		.team {
+			float: left;
+			width: auto;
+			position: relative;
+
+			img {
+				width: 79px;
+				float: left;
+				margin-right: 20px;
+			}
+
+			.name {
+				width: auto;
+				float: left;
+				text-align: left;
+
+				h3, h4 {
+					margin: 0;
+					line-height: 1;
+					text-transform: uppercase;
+				}
+
+				h3 {
+					font-size: 21px;
+					color: $brand-primary-dark-t20;
+				}
+
+				h4 {
+					font-size: 19px;
+					color: $brand-primary;
+					position: relative;
+					margin-bottom: 15px;
+
+					small {
+						font-size: 15px;
+						position: absolute;
+						bottom: -17px;
+						left: 0;
+						width: 100%;
+					}
+				}
+
+				p {
+					color: #333;
+					margin: 0; 
+
+					span:first-of-type {
+						margin-right: 5px;
+						padding-right: 5px;
+						border-right: 1px solid #333;
+					}
+				}
+			}
+		}
+
+		.link {
+			text-align: right;
+			float: right;
+
+			.status {
+				font-weight: 800;
+				color: #333;
+				text-transform: uppercase;
+				line-height: 1;
+				display: block;
+			}
+
+			p {
+				margin: 0; 
+			}
+
+			a {
+				font-weight: 600;
+				text-transform: uppercase;
+				font-size: 14px;
+				color: white;
+				float: right;
+				margin-left: 20px;
+				padding: 6px 16px;
+				font-weight: 800;
+			}
+
+			.matchlink {
+				background: $brand-primary;
+			}
+
+			.ticketlink {
+				background: $brand-primary-dark;
+			}
+		}
+	}
+}

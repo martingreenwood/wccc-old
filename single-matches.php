@@ -92,26 +92,30 @@ get_header();
 						?>
 						<?php if (file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')): ?>
 						<h1>
-							<?php if ($home_team === "Worcestershire"): ?>
-							<span>
-							<?php endif; ?>
+							<?php if ($home_team === "Worcestershire"): ?><span><?php endif; ?>
 							<?php echo $home_team; ?>
-							<?php if ($home_team === "Worcestershire"): ?>
-							</span>
-							<?php endif; ?>
+							<?php if ($home_team === "Worcestershire"): ?></span><?php endif; ?>
 							
 							<small>VS</small><br>
 
-							<?php if ($away_team === "Worcestershire"): ?>
-							<span>
-							<?php endif; ?>
+							<?php if ($away_team === "Worcestershire"): ?><span><?php endif; ?>
 							<?php echo $away_team; ?>
-							<?php if ($away_team === "Worcestershire"): ?>
-							</span>
-							<?php endif; ?>
+							<?php if ($away_team === "Worcestershire"): ?></span><?php endif; ?>
 							<?php if($game_status == "Result"): ?>
 							<br><small style="font-size: 40%"><?php echo $result; ?></small>
 							<?php endif; ?>
+						</h1>
+						<?php else: ?>
+						<h1>
+							<?php if ($title[0] === "Worcestershire"): ?><span><?php endif; ?>
+							<?php echo $title[0]; ?>
+							<?php if ($title[0] === "Worcestershire"): ?></span><?php endif; ?>
+							
+							<small>VS</small><br>
+
+							<?php if ($title[2] === "Worcestershire"): ?><span><?php endif; ?>
+							<?php echo $title[2]; ?>
+							<?php if ($title[2] === "Worcestershire"): ?></span><?php endif; ?>
 						</h1>
 						<?php endif; ?>
 					</div>
@@ -214,9 +218,8 @@ get_header();
 					<img src="<?php echo team_image($home_team_id); ?>">
 					<div class="name">
 						
-						<?php echo $home_team; ?>
 						<?php if (strpos($competition_name, 'T20') !== false): ?>
-						<h3><?php echo t20_name($home_team); echo $home_team ?></h3>
+						<h3><?php echo t20_name($home_team); ?></h3>
 						<?php else: ?>
 						<h3><?php echo $home_team; ?></h3>
 						<?php endif; ?>

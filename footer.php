@@ -13,6 +13,29 @@
 
 	</div>
 
+	<section id="signup">
+		<div class="container">
+			<div class="row" style="padding-top: 30px">
+				<div class="span12">
+
+					<h3>Sign Up to our Newsletter</h3>
+					<form action="https://ventutec.createsend.com/t/r/s/tdtutid/" method="post" id="subForm">
+						<p>
+							<input id="fieldName" name="cm-name" type="text" placeholder="Your name" />
+						</p>
+						<p>
+							<input id="fieldEmail" name="cm-tdtutid-tdtutid" type="email" required placeholder="Your email" />
+						</p>
+						<p>
+							<button type="submit">Sign Up</button>
+						</p>
+					</form>
+				</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info container">
 			

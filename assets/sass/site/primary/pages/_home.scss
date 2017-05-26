@@ -67,12 +67,21 @@
 					span {
 						float: left;
 						line-height: 1;
+						padding-right: 10px;
+						margin-right: 10px;
+						border-right: 1px solid white;
 
-						&:first-of-type {
-							padding-right: 10px;
-							margin-right: 10px;
-							border-right: 1px solid white;
-					
+						span {
+							float: none;
+							padding-right: 0;
+							margin-right: 0;
+							border-right: none;
+						}
+
+						&:last-of-type {
+							padding-right: 0;
+							margin-right: 0;
+							border-right: none;
 						}
 					}
 				}
@@ -141,6 +150,7 @@
 				}
 
 				.match {
+
 					span {
 						color: $brand-primary;
 					}
@@ -154,56 +164,13 @@
 		padding:0 0 38px 0;
 
 		.row {
+
 			h3 {
-				font-size: 20px;
-				text-transform: uppercase;
-				margin-bottom: 10px;
-			}
-		}
-
-		div#getting-started {
-			line-height: 48px;
-			font-weight: 700;
-			font-size: 23px;
-
-			span {
 				color: $brand-primary;
-			}
-		}
-
-		#subForm {
-			
-			p {
-				width: 32.52%;
-				float: left;
-				margin: 0 10px 0 0;
-
-				input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select[multiple=multiple], button {
-					margin: 0;
-					padding: 10px;
-					border-radius: 0;
-					box-shadow: none;
-					border: 1px solid #ccc;
-					width: 100%;
-					font-family: proxima-nova;
-				}
-
-				button {
-					text-transform: uppercase;
-					background: $brand-primary;
-					border-color: $brand-primary;
-					color: white;
-					font-weight: 700;
-					line-height: 1.75;
-
-					&:hover, &:active {
-						background-color: $brand-primary-dark;
-					}
-				}
-
-				&:last-of-type {
-					margin-right: 0;
-				}
+				font-size: 30px;
+				margin: 0 0 20px 0;
+				text-transform: uppercase;
+				text-align: center;
 			}
 		}
 

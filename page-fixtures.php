@@ -12,6 +12,7 @@ $today = date('Ymd', strtotime('now'));
 $dates = array();
 $matches = array();
 $prev = NULL;
+$comp = NULL;
 
 $fixture_files = preg_grep('~^EDC.*\.(xml)$~', scandir(FEED_DIR, 1));
 $fixture_file = array_pop($fixture_files);
@@ -95,19 +96,19 @@ get_header(); ?>
 						<ul>
 							<li>
 								<label for="first">First XI</label>
-								<input type="checkbox" name="first" value="first">
+								<input type="radio" name="first" value="first">
 							</li>
 							<li>
 								<label for="second">Second XI</label>
-								<input type="checkbox" name="second" value="second">
+								<input type="radio" name="second" value="second">
 							</li>
 							<li>
 								<label for="rapids">Rapids</label>
-								<input type="checkbox" name="rapids" value="rapids">
+								<input type="radio" name="rapids" value="rapids">
 							</li>
 							<li>
 								<label for="acadamy">Acadamy</label>
-								<input type="checkbox" name="acadamy" value="acadamy">
+								<input type="radio" name="acadamy" value="acadamy">
 							</li>
 						</ul>
 					</form>
@@ -117,44 +118,17 @@ get_header(); ?>
 					<form>
 						<ul>
 							<li>
-								<label for="first">First XI</label>
-								<input type="checkbox" name="first" value="first">
+								<label for="">County Championship</label>
+								<input type="radio" name="comp" value="comp-1969">
 							</li>
 							<li>
-								<label for="second">Second XI</label>
-								<input type="checkbox" name="second" value="second">
+								<label for="">One Day Cup</label>
+								<input type="radio" name="comp" value="comp-1970">
 							</li>
 							<li>
-								<label for="rapids">Rapids</label>
-								<input type="checkbox" name="rapids" value="rapids">
+								<label for="">T20 Blast</label>
+								<input type="radio" name="comp" value="comp-1971">
 							</li>
-							<li>
-								<label for="acadamy">Acadamy</label>
-								<input type="checkbox" name="acadamy" value="acadamy">
-							</li>
-						</ul>
-					</form>
-				</div>
-			</div>
-			<div class="row">
-				<div class="span12">
-					<h3>Jump to Month</h3>
-					<form>
-						<ul>
-						<?php
-						foreach ($matches as $match) {
-							$match_game_date = $match['@attributes']['game_date']; 
-							$match_month = date("F", strtotime($match_game_date));
-							if ($match_month != $prev) { ?>
-							<li>
-								<label for="<?php echo strtolower($match_month); ?>"><?php echo $match_month; ?></label>
-								<input type="checkbox" name="<?php echo strtolower($match_month); ?>" value="<?php echo strtolower($match_month); ?>">
-							</li>
-							<?php 
-							$prev = $match_month;
-							}
-						}
-						?>
 						</ul>
 					</form>
 				</div>
@@ -258,7 +232,17 @@ get_header(); ?>
 						<?php } ?>
 
 						<div class="name">
-							<h3><?php echo $match_home_team_name; ?> <small>vs</small> <?php echo $match_away_team_name; ?></h3>
+
+							<h3>
+								<?php if (strpos($competition_name, 'T20') !== false): ?>
+								<?php echo t20_name($match_home_team_name); ?>
+								<?php else: ?>
+								<?php echo $match_home_team_name; ?>
+								<?php endif; ?>
+
+								<small>vs</small> 
+								<?php echo $match_away_team_name; ?>
+							</h3>
 							<h4><span><?php echo $match_game_date_string; ?></span> <span><?php echo date('g:iA', strtotime($match_time)); ?></span></h4>
 							<p><span><?php echo $match_venue; ?></span> <span><?php echo $match_comp_name; ?></span></p>
 						</div>

@@ -110,7 +110,7 @@ get_header(); ?>
 	<div id="filter">
 		<div class="container">
 			<div class="row">
-				<div class="span4">
+				<div class="choice">
 					<h3>Filter by Team</h3>
 					<form>
 						<ul>
@@ -129,7 +129,7 @@ get_header(); ?>
 						</ul>
 					</form>
 				</div>
-				<div class="span8">
+				<div class="choice">
 					<h3>By Competition</h3>
 					<form>
 						<ul>
@@ -138,7 +138,7 @@ get_header(); ?>
 							$comp_data = explode("_", $comp)
 							?>
 							<li>
-								<input type="checkbox" name="comp-<?php echo $comp_data[0]; ?>" value="comp-<?php echo $comp_data[0]; ?>">
+								<input class="compfilter" type="checkbox" name="comp-<?php echo $comp_data[0]; ?>" value="comp-<?php echo $comp_data[0]; ?>">
 								<label for="comp-<?php echo $comp_data[0]; ?>"><?php echo $comp_data[1]; ?></label>
 							</li>
 							<?php 
@@ -308,7 +308,7 @@ get_header(); ?>
 											<?php endif; ?>
 											
 										</h3>
-										<h4><span><?php echo $match_game_date_string; ?></span> <span><?php echo date('g:iA', strtotime($match_time)); ?></span></h4>
+										<h4><span><?php echo $match_game_date_string; ?></span> <span><?php echo date('g:i', strtotime($match_time)); ?></span></h4>
 										<p><span><?php echo $match_venue; ?></span> <span><?php echo $match_comp_name; ?></span></p>
 									</div>
 								</div>

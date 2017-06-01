@@ -83,26 +83,22 @@ get_header(); ?>
 	<div id="filter">
 		<div class="container">
 			<div class="row">
-				<div class="span4">
+				<div class="choice">
 					<h3>Filter by Team</h3>
 					<form>
 						<ul>
 							<li>
-								<label for="first">First XI</label>
 								<input class="teamfilter" type="checkbox" name="team" value="firstxi">
+								<label for="first">First XI</label>
 							</li>
 							<li>
-								<label for="second">Second XI</label>
-								<input class="teamfilter" type="checkbox" name="team" value="secondxi">
-							</li>
-							<li>
-								<label for="rapids">Rapids</label>
 								<input class="teamfilter" type="checkbox" name="team" value="rapids">
+								<label for="rapids">Rapids</label>
 							</li>
 						</ul>
 					</form>
 				</div>
-				<div class="span8">
+				<div class="choice">
 					<h3>By Competition</h3>
 					<form>
 						<ul>
@@ -111,8 +107,8 @@ get_header(); ?>
 							$comp_data = explode("_", $comp)
 							?>
 							<li>
+								<input class="compfilter" type="checkbox" name="comp-<?php echo $comp_data[0]; ?>" value="comp-<?php echo $comp_data[0]; ?>">
 								<label for="comp-<?php echo $comp_data[0]; ?>"><?php echo $comp_data[1]; ?></label>
-								<input type="checkbox" name="comp-<?php echo $comp_data[0]; ?>" value="comp-<?php echo $comp_data[0]; ?>">
 							</li>
 							<?php 
 						endforeach;

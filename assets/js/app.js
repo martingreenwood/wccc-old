@@ -184,10 +184,39 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 })(jQuery);
 
 
+(function($) {
+
+	// $('#filter h3').on( "click" , function(){		
+		
+	// 	$('.choice').removeClass('active');
+	// 	$('form').removeClass('active');
+
+
+	// 	$(this).parent().addCLass('active');
+	// 	$(this).siblings('form').addCLass('active');
+
+	// });	
+
+	$('#filter').find('h3').on("click", function(){
+
+		//Expand or collapse this panel
+		$(this).next().slideToggle('fast');
+		$(this).parent('.choice').addClass('active');
+
+		//Hide the other panels
+		$("form").not($(this).next()).slideUp('fast');
+		$("form").not($(this).next()).parent('.choice').removeClass('active');
+
+	});
+
+})(jQuery);
 
 (function($) {
 
 	$('.teamfilter').on( "click" , function(){
+		$('.choice').removeClass('active');
+		$('form').removeClass('active');
+
 
 		if($(this).hasClass('selected'))
 		{
@@ -205,6 +234,42 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 
 			// remove selected classes and add class to this
 			$('.teamfilter').removeClass('selected');
+			$(this).addClass('selected');
+
+			$('.match').fadeTo('fast',0.1);
+			$('.match[data-team='+team+']').fadeTo('fast',1);
+
+			$('html, body').animate({
+				scrollTop: $('.match[data-team='+team+']:first').offset().top - 80
+			}, 400);
+		}
+	});
+
+})(jQuery);
+
+
+(function($) {
+
+	$('.compfilter').on( "click" , function(){
+		$('.choice').removeClass('active');
+		$('form').removeClass('active');
+
+		if($(this).hasClass('selected'))
+		{
+			$('.compfilter').removeClass('selected');
+			$('.match').fadeTo('fast',1);
+		}
+		else 
+		{	
+			// uncheck all but this one
+			$('.compfilter').not(this).prop('checked', false);
+
+			// get val
+			var team = $('.compfilter:checked').val();
+			console.log(team);
+
+			// remove selected classes and add class to this
+			$('.compfilter').removeClass('selected');
 			$(this).addClass('selected');
 
 			$('.match').fadeTo('fast',0.1);

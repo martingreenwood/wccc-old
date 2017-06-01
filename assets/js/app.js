@@ -201,7 +201,7 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 
 		//Expand or collapse this panel
 		$(this).next().slideToggle('fast');
-		$(this).parent('.choice').addClass('active');
+		$(this).parent('.choice').addClass('active'); 
 
 		//Hide the other panels
 		$("form").not($(this).next()).slideUp('fast');

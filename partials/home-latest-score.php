@@ -5,7 +5,7 @@ $dates = array();
 $fm_dates = array();
 $fm_matches = array();
 
-$fixture_files = preg_grep('~^EDC.*\.(xml)$~', scandir(FEED_DIR));
+$fixture_files = preg_grep('~^EDC.fixtures.*\.(xml)$~', scandir(FEED_DIR));
 $fixture_file = array_pop($fixture_files);
 
 if (file_exists(FEED_DIR .'/'. $fixture_file)):

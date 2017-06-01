@@ -21,6 +21,7 @@ $cpts = array(
 	array('academy','Academy Squad Member','Academy Squad','dashicons-groups',array('title','editor','thumbnail')),
 	array('wcccagm','WCCC AGM Report','Minutes & Reports','dashicons-analytics',array('title')),
 	array('matches','Matches','Matches','dashicons-microphone',array('title','editor','thumbnail')),
+	array('fixtures','Fixture','Fixtures','dashicons-forms',array('title')),
 );
 
 

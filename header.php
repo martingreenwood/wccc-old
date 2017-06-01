@@ -137,27 +137,26 @@
 
 										<?php
 										// oldest fixture file
+										$resultscount = 0;
 										$today = date('Ymd', strtotime('now')); 
 										$past_dates = array();
 										$past_matches = array();
-										$past_fixture_files = preg_grep('~^EDC.*\.(xml)$~', scandir(FEED_DIR, SCANDIR_SORT_ASCENDING));
-										$past_fixture_file = current($past_fixture_files);
+										$results_files = preg_grep('~^EDC.results.*\.(xml)$~', scandir(FEED_DIR, SCANDIR_SORT_ASCENDING));
+										$results_file = array_pop($results_files);
 
-										// read fixtures file and assign to arrays
-										if (file_exists(FEED_DIR .'/'. $past_fixture_file)):
-											$p_fixtures_xml = simplexml_load_file(FEED_DIR .'/'. $past_fixture_file);
-											$p_fixtures_json = json_encode($p_fixtures_xml);
-											$p_fixtures_array = json_decode($p_fixtures_json,TRUE);
-											$p_fixtures = $p_fixtures_array['fixture'];
+										if (file_exists(FEED_DIR .'/'. $results_file)):
+											$results_xml = simplexml_load_file(FEED_DIR .'/'. $results_file);
+											$results_json = json_encode($results_xml);
+											$results_array = json_decode($results_json,TRUE);
+											$p_fixtures = $results_array['results'];
+											$p_fixtures = array_reverse($p_fixtures);
 										endif;
 
 										foreach ($p_fixtures as $p_fixture):
 
-											if ( $p_fixture['@attributes']['game_date'] < $today ) {
-												if ($p_fixture['@attributes']['away_team'] == '56' || $p_fixture['@attributes']['home_team'] == '56' ) {
-													$past_matches[] = $p_fixture;
-													$past_dates[] = $p_fixture['@attributes']['game_date'] .'_'. $p_fixture['@attributes']['id'];
-												}
+											if ($p_fixture['@attributes']['away_team'] == '56' || $p_fixture['@attributes']['home_team'] == '56' ) {
+												$past_matches[] = $p_fixture;
+												$past_dates[] = $p_fixture['@attributes']['game_date'] .'_'. $p_fixture['@attributes']['id'];
 											}
 
 										endforeach;
@@ -199,7 +198,7 @@
 											</p>
 											
 										</div>
-										<?php endforeach; ?>
+										<?php $resultscount++; if ($resultscount == 4 ) { break; } endforeach; ?>
 
 									</div>
 

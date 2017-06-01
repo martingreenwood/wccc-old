@@ -105,7 +105,8 @@
 ## Fixtures
 --------------------------------------------------------------*/
 
-.page-template-page-fixtures {
+.page-template-page-fixtures,
+.page-template-page-results {
 
 	#vs {
 		position: relative;
@@ -123,6 +124,45 @@
 
 			&:first-of-type {
 				margin-top: 0;
+			}
+		}
+
+		.tab-content {
+			padding: 0;
+			border: 0;
+			border-radius: 0;
+			box-shadow: none;
+			background: transparent;
+		}
+
+		.tab-links {
+			margin: 0 0 30px 0;
+			text-align: center;
+
+			li {
+				margin: 0;
+				float: left;
+				width: 50%;
+
+				a {
+					padding: 9px 15px;
+					display: block;
+					color: white;
+					border-radius: 0;
+					background: $brand-primary-dark;
+					font-size: 16px;
+					font-weight: 600;
+					transition: all linear 0.15s;
+					text-transform: uppercase;
+				}
+
+				&.active {
+
+					a {
+						background-color: $brand-primary;
+						color: white;
+					}
+				}
 			}
 		}
 
@@ -193,10 +233,16 @@
 					color: #333;
 					margin: 0; 
 
-					span:first-of-type {
+					span {
 						margin-right: 5px;
-						padding-right: 5px;
+						padding-right: 10px;
 						border-right: 1px solid #333;
+
+						&:last-of-type {
+							margin-right: 0;
+							padding-right: 0;
+							border-right: 0;
+						}
 					}
 				}
 			}

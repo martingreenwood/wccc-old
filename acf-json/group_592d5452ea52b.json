@@ -1,0 +1,51 @@
+{
+    "key": "group_592d5452ea52b",
+    "title": "Select a Team",
+    "fields": [
+        {
+            "key": "field_592d5784d8af0",
+            "label": "",
+            "name": "team_playing",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "firstxi": "First XI",
+                "secondxi": "Second XI"
+            },
+            "default_value": [
+                "secondxi"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "fixtures"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1496235628
+}

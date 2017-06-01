@@ -3,9 +3,109 @@
     "title": "Fixture Type",
     "fields": [
         {
-            "key": "field_590c404fe0dc8",
-            "label": "",
-            "name": "fixture_type",
+            "key": "field_590c410ae0dcb",
+            "label": "Start Date",
+            "name": "start_date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y",
+            "return_format": "Ymd",
+            "first_day": 1
+        },
+        {
+            "key": "field_590c412fe0dcc",
+            "label": "Start Time",
+            "name": "start_time",
+            "type": "time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "g:i a",
+            "return_format": "g:i a"
+        },
+        {
+            "key": "field_592d4f1c9a21a",
+            "label": "Match Length",
+            "name": "match_length",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "One Day",
+                "2": "Two Day",
+                "3": "Three Day",
+                "4": "Four Day"
+            },
+            "default_value": [
+                1
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_590c4141e0dcd",
+            "label": "Home Team",
+            "name": "home_team",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_590c4149e0dce",
+            "label": "Away Team",
+            "name": "away_team",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_590c4155e0dcf",
+            "label": "Type",
+            "name": "type",
             "type": "radio",
             "instructions": "",
             "required": 0,
@@ -16,235 +116,78 @@
                 "id": ""
             },
             "choices": {
-                "manual": "Manual",
-                "live": "Live [Opta]"
+                "1969_Specsavers County Championship Division Two 2017": "Specsavers County Championship Division Two 2017",
+                "1970_Royal London One-Day Cup 2017": "Royal London One-Day Cup 2017",
+                "1971_NatWest T20 Blast 2017": "NatWest T20 Blast 2017"
             },
             "allow_null": 0,
-            "other_choice": 0,
+            "other_choice": 1,
             "save_other_choice": 0,
             "default_value": "",
             "layout": "horizontal",
             "return_format": "value"
         },
         {
-            "key": "field_590c4082e0dc9",
-            "label": "",
-            "name": "",
-            "type": "message",
+            "key": "field_590c416ce0dd0",
+            "label": "Venue",
+            "name": "venue",
+            "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_590c404fe0dc8",
-                        "operator": "==",
-                        "value": "live"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "message": "For 1st XI fixtures only - this feed will pull in the Opta widget.",
-            "new_lines": "wpautop",
-            "esc_html": 0
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
-            "key": "field_590c40d9e0dca",
-            "label": "Fixtures",
-            "name": "fixtures",
-            "type": "repeater",
+            "key": "field_590c4176e0dd1",
+            "label": "Result",
+            "name": "result",
+            "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_590c404fe0dc8",
-                        "operator": "==",
-                        "value": "manual"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "Add Fixture",
-            "sub_fields": [
-                {
-                    "key": "field_590c410ae0dcb",
-                    "label": "Start Date",
-                    "name": "start_date",
-                    "type": "date_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "display_format": "F j, Y",
-                    "return_format": "Ymd",
-                    "first_day": 1
-                },
-                {
-                    "key": "field_590c412fe0dcc",
-                    "label": "Start Time",
-                    "name": "start_time",
-                    "type": "time_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "display_format": "g:i a",
-                    "return_format": "g:i a"
-                },
-                {
-                    "key": "field_590c4141e0dcd",
-                    "label": "Home Team",
-                    "name": "home_team",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_590c4149e0dce",
-                    "label": "Away Team",
-                    "name": "away_team",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_590c4155e0dcf",
-                    "label": "Type",
-                    "name": "type",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "spec": "Specsavers County Championship",
-                        "royal": "Royal London One-Day Cup",
-                        "tom": "TOM 3",
-                        "t20": "T20 Blast",
-                        "19ODI": "19ODI",
-                        "un i": "UNI",
-                        "friendly": "Friendly",
-                        "sec": "SEC",
-                        "set": "SET",
-                        "set20": "SET20"
-                    },
-                    "default_value": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "return_format": "value",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_590c416ce0dd0",
-                    "label": "Venue",
-                    "name": "venue",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_590c4176e0dd1",
-                    "label": "Result",
-                    "name": "result",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_590c4184e0dd2",
-                    "label": "Match Report Link",
-                    "name": "match_report_link",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
-                }
-            ]
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_590c4184e0dd2",
+            "label": "Match Link",
+            "name": "match_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "post_type",
                 "operator": "==",
-                "value": "page-fixtures.php"
+                "value": "fixtures"
             }
         ]
     ],
@@ -256,5 +199,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1493976555
+    "modified": 1496141386
 }

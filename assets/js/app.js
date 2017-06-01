@@ -182,3 +182,38 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
     	"transitionSpeed": 400
 	});
 })(jQuery);
+
+
+
+(function($) {
+
+	$('.teamfilter').on( "click" , function(){
+
+		if($(this).hasClass('selected'))
+		{
+			$('.teamfilter').removeClass('selected');
+			$('.match').fadeTo('fast',1);
+		}
+		else 
+		{	
+			// uncheck all but this one
+			$('.teamfilter').not(this).prop('checked', false);
+
+			// get val
+			var team = $('.teamfilter:checked').val();
+			console.log(team);
+
+			// remove selected classes and add class to this
+			$('.teamfilter').removeClass('selected');
+			$(this).addClass('selected');
+
+			$('.match').fadeTo('fast',0.1);
+			$('.match[data-team='+team+']').fadeTo('fast',1);
+
+			$('html, body').animate({
+				scrollTop: $('.match[data-team='+team+']:first').offset().top - 80
+			}, 400);
+		}
+	});
+
+})(jQuery);

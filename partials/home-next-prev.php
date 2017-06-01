@@ -7,7 +7,7 @@ $matches = array();
 $past_matches = array();
 
 // latest fixture file
-$fixture_files = preg_grep('~^EDC.*\.(xml)$~', scandir(FEED_DIR));
+$fixture_files = preg_grep('~^EDC.fixtures.*\.(xml)$~', scandir(FEED_DIR));
 $fixture_file = array_pop($fixture_files);
 
 // oldest fixture file
@@ -88,12 +88,12 @@ $last_match = end($past_matches);
 						if ( $match_query->have_posts() ) : while ( $match_query->have_posts() ):
 						$match_query->the_post();
 						?>
-						<a class="info" href="<?php echo the_permalink(); ?>#report">Match Report</a>
+						<a class="info" href="<?php echo the_permalink(); ?>">Match Report</a>
 						<?php endwhile; wp_reset_postdata(); endif; ?>
 					</div>
 					
 				</div>
-				<a href="<?php echo home_url('fixtures'); ?>">SEE ALL UPCOMING FIXTURES</a>
+				<a href="<?php echo home_url('cricket/fixtures-results/results'); ?>">SEE ALL RESULTS</a>
 			</div>
 			<div class="span6 fixture">
 				<?php 
@@ -120,12 +120,6 @@ $last_match = end($past_matches);
 									+ '<span>%M</span> min%!M '
 								));
 							});
-
-							//jQuery(".timetomatch").countdown("<?php echo $match_date_countdown; ?>", function(event) {
-							//	jQuery(this).text(
-							//		event.strftime('%D Days %H Hours %M Mins')
-							//	);
-							//});
 						</script>
 					</p>
 
@@ -150,7 +144,7 @@ $last_match = end($past_matches);
 					</div>
 					
 				</div>
-				<a href="<?php echo home_url('fixtures'); ?>">SEE ALL UPCOMING FIXTURES</a>
+				<a href="<?php echo home_url('cricket/fixtures-results'); ?>">SEE ALL UPCOMING FIXTURES</a>
 			</div>
 
 		</div>

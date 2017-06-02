@@ -19,6 +19,7 @@ if (file_exists(FEED_DIR .'/'. $results_file)):
 	$results_array = json_decode($results_json,TRUE);
 	$results = $results_array['results'];
 endif;
+// $fixtures = array_reverse($fixtures);
 
 // read fixtures file and assign to arrays
 if (file_exists(FEED_DIR .'/'. $fixture_file)):
@@ -27,7 +28,7 @@ if (file_exists(FEED_DIR .'/'. $fixture_file)):
 	$fixtures_array = json_decode($fixtures_json,TRUE);
 	$fixtures = $fixtures_array['fixture'];
 endif;
-$fixtures = array_reverse($fixtures);
+
 
 // loop through fixtures and create arrays of wccc only matches both past and present
 foreach ($fixtures as $fixture):

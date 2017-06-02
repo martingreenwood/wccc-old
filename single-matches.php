@@ -315,7 +315,7 @@ get_header();
 						$weather_data = file_get_contents(get_stylesheet_directory() . '/cache/localweather.txt');
 						$weather_obj = json_decode($weather_data);
 					} else {
-						$weather_data = get_data('http://api.openweathermap.org/data/2.5/weather?q=Worcester,GB&APPID=06b89ae566dac5b260f76c168f26e2d8');
+						$weather_data = get_data('http://api.openweathermap.org/data/2.5/weather?q='.$venue_city.',GB&APPID=06b89ae566dac5b260f76c168f26e2d8');
 						file_put_contents(get_stylesheet_directory() . '/cache/localweather.txt', $weather_data);
 						$weather_obj = json_decode($weather_data);
 					}

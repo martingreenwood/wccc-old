@@ -322,7 +322,10 @@ get_header();
 
 					?>
 
+					<h3>Match Weather</h3>
+
 					<div class="weather">
+
 						<div class="icon">
 							<?php echo weather_icon($weather_obj->weather[0]->icon); ?>
 						</div>

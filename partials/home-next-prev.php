@@ -10,9 +10,15 @@ $past_matches = array();
 $fixture_files = preg_grep('~^EDC.fixtures.*\.(xml)$~', scandir(FEED_DIR));
 $fixture_file = array_pop($fixture_files);
 
-// oldest fixture file
-$past_fixture_files = preg_grep('~^EDC.*\.(xml)$~', scandir(FEED_DIR, SCANDIR_SORT_ASCENDING));
-$past_fixture_file = current($fixture_files);
+$results_files = preg_grep('~^EDC.results.*\.(xml)$~', scandir(FEED_DIR, SCANDIR_SORT_ASCENDING));
+$results_file = array_pop($results_files);
+
+if (file_exists(FEED_DIR .'/'. $results_file)):
+	$results_xml = simplexml_load_file(FEED_DIR .'/'. $results_file);
+	$results_json = json_encode($results_xml);
+	$results_array = json_decode($results_json,TRUE);
+	$results = $results_array['results'];
+endif;
 
 // read fixtures file and assign to arrays
 if (file_exists(FEED_DIR .'/'. $fixture_file)):
@@ -21,14 +27,7 @@ if (file_exists(FEED_DIR .'/'. $fixture_file)):
 	$fixtures_array = json_decode($fixtures_json,TRUE);
 	$fixtures = $fixtures_array['fixture'];
 endif;
-
-// read fixtures file and assign to arrays
-if (file_exists(FEED_DIR .'/'. $past_fixture_file)):
-	$p_fixtures_xml = simplexml_load_file(FEED_DIR .'/'. $past_fixture_file);
-	$p_fixtures_json = json_encode($p_fixtures_xml);
-	$p_fixtures_array = json_decode($p_fixtures_json,TRUE);
-	$p_fixtures = $p_fixtures_array['fixture'];
-endif;
+$fixtures = array_reverse($fixtures);
 
 // loop through fixtures and create arrays of wccc only matches both past and present
 foreach ($fixtures as $fixture):
@@ -41,14 +40,12 @@ foreach ($fixtures as $fixture):
 endforeach;
 
 // loop through fixtures and create arrays of wccc only matches both past and present
-foreach ($p_fixtures as $p_fixture):
-
-	if ( $p_fixture['@attributes']['game_date'] < $today ) {
-		if ($p_fixture['@attributes']['away_team'] == '56' || $p_fixture['@attributes']['home_team'] == '56' ) {
-			$past_matches[] = $p_fixture;
-			$past_dates[] = $p_fixture['@attributes']['game_date'] .'_'. $p_fixture['@attributes']['id'];
-		}
+foreach ($results as $result):
+	if ($result['@attributes']['away_team'] == '56' || $result['@attributes']['home_team'] == '56' ) {
+		$past_matches[] = $result;
+		$past_dates[] = $result['@attributes']['game_date'] .'_'. $result['@attributes']['id'];
 	}
+
 endforeach;
 
 // get the next matrchj

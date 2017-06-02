@@ -369,7 +369,7 @@
 	// 	}
 	// }
 
-	.time {
+	.time, .listen-live {
 		text-align: center;
 		margin-top: 20px;
 		background: #f9f9f9;
@@ -377,7 +377,7 @@
 		color: #333;
 		position: relative;
 
-		#pause, #resume {
+		#pause, #resume, #play {
 			background-color: $brand-primary-dark;
 			width: 36px;
 			line-height: 36px;
@@ -423,6 +423,60 @@
 			background-color: $brand-primary;
 			box-sizing: border-box;
 		}
+	}
 
+	.listen-live {
+		margin-top: 10px;
+
+		a {
+			float: left;
+			width: 100%;
+		}
+
+		h3 {
+			line-height: 36px;
+		}
+	}
+
+	.home-weather {
+		position: relative;
+		margin-top: 10px;
+
+		.weather {
+			position: relative;
+			right: auto;
+			padding: 20px;
+			width: 100%;
+			border: 0;
+			background-color: $brand-primary;
+			top: auto;
+			color: white;
+
+			.wi {
+				font-size: 36px;
+				vertical-align: middle;
+				margin-bottom: 0px;
+				line-height: inherit;
+			}
+
+			.icon {
+				display: block;
+				padding: 0;
+			}
+
+			.type, .temp {
+				font-size: 20px;
+				float: none;
+				display: block;
+				padding: 0;
+				text-align: center;
+				border: 0;
+				width: 100%;
+				box-sizing: border-box;
+				font-weight: 700;
+				text-transform: uppercase;
+				font-family: #heading-font-family;
+			}
+		}
 	}
 }

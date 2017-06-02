@@ -296,7 +296,44 @@ get_header();
 					<?php endif; ?>
 					<?php endif; ?>
 				</ul>
-	
+
+				<?php if (get_field( 'listen_live_link' )): ?>
+				<div class="listen-live">
+					<a href="<?php the_field( 'listen_live_link' ); ?>" target="_blank">
+						<div id="play"><i class="fa fa-volume-up" aria-hidden="true"></i></div>
+						<h3>Listen Live</h3>
+					</a>
+					<div class="clear"></div>
+				</div>
+				<?php endif; ?>
+
+				<div class="home-weather">
+
+					<?php
+
+					if(cached_and_valid(get_stylesheet_directory() . '/cache/localweather.txt')){
+						$weather_data = file_get_contents(get_stylesheet_directory() . '/cache/localweather.txt');
+						$weather_obj = json_decode($weather_data);
+					} else {
+						$weather_data = get_data('http://api.openweathermap.org/data/2.5/weather?q=Worcester,GB&APPID=06b89ae566dac5b260f76c168f26e2d8');
+						file_put_contents(get_stylesheet_directory() . '/cache/localweather.txt', $weather_data);
+						$weather_obj = json_decode($weather_data);
+					}
+
+					?>
+
+					<div class="weather">
+						<div class="icon">
+							<?php echo weather_icon($weather_obj->weather[0]->icon); ?>
+						</div>
+
+						<div class="temp">
+						<?php echo kelvin_to_celsius($weather_obj->main->temp); ?>&deg;C <?php echo weather_type($weather_obj->weather[0]->main); ?>
+						</div>
+					</div>
+
+				</div>
+
 				<?php if (file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')): ?>
 				<?php if ($game_status != "Result" && $game_status != "Pre Game"): ?>
 				<div class="time">
@@ -305,12 +342,8 @@ get_header();
 					<h3>This page will refresh in <span class="countdown"></span></h3>
 					<div class="clear"></div>
 					<div id="progressBar">
-						<div></div>
+						<div class="div"></div>
 					</div>
-				</div>
-
-				<div class="live" style="margin-top: 30px;">
-					<a>LIVE VIEW</a>
 				</div>
 				<?php endif; ?>
 				<?php endif; ?>
@@ -584,7 +617,7 @@ jQuery('#primary').addClass('blur');
 
 	function progress(timeleft, timetotal, $element) {
 	    var progressBarWidth = timeleft * $element.width() / timetotal;
-	    $element.find('div').animate({ width: progressBarWidth }, timeleft == timetotal ? 0 : 1000, 'linear').html();
+	    $element.find('.div').animate({ width: progressBarWidth }, timeleft == timetotal ? 0 : 1000, 'linear').html();
 	    if(timeleft > 0) {
 	        setTimeout(function() {
 	            progress(timeleft - 1, timetotal, $element);

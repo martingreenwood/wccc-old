@@ -129,6 +129,14 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"\/acf-json\/group_59311bb34966e.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/acf-json\/group_59311bb34966e-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"\/archive.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -169,6 +177,40 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/assets\/fonts\/slick.woff",
+		"oF": 0
+		},
+	"\/assets\/fonts\/weathericons-regular-webfont.eot": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/weathericons-regular-webfont.eot",
+		"oF": 0
+		},
+	"\/assets\/fonts\/weathericons-regular-webfont.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/weathericons-regular-webfont.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/fonts\/weathericons-regular-webfont.ttf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/weathericons-regular-webfont.ttf",
+		"oF": 0
+		},
+	"\/assets\/fonts\/weathericons-regular-webfont.woff": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/weathericons-regular-webfont.woff",
+		"oF": 0
+		},
+	"\/assets\/fonts\/weathericons-regular-webfont.woff2": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/weathericons-regular-webfont.woff2",
 		"oF": 0
 		},
 	"\/assets\/images\/001-cricket.svg": {
@@ -3374,6 +3416,475 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/assets\/sass\/weather\/font\/weathericons-regular-webfont.eot": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/sass\/weather\/font\/weathericons-regular-webfont.eot",
+		"oF": 0
+		},
+	"\/assets\/sass\/weather\/font\/weathericons-regular-webfont.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/sass\/weather\/font\/weathericons-regular-webfont.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/sass\/weather\/font\/weathericons-regular-webfont.ttf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/sass\/weather\/font\/weathericons-regular-webfont.ttf",
+		"oF": 0
+		},
+	"\/assets\/sass\/weather\/font\/weathericons-regular-webfont.woff": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/sass\/weather\/font\/weathericons-regular-webfont.woff",
+		"oF": 0
+		},
+	"\/assets\/sass\/weather\/font\/weathericons-regular-webfont.woff2": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/sass\/weather\/font\/weathericons-regular-webfont.woff2",
+		"oF": 0
+		},
+	"\/assets\/sass\/weather\/sass\/_weather-icons-classes.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/_weather-icons-classes.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/_weather-icons-core.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/_weather-icons-core.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/_weather-icons-variables.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/_weather-icons-variables.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/_weather-icons-wind.min.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/sass\/weather\/sass\/_weather-icons-wind.min.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/_weather-icons-wind.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/sass\/weather\/sass\/_weather-icons-wind.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/_weather-icons.min.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/assets\/sass\/weather\/sass\/_weather-icons.min.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/_weather-icons.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/_weather-icons.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-classes\/_classes-beaufort.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-classes\/_classes-beaufort.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-classes\/_classes-day.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-classes\/_classes-day.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-classes\/_classes-direction.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-classes\/_classes-direction.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-classes\/_classes-misc.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-classes\/_classes-misc.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-classes\/_classes-moon-aliases.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-classes\/_classes-moon-aliases.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-classes\/_classes-moon.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-classes\/_classes-moon.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-classes\/_classes-neutral.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-classes\/_classes-neutral.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-classes\/_classes-night.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-classes\/_classes-night.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-classes\/_classes-time.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-classes\/_classes-time.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-classes\/_classes-wind-aliases.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-classes\/_classes-wind-aliases.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-classes\/_classes-wind-degrees.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-classes\/_classes-wind-degrees.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-classes\/_classes-wind.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-classes\/_classes-wind.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-variables\/_variables-beaufort.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-variables\/_variables-beaufort.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-variables\/_variables-day.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-variables\/_variables-day.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-variables\/_variables-direction.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-variables\/_variables-direction.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-variables\/_variables-misc.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-variables\/_variables-misc.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-variables\/_variables-moon.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-variables\/_variables-moon.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-variables\/_variables-neutral.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-variables\/_variables-neutral.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-variables\/_variables-night.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-variables\/_variables-night.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-variables\/_variables-time.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-variables\/_variables-time.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/icon-variables\/_variables-wind-names.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/icon-variables\/_variables-wind-names.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/mappings\/_wi-forecast-io.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/mappings\/_wi-forecast-io.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/mappings\/_wi-owm.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/mappings\/_wi-owm.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/mappings\/_wi-wmo4680.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/mappings\/_wi-wmo4680.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/mappings\/_wi-wunderground.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/mappings\/_wi-wunderground.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/weather\/sass\/mappings\/_wi-yahoo.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/weather\/sass\/mappings\/_wi-yahoo.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/cache": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/cache",
+		"oF": 0
+		},
 	"\/comments.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -3408,6 +3919,132 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/header.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap\/AbstractCache.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap\/AbstractCache.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap\/CurrentWeather.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap\/CurrentWeather.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap\/CurrentWeatherGroup.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap\/CurrentWeatherGroup.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap\/Exception.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap\/Exception.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap\/Fetcher\/CurlFetcher.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap\/Fetcher\/CurlFetcher.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap\/Fetcher\/FetcherInterface.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap\/Fetcher\/FetcherInterface.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap\/Fetcher\/FileGetContentsFetcher.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap\/Fetcher\/FileGetContentsFetcher.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap\/Forecast.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap\/Forecast.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap\/History.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap\/History.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap\/Util\/City.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap\/Util\/City.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap\/Util\/Location.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap\/Util\/Location.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap\/Util\/Sun.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap\/Util\/Sun.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap\/Util\/Temperature.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap\/Util\/Temperature.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap\/Util\/Time.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap\/Util\/Time.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap\/Util\/Unit.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap\/Util\/Unit.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap\/Util\/Weather.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap\/Util\/Weather.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap\/Util\/Wind.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap\/Util\/Wind.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap\/UVIndex.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap\/UVIndex.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap\/WeatherForecast.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap\/WeatherForecast.php",
+		"oF": 0
+		},
+	"\/inc\/cmfcmf\/OpenWeatherMap\/WeatherHistory.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/cmfcmf\/OpenWeatherMap\/WeatherHistory.php",
 		"oF": 0
 		},
 	"\/inc\/cpts.php": {

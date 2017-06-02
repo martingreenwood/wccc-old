@@ -68,10 +68,23 @@ aside {
 		}
 
 		&.zoom-social-icons-list {
+		
 			li {
 				border-bottom: 0;
 				margin-bottom: 0;
 				padding-bottom: 0;
+			}
+		}
+
+		.children {
+
+			li {
+				padding-top: 10px;
+				border-top: 1px solid $brand-primary;
+				margin-top: 10px;
+				padding-bottom: 0;
+				margin-bottom: 0;
+				border-bottom: 0;
 			}
 		}
 	}

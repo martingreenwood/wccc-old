@@ -189,27 +189,34 @@ get_header(); ?>
 							if (isset($match['@attributes']['away_team'])) {
 								$match_away_team = $match['@attributes']['away_team']; 
 							} else {
-								$match_away_team = $fixture_title[2];
+								$match_away_team = ucwords(strtolower($fixture_title[2]));
 							}
 							
 							if (isset($match['@attributes']['away_team_name'])) {
 								$match_away_team_name = $match['@attributes']['away_team_name']; 
 							} else {
-								$match_away_team_name = $fixture_title[2];
+								$match_away_team_name = ucwords(strtolower($fixture_title[2]));
+							}
+
+							if (empty(trim($match_away_team_name))) {
+								$match_away_team_name = "TBC";
 							}
 
 							if (isset($match['@attributes']['home_team'])) {
 								$match_home_team = $match['@attributes']['home_team'];
 							} else {
-								$match_home_team = $fixture_title[0];
+								$match_home_team = ucwords(strtolower($fixture_title[0]));
 							}
 
 							if (isset($match['@attributes']['home_team_name'])) {
 								$match_home_team_name = $match['@attributes']['home_team_name'];
 							} else {
-								$match_home_team_name = $fixture_title[0];
+								$match_home_team_name = ucwords(strtolower($fixture_title[0]));
 							}
 
+							if (empty(trim($match_home_team_name))) {
+								$match_home_team_name = "TBC";
+							}
 
 							if (isset($match['@attributes']['comp_name'])) {
 								$match_comp_name = $match['@attributes']['comp_name'];

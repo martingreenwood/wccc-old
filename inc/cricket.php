@@ -63,6 +63,9 @@ function t20_name($teamname) {
 		case "Kent":
 			$team_name = "Kent Spifires";
 			break;
+		default:
+			$team_name = $teamname;
+
 	}
 	return $team_name;
 }

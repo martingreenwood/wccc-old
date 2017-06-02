@@ -91,7 +91,7 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 	     * This part causes smooth scrolling using scrollto.js
 	     * We target all a tags inside the nav, and apply the scrollto.js to it.
 	     */
-	    $("aside nav a").click(function(evn){
+	    $("aside nav ul li a").click(function(evn){
 	        evn.preventDefault();
 	        $('html,body').scrollTo(this.hash, this.hash, {offset:-12} ); 
 	    });
@@ -186,27 +186,23 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 
 (function($) {
 
-	// $('#filter h3').on( "click" , function(){		
-		
-	// 	$('.choice').removeClass('active');
-	// 	$('form').removeClass('active');
+	$('#filter').find('h3').on({
+	
+		click: function() {
 
+			//Expand or collapse this panel
+			$(this).toggleClass( "active" );
+			$(this).next().slideToggle('fast');
 
-	// 	$(this).parent().addCLass('active');
-	// 	$(this).siblings('form').addCLass('active');
+			//Hide the other panels
+			$("h3").not($(this)).removeClass('active');
+			$("form").not($(this).next()).slideUp('fast');
 
-	// });	
-
-	$('#filter').find('h3').on("click", function(){
-
-		//Expand or collapse this panel
-		$(this).next().slideToggle('fast');
-		$(this).parent('.choice').addClass('active'); 
-
-		//Hide the other panels
-		$("form").not($(this).next()).slideUp('fast');
-		$("form").not($(this).next()).parent('.choice').removeClass('active');
-
+		}, mouseenter: function() {
+			//$(this).addClass( "active" );
+		}, mouseleave: function() {
+			//$(this).removeClass( "active" );
+		}
 	});
 
 })(jQuery);

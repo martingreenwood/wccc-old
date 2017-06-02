@@ -70,3 +70,35 @@
 	}
 }
 
+.home-weather {
+	position: relative;
+
+	.weather {
+		position: absolute;
+		right: 0;
+		width: 172px;
+		border: 2px solid white;
+		background-color: $brand-primary;
+		top: 57px;
+		color: white;
+
+		.wi {
+			font-size: 23px;
+			vertical-align: middle;
+		}
+
+		.icon, .type, .temp {
+			float: left;
+			padding: 4.5px 0;
+			text-align: center;
+			border-left: 2px solid white;
+			width: 100%;
+			box-sizing: border-box;
+			font-weight: 700;
+
+			&:first-of-type {
+				border-left: 0;
+			}
+		}
+	}
+}

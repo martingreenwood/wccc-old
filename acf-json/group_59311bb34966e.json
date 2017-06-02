@@ -1,0 +1,40 @@
+{
+    "key": "group_59311bb34966e",
+    "title": "Listen Live Link",
+    "fields": [
+        {
+            "key": "field_59311bbb2094d",
+            "label": "Listen Live Link",
+            "name": "listen_live_link",
+            "type": "url",
+            "instructions": "Link to live stream.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "eg: http:\/\/www.bbc.co.uk\/sport\/live\/cricket\/40050443"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "matches"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1496390653
+}

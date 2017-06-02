@@ -77,9 +77,11 @@
 	h3 {
 		color: $brand-primary;
 		font-size: 30px;
+		padding: 30px 0;
 		margin: 0;
 		text-transform: uppercase;
 		text-align: center;
+		position: relative;
 
 		&:before {
 			content: '';
@@ -87,7 +89,7 @@
 			height: 20px;
 			background-color: $brand-primary-dark;
 			position: absolute;
-			bottom: -43px;
+			bottom: -10px;
 			transform: rotate(45deg);
 			left: 50%;
 			margin-left: -10px;
@@ -98,7 +100,6 @@
 	.choice {
 		float: left;
 		width: 50%;
-		padding: 30px 0;
 		cursor: pointer;
 		background-color: #f9f9f9;
 		-webkit-transition: all 300ms ease-in-out;
@@ -108,22 +109,17 @@
 		        transition: all 300ms ease-in-out;
 
 		&:hover, &.active {
-			background-color: $brand-primary;
 
 			h3 {
-				color: white;
-				position: relative;
 			}
 		}
 
-		&.active {
+		h3.active {
+			background-color: $brand-primary;
+			color: white;
 
-			h3 {
-
-				&:before {
-					display: block;
-				}
-
+			&:before {
+				display: block;
 			}
 		}
 	}
@@ -154,9 +150,14 @@
 		li {
 			float: left;
 			margin-right: 20px;
+			line-height: 3;
+			vertical-align: middle;
 
 			label, input {
-				float: left;
+				float: none;
+				margin: 0;
+				vertical-align: middle;
+				color: white;
 			}
 
 			input[type="checkbox"] {
@@ -171,6 +172,8 @@
 				margin-right: 4px;
 				outline:0;
 				box-shadow: none;
+				display: inline-block;
+				vertical-align: middle;
 
 				&:checked{
 
@@ -240,7 +243,7 @@
 				box-shadow: none;
 				border: 1px solid #ccc;
 				width: 100%;
-				font-family: proxima-nova;
+				font-family: $heading-font-family;
 			}
 
 			button {

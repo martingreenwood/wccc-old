@@ -6,11 +6,11 @@ html {
 *:before,
 *:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 	box-sizing: inherit;
-	font-family: $heading-font-family;
 }
 
 body {
 	background: $background-color; /* Fallback for when there is no custom background color defined. */
+	font-family: $heading-font-family;
 }
 
 .blur * {
@@ -60,7 +60,7 @@ img {
 }
 
 code, samp, kbd {
-	font-family: "Courier New", Courier, monospace, sans-serif;
+	font-family: $heading-font-family;
 	text-align: left;
 	color: #555;
 	max-height: 500px;

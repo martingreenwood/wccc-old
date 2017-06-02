@@ -252,7 +252,7 @@ get_header(); ?>
 
 							$match_live_game = $match['@attributes']['live_game'];
 							$match_live_game_class = null;
-							if ($match_live_game === 1) {
+							if ($match_live_game > 0) {
 								$match_live_game_class = 'live-game';
 							}
 							
@@ -290,10 +290,10 @@ get_header(); ?>
 								data-team="<?php echo $team_type; ?>">
 
 								<div class="team home">
-									<?php if ($match_away_team !== '56' && $match_away_team !== 'WORCESTERSHIRE'&& $match_away_team !== 'TBC') { ?>
+									<?php if ($match_away_team !== '56' && $match_away_team !== 'Worcestershire' && $match_away_team !== 'TBC') { ?>
 										<img src="<?php echo team_image($match_away_team); ?>">
 									<?php } ?>
-									<?php if($match_home_team !== '56' && $match_home_team !== 'WORCESTERSHIRE' ) { ?>
+									<?php if($match_home_team !== '56' && $match_home_team !== 'Worcestershire' ) { ?>
 										<img src="<?php echo team_image($match_home_team); ?>">
 									<?php } ?>
 

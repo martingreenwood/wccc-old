@@ -438,7 +438,7 @@
 		}
 	}
 
-	.home-weather {
+	.match-weather {
 		position: relative;
 		margin-top: 10px;
 
@@ -462,6 +462,7 @@
 			.icon {
 				display: block;
 				padding: 0;
+				text-align: center;
 			}
 
 			.type, .temp {

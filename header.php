@@ -33,29 +33,6 @@
 
 		<div class="site-header container">
 
-			<div class="home-weather">
-
-				<?php
-
-				if(cached_and_valid(get_stylesheet_directory() . '/cache/localweather.txt')){
-					$weather_data = file_get_contents(get_stylesheet_directory() . '/cache/localweather.txt');
-					$weather_obj = json_decode($weather_data);
-				} else {
-					$weather_data = get_data('http://api.openweathermap.org/data/2.5/weather?q=Worcester,GB&APPID=06b89ae566dac5b260f76c168f26e2d8');
-					file_put_contents(get_stylesheet_directory() . '/cache/localweather.txt', $weather_data);
-					$weather_obj = json_decode($weather_data);
-				}
-
-				?>
-
-				<div class="weather">
-					<div class="icon">
-						<?php echo weather_icon($weather_obj->weather[0]->icon); ?> <?php echo kelvin_to_celsius($weather_obj->main->temp); ?>&deg;C <?php echo weather_type($weather_obj->weather[0]->main); ?>
-					</div>
-				</div>
-
-			</div>
-
 			<div class="row">
 			
 				<div class="branding">

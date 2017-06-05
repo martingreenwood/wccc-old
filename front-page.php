@@ -41,13 +41,20 @@ get_header(); ?>
 			<div class="container">
 				<div class="slides">
 				<?php 
-				$loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => -1 ) );
+				$loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 6 ) );
 				while ( $loop->have_posts() ) : $loop->the_post(); 
 					?>
 					<div class="slide">
 						<a href="<?php the_permalink(); ?>">
 							<div class="image">
-								<?php the_post_thumbnail( 'slide-thumb' ); ?>
+								<?php 
+								if (has_post_thumbnail()) {
+									the_post_thumbnail( 'slide-thumb' ); 
+								}
+								else {
+									echo "<img src='".get_stylesheet_directory_uri()."/assets/images/slide-holder.jpg'>";
+								}
+								?>
 							</div>
 							<div class="content">
 								<h3><?php the_title( ); ?></h3>

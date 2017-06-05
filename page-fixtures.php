@@ -151,7 +151,6 @@ get_header(); ?>
 		</div>
 	</div>
 
-
 	<div id="primary" class="content-area container">
 		<main id="main" class="site-main span12" role="main">
 
@@ -276,18 +275,7 @@ get_header(); ?>
 								$prev = $match_month;
 							}
 							?>
-							<div 
-								class="row match <?php echo $match_live_game_class; ?>" 
-
-								<?php if ( $match_game_date >= $today ): ?>
-								data-match-type="fixture" 
-								<?php else: ?>
-								data-match-type="result"
-								<?php endif; ?>
-
-								data-game-id="<?php echo $match_id; ?>"
-								data-compid="comp-<?php echo $match_comp_id; ?>" 
-								data-team="<?php echo $team_type; ?>">
+							<div class="row match <?php echo $match_live_game_class; ?>"  <?php if ( $match_game_date >= $today ): ?> data-match-type="fixture"  <?php else: ?> data-match-type="result" <?php endif; ?> data-game-id="<?php echo $match_id; ?>" data-compid="comp-<?php echo $match_comp_id; ?>"  data-team="<?php echo $team_type; ?>">
 
 								<div class="team home">
 									<?php if ($match_away_team !== '56' && $match_away_team !== 'Worcestershire' && $match_away_team !== 'TBC') { ?>

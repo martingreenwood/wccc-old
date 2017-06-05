@@ -18,7 +18,6 @@ global $cpts;
 $cpts = array(
 	array('sponsors','Sponsor','Sponsors','dashicons-slides',array('title','editor','thumbnail')),
 	array('players','Player','Players','dashicons-groups',array('title','editor','thumbnail')),
-	array('academy','Academy Squad Member','Academy Squad','dashicons-groups',array('title','editor','thumbnail')),
 	array('wcccagm','WCCC AGM Report','Minutes & Reports','dashicons-analytics',array('title')),
 	array('matches','Matches','Matches','dashicons-microphone',array('title','editor','thumbnail')),
 	array('fixtures','Fixture','Fixtures','dashicons-forms',array('title')),
@@ -72,3 +71,22 @@ function cpts_register() {
 //create Products custom post type
 add_action('init', 'cpts_register');
 
+
+function _wccc_taxonomies() {
+    register_taxonomy(
+        'filter',
+        'players',
+        array(
+            'labels' => array(
+                'name' => 'Filter',
+                'add_new_item' => 'Add Filter',
+                'new_item_name' => "New Filter"
+            ),
+            'show_ui' => true,
+            'show_tagcloud' => false,
+            'hierarchical' => true
+        )
+    );
+}
+
+add_action( 'init', '_wccc_taxonomies', 0 );

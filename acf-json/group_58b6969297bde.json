@@ -22,14 +22,14 @@
                 "wicket-keeper": "Wicket Keeper",
                 "captain": "Captain",
                 "physiotherapist": "Physiotherapist",
-                "2nd-xi-coach": "2nd XI Coach",
+                "academy-coach": "Academy Coach",
+                "2nd-xi-coach": "Second XI Coach",
+                "2nd-xi-physiotherapist": "Second XI Physiotherapist",
                 "bowling-coach-assistant-coach": "Bowling Coach & Assistant Coach",
                 "strength-conditioning-coach": "Strength & Conditioning Coach",
                 "director-of-cricket": "Director of Cricket"
             },
-            "default_value": [
-
-            ],
+            "default_value": [],
             "allow_null": 0,
             "multiple": 0,
             "ui": 1,
@@ -56,9 +56,7 @@
                 "ambidextrous": "Ambidextrous",
                 "none": "N\/A"
             },
-            "default_value": [
-
-            ],
+            "default_value": [],
             "allow_null": 1,
             "multiple": 0,
             "ui": 1,
@@ -92,9 +90,7 @@
                 "leg-spin": "Leg Spin",
                 "none": "N\/A"
             },
-            "default_value": [
-
-            ],
+            "default_value": [],
             "allow_null": 0,
             "multiple": 1,
             "ui": 1,
@@ -354,5 +350,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1488369215
+    "modified": 1496657700
 }

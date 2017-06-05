@@ -5,7 +5,7 @@ $dates = array();
 $fm_dates = array();
 $fm_matches = array();
 
-$fixture_files = preg_grep('~^EDC.fixtures.*\.(xml)$~', scandir(FEED_DIR));
+$fixture_files = preg_grep('~^EDC.fixtures.*\.(xml)$~', scandir(FEED_DIR, SCANDIR_SORT_ASCENDING));
 $fixture_file = array_pop($fixture_files);
 
 if (file_exists(FEED_DIR .'/'. $fixture_file)):
@@ -141,9 +141,9 @@ if ($days_since_game < $number_days ): ?>
 				<div class="name">
 					
 					<?php if (strpos($competition_name, 'T20') !== false): ?>
-					<h3><?php echo t20_name(team_name($home_team_id, $competition_id)); ?></h3>
+					<h3><?php echo t20_name(team_name($batting_team_id, $competition_id)); ?></h3>
 					<?php else: ?>
-					<h3><?php echo team_name($home_team_id, $competition_id); ?></h3>
+					<h3><?php echo team_name($batting_team_id, $competition_id); ?></h3>
 					<?php endif; ?>
 
 					<?php 
@@ -182,7 +182,7 @@ if ($days_since_game < $number_days ): ?>
 
 			<?php $innings_count++; endforeach; ?>
 
-			<?php else: // innings are not in array with [0[] key ?>
+			<?php else: // innings are not in array with [0] key ?>
 			<div class="team one">
 				<img src="<?php echo team_image($home_team_id); ?>">
 				<div class="name">

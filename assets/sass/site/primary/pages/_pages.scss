@@ -285,3 +285,109 @@
 		}
 	}
 }
+
+/*--------------------------------------------------------------
+## Squad
+--------------------------------------------------------------*/
+
+.squad {
+	position: relative;
+	float: left;
+	width: 100%;
+
+	.person {
+		position: relative;
+		float: left;
+		width: 23.78%;
+		margin-right: 20px;
+		margin-bottom: 20px;
+		overflow: hidden;
+
+		&:nth-child(4n) {
+			margin-right: 0;
+		}
+
+		img {
+			display: block;
+		}
+
+		h2 {
+			position: absolute;
+			bottom: 0;
+			color: white;
+			text-transform: uppercase;
+			padding: 20px;
+			margin: 0;
+			line-height: 1;
+			width: 100%;
+			background: $brand-primary-dark;
+			font-size: 20px;
+		}
+
+		.info {
+			position: absolute;
+			width: 100%;
+			top: 100%;
+			padding: 20px;
+			height: 100%;
+			background: $brand-primary-dark;
+			-webkit-transition: all .25s ease-in-out;
+			   -moz-transition: all .25s ease-in-out;
+			    -ms-transition: all .25s ease-in-out;
+			     -o-transition: all .25s ease-in-out;
+			        transition: all .25s ease-in-out;
+
+			h3, h4 {
+				color: white;
+				text-transform: uppercase;
+			}
+
+			h3 {
+				font-size: 20px;
+			}
+
+			h4 {
+				font-size: 18px;
+				border-bottom: 1px solid #fff;
+				padding-bottom: 5px;
+				margin-bottom: 5px;
+			}
+
+			ul {
+				margin: 0;
+				list-style: none;
+
+				li {
+					color: white;
+					text-transform: capitalize;
+
+					span {
+						width: 50px;
+						display: inline-block;
+					}
+				}
+			}
+
+			a {
+				background-color: $brand-primary;
+				display: block;
+				position: absolute;
+				width: 100%;
+				left: 0;
+				text-align: center;
+				color: white;
+				padding: 10px;
+				text-transform: uppercase;
+				font-weight: 700;
+				bottom: 0;
+			}
+		}
+
+		&:hover {
+			.info {
+				top: 0;
+			}
+		}
+	}
+
+}

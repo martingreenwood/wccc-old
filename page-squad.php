@@ -39,33 +39,6 @@ get_header(); ?>
 		</div>
 	</section>
 
-	<div id="filter">
-		<div class="container">
-			<div class="row">
-				<div class="choice">
-					<h3>Filter by Team</h3>
-					<form>
-						<ul>
-						<?php
-						$terms = get_terms( 'filter', array(
-    						'hide_empty' => true,
-						) );
-						foreach( $terms as $term ) : 
-							?>
-							<li>
-								<input class="personfilter" type="checkbox" name="team" value="<?php echo $term->slug; ?>">
-								<label for="<?php echo $term->slug; ?>"><?php echo $term->name; ?></label>
-							</li>
-							<?php
-						endforeach;
-						?>
-						</ul>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-
 	<div id="primary" class="content-area container">
 		<main id="main" class="site-main span12" role="main">
 

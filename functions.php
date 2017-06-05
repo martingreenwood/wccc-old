@@ -245,6 +245,9 @@ function wccc_acf_init() {
 add_action('acf/init', 'wccc_acf_init');
 
 
+// remove empty p tags
+remove_filter('the_content', 'wpautop');
+
 /*================================
 =            INCLUDES            =
 ================================*/

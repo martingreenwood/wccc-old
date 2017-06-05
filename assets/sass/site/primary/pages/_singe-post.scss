@@ -58,6 +58,17 @@
 				margin-bottom: 20px;
 				line-height: 1.2;
 			}
+
+			.entry-content {
+
+				p {
+					&:first-of-type {
+						font-size: 18px;
+						color: #333;
+						font-weight: 800;
+					}
+				}
+			}
 		}
 	}
 }

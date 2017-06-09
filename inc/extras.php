@@ -267,9 +267,9 @@ function weather_type($weathertype) {
 // add image to first para of single posts
 
 add_filter( 'the_content', 'insert_featured_image', 20 );
-
 function insert_featured_image( $content ) {
-
-    $content = preg_replace( "/<\/p>/", "</p>" . get_the_post_thumbnail($post->ID, 'post-single'), $content, 1 );
-    return $content;
+	if (is_single()) {
+    	$content = preg_replace( "/<\/p>/", "</p>" . get_the_post_thumbnail($post->ID, 'post-single'), $content, 1 );
+    	return $content;
+    }
 }

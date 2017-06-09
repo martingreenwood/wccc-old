@@ -54,7 +54,7 @@ function get_data($data_url)
     return $string;
 }
 function cached_and_valid($file) {
-  $expired_time = time() - 1800; //0,5 hours
+  $expired_time = time() - 3600; // 1 hours
   return file_exists($file) && filemtime($file) > $expired_time;
 }
 

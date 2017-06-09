@@ -153,131 +153,128 @@ function weather_icon($typeicon) {
 
 	// 3200	not available
 
-	// switch ($typeicon) {
-	// 	case '0':
-	// 	case '1':
-	// 	case '2':
-	// 	case '3':
-	// 	case '4':
-	// 		$weatherIcon = '<i class="wi wi-strong-wind"></i>';
-	// 		break;
-		
-	// 	case '5':
-	// 	case '6':
-	// 	case '7':
-	// 	case '8':
-	// 	case '9':
-	// 	case '10':
-	// 	case '35': // mix hail n rail
-	// 		$weatherIcon = '<i class="wi wi-sleet"></i>';
-	// 		break;
-
-	// 	case '11':
-	// 	case '12':
-	// 	case '40':
-	// 		$weatherIcon = '<i class="wi wi-showers"></i>';
-	// 		break;
-
-	// 	case '13':
-	// 	case '14':
-	// 	case '15':
-	// 	case '16':
-	// 	case '17':
-	// 	case '18':
-	// 	case '25': // cold
-	// 	case '41': 
-	// 	case '42': 
-	// 	case '43': 
-	// 	case '46': 
-	// 		$weatherIcon = '<i class="wi wi-snow"></i>';
-	// 		break;
-
-	// 	case '19':
-	// 	case '20':
-	// 	case '21':
-	// 	case '22':
-	// 		$weatherIcon = '<i class="wi wi-dust"></i>';
-	// 		break;
-
-	// 	case '23':
-	// 	case '24':
-	// 		$weatherIcon = '<i class="wi wi-windy"></i>';
-	// 		break;
-
-	// 	case '26':
-	// 	case '44':
-	// 		$weatherIcon = '<i class="wi wi-cloudy"></i>';
-	// 		break;
-
-	// 	case '27':
-	// 	case '28':
-	// 	case '29':
-	// 	case '30':
-	// 		$weatherIcon = '<i class="wi wi-day-cloudy"></i>';
-	// 		break;
-
-	// 	case '31':
-	// 	case '32':
-	// 	case '33':
-	// 	case '34':
-	// 		$weatherIcon = '<i class="wi wi-day-day-sunny"></i>';
-	// 		break;
-
-	// 	case '36': 
-	// 		$weatherIcon = '<i class="wi wi-day-day-hot"></i>';
-	// 		break;
-
-	// 	case '37': 
-	// 	case '38': 
-	// 	case '39': 
-	// 	case '45':
-	// 	case '47':
-	// 		$weatherIcon = '<i class="wi wi-day-thunderstorm"></i>';
-	// 		break;
-
-	// 	case '41': 
-	// 	case '42': 
-	// 	case '43': 
-	// 		$weatherIcon = '<i class="wi wi-day-thunderstorm"></i>';
-	// 		break;		
-
-	// 	case '3200':
-	// 		$weatherIcon = '<i class="wi wi-alien"></i>';
-	// 		break;
-	
-	// 	default:
-	// 		$weatherIcon = '<i class="wi wi-alien"></i>';
-	// 		break;
-	// }
-
-	if ($typeicon == "01d"):
-		$weatherIcon = '<i class="wi wi-day-sunny"></i>';
-	elseif ($typeicon == "01n"):
-		$weatherIcon = '<i class="wi wi-night-clear"></i>';
-
-	elseif ($typeicon == "02d"):
-		$weatherIcon = '<i class="wi wi-day-cloudy"></i>';
-	elseif ($typeicon == "02n"):
-		$weatherIcon = '<i class="wi wi-night-partly-cloudy"></i>';
-	elseif ($typeicon == "03d" || $typeicon == "03n"):
-		$weatherIcon = '<i class="wi wi-cloud"></i>';
-	elseif ($typeicon == "04d" || $typeicon == "04n"):
-		$weatherIcon = '<i class="wi wi-cloudy"></i>';
-	elseif ($typeicon == "09d" || $typeicon == "09n"):
+	if (
+		$typeicon == 0 || 
+		$typeicon == 1 || 
+		$typeicon == 2 || 
+		$typeicon == 3 || 
+		$typeicon == 4
+	) {
+		$weatherIcon = '<i class="wi wi-strong-wind"></i>';
+	} else if (
+		$typeicon == 5 || 
+		$typeicon == 6 || 
+		$typeicon == 7 || 
+		$typeicon == 8 || 
+		$typeicon == 9 || 
+		$typeicon == 10 || 
+		$typeicon == 35
+	) {
+		$weatherIcon = '<i class="wi wi-sleet"></i>';
+	} else if (
+		$typeicon == 10 || 
+		$typeicon == 12 || 
+		$typeicon == 40
+	) {
 		$weatherIcon = '<i class="wi wi-showers"></i>';
-	elseif ($typeicon == "10d"):
-		$weatherIcon = '<i class="wi wi-rain"></i>';
-	elseif ($typeicon == "10n"):
-		$weatherIcon = '<i class="wi wi-night-alt-rain"></i>';
-	elseif ($typeicon == "11d" || $typeicon == "11n"):
-		$weatherIcon = '<i class="wi wi-thunderstorm"></i>';
-	elseif ($typeicon == "13d" || $typeicon == "13n"):
-		$weatherIcon = '<i class="wi wi-day-fog"></i>';
-	elseif ($typeicon == "50d" || $typeicon == "50n"):
-		$weatherIcon = '<i class="wi wi-night-fog"></i>';
-	else:
+	} else if (
+		$typeicon == 13 || 
+		$typeicon == 14 || 
+		$typeicon == 15 || 
+		$typeicon == 16 || 
+		$typeicon == 17 || 
+		$typeicon == 18 || 
+		$typeicon == 25 || 
+		$typeicon == 41 || 
+		$typeicon == 42 || 
+		$typeicon == 46
+	) {
+		$weatherIcon = '<i class="wi wi-snow"></i>';
+	} else if (
+		$typeicon == 19 || 
+		$typeicon == 20 || 
+		$typeicon == 21 || 
+		$typeicon == 22
+	) {
+		$weatherIcon = '<i class="wi wi-dust"></i>';
+	} else if (
+		$typeicon == 23 || 
+		$typeicon == 24
+	) {
+		$weatherIcon = '<i class="wi wi-windy"></i>';
+	} else if (
+		$typeicon == 26 || 
+		$typeicon == 44
+	) {
+		$weatherIcon = '<i class="wi wi-cloudy"></i>';
+	} else if (
+		$typeicon == 27 || 
+		$typeicon == 28 || 
+		$typeicon == 29 || 
+		$typeicon == 30
+	) {
+		$weatherIcon = '<i class="wi wi-day-cloudy"></i>';
+	} else if (
+		$typeicon == 31 || 
+		$typeicon == 32 || 
+		$typeicon == 33 || 
+		$typeicon == 34
+	) {
+		$weatherIcon = '<i class="wi wi-day-day-sunny"></i>';
+	} else if (
+		$typeicon == 36
+	) {
+		$weatherIcon = '<i class="wi wi-day-hot"></i>';
+	} else if (
+		$typeicon == 37 || 
+		$typeicon == 38 || 
+		$typeicon == 39 || 
+		$typeicon == 45 || 
+		$typeicon == 47
+	) {
+		$weatherIcon = '<i class="wi wi-day-thunderstorm"></i>';
+	} else if (
+		$typeicon == 41 || 
+		$typeicon == 42 || 
+		$typeicon == 43
+	) {
+		$weatherIcon = '<i class="wi wi-day-thunderstorm"></i>';
+	} else if (
+		$typeicon == 3200
+	) {
 		$weatherIcon = '<i class="wi wi-alien"></i>';
-	endif;
+	} else {
+		$weatherIcon = '<i class="wi wi-alien"></i>';
+	}
+
+	// if ($typeicon == "01d"):
+	// 	$weatherIcon = '<i class="wi wi-day-sunny"></i>';
+	// elseif ($typeicon == "01n"):
+	// 	$weatherIcon = '<i class="wi wi-night-clear"></i>';
+
+	// elseif ($typeicon == "02d"):
+	// 	$weatherIcon = '<i class="wi wi-day-cloudy"></i>';
+	// elseif ($typeicon == "02n"):
+	// 	$weatherIcon = '<i class="wi wi-night-partly-cloudy"></i>';
+	// elseif ($typeicon == "03d" || $typeicon == "03n"):
+	// 	$weatherIcon = '<i class="wi wi-cloud"></i>';
+	// elseif ($typeicon == "04d" || $typeicon == "04n"):
+	// 	$weatherIcon = '<i class="wi wi-cloudy"></i>';
+	// elseif ($typeicon == "09d" || $typeicon == "09n"):
+	// 	$weatherIcon = '<i class="wi wi-showers"></i>';
+	// elseif ($typeicon == "10d"):
+	// 	$weatherIcon = '<i class="wi wi-rain"></i>';
+	// elseif ($typeicon == "10n"):
+	// 	$weatherIcon = '<i class="wi wi-night-alt-rain"></i>';
+	// elseif ($typeicon == "11d" || $typeicon == "11n"):
+	// 	$weatherIcon = '<i class="wi wi-thunderstorm"></i>';
+	// elseif ($typeicon == "13d" || $typeicon == "13n"):
+	// 	$weatherIcon = '<i class="wi wi-day-fog"></i>';
+	// elseif ($typeicon == "50d" || $typeicon == "50n"):
+	// 	$weatherIcon = '<i class="wi wi-night-fog"></i>';
+	// else:
+	// 	$weatherIcon = '<i class="wi wi-alien"></i>';
+	// endif;
 
 	return $weatherIcon;
 }

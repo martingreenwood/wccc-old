@@ -313,23 +313,23 @@ get_header();
 
 					<?php
 
-					if(cached_and_valid(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt')){
-						$weather_data = file_get_contents(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt');
-						$weather_obj = json_decode($weather_data);
-					} else {
-						$weather_data = get_data('http://api.openweathermap.org/data/2.5/weather?q='.$venue_city.',GB&APPID=06b89ae566dac5b260f76c168f26e2d8');
-						file_put_contents(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt', $weather_data);
-						$weather_obj = json_decode($weather_data);
-					}
+					// if(cached_and_valid(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt')){
+					// 	$weather_data = file_get_contents(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt');
+					// 	$weather_obj = json_decode($weather_data);
+					// } else {
+					// 	$weather_data = get_data('http://api.openweathermap.org/data/2.5/weather?q='.$venue_city.',GB&APPID=06b89ae566dac5b260f76c168f26e2d8');
+					// 	file_put_contents(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt', $weather_data);
+					// 	$weather_obj = json_decode($weather_data);
+					// }
 
 
-					// $BASE_URL = "http://query.yahooapis.com/v1/public/yql";
-					// $yql_query = 'select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text="Worcester, GB")';
-					// $yql_query_url = $BASE_URL . "?q=" . urlencode($yql_query) . "&format=json";
-					// $session = curl_init($yql_query_url);
-					// curl_setopt($session, CURLOPT_RETURNTRANSFER,true);
-					// $json = curl_exec($session);
-					// $weather_obj =  json_decode($json);
+					$BASE_URL = "http://query.yahooapis.com/v1/public/yql";
+					$yql_query = 'select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text="Worcester, GB")';
+					$yql_query_url = $BASE_URL . "?q=" . urlencode($yql_query) . "&format=json";
+					$session = curl_init($yql_query_url);
+					curl_setopt($session, CURLOPT_RETURNTRANSFER,true);
+					$json = curl_exec($session);
+					$weather_obj =  json_decode($json);
 					
 					?>
 
@@ -338,15 +338,16 @@ get_header();
 					<div class="weather">
 
 						<div class="icon">
-							<?php //echo weather_icon($weather_obj->query->results->channel->item->condition->code); ?>
-							<?php echo weather_icon($weather_obj->weather[0]->icon); ?>
+							<?php echo weather_icon($weather_obj->query->results->channel->item->condition->code); ?>
+							<?php //echo weather_icon($weather_obj->weather[0]->icon); ?>
 						</div>
 
 						<div class="temp">
-						<?php //xecho fahrenheit_to_celsius($weather_obj->query->results->channel->item->condition->temp); ?> 
-						<?php //echo $weather_obj->query->results->channel->item->condition->text; ?>
+						<?php echo fahrenheit_to_celsius($weather_obj->query->results->channel->item->condition->temp); ?> &deg;C
+						<?php echo $weather_obj->query->results->channel->item->condition->text; ?>
 
-						<?php echo kelvin_to_celsius($weather_obj->main->temp); ?>&deg;C <?php echo weather_type($weather_obj->weather[0]->description); ?>
+						<?php //echo kelvin_to_celsius($weather_obj->main->temp); ?>
+						<?php //echo weather_type($weather_obj->weather[0]->description); ?>
 						</div>
 					</div>
 

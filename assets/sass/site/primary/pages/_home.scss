@@ -161,9 +161,10 @@
 
 	#vs {
 		position: relative;
-		padding:0 0 38px 0;
+		padding:0 0 40px 0;
 
 		.row {
+			margin-bottom: 0;
 
 			h3 {
 				color: $brand-primary;
@@ -171,6 +172,19 @@
 				margin: 0 0 20px 0;
 				text-transform: uppercase;
 				text-align: center;
+			}
+
+			.inning {
+				
+				&:nth-child(1) {
+
+					.team {
+
+						.name {
+							padding: 21px 0 0 0;
+						}
+					}
+				}
 			}
 		}
 
@@ -216,12 +230,14 @@
 
 			img {
 				height: 96px;
+
+				position: absolute;
+				top: 0;
 			}
 
 			.name {
 				width: 300px;
 				text-align: center;
-				padding: 21px 0;
 
 				h3, h4 {
 					margin: 0;
@@ -255,6 +271,7 @@
 
 				img {
 					float: left;
+					left: 0;
 				}
 
 				.name {
@@ -268,6 +285,7 @@
 
 				img {
 					float: right;
+					right: 0;
 				}
 
 				.name {
@@ -281,17 +299,20 @@
 
 				img {
 					float: left;
+					left: 0;
 				}
 
 				.name {
 					float: right;
 				}
 			}
+
 			&.two {
 				padding-left: 150px;
 
 				img {
 					float: right;
+					right: 0;
 				}
 
 				.name {
@@ -339,6 +360,14 @@
 				font-size: 14px;
 
 
+			}
+		}
+
+		.one_innings {
+			.team {
+				img {
+					position: relative;
+				}
 			}
 		}
 	}

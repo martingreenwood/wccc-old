@@ -4239,6 +4239,12 @@
 		"oAP": "\/partials\/home-latest-score.php",
 		"oF": 0
 		},
+	"\/partials\/home-latest-score.php.bck": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/partials\/home-latest-score.php.bck",
+		"oF": 0
+		},
 	"\/partials\/home-next-prev.php": {
 		"ft": 8192,
 		"oA": 2,

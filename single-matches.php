@@ -144,6 +144,7 @@ get_header();
 					<span class="status"><?php echo $game_status; ?></span>
 					<?php echo $result; ?>
 				</div>
+				<div class="mid"><p>VS</p></div>
 
 				<?php if (is_array($innings) && array_key_exists('0', $innings)): ?>
 
@@ -160,7 +161,7 @@ get_header();
 
 					++$innings_counter;
 					if($innings_counter == 1) {  
-						echo "<div class='row'>";
+						echo "<div class='inning'>";
 					}
         		?>
 				<div class="team <?php echo $side; ?>">
@@ -169,10 +170,14 @@ get_header();
 					<?php endif; ?>
 					<div class="name">
 						
+						<?php if($innings_count <= 1): ?>
+						
 						<?php if (strpos($competition_name, 'T20') !== false): ?>
 						<h3><?php echo t20_name(team_name($batting_team_id, $competition_id)); ?></h3>
 						<?php else: ?>
 						<h3><?php echo team_name($batting_team_id, $competition_id); ?></h3>
+						<?php endif; ?>
+						
 						<?php endif; ?>
 
 						<?php 
@@ -183,6 +188,9 @@ get_header();
 						}
 						?>
 						<h4>
+							<?php if($innings_count > 1): ?>
+								&amp;
+							<?php endif; ?>
 							<?php echo $inning['Total']['@attributes']['runs_scored']; ?>
 							<?php 
 							if ($inning['Total']['@attributes']['wickets'] < 10) {
@@ -195,13 +203,6 @@ get_header();
 					</div>
 				</div>
 
-				<?php if ($innings_count == 1): ?>
-				<div class="mid"><p>FIRST INNINGS</p></div>
-				<?php endif; ?>
-				<?php if ($innings_count == 2): ?>
-				<div class="mid"><p>SECOND INNINGS</p></div>
-				<?php endif; ?>
-
 				<?php 
 				if ($innings_counter == 2) {
 					echo "</div>";
@@ -213,62 +214,63 @@ get_header();
 
 				<?php else: ?>
 				<?php $batting_team_id = $innings['@attributes']['batting_team_id']; ?>
-				
-				<div class="team home">
-					<img src="<?php echo team_image($home_team_id); ?>">
-					<div class="name">
-						
-						<?php if (strpos($competition_name, 'T20') !== false): ?>
-						<h3><?php echo t20_name($home_team); ?></h3>
-						<?php else: ?>
-						<h3><?php echo $home_team; ?></h3>
-						<?php endif; ?>
+				<div class="one_innings">
+					<div class="team home">
+						<img src="<?php echo team_image($home_team_id); ?>">
+						<div class="name">
+							
+							<?php if (strpos($competition_name, 'T20') !== false): ?>
+							<h3><?php echo t20_name($home_team); ?></h3>
+							<?php else: ?>
+							<h3><?php echo $home_team; ?></h3>
+							<?php endif; ?>
 
-						<?php if (array_key_exists('Innings', $matchinfo)): ?>
-						<?php if ($home_team_id == $batting_team_id): ?>
-							<h4>
-								<?php echo $innings['Total']['@attributes']['runs_scored']; ?>
-								<?php 
-								if ($innings['Total']['@attributes']['wickets'] < 10) {
-									echo "/ " . $innings['Total']['@attributes']['wickets'];
-								} else {
-									echo "All Out";
-								}
-								?>
-							</h4>
-						<?php else: ?>
-							<h4>YET TO BAT</h4>
-						<?php endif; ?>
-						<?php endif; ?>
+							<?php if (array_key_exists('Innings', $matchinfo)): ?>
+							<?php if ($home_team_id == $batting_team_id): ?>
+								<h4>
+									<?php echo $innings['Total']['@attributes']['runs_scored']; ?>
+									<?php 
+									if ($innings['Total']['@attributes']['wickets'] < 10) {
+										echo "/ " . $innings['Total']['@attributes']['wickets'];
+									} else {
+										echo "All Out";
+									}
+									?>
+								</h4>
+							<?php else: ?>
+								<h4>YET TO BAT</h4>
+							<?php endif; ?>
+							<?php endif; ?>
 
+						</div>
 					</div>
-				</div>
-				<div class="team away">
-					<img src="<?php echo team_image($away_team_id); ?>">
-					<div class="name">
-						
-						<?php if (strpos($competition_name, 'T20') !== false): ?>
-						<h3><?php echo t20_name(team_name($away_team_id, $competition_id)); ?></h3>
-						<?php else: ?>
-						<h3><?php echo team_name($away_team_id, $competition_id); ?></h3>
-						<?php endif; ?>
+					<div class="team away">
+						<img src="<?php echo team_image($away_team_id); ?>">
+						<div class="name">
+							
+							<?php if (strpos($competition_name, 'T20') !== false): ?>
+							<h3><?php echo t20_name(team_name($away_team_id, $competition_id)); ?></h3>
+							<?php else: ?>
+							<h3><?php echo team_name($away_team_id, $competition_id); ?></h3>
+							<?php endif; ?>
 
-						<?php if (array_key_exists('Innings', $matchinfo)): ?>
-						<?php if ($away_team_id == $batting_team_id): ?>
-							<h4>
-								<?php echo $innings['Total']['@attributes']['runs_scored']; ?>
-								<?php 
-								if ($innings['Total']['@attributes']['wickets'] < 10) {
-									echo "/ " . $innings['Total']['@attributes']['wickets'];
-								} else {
-									echo "All Out";
-								}
-								?>
-							</h4>
-						<?php else: ?>
-							<h4>YET TO BAT</h4>
-						<?php endif; ?>
-						<?php endif; ?>
+							<?php if (array_key_exists('Innings', $matchinfo)): ?>
+							<?php if ($away_team_id == $batting_team_id): ?>
+								<h4>
+									<?php echo $innings['Total']['@attributes']['runs_scored']; ?>
+									<?php 
+									if ($innings['Total']['@attributes']['wickets'] < 10) {
+										echo "/ " . $innings['Total']['@attributes']['wickets'];
+									} else {
+										echo "All Out";
+									}
+									?>
+								</h4>
+							<?php else: ?>
+								<h4>YET TO BAT</h4>
+							<?php endif; ?>
+							<?php endif; ?>
+						</div>
 					</div>
 				</div>
 				<?php endif; ?>
@@ -311,15 +313,23 @@ get_header();
 
 					<?php
 
-					if(cached_and_valid(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt')){
-						$weather_data = file_get_contents(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt');
-						$weather_obj = json_decode($weather_data);
-					} else {
-						$weather_data = get_data('http://api.openweathermap.org/data/2.5/weather?q='.$venue_city.',GB&APPID=06b89ae566dac5b260f76c168f26e2d8');
-						file_put_contents(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt', $weather_data);
-						$weather_obj = json_decode($weather_data);
-					}
+					// if(cached_and_valid(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt')){
+					// 	$weather_data = file_get_contents(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt');
+					// 	$weather_obj = json_decode($weather_data);
+					// } else {
+					// 	$weather_data = get_data('http://api.openweathermap.org/data/2.5/weather?q='.$venue_city.',GB&APPID=06b89ae566dac5b260f76c168f26e2d8');
+					// 	file_put_contents(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt', $weather_data);
+					// 	$weather_obj = json_decode($weather_data);
+					// }
 
+					$BASE_URL = "http://query.yahooapis.com/v1/public/yql";
+					$yql_query = 'select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text="Worcester, GB")';
+					$yql_query_url = $BASE_URL . "?q=" . urlencode($yql_query) . "&format=json";
+					$session = curl_init($yql_query_url);
+					curl_setopt($session, CURLOPT_RETURNTRANSFER,true);
+					$json = curl_exec($session);
+					$weather_obj =  json_decode($json);
+					
 					?>
 
 					<h3>Match Weather</h3>
@@ -327,11 +337,12 @@ get_header();
 					<div class="weather">
 
 						<div class="icon">
-							<?php echo weather_icon($weather_obj->weather[0]->icon); ?>
+							<?php echo weather_icon($weather_obj->query->results->channel->item->condition->code); ?>
 						</div>
 
 						<div class="temp">
-						<?php echo kelvin_to_celsius($weather_obj->main->temp); ?>&deg;C <?php echo weather_type($weather_obj->weather[0]->main); ?>
+						<?php echo fahrenheit_to_celsius($weather_obj->query->results->channel->item->condition->temp); ?>&deg;C 
+						<?php echo $weather_obj->query->results->channel->item->condition->text; ?>
 						</div>
 					</div>
 

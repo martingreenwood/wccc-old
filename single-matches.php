@@ -313,6 +313,10 @@ get_header();
 
 					<?php
 
+					$BASE_URL = "http://query.yahooapis.com/v1/public/yql";
+					$yql_query = 'select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text="Worcester, GB")';
+					$yql_query_url = $BASE_URL . "?q=" . urlencode($yql_query) . "&format=json";
+
 					// if(cached_and_valid(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt')){
 					// 	$weather_data = file_get_contents(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt');
 					// 	$weather_obj = json_decode($weather_data);
@@ -323,13 +327,14 @@ get_header();
 					// }
 
 
-					$BASE_URL = "http://query.yahooapis.com/v1/public/yql";
-					$yql_query = 'select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text="Worcester, GB")';
-					$yql_query_url = $BASE_URL . "?q=" . urlencode($yql_query) . "&format=json";
-					$session = curl_init($yql_query_url);
-					curl_setopt($session, CURLOPT_RETURNTRANSFER,true);
-					$json = curl_exec($session);
-					$weather_obj =  json_decode($json);
+					if(cached_and_valid(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt')){
+						$weather_data = file_get_contents(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt');
+						$weather_obj = json_decode($weather_data);
+					} else {
+						$weather_data = get_data($yql_query_url);
+						file_put_contents(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt', $weather_data);
+						$weather_obj = json_decode($weather_data);
+					}
 					
 					?>
 

@@ -237,16 +237,21 @@ function makePretty($value)
     return ucwords($value);
 }
 
+
 function wccc_acf_init() {
 	
 	acf_update_setting('google_api_key', 'AIzaSyAT5vS9U3S5QkN-f2cwPN-Am4C1vc7zElE');
 }
-
 add_action('acf/init', 'wccc_acf_init');
 
 
-// remove empty p tags
-remove_filter('the_content', 'wpautop');
+// insert ft image into post
+function insert_featured_image( $content ) {
+	$content = preg_replace( "/<\/p>/", "</p>" . get_the_post_thumbnail($post->ID, 'post-single'), $content, 1 );
+	return $content;
+}
+add_filter( 'the_content', 'insert_featured_image', 20 );
+
 
 /*================================
 =            INCLUDES            =

@@ -7,8 +7,6 @@
  * @package wccc
  */
 
-global $post;
-
 /**
  * Adds custom classes to the array of body classes.
  *
@@ -263,16 +261,4 @@ function weather_type($weathertype) {
 	}
 	
 	return $weather;
-}
-
-
-// add image to first para of single posts
-
-add_filter( 'the_content', 'insert_featured_image', 20 );
-function insert_featured_image( $content ) {
-	if (is_single()) {
-		global $post;
-    	$content = preg_replace( "/<\/p>/", "</p>" . get_the_post_thumbnail($post->ID, 'post-single'), $content, 1 );
-    	return $content;
-    }
 }

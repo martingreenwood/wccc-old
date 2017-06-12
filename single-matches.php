@@ -337,8 +337,9 @@ get_header();
 					
 					?>
 
+				<?php if (file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')): ?>
+				<?php if ($game_status != "Result" && $game_status != "Pre Game"): ?>
 					<h3>Match Weather</h3>
-
 					<div class="weather">
 
 						<div class="icon">
@@ -354,6 +355,8 @@ get_header();
 						<?php //echo weather_type($weather_obj->weather[0]->description); ?>
 						</div>
 					</div>
+				<?php endif; ?>
+				<?php endif; ?>
 
 				</div>
 

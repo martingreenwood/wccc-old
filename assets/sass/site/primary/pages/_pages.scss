@@ -4,9 +4,100 @@
 
 .page {
 
+	#parts {
+		
+		.section {
+			padding: 40px 0;
+
+			&:nth-child(odd) {
+				background-color: #f9f9f9;
+			}
+
+			.column {
+
+				.copy {
+					padding: 0;
+				}
+
+				&.hundred {
+					@include span-columns(1);
+
+					@include media($medium-screen-up) {
+						@include span-columns(8);
+					}
+
+					@include media($large-screen-up) {
+						@include span-columns(12);
+					}
+					margin-right: 0;
+					margin-bottom: 20px;
+					text-align: center;
+
+					&:last-of-type {
+						margin-bottom: 0;
+					}
+
+					p {
+						padding: 0 40px;
+
+						&:last-of-type {
+							margin-bottom: 0;
+						}
+					}
+				}
+
+				&.seventyfive {
+					@include span-columns(1);
+
+					@include media($medium-screen-up) {
+						@include span-columns(9);
+					}
+
+					@include media($large-screen-up) {
+						@include span-columns(9);
+					}
+				}
+
+				&.fifty {
+					@include span-columns(1);
+
+					@include media($medium-screen-up) {
+						@include span-columns(4);
+					}
+
+					@include media($large-screen-up) {
+						@include span-columns(6);
+					}
+				}
+
+				&.twentyfive {
+					@include span-columns(1);
+
+					@include media($medium-screen-up) {
+						@include span-columns(2);
+					}
+
+					@include media($large-screen-up) {
+						@include span-columns(3);
+					}
+				}
+
+				img {
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+	}
+
 	#jumbrotron {
-		height: 420px;
-		max-height: 420px;
+		height: 250px;
+		max-height: 250px;
+
+		@include media($medium-screen-up) {
+			height: 420px;
+			max-height: 420px;			
+		}
 
 		h1 {
 			color: white;
@@ -24,6 +115,11 @@
 
 		.news {
 			bottom: 0;
+			background-size: cover;
+
+			@include media($medium-screen-up) {
+				background-size: initial;
+			}
 
 			.span6 {
 				position: static;
@@ -31,7 +127,13 @@
 				h1 {
 					margin: 0;
 					position: absolute;
-					top: 50%;
+					top: auto;
+					bottom: 20px;
+
+					@include media($medium-screen-up) {
+						top: 50%;
+						bottom: auto;
+					}
 				}
 
 				h3 {
@@ -287,28 +389,46 @@
 }
 
 /*--------------------------------------------------------------
-## Squad
+## Squadies
 --------------------------------------------------------------*/
 
-.squad {
+.squadies {
 	position: relative;
-	float: left;
+	// float: left;
 	width: 100%;
 
 	.person {
 		position: relative;
 		float: left;
-		width: 23.78%;
-		margin-right: 20px;
-		margin-bottom: 20px;
+		width: 100%;
+		margin-bottom: 10px;
 		overflow: hidden;
 
-		&:nth-child(4n) {
+		&:nth-child(2n) {
 			margin-right: 0;
+		}
+
+
+		@include media($medium-screen-up) {
+			width: 23.78%;
+			margin-right: 20px;
+			margin-bottom: 20px;
+		}
+
+		@include media($medium-screen-up) {
+	
+			&:nth-child(2n) {
+				margin-right: 20px;
+			}
+
+			&:nth-child(4n) {
+				margin-right: 0;
+			}
 		}
 
 		img {
 			display: block;
+			width: 100%;
 		}
 
 		h2 {
@@ -390,4 +510,282 @@
 		}
 	}
 
+}
+
+/*--------------------------------------------------------------
+## Template No Sidebar
+--------------------------------------------------------------*/
+
+.page-template-no-sidebar,
+.roll-of-honour,
+.membership,
+.squad,
+.visitor-info,
+.official-sponsors-partners,
+{
+
+	#main {
+
+		center {
+			padding: 0 100px;
+			margin-bottom: 50px;
+			
+			p {
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+			
+			h1 {
+				font-size: 30px;
+				text-transform: uppercase;
+				color: black;
+				margin: 0 0 20px 0;
+			}
+		}
+
+		.quick-links {
+
+			ul {
+				list-style: none;
+				margin: 20px 0;
+				border-top: 2px solid $brand-primary;
+				padding: 20px 0;
+
+				li {
+					display: inline-block;
+					margin-bottom: 5px;
+
+					a {
+						background-color: $brand-primary;
+						color: white;
+						padding: 5px 10px;
+						display: block;
+						font-weight: 600;
+					}
+				} 
+			}
+		}
+
+		.downloads {
+			text-align: center;
+			margin: 0 0 40px;
+			border-top: 2px solid #ccc;
+			border-bottom: 2px solid #ccc;
+			padding: 40px 0;
+
+			a {
+				display: inline-block;
+				padding: 5px 10px;
+				color: white;
+				background-color: $brand-primary;
+				margin: 0 4px;
+			}
+		}
+
+		.memberships {
+			text-align: center;
+
+			.package {
+				display: inline-block;
+				width: 35%;
+				text-align: left;
+				vertical-align: top;
+				margin-bottom: 20px;
+				background: #f9f9f9;
+				margin: 0 1% 30px;
+				position: relative;
+
+				img {
+					display: block;
+				}
+
+				.links {
+
+					a {
+						float: left;
+						width: 50%;
+						text-align: center;
+						padding: 5px 10px;
+						background: $brand-primary-dark;
+						color: white;
+						font-weight: 800;
+						text-transform: uppercase;
+
+						&.more {
+							background: #ccc;
+							color: #333;
+						}
+					}
+				}
+
+				.copy {
+
+					h3 {
+						position: absolute;
+						top: 0;
+						background: $brand-primary-dark;
+						padding: 5px 10px;
+						color: white;
+						text-transform: capitalize;
+						left: 20px;
+					}
+
+					h4 {
+						position: absolute;
+						top: 0;
+						right: 30px;
+						background: $brand-primary;
+						padding: 5px 10px;
+						color: white;
+					}
+
+					ul {
+						list-style: none;
+						margin: 0;
+						height: 261px;
+						overflow: hidden;
+
+						&.reveal {
+							overflow: auto;
+							height: auto;
+						}
+
+						li {
+							position: relative;
+							padding: 0 0 0 30px;
+							margin-bottom: 10px;
+
+							i {
+								color: $brand-primary-dark;
+								position: absolute;
+								left: 0;
+								top: 5px;
+							}
+
+							&:last-of-type {
+								margin-bottom: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+## SPONSORS PAGE
+--------------------------------------------------------------*/
+
+.official-sponsors-partners {
+
+	#spnsrs {
+		background: #f9f9f9;
+		padding: 40px 0;
+
+		.row {
+			margin-bottom: 20px;
+		}
+
+		header {
+
+			h3 {
+				padding: 0;
+				text-transform: uppercase;
+			}
+		}
+
+		.sponsors {
+			position: relative;
+
+			.wrap {
+				float: left;
+			}
+
+			.sponsor {
+				float: left;
+				
+				img {
+					display:block;
+					filter: grayscale(100%);
+					height: auto;
+					width: auto;
+				}
+			}
+
+			&.official {;
+
+				.sponsor {
+					width: 100%;
+
+					.image {
+						float: left;
+						width: 30%;
+					}
+
+					.copy {
+						float: left;
+						width: 70%;
+						text-align: left;
+						padding: 0 0 0 20px;
+					}
+				}
+			}
+
+			&.main {
+
+				.sponsor {
+					width: 49%;
+					margin-right: 2%;
+					margin-bottom: 20px;
+					box-sizing: border-box;
+
+					&:last-of-type {
+						margin-right: 0;
+					}
+
+					.image {
+						float: left;
+						width: 30%;
+					}
+
+					.copy {
+						float: left;
+						width: 70%;
+						text-align: left;
+						padding: 0 0 0 20px;
+					}
+				}
+			}
+
+			&.club {
+				
+				.sponsor {
+					width: 32%;
+					margin-right: 2%;
+					margin-bottom: 20px;
+					box-sizing: border-box;
+
+					&:last-of-type {
+						margin-right: 0;
+					}
+
+					.image {
+						float: left;
+						width: 100%;
+						margin-bottom: 20px;
+					}
+
+					.copy {
+						float: left;
+						width: 100%;
+						text-align: left;
+						padding: 0;
+					}
+				}
+
+			}
+		}
+	}
 }

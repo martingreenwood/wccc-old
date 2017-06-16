@@ -5,17 +5,28 @@
 .home {
 
 	#jumbrotron {
-		height: 670px;
-		max-height: 670px;
-		min-height: 670px;
+		height: 750px;
+		max-height: 750px;
+		min-height: 750px;
+
+		@include media($medium-screen-up) {
+			height: 690px;
+			max-height: 690px;
+			min-height: 690px;
+		}
 	}
 
 	#fixtures {
-		background: linear-gradient(90deg, $brand-primary 50%, $brand-primary-dark 50%);
+		background: linear-gradient(180deg, $brand-primary 50%, $brand-primary-dark 50%);
+		
 		padding: 50px 0;
 
+		@include media($medium-screen-up) {
+			background: linear-gradient(90deg, $brand-primary 50%, $brand-primary-dark 50%);
+		}
+
 		.fixture {
-			padding-right: 20px;
+			//padding-right: 20px;
 
 			.Opta {
 				.Opta-Flex {
@@ -31,14 +42,24 @@
 		}
 
 		.result, .fixture {
+			float: left;
+			width: 100%;
+
+			@include media($medium-screen-up) {
+				width: 50%;
+			}
 
 			h2 {
-				font-size: 47px;
+				font-size: 32px;
 				text-transform: uppercase;
 				line-height: 1;
 				margin-bottom: 30px;
 				color: white;
 				font-weight: 300;
+
+				@include media($medium-screen-up) {
+					font-size: 47px;
+				}
 			}
 
 			a {
@@ -59,10 +80,15 @@
 					color: white;
 					font-weight: 900;
 					font-family: $heading-font-family;
-					font-size: 19px;
+					font-size: 12px;
 					position: absolute;
-					top: -10px;
+					top: -6px;
 					padding: 0 10px 0 0;
+
+					@include media($medium-screen-up) {
+						font-size: 19px;
+						top: -10px;
+					}
 
 					span {
 						float: left;
@@ -91,11 +117,18 @@
 					text-transform: uppercase;
 					font-weight: 900;
 					font-family: $heading-font-family;
-					font-size: 19px;
+					font-size: 12px;
 					margin: 0;
 					line-height: 1;
-					margin-top: 20px;
+					margin-top: 0;
+					margin-bottom: 5px;
 					font-style: italic;
+
+					@include media($medium-screen-up) {
+						font-size: 19px;
+						margin-top: 20px;
+						margin-bottom: 0;
+					}
 				}
 
 				.match {
@@ -127,6 +160,12 @@
 		}
 
 		.result {
+			padding-bottom: 20px;
+
+			@include media($medium-screen-up) {
+				padding-right: 20px;
+				padding-bottom: 0;
+			}
 
 			.match-info {
 
@@ -137,7 +176,12 @@
 		}
 
 		.fixture {
-			padding-left: 20px;
+			padding-top: 20px;
+
+			@include media($medium-screen-up) {
+				padding-left: 20px;
+				padding-top: 0;
+			}
 
 			.match-info {
 

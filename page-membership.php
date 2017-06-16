@@ -1,6 +1,13 @@
 <?php
 /**
- * The template for displaying the squad page
+ * The template for displaying all pages
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site may use a
+ * different template.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package wccc
  */
@@ -39,11 +46,6 @@ get_header(); ?>
 		</div>
 	</section>
 
-	<div id="topnavbar" class="pagenav">
-		<div class="container">
-		<?php get_sidebar('top'); ?>
-		</div>
-	</div>
 
 	<div id="primary" class="content-area container">
 		<main id="main" class="site-main span12" role="main">
@@ -58,61 +60,59 @@ get_header(); ?>
 			endwhile; // End of the loop.
 			?>
 			</center>
-			
-			<div class="squadies">
-				
-				<?php
-				$prev = null;
+
+			<?php if( have_rows('downloads') ): ?>
+			<div class="downloads">
+				<h3>DOWNLOADS</h3>
+				<?php while ( have_rows('downloads') ) : the_row(); $file = get_sub_field( 'files' ); ?>
+				<a href="<?php echo $file['url']; ?>"><?php echo $file['title']; ?></a>
+				<?php endwhile; ?>
+			</div>
+			<?php endif; ?>
+
+
+			<div class="memberships">
+				<?php 
 				$args = array( 
-					'post_type' 		=> 'players',
-					'posts_per_page' 	=> -1,
+					'post_type' => 'memberships',
+					'posts_per_page' => -1,
+					'order'   => 'ASC',
 				);
-				$match_query = new WP_Query( $args );
-
-				if ( $match_query->have_posts() ) : 
-					while ( $match_query->have_posts() ): $match_query->the_post();
-					$filter = get_terms( 'filter', $args );
-					?>
-					<div class="person" data-filter="<?php echo $filter->slug; ?>">
-						<?php the_post_thumbnail( 'poster' ); ?>
-						<h2><?php the_title(); ?></h2>
-
-						<div class="info">
-							<h3><?php the_title(); ?></h3>
-							<h4>Stats</h4>
-							<ul>
-								<li>
-									<span>Role</span>
-									<?php echo str_replace("-", " ", get_field( 'role' )); ?>
-								</li>
-								<li>
-									<span>Bats</span>
-									<?php the_field( 'bats' ); ?>
-								</li>
-								<?php if (get_field( 'bowls' )): ?>
-								<li>
-									<span>Bowls</span>
-									<?php echo implode(', ', get_field( 'bowls' )); ?>
-								</li>
-								<?php endif; ?>
-								<li>
-									<span>Shirt No.</span>
-									<?php the_field( 'shirt_number' );?>
-								</li>
-							</ul>
-							<a href="<?php the_permalink(); ?>">Read More</a>
-						</div>
-					</div>
-					<?php 
-					endwhile; 
-					wp_reset_postdata(); 
-				endif; 
+				$query = new WP_Query( $args );
+				if ( $query->have_posts() ) : while ( $query->have_posts() ):
+				$query->the_post();
 				?>
-				
+				<div class="package">
+					<?php the_post_thumbnail( ); ?>
+					<div class="copy">
+						<h3><?php the_title( ); ?></h3>
+						<h4><?php the_field('price'); ?></h4>
+						<ul>
+						<?php
+						if( have_rows('benefits') ):
+						    while ( have_rows('benefits') ) : the_row();
+							?>
+							<li>
+					        	<i class="fa fa-check" aria-hidden="true"></i>
+					        	<?php the_sub_field('benefit'); ?>
+							</li>
+							<?php
+						    endwhile;
+						endif;
+						?>
+						</ul>
+					</div>
+					<div class="links">
+						<a href="#" class="more">Read More</a>
+						<a target="_blank" href="<?php the_field( 'purchase_link' ); ?>">Buy Membership</a>
+					</div>
+				</div>
+				<?php endwhile; wp_reset_postdata(); endif; ?>
 			</div>
 
 		</main><!-- #main -->
 
+		<!-- <?php get_sidebar('pages'); ?> -->
 	</div><!-- #primary -->
 
 	<?php if( have_rows('sections') ): ?>

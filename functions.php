@@ -58,7 +58,6 @@ function wccc_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Primary', 'wccc' ),
-
 		'menu-2' => esc_html__( 'Footer Quick Links', 'wccc' ),
 		'menu-3' => esc_html__( 'Footer Tickets', 'wccc' ),
 		'menu-4' => esc_html__( 'Footer Commercial', 'wccc' ),
@@ -131,6 +130,16 @@ function wccc_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Topbar [No Sidebar]', 'wccc' ),
+		'id'            => 'sidebar-4',
+		'description'   => esc_html__( 'Add widgets here.', 'wccc' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'wccc_widgets_init' );
 
@@ -149,6 +158,7 @@ function wccc_scripts() {
 	wp_enqueue_script( 'wccc-mod', get_template_directory_uri() . '/assets/js/modernizr.js', '', '', true );
 	wp_enqueue_script( 'wccc-acc', get_template_directory_uri() . '/assets/js/jquery.accordion.js', '', '', true );
 	wp_enqueue_script( 'wccc-nav', get_template_directory_uri() . '/assets/js/navigation.js', '', '', true );
+	wp_enqueue_script( 'wccc-grid', get_template_directory_uri() . '/assets/js/grid.js', '', '', true );
 	wp_enqueue_script( 'wccc-map', get_template_directory_uri() . '/assets/js/map.js', '', '', true );
 	if (is_front_page()) {
 		wp_enqueue_script( 'wccc-ctd', get_template_directory_uri() . '/assets/js/countdown.js' );
@@ -247,10 +257,12 @@ add_action('acf/init', 'wccc_acf_init');
 
 // insert ft image into post
 function insert_featured_image( $content ) {
-	$content = preg_replace( "/<\/p>/", "</p>" . get_the_post_thumbnail($post->ID, 'post-single'), $content, 1 );
-	return $content;
+	if (is_single('post')) {
+		$content = preg_replace( "/<\/p>/", "</p>" . get_the_post_thumbnail($post->ID, 'post-single'), $content, 1 );
+		return $content;
+	}
 }
-add_filter( 'the_content', 'insert_featured_image', 20 );
+//add_filter( 'the_content', 'insert_featured_image', 20 );
 
 
 /*================================

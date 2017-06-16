@@ -7,7 +7,7 @@
  * @package wccc
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( 'sidebar-3' ) ) {
 	return;
 }
 ?>

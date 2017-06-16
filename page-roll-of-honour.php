@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the squad page
+ * The template for displaying the hours of play page
  *
  * @package wccc
  */
@@ -57,63 +57,67 @@ get_header(); ?>
 
 			endwhile; // End of the loop.
 			?>
-			</center>
-			
-			<div class="squadies">
-				
+
+			<div class="quick-links">
+				<ul>
 				<?php
-				$prev = null;
-				$args = array( 
-					'post_type' 		=> 'players',
-					'posts_per_page' 	=> -1,
-				);
-				$match_query = new WP_Query( $args );
-
-				if ( $match_query->have_posts() ) : 
-					while ( $match_query->have_posts() ): $match_query->the_post();
-					$filter = get_terms( 'filter', $args );
+				if( have_rows('roll_of_honours') ):
+					while ( have_rows('roll_of_honours') ) : the_row();
+					$section_title =  get_sub_field('title');
 					?>
-					<div class="person" data-filter="<?php echo $filter->slug; ?>">
-						<?php the_post_thumbnail( 'poster' ); ?>
-						<h2><?php the_title(); ?></h2>
-
-						<div class="info">
-							<h3><?php the_title(); ?></h3>
-							<h4>Stats</h4>
-							<ul>
-								<li>
-									<span>Role</span>
-									<?php echo str_replace("-", " ", get_field( 'role' )); ?>
-								</li>
-								<li>
-									<span>Bats</span>
-									<?php the_field( 'bats' ); ?>
-								</li>
-								<?php if (get_field( 'bowls' )): ?>
-								<li>
-									<span>Bowls</span>
-									<?php echo implode(', ', get_field( 'bowls' )); ?>
-								</li>
-								<?php endif; ?>
-								<li>
-									<span>Shirt No.</span>
-									<?php the_field( 'shirt_number' );?>
-								</li>
-							</ul>
-							<a href="<?php the_permalink(); ?>">Read More</a>
-						</div>
-					</div>
-					<?php 
-					endwhile; 
-					wp_reset_postdata(); 
-				endif; 
+					<li><a href="#<?php echo str_replace(" ","",strtolower($section_title)); ?>"><?php the_sub_field('title'); ?></a></li>
+					<?php
+					endwhile;
+				endif;
 				?>
-				
+				</ul>
 			</div>
+
+			</center>
+
+			<section id="cd-timeline" class="cd-container">
+
+				<?php
+				if( have_rows('roll_of_honours') ):
+				    while ( have_rows('roll_of_honours') ) : the_row();
+					$section_title =  get_sub_field('title');
+					?>
+				    
+				    <h1 id="<?php echo str_replace(" ","",strtolower($section_title)); ?>"><?php the_sub_field('title'); ?></h1>
+					<?php
+					if( have_rows('honours') ):
+					    while ( have_rows('honours') ) : the_row();
+						?>
+						<div class="cd-timeline-block cssanimations">
+							<div class="cd-timeline-img cd-picture is-hidden">
+								<img width="50px" src="<?php echo get_stylesheet_directory_uri() . "/assets/images/1497449591_calendar-80px.svg"; ?>">
+							</div>
+					 
+							<div class="cd-timeline-content is-hidden">
+								<h2><?php the_sub_field('name'); ?></h2>
+								<span class="cd-date"><?php the_sub_field('year'); ?></span>
+							</div>
+						</div>
+
+						<tr>
+				        	<td class="title"></td>
+				        	<td class="info"></td>
+						</tr>
+						<?php
+					    endwhile;
+					endif;
+
+				    endwhile;
+				endif;
+				?>
+
+			</section>
 
 		</main><!-- #main -->
 
+		<?php //get_sidebar('pages'); ?>
 	</div><!-- #primary -->
+
 
 	<?php if( have_rows('sections') ): ?>
 	<section id="parts">

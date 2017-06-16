@@ -137,6 +137,38 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"\/acf-json\/group_593fd0f25ef26.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/acf-json\/group_593fd0f25ef26-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/acf-json\/group_593ff05ea3007.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/acf-json\/group_593ff05ea3007-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/acf-json\/group_594001ca7ad0a.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/acf-json\/group_594001ca7ad0a-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/acf-json\/group_59426a43717d6.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/acf-json\/group_59426a43717d6-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"\/archive.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -228,6 +260,26 @@
 		"miP": 0,
 		"oA": 2,
 		"oAP": "\/assets\/images\/002-cricket-helmet.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/images\/1497447453_calendar.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/1497447453_calendar.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/assets\/images\/1497449591_calendar-80px.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/1497449591_calendar-80px.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -692,6 +744,24 @@
 		"oAP": "\/assets\/js\/customizer-min.js",
 		"oF": 1,
 		"sC": 0,
+		"tS": 0
+		},
+	"\/assets\/js\/grid-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/grid-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/assets\/js\/grid.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/grid-min.js",
+		"oF": 0,
+		"sC": 1,
 		"tS": 0
 		},
 	"\/assets\/js\/jquery.accordion.js": {
@@ -4203,10 +4273,28 @@
 		"oAP": "\/page-hours-of-play.php",
 		"oF": 0
 		},
+	"\/page-membership.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-membership.php",
+		"oF": 0
+		},
+	"\/page-official-sponsors-partners.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-official-sponsors-partners.php",
+		"oF": 0
+		},
 	"\/page-results.php": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page-results.php",
+		"oF": 0
+		},
+	"\/page-roll-of-honour.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-roll-of-honour.php",
 		"oF": 0
 		},
 	"\/page-squad.php": {
@@ -4261,6 +4349,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/partials\/sponsor-boxes.php",
+		"oF": 0
+		},
+	"\/partials\/sponsor-boxes.php.bck": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/partials\/sponsor-boxes.php.bck",
 		"oF": 0
 		},
 	"\/README.md": {
@@ -4326,6 +4420,12 @@
 		"oAP": "\/sidebar-pages.php",
 		"oF": 0
 		},
+	"\/sidebar-top.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/sidebar-top.php",
+		"oF": 0
+		},
 	"\/sidebar.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -4336,6 +4436,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/single-matches.php",
+		"oF": 0
+		},
+	"\/single-players.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/single-players.php",
 		"oF": 0
 		},
 	"\/single.php": {
@@ -4388,6 +4494,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/template-parts\/content.php",
+		"oF": 0
+		},
+	"\/templates\/no-sidebar.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/no-sidebar.php",
 		"oF": 0
 		}
 	},

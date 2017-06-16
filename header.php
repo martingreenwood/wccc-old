@@ -20,7 +20,8 @@
 </head>
 <?php $enable_t20_mode = null; if (get_field( 'enable_t20_mode', 'option' )): $enable_t20_mode = 't20'; endif; ?>
 <body <?php body_class($enable_t20_mode); ?>>
-<div id="page" class="site">
+
+<div id="page" class="site <?php echo $pagename; ?>">
 
 	<div id="loader">
 		<div id="loading">
@@ -78,7 +79,7 @@
 								</li>
 
 								<li>
-									<a id="members" data-tab="members" href="<?php echo home_url('memberships'); ?>">Memberships</a>
+									<a id="members" data-tab="members" href="<?php echo home_url('membership'); ?>">Memberships</a>
 								</li>
 
 								<li>

@@ -22,10 +22,10 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_590b3fcfa7984",
-            "label": "Files",
-            "name": "files",
-            "type": "file",
+            "key": "field_5941225724eea",
+            "label": "Downloads",
+            "name": "downloads",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
@@ -42,11 +42,32 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": ""
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Download",
+            "sub_fields": [
+                {
+                    "key": "field_590b3fcfa7984",
+                    "label": "Files",
+                    "name": "files",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -66,5 +87,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1493909486
+    "modified": 1497440922
 }

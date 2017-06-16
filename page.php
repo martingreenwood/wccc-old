@@ -61,7 +61,53 @@ get_header(); ?>
 		</main><!-- #main -->
 
 		<?php get_sidebar('pages'); ?>
-	</div><!-- #primary -->
+	</div>
+
+	<?php if( have_rows('sections') ): ?>
+	<section id="parts">
+
+	    <?php while ( have_rows('sections') ) : the_row(); ?>
+		<div class="section">
+			<div class="container">
+				<div class="row">
+				
+				    <?php while ( have_rows('column') ) : the_row(); ?>
+					<div class="column <?php the_sub_field( 'column_with' ); ?>">
+
+					<?php
+					if( have_rows('column_content') ):
+					    while ( have_rows('column_content') ) : the_row();
+
+					        if( get_row_layout() == 'content' ):
+
+					        	the_sub_field('content');
+
+					        elseif( get_row_layout() == 'image' ): 
+
+					        	$image = get_sub_field('image');
+					        	echo "<img src='".$image["url"]."'>";
+
+
+							elseif( get_row_layout() == 'video' ): 
+
+					        	the_sub_field('video');
+
+					        endif;
+
+					    endwhile;
+					endif;
+					?>
+
+					</div>
+					<?php endwhile; ?>
+					
+				</div>
+			</div>
+		</div>
+		<?php endwhile; ?>
+
+	</section>
+	<?php endif; ?>
 
 <?php
 get_footer();

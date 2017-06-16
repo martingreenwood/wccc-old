@@ -4,7 +4,11 @@
 
 .container {
 	@include outer-container();
-	padding: 0 40px;
+	padding: 0 20px;
+
+	@include media($medium-screen-up) {
+		padding: 0 40px;
+	}
 }
 
 .row {

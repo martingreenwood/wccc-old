@@ -14,6 +14,11 @@
 
 	&.toggled {
 		display: block;
+		height: 100vh;
+
+		@include media($medium-screen-up) {
+			height: auto;
+		}
 	}
 
 	ul {
@@ -35,6 +40,11 @@
 			float: left;
 			width: 100%;
 			margin-bottom: 20px;
+			margin-top: 40px;
+
+			@include media ($medium-screen-up) {
+				margin-top: 0;
+			}
 
 			li {
 
@@ -48,8 +58,12 @@
 					background: #cf9c23;
 					margin: 0;
 					padding: 0 20px;
-					border-left: 2px solid white;
-					border-right: 2px solid white;
+					border-bottom: 0;
+
+					@include media($medium-screen-up) {
+						border-left: 2px solid white;
+						border-right: 2px solid white;
+					}
 				}
 			}
 		}
@@ -62,12 +76,19 @@
 		text-transform: uppercase;
 		font-size: 14px;
 		font-weight: 500;
+
+		@include media($medium-screen-down) {
+			width: 100%;
+			text-align: center;
+			border-bottom: 2px solid white;
+		}
 	
 		&:hover > a,
 		&.focus > a {
 			color: $brand-primary;
 		}
 	}
+	
 	a {
 		display: block;
 		text-decoration: none;
@@ -139,6 +160,11 @@
 }
 
 .menu-childs {
+	display: none;
+
+	@include media($medium-screen-up) {
+		display: block;
+	}
 
 	.child {
 

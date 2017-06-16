@@ -56,8 +56,13 @@
 
 		.branding {
 			float: left;
-			width: 415px;
-			height: 92px;
+			width: 100%;
+			height: auto;
+
+			@include media($medium-screen-up) {
+				width: 415px;
+				height: 92px;
+			}
 
 			img {
 				display: block;

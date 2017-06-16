@@ -59,7 +59,7 @@ $last_match = end($past_matches);
 
 		<div class="container">
 
-			<div class="span6 result">
+			<div class="result">
 				<h2>RESULTS</h2>
 				<div class="match-info">
 					<p class="date-time">
@@ -93,7 +93,7 @@ $last_match = end($past_matches);
 				</div>
 				<a href="<?php echo home_url('cricket/fixtures-results/results'); ?>">SEE ALL RESULTS</a>
 			</div>
-			<div class="span6 fixture">
+			<div class="fixture">
 				<?php 
 					$next_match_date = $next_match['@attributes']['game_date_time'];
 					$match_date_time = strtotime($next_match_date) + 60*60;

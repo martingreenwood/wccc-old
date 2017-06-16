@@ -104,12 +104,23 @@ $slick-opacity-not-active: 0.25 !default;
 
 .slick-prev {
     background-image: url(assets/images/slide-prev.svg);
-    left: -45px;
+    display: none;
+
+    @include media($medium-screen-up) {
+        display: block;
+        left: -45px;
+    }
 }
 
 .slick-next {
     background-image: url(assets/images/slide-next.svg);
-    right: -45px;
+    right: -5px;
+    display: none;
+
+    @include media($medium-screen-up) {
+        right: -45px;
+        display: block;
+    }
 }
 
 .slick-prev, .slick-next {

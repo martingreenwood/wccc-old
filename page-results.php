@@ -80,6 +80,12 @@ get_header(); ?>
 		</div>
 	</section>
 
+	<div id="topnavbar" class="pagenav">
+		<div class="container">
+		<?php get_sidebar('top'); ?>
+		</div>
+	</div>
+
 	<div id="filter">
 		<div class="container">
 			<div class="row">
@@ -120,7 +126,6 @@ get_header(); ?>
 		</div>
 	</div>
 
-
 	<div id="primary" class="content-area container">
 		<main id="main" class="site-main span12" role="main">
 
@@ -136,8 +141,8 @@ get_header(); ?>
 
 				<div class="tabs">
 					<ul class="tab-links">
-						<li><a href="<?php echo home_url( 'cricket/fixtures-results' ); ?>">Fixtures</a></li>
-						<li class="active"><a href="<?php echo home_url( 'cricket/fixtures-results/results' ); ?>">Results</a></li>
+						<li><a href="<?php echo home_url( 'cricket/fixtures' ); ?>">Fixtures</a></li>
+						<li class="active"><a href="<?php echo home_url( 'cricket/results' ); ?>">Results</a></li>
 					</ul>
 
 					<div class="tab-content">

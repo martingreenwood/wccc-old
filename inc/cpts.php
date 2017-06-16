@@ -21,6 +21,7 @@ $cpts = array(
 	array('wcccagm','WCCC AGM Report','Minutes & Reports','dashicons-analytics',array('title')),
 	array('matches','Matches','Matches','dashicons-microphone',array('title','editor','thumbnail')),
 	array('fixtures','Fixture','Fixtures','dashicons-forms',array('title')),
+	array('memberships','Membership','Memberships','dashicons-nametag',array('title','editor','thumbnail')),
 );
 
 

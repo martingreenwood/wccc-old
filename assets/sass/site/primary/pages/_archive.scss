@@ -45,12 +45,16 @@
 		article {
 			position: relative;
 			float: left;
-			width: 23.78%;
-			margin-right: 20px;
+			width: 100%;
 			margin-bottom: 20px;
 
-			&:nth-child(4n) {
-				margin-right: 0;
+			@include media($medium-screen-up) {
+				width: 23.78%;
+				margin-right: 20px;
+
+				&:nth-child(4n) {
+					margin-right: 0;
+				}
 			}
 
 			img {
@@ -66,7 +70,7 @@
 
 				h1 {
 					margin: 0;
-					display: inline;
+					display: inline-block;
 					color: white;
 					text-transform: uppercase;
 					font-weight: 400;

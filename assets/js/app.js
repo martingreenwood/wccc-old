@@ -67,6 +67,17 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 })(jQuery);
 
 
+(function($){
+	$('#primary-menu > li > a').on('hover', function(event) {
+		event.preventDefault();
+		var target = $(this).attr('data-tab');
+		$('.menu-childs .child').removeClass('open');
+		
+		$('.menu-childs #' + target).addClass('open');
+		console.log(target);
+	});
+})(jQuery);
+
 // SCROLL TO #
 
 (function($) {
@@ -341,6 +352,9 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 })(jQuery);
 
 
-(function() {
-	Grid.init();
+(function($) {
+	var $grid = $('.og-grid');
+	if ($grid.length) {
+		Grid.init();
+	}
 })(jQuery);

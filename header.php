@@ -59,7 +59,7 @@
 							<ul class="menu" id="primary-menu">
 								
 								<li>
-									<a id="home" href="<?php echo home_url(); ?>">Home</a>
+									<a id="default" data-tab="default" href="<?php echo home_url(); ?>">Home</a>
 								</li>
 
 								<li>
@@ -106,7 +106,7 @@
 
 							<div class="menu-childs">
 
-								<div id="home" class="child open">
+								<div id="default" class="child open">
 									
 									<div class="fixtures span6">
 										<h2>Tables</h2>
@@ -236,6 +236,57 @@
 								</div><!-- END TAB -->
 
 								<div id="cricket" class="child">
+
+									<div class="span3 menu-sub-menu">
+										<h2>CRIICKET</h2>
+										<div class="clear"></div>
+										<?php
+										$cricketPID = get_id_by_slug('cricket');
+										$children = wp_list_pages( 'title_li=&child_of='.$cricketPID.'&echo=0' );
+										if ( $children) : ?>
+										<ul>
+											<?php echo $children; ?>
+										</ul>
+										<?php endif; ?>
+									</div>
+
+									<div class="span9 players">
+										<h2>The Squad</h2>
+										<div class="clear">
+										<?php
+										$args = array( 
+											'post_type' 		=> 'players',
+											'posts_per_page' 	=> -1,
+											'tax_query'   => [
+												[
+													'taxonomy' => 'filter',
+													'field'    => 'slug',
+													'terms'    => 'senior-squad '
+												]
+											]
+										);
+										$match_query = new WP_Query( $args );
+										$filter = null;
+										if ( $match_query->have_posts() ) : 
+											while ( $match_query->have_posts() ): $match_query->the_post();
+											$filter = get_the_terms( get_the_id(), 'filter');
+											$filter = current($filter);
+											?>
+											<div class="person <?php echo $filter->slug; ?>">
+												<a href="<?php the_permalink(); ?>">
+													<?php the_post_thumbnail( 'thumbnail' ); ?>
+													<h2><?php the_title(); ?></h2>
+													<span class="<?php the_field( 'role' ); ?>"></span>
+												</a>
+											</div>
+											<?php 
+											endwhile; 
+											wp_reset_postdata(); 
+										endif; 
+										?>
+										</div>
+									</div>
+
 								</div><!-- END TAB -->
 
 								<div id="news" class="child">

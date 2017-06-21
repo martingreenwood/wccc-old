@@ -167,6 +167,11 @@
 	}
 
 	.child {
+		display: none;
+
+		&.open {
+			display: block;
+		}
 
 		h2 {
 			color: white;
@@ -270,6 +275,59 @@
 					text-transform: uppercase;
 					background: transparent;
 					border-bottom: 2px solid $brand-primary;
+				}
+			}
+		}
+
+		.players {
+
+			.clear {
+				column-count: 6;
+				-webkit-column-count: 6;
+				-ms-column-count: 6;
+				-moz-column-count: 6;
+			}
+
+			.person {
+				position: relative;
+				margin-bottom: 15px;
+
+				img {
+					display: block;
+				}
+
+				span {
+					bottom: 0;
+					right: 0;
+					position: absolute;
+				}
+
+				h2 {
+					border: 0;
+					font-size: 10px;
+					padding: 0;
+					position: absolute;
+					bottom: 5px;
+					left: 5px;
+					margin: 0;
+				}
+			}
+		}
+
+		.menu-sub-menu {
+
+			ul {
+				width: 100%;
+				
+				li {
+					width: 100%;
+					border-bottom: 2px solid $brand-primary;
+
+					a {
+						width: 100%;
+						line-height: 3;
+						font-weight: 900;
+					}
 				}
 			}
 		}

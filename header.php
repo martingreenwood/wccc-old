@@ -79,7 +79,7 @@
 								</li>
 
 								<li>
-									<a id="members" data-tab="members" href="<?php echo home_url('membership'); ?>">Memberships</a>
+									<a id="members" data-tab="memberships" href="<?php echo home_url('membership'); ?>">Memberships</a>
 								</li>
 
 								<li>
@@ -212,6 +212,7 @@
 										while ( $loop->have_posts() ) : $loop->the_post(); 
 											?>
 											<div class="match-info">
+
 												<p class="date-time">
 													<?php echo the_date( ); ?>
 												</p>
@@ -290,6 +291,47 @@
 								</div><!-- END TAB -->
 
 								<div id="news" class="child">
+								
+							    	<h2>Latest News</h2>
+							    	<div class="row">
+                                    <?php 
+                                    $i = 0;
+                                    $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 4 ) );
+                                    while ( $loop->have_posts() ) : $loop->the_post(); 
+                                        ?>
+                                        <div class="match-info span3">
+
+                                        	<?php 
+											if (has_post_thumbnail()) 
+											{
+												the_post_thumbnail( 'poster' ); 
+											} 
+											else 
+											{
+												echo "<img src='".get_stylesheet_directory_uri()."/assets/images/poster-holder.jpg'>";
+											}
+											?>
+
+                                            <p class="date-time">
+                                                <?php echo the_date( ); ?>
+                                            </p>
+
+                                            <p class="match">
+                                                <?php the_title( ); ?>
+                                            </p>
+
+                                            <p class="links">
+                                                <a class="info" href="<?php echo the_permalink(); ?>">Read More</a>
+                                            </p>
+
+                                        </div>
+
+                                        <?php 
+                                    endwhile; 
+                                    wp_reset_query(); 
+                                    ?>
+                                    </div>
+								
 								</div><!-- END TAB -->
 
 								<div id="theclub" class="child">
@@ -299,6 +341,48 @@
 								</div><!-- END TAB -->
 
 								<div id="memberships" class="child">
+
+									<div class="span3 menu-sub-menu">
+										<h2>Downloads</h2>
+										<?php 
+										$downloadspage = get_id_by_slug('downloads');
+										if( have_rows('downloads', $downloadspage) ): ?>
+										<ul>
+										<?php while ( have_rows('downloads', $downloadspage) ) : the_row(); $file = get_sub_field( 'files' ); ?>
+											<li><a href="<?php echo $file['url']; ?>"><?php echo $file['title']; ?></a></li>
+										<?php endwhile; ?>
+										</il>
+										<?php endif; ?>
+									</div>
+
+									<div class="memberships span9">
+										<h2>Memberships</h2>
+										<div class="packages">
+											<?php 
+											$args = array( 
+												'post_type' => 'memberships',
+												'posts_per_page' => 4,
+												'order'   => 'ASC',
+											);
+											$query = new WP_Query( $args );
+											if ( $query->have_posts() ) : while ( $query->have_posts() ):
+											$query->the_post();
+											?>
+											<div class="package">
+												<?php the_post_thumbnail( ); ?>
+												<div class="copy">
+													<h3><?php the_title( ); ?></h3>
+													<h4><?php the_field('price'); ?></h4>
+												</div>
+												<div class="links">
+													<a target="_blank" href="<?php the_field( 'purchase_link' ); ?>">Buy Membership</a>
+												</div>
+											</div>
+											<?php endwhile; wp_reset_postdata(); endif; ?>
+										</div>
+										<a class="viewall" href="<?php echo home_url( '/downloads' ); ?>">View All Memberships</a>
+									</div>
+
 								</div><!-- END TAB -->
 
 								<div id="commercial" class="child">

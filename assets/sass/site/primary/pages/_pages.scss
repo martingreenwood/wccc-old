@@ -789,3 +789,110 @@
 		}
 	}
 }
+
+/*--------------------------------------------------------------
+## CONTACT PAGE
+--------------------------------------------------------------*/
+
+.contact {
+	
+	.gform_wrapper {
+		overflow: inherit;
+		margin: 0;
+		max-width: 100%;
+
+		.gform_body {
+			
+			ul {
+				
+				.gfield {
+					margin-bottom: 20px;
+					width: 49%;
+					float: left;
+					clear: none;
+
+					&:nth-child(2n) {
+						float: right;
+					}
+
+					&:last-of-type {
+						margin-bottom: 0;
+						width: 100%;
+					}
+
+					.gfield_label {
+						margin: 0 0 10px 0;
+						font-weight: 600;
+						display: -moz-inline-stack;
+						display: inline-block;
+						line-height: inherit;
+						clear: both;
+						color: $brand-primary-dark;
+						text-transform: uppercase;
+					}
+
+					.gfield_label+div.ginput_container {
+						margin-top: 0;
+					}
+
+					input.large, select.large {
+						width: 100%;
+					}
+
+					textarea.medium, textarea.lsrge {
+						width: 100%;
+					}
+
+					input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], textarea, select {
+						display: block;
+						margin: 0;
+						box-sizing: border-box;
+						-webkit-appearance: none;
+						border: 1px solid #ddd;
+						box-shadow: none;
+						border-radius: 0;
+						background: white;
+						line-height: 1.6;
+						padding: 5px;
+					}
+				}
+			}
+		}
+
+		.gform_footer {
+			padding: 0;
+			margin: 20px 0 0 0;
+			clear: both;
+			float: right;
+
+			input.button, input[type=image], input[type=submit] {
+				display: inline-block;
+				background: $brand-primary-dark;
+				color: white;
+				text-transform: uppercase;
+				border: 0;
+				padding: 10px 40px;
+			}
+		}
+	}
+
+
+	table {
+
+		thead {
+			background: $brand-primary-dark;
+			color: white;
+
+			th {
+				padding: 5px 10px;
+				font-weight: 900;
+			}
+		}
+
+		tbody {
+			td {
+				padding: 5px 10px;
+			}
+		}
+	}
+}

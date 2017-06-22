@@ -1,10 +1,6 @@
 <?php
 /**
- Template Name: No Sidebar
- *
- * The template for displaying all pages
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * The template for displaying live stream
  *
  * @package wccc
  */
@@ -43,17 +39,10 @@ get_header(); ?>
 		</div>
 	</section>
 
-	<div id="topnavbar" class="pagenav">
-		<div class="container">
-		<?php get_sidebar('top'); ?>
-		</div>
-	</div>
 
 	<div id="primary" class="content-area container">
 		<main id="main" class="site-main span12" role="main">
 
-			<center>
-			<h1><?php the_title(); ?></h1>
 			<?php
 			while ( have_posts() ) : the_post();
 
@@ -61,11 +50,44 @@ get_header(); ?>
 
 			endwhile; // End of the loop.
 			?>
-			</center>
+
+			<?php
+
+			// get iframe HTML
+			$iframe = get_field('stream');
+
+
+			// use preg_match to find iframe src
+			preg_match('/src="(.+?)"/', $iframe, $matches);
+			$src = $matches[1];
+
+
+			// add extra params to iframe src
+			$params = array(
+			    'controls' 		=> 0,
+			    'hd' 			=> 1,
+			    'autohide' 		=> 1,
+			    'autoplay' 		=> 1
+			);
+
+			$new_src = add_query_arg($params, $src);
+
+			$iframe = str_replace($src, $new_src, $iframe);
+
+
+			// add extra attributes to iframe html
+			$attributes = 'frameborder="0"';
+
+			$iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
+			
+			?>
+
+			<div class="embed-container">
+				<?php echo $iframe; ?>
+			</div>
 
 		</main><!-- #main -->
 
-		<?php //get_sidebar('pages'); ?>
 	</div>
 
 	<?php if( have_rows('sections') ): ?>
@@ -78,34 +100,31 @@ get_header(); ?>
 				
 				    <?php while ( have_rows('column') ) : the_row(); ?>
 					<div class="column <?php the_sub_field( 'column_with' ); ?>">
+
 					<?php
 					if( have_rows('column_content') ):
 					    while ( have_rows('column_content') ) : the_row();
 
 					        if( get_row_layout() == 'content' ):
-				        	?>
-					        	<div class="copy">
-					        	<?php the_sub_field('content'); ?>
-					        	</div>
-					        <?php 
+
+					        	the_sub_field('content');
+
 					        elseif( get_row_layout() == 'image' ): 
-				        	?>
-					        	<div class="image">
-					        	<?php $image = get_sub_field('image'); ?>
-					        	<?php echo "<img src='".$image["url"]."'>"; ?>
-					        	</div>
-							<?php 
+
+					        	$image = get_sub_field('image');
+					        	echo "<img src='".$image["url"]."'>";
+
+
 							elseif( get_row_layout() == 'video' ): 
-							?>
-								<div class="video">
-					        	<?php the_sub_field('video'); ?>
-					        	</div>
-							<?php 
+
+					        	the_sub_field('video');
+
 					        endif;
 
 					    endwhile;
 					endif;
 					?>
+
 					</div>
 					<?php endwhile; ?>
 					
@@ -116,18 +135,6 @@ get_header(); ?>
 
 	</section>
 	<?php endif; ?>
-
-	<?php if (is_page( 'contact' )): ?>
-	<?php 
-	$location = get_field('location', 'options');
-	if( !empty($location) ): ?>
-	<section id="location">
-		<div class="map">
-			<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
-		</div>
-	</section>
-	<?php endif; ?>		
-	<?php endif ?>
 
 <?php
 get_footer();

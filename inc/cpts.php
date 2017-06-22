@@ -17,6 +17,7 @@ global $cpts;
 
 $cpts = array(
 	array('sponsors','Sponsor','Sponsors','dashicons-slides',array('title','editor','thumbnail')),
+	array('events','Event','Events','dashicons-tickets',array('title','editor','thumbnail')),
 	array('players','Player','Players','dashicons-groups',array('title','editor','thumbnail')),
 	array('wcccagm','WCCC AGM Report','Minutes & Reports','dashicons-analytics',array('title')),
 	array('matches','Matches','Matches','dashicons-microphone',array('title','editor','thumbnail')),

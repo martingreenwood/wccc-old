@@ -60,6 +60,16 @@
 					padding: 0 20px;
 					border-bottom: 0;
 
+					a {
+						color: white;
+					}
+
+					&:hover {
+						a {
+							color: white;
+						}
+					}
+
 					@include media($medium-screen-up) {
 						border-left: 2px solid white;
 						border-right: 2px solid white;
@@ -327,6 +337,71 @@
 						width: 100%;
 						line-height: 3;
 						font-weight: 900;
+					}
+				}
+			}
+		}
+
+		&#news {
+
+			.match-info {
+
+			}
+		}
+
+		.memberships {
+
+			.viewall {
+				background: green;
+				display: inline-block;
+				float: right;
+				margin-top: 20px;
+				text-transform: uppercase;
+				font-weight: 900;
+				padding: 5px 10px;
+			}
+
+			.packages {
+				column-count: 4;
+				vertical-align: top;
+
+				.package {
+					position: relative;
+
+					.copy {
+						padding: 0;
+						position: absolute;
+						top: 0;
+
+						h3 {
+							margin: 0;
+							color: white;
+							font-size: 14px;
+						}
+
+						h4 {
+							margin: 0;
+							color: white;
+							font-size: 14px;
+							position: absolute;
+							top: 0;
+							right: 0px;
+							background: $brand-primary;
+							padding: 5px;
+						}
+					}
+
+					.links {
+						a {
+							background: green;
+							text-align: center;
+							font-size: 14px;
+							text-transform: uppercase;
+							font-weight: 600;
+							padding: 3px 6px;
+							margin-top: 5px;
+							display: inline-block;
+						}
 					}
 				}
 			}

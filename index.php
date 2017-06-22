@@ -51,15 +51,23 @@ get_header(); ?>
 		</div>
 
 		<div class="row">
-			<main id="main" class="site-main span12" role="main">
+			<main id="main" class="site-main" role="main">
 
+			<div class="row">
 			<?php
+			$i = 1;
 			while ( have_posts() ) : the_post();
 
 				get_template_part( 'template-parts/content', 'box' );
 
-			endwhile; // End of the loop.
+				if ( $i % 4 == 0 ) : ?>
+				</div>
+				<div class="row">
+				<?php endif;
+
+			$i++; endwhile; // End of the loop.
 			?>
+			</div>
 
 			</main>
 		</div>

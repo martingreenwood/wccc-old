@@ -29,7 +29,7 @@
 				position: static;
 
 				h1 {
-					margin: 0 0 40px 0;;
+					margin: 0 0 40px 0;
 				}
 			}
 		}
@@ -44,16 +44,11 @@
 
 		article {
 			position: relative;
-			float: left;
-			width: 100%;
-			margin-bottom: 20px;
+			margin-bottom: 5px;
 
 			@include media($medium-screen-up) {
-				width: 23.78%;
-				margin-right: 20px;
 
 				&:nth-child(4n) {
-					margin-right: 0;
 				}
 			}
 

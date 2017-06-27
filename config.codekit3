@@ -193,6 +193,14 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"\/acf-json\/group_59513464786fc.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/acf-json\/group_59513464786fc-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"\/archive.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -4243,6 +4251,12 @@
 		"oAP": "\/inc\/jetpack.php",
 		"oF": 0
 		},
+	"\/inc\/post-renamer-on-mass.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/post-renamer-on-mass.php",
+		"oF": 0
+		},
 	"\/inc\/template-tags.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -4327,16 +4341,16 @@
 		"oAP": "\/page-roll-of-honour.php",
 		"oF": 0
 		},
-	"\/page-squad.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/page-squad.php",
-		"oF": 0
-		},
 	"\/page-visitor-info.php": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page-visitor-info.php",
+		"oF": 0
+		},
+	"\/page-whats-on.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-whats-on.php",
 		"oF": 0
 		},
 	"\/page.php": {
@@ -4462,6 +4476,12 @@
 		"oAP": "\/sidebar.php",
 		"oF": 0
 		},
+	"\/single-events.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/single-events.php",
+		"oF": 0
+		},
 	"\/single-matches.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -4530,6 +4550,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/templates\/no-sidebar.php",
+		"oF": 0
+		},
+	"\/templates\/players.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/players.php",
 		"oF": 0
 		}
 	},

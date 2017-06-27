@@ -68,7 +68,7 @@
 					display: inline-block;
 					color: white;
 					text-transform: uppercase;
-					font-weight: 400;
+					font-weight: $base-weight;
 					padding: 0 6px;
 
 					background: $brand-primary-dark;
@@ -112,7 +112,7 @@
 					border: 0;
 					padding: 10px;
 					font-size: 17px;
-					font-weight: 600;
+					font-weight: $base-weight;
 
 					a {
 						color: #333;

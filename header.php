@@ -253,8 +253,9 @@
 
 									<div class="span9 players">
 										<h2>The Squad</h2>
-										<div class="clear">
+										<div class="row">
 										<?php
+										$i = 1;
 										$args = array( 
 											'post_type' 		=> 'players',
 											'posts_per_page' 	=> -1,
@@ -276,12 +277,18 @@
 											<div class="person <?php echo $filter->slug; ?>">
 												<a href="<?php the_permalink(); ?>">
 													<?php the_post_thumbnail( 'thumbnail' ); ?>
-													<h2><?php the_title(); ?></h2>
-													<span class="<?php the_field( 'role' ); ?>"></span>
+													<div class="info">
+														<div class="table"><div class="cell middle">
+														<h2><?php the_title(); ?></h2>
+														</div></div>
+													</div>
 												</a>
 											</div>
-											<?php 
-											endwhile; 
+											<?php if ( $i % 6 == 0 ) : ?>
+											</div>
+											<div class="row">
+											<?php endif;
+											$i++; endwhile; 
 											wp_reset_postdata(); 
 										endif; 
 										?>

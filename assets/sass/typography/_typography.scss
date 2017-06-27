@@ -8,7 +8,7 @@ textarea {
 	font-family: $heading-font-family;
 	@include rem(font-size, 15px);
 	line-height: $base-line-height;
-    font-weight: 400;
+    font-weight: $base-weight;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }

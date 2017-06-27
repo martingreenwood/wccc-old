@@ -68,7 +68,7 @@ aside {
 
 			&.current_page_item {
 				a {
-					font-weight: 600;
+					font-weight: $base-weight;
 				}
 			}
 		}
@@ -122,7 +122,7 @@ aside {
 // 				font-size: 16px;
 // 				color: white;
 // 				text-transform: uppercase;
-// 				font-weight: bold;
+// 				font-weight: $base-weight;
 // 				padding: 10px;
 // 				z-index: 93;
 // 				z-index: 9999;

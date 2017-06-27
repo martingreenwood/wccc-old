@@ -66,9 +66,6 @@ $last_match = end($past_matches);
 						<span class="date">
 							<?php echo date("d/m/Y", strtotime($last_match['@attributes']['game_date'])); ?>
 						</span>
-						<span class="time">
-							<?php echo $last_match['@attributes']['time']; ?>
-						</span>
 					</p>
 
 					<p class="comp">

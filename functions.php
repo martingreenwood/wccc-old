@@ -257,12 +257,12 @@ add_action('acf/init', 'wccc_acf_init');
 
 // insert ft image into post
 function insert_featured_image( $content ) {
-	if (is_single('post')) {
+	if (is_singular( 'post' )) {
 		$content = preg_replace( "/<\/p>/", "</p>" . get_the_post_thumbnail($post->ID, 'post-single'), $content, 1 );
 		return $content;
 	}
 }
-//add_filter( 'the_content', 'insert_featured_image', 20 );
+add_filter( 'the_content', 'insert_featured_image', 20 );
 
 
 /*================================
@@ -308,3 +308,4 @@ require get_template_directory() . '/inc/twitteroauth/twitteroauth.php';
  * Load OpenWeatherMapAPI API
  */
 require get_template_directory() . '/inc/cmfcmf/OpenWeatherMap.php';
+

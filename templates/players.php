@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: Players
+ *
  * The template for displaying the squad page
  *
  * @package wccc
@@ -61,11 +63,20 @@ get_header(); ?>
 			
 			<div class="squadies">
 				
+				<div class="row">
 				<?php
+				$i = 1;
 				$prev = null;
 				$args = array( 
 					'post_type' 		=> 'players',
 					'posts_per_page' 	=> -1,
+					'tax_query'   => [
+						[
+							'taxonomy' => 'filter',
+							'field'    => 'term_id',
+							'terms'    => get_field( 'show_team' )
+						]
+					]
 				);
 				$match_query = new WP_Query( $args );
 
@@ -73,7 +84,7 @@ get_header(); ?>
 					while ( $match_query->have_posts() ): $match_query->the_post();
 					$filter = get_terms( 'filter', $args );
 					?>
-					<div class="person" data-filter="<?php echo $filter->slug; ?>">
+					<div class="person span3" data-filter="<?php echo $filter->slug; ?>">
 						<?php the_post_thumbnail( 'poster' ); ?>
 						<h2><?php the_title(); ?></h2>
 
@@ -103,11 +114,17 @@ get_header(); ?>
 							<a href="<?php the_permalink(); ?>">Read More</a>
 						</div>
 					</div>
-					<?php 
-					endwhile; 
+
+					<?php if ( $i % 4 == 0 ) : ?>
+					</div>
+					<div class="row">
+					<?php endif;
+
+					$i++; endwhile; 
 					wp_reset_postdata(); 
 				endif; 
 				?>
+				</div>
 				
 			</div>
 

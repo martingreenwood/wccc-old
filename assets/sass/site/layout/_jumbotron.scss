@@ -29,7 +29,7 @@
 		h1, h2 {
 			font-size: 55px;
 			line-height: 0.875;
-			font-weight: 900;
+			font-weight: $base-weight;
 			color: white;
 
 			span {
@@ -50,7 +50,7 @@
 			color: white;
 			text-transform: uppercase;
 			padding: 8px 32px;
-			font-weight: 600;
+			font-weight: $base-weight;
 			font-size: 14px;
 			float: left;
 		}
@@ -96,7 +96,7 @@
 			.more {
 				position: absolute;
 				font-size: 13px;
-				font-weight: 600;
+				font-weight: $base-weight;
 				bottom: 7px;
 				color: $brand-primary;
 			}

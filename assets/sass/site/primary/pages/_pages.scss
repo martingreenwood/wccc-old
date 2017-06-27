@@ -105,6 +105,7 @@
 			font-size: 38px;
 			line-height: 1.1;
 			margin: 0 0 40px 0;
+			font-weight: $base-weight;
 		}
 
 		h3 {
@@ -183,7 +184,7 @@
 							background-color: $brand-primary-dark;
 							color: white;
 							font-family: $heading-font-family;
-							font-weight: 800;
+							font-weight: $base-weight;
 							width: 30%;
 							border-top: 1px solid $brand-primary-dark;
 							border-bottom: 1px solid white;
@@ -220,7 +221,7 @@
 			line-height: 1;
 			margin: 60px 0 20px 0;
 			text-transform: uppercase;
-			font-weight: 900;
+			font-weight: $base-weight;
 			display: inline-block;
 			padding-right: 100px;
 
@@ -253,7 +254,7 @@
 					border-radius: 0;
 					background: $brand-primary-dark;
 					font-size: 16px;
-					font-weight: 600;
+					font-weight: $base-weight;
 					transition: all linear 0.15s;
 					text-transform: uppercase;
 				}
@@ -283,7 +284,7 @@
 				margin: 0 0 20px 0;
 				text-transform: uppercase;
 				background: transparent;
-				font-weight: 900;
+				font-weight: $base-weight;
 				border: 0;
 				height: auto;
 			}
@@ -355,7 +356,7 @@
 			float: right;
 
 			.status {
-				font-weight: 800;
+				font-weight: $base-weight;
 				color: #333;
 				text-transform: uppercase;
 				line-height: 1;
@@ -367,14 +368,13 @@
 			}
 
 			a {
-				font-weight: 600;
+				font-weight: $base-weight;
 				text-transform: uppercase;
 				font-size: 14px;
 				color: white;
 				float: right;
 				margin-left: 20px;
 				padding: 6px 16px;
-				font-weight: 800;
 			}
 
 			.matchlink {
@@ -399,32 +399,15 @@
 
 	.person {
 		position: relative;
-		float: left;
-		width: 100%;
-		margin-bottom: 10px;
+		margin-bottom: 5px;
 		overflow: hidden;
 
-		&:nth-child(2n) {
-			margin-right: 0;
-		}
-
-
 		@include media($medium-screen-up) {
-			width: 23.78%;
-			margin-right: 20px;
-			margin-bottom: 20px;
 		}
 
-		@include media($medium-screen-up) {
-	
-			&:nth-child(2n) {
-				margin-right: 20px;
-			}
-
-			&:nth-child(4n) {
-				margin-right: 0;
-			}
+		@include media($medium-screen-up) {	
 		}
+
 
 		img {
 			display: block;
@@ -498,7 +481,7 @@
 				color: white;
 				padding: 10px;
 				text-transform: uppercase;
-				font-weight: 700;
+				font-weight: $base-weight;
 				bottom: 0;
 			}
 		}
@@ -519,7 +502,9 @@
 .page-template-no-sidebar,
 .roll-of-honour,
 .membership,
-.squad,
+.senior-squad,
+.coaching-staff,
+.academy-squad,
 .visitor-info,
 .official-sponsors-partners,
 {
@@ -561,7 +546,7 @@
 						color: white;
 						padding: 5px 10px;
 						display: block;
-						font-weight: 600;
+						font-weight: $base-weight;
 					}
 				} 
 			}
@@ -609,7 +594,7 @@
 						padding: 5px 10px;
 						background: $brand-primary-dark;
 						color: white;
-						font-weight: 800;
+						font-weight: $base-weight;
 						text-transform: uppercase;
 
 						&.more {
@@ -822,7 +807,7 @@
 
 					.gfield_label {
 						margin: 0 0 10px 0;
-						font-weight: 600;
+						font-weight: $base-weight;
 						display: -moz-inline-stack;
 						display: inline-block;
 						line-height: inherit;
@@ -885,13 +870,54 @@
 
 			th {
 				padding: 5px 10px;
-				font-weight: 900;
+				font-weight: $base-weight;
 			}
 		}
 
 		tbody {
 			td {
 				padding: 5px 10px;
+			}
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+## WHATS ON
+--------------------------------------------------------------*/
+
+.whats-on {
+
+	#main {
+
+		.row {
+
+			.package {
+				position: relative;
+				margin-bottom: 5px;
+
+				img {
+					display: block;
+				}
+
+				header {
+					position: absolute;
+					width: 100%;
+					bottom: 0;
+					padding: 20px;
+					box-sizing: border-box;
+
+					h3 {
+						margin: 0;
+						display: inline-block;
+						color: white;
+						text-transform: uppercase;
+						font-weight: $base-weight;
+						padding: 0 6px;
+						background: #113220;
+						color: white;
+					}
+				}
 			}
 		}
 	}

@@ -8,6 +8,7 @@ input[type="submit"] {
 	color: $text-color;
 	@include rem(padding, 10px 20px);
 	border-radius: 0;
+	font-weight: $heavy-weight;
 
 	&:hover {
 	}

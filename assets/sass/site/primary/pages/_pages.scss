@@ -105,7 +105,6 @@
 			font-size: 38px;
 			line-height: 1.1;
 			margin: 0 0 40px 0;
-			font-weight: $base-weight;
 		}
 
 		h3 {
@@ -184,7 +183,6 @@
 							background-color: $brand-primary-dark;
 							color: white;
 							font-family: $heading-font-family;
-							font-weight: $base-weight;
 							width: 30%;
 							border-top: 1px solid $brand-primary-dark;
 							border-bottom: 1px solid white;
@@ -221,7 +219,6 @@
 			line-height: 1;
 			margin: 60px 0 20px 0;
 			text-transform: uppercase;
-			font-weight: $base-weight;
 			display: inline-block;
 			padding-right: 100px;
 
@@ -254,7 +251,6 @@
 					border-radius: 0;
 					background: $brand-primary-dark;
 					font-size: 16px;
-					font-weight: $base-weight;
 					transition: all linear 0.15s;
 					text-transform: uppercase;
 				}
@@ -284,7 +280,6 @@
 				margin: 0 0 20px 0;
 				text-transform: uppercase;
 				background: transparent;
-				font-weight: $base-weight;
 				border: 0;
 				height: auto;
 			}
@@ -356,7 +351,6 @@
 			float: right;
 
 			.status {
-				font-weight: $base-weight;
 				color: #333;
 				text-transform: uppercase;
 				line-height: 1;
@@ -368,7 +362,6 @@
 			}
 
 			a {
-				font-weight: $base-weight;
 				text-transform: uppercase;
 				font-size: 14px;
 				color: white;
@@ -481,7 +474,6 @@
 				color: white;
 				padding: 10px;
 				text-transform: uppercase;
-				font-weight: $base-weight;
 				bottom: 0;
 			}
 		}
@@ -546,7 +538,6 @@
 						color: white;
 						padding: 5px 10px;
 						display: block;
-						font-weight: $base-weight;
 					}
 				} 
 			}
@@ -594,7 +585,6 @@
 						padding: 5px 10px;
 						background: $brand-primary-dark;
 						color: white;
-						font-weight: $base-weight;
 						text-transform: uppercase;
 
 						&.more {
@@ -807,7 +797,6 @@
 
 					.gfield_label {
 						margin: 0 0 10px 0;
-						font-weight: $base-weight;
 						display: -moz-inline-stack;
 						display: inline-block;
 						line-height: inherit;
@@ -870,7 +859,7 @@
 
 			th {
 				padding: 5px 10px;
-				font-weight: $base-weight;
+				font-weight: $heavy-weight;
 			}
 		}
 
@@ -912,7 +901,6 @@
 						display: inline-block;
 						color: white;
 						text-transform: uppercase;
-						font-weight: $base-weight;
 						padding: 0 6px;
 						background: #113220;
 						color: white;

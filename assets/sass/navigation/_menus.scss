@@ -50,7 +50,7 @@
 
 				a {
 					padding: 10px 0;
-					font-weight: $base-weight;
+					font-weight: $medium-weight;
 				}
 
 				&:last-of-type {
@@ -85,7 +85,6 @@
 		margin: 0 20px 0 0;
 		text-transform: uppercase;
 		font-size: 14px;
-		font-weight: $base-weight;
 
 		@include media($medium-screen-down) {
 			width: 100%;
@@ -120,7 +119,7 @@
 	font-size: 12px;
 	text-transform: uppercase;
 	padding: 5px 10px;
-	font-weight: 900;
+	font-weight: $super-weight;
 	margin-top: 16px;
 }
 
@@ -192,7 +191,6 @@
 			margin-top: 10px;
 			display: inline-block;
 			padding-right: 100px; 
-			font-weight: $base-weight;
 		}
 
 		.match-info {
@@ -201,10 +199,8 @@
 			p {
 				color: white;
 				margin-bottom: 0;
-				font-weight: $base-weight;
 
 				&.match {
-					font-weight: $base-weight;
 				}
 
 				a {
@@ -359,7 +355,7 @@
 					a {
 						width: 100%;
 						line-height: 3;
-						font-weight: $base-weight;
+						font-weight: $medium-weight;
 					}
 				}
 			}
@@ -380,7 +376,7 @@
 				float: right;
 				margin-top: 20px;
 				text-transform: uppercase;
-				font-weight: $base-weight;
+				font-weight: $heavy-weight;
 				padding: 5px 10px;
 			}
 
@@ -411,7 +407,6 @@
 							right: 0px;
 							background: $brand-primary;
 							padding: 5px;
-							font-weight: $base-weight;
 						}
 					}
 
@@ -421,7 +416,7 @@
 							text-align: center;
 							font-size: 14px;
 							text-transform: uppercase;
-							font-weight: $base-weight;
+							font-weight: $medium-weight;
 							padding: 3px 6px;
 							margin-top: 5px;
 							display: inline-block;

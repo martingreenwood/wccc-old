@@ -11,6 +11,7 @@ html {
 body {
 	background: $background-color; /* Fallback for when there is no custom background color defined. */
 	font-family: $heading-font-family;
+	font-weight: $base-weight;
 }
 
 .blur * {

@@ -1,6 +1,8 @@
 .t20 {
 
-	$base-weight: 900;
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: $super-weight;
+	}
 
 	#no-feed {
 		background-color: $brand-primary-dark-t20;
@@ -8,6 +10,7 @@
 
 	.main-menu-container {
 		background: $brand-primary-dark-t20;
+		padding-top: 170px;
 	}
 
 	.slick-prev {
@@ -43,7 +46,7 @@
 			}
 		}
 
-		.news {
+		.stories, .news {
 			.slide {
 				h2, h3, h4, a {
 					color: $brand-primary-t20;
@@ -169,6 +172,25 @@
 					color: $brand-primary-dark-t20;
 				}
 			}
+		}
+	}
+
+	&.single-matches {
+
+		#jumbrotron {
+
+			.news {
+				
+				h1 {
+					span {
+						color: $brand-primary-t20;
+					}
+				}
+			}
+		}
+
+		.data-feed {
+			border-color: $brand-primary-t20;
 		}
 	}
 

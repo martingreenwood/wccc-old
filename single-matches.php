@@ -48,6 +48,14 @@ if (file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')):
 	$result = $matchinfo['MatchDetail']['@attributes']['result']; 
 	$competition_id = $matchinfo['MatchDetail']['@attributes']['competition_id']; 
 	$competition_name = $matchinfo['MatchDetail']['@attributes']['competition_name']; 
+
+
+	if (isset($matchinfo['MatchDetail']['@attributes']['number_days'])) {
+		$number_days = $matchinfo['MatchDetail']['@attributes']['number_days'];
+	} else {
+		$number_days = 0;
+	}
+
 	
 	$home_team = $matchinfo['MatchDetail']['@attributes']['home_team']; 
 	// if ($home_team == "Worcestershire") {
@@ -149,10 +157,18 @@ get_header();
 				<?php if (is_array($innings) && array_key_exists('0', $innings)): ?>
 
 				<?php
+	
+				if ($number_days >= 2 ):
+					echo "<div class='innings multiple'>";
+				elseif ($number_days < 2 ):
+					echo "<div class='innings'>";
+				endif;
+
 				$innings_count = 0;
 				$innings_counter = 0;
 				foreach ($innings as $inning):
 					$batting_team_id = $inning['@attributes']['batting_team_id']; 
+
 					if ($batting_team_id === $home_team_id) {
 						$side = 'home';
 					} else {
@@ -161,7 +177,7 @@ get_header();
 
 					++$innings_counter;
 					if($innings_counter == 1) {  
-						echo "<div class='inning'>";
+						echo "<div class='inning row'>";
 					}
         		?>
 				<div class="team <?php echo $side; ?>">
@@ -210,7 +226,11 @@ get_header();
 				}
 				?>
 
-				<?php $innings_count++; endforeach; ?>
+				<?php $innings_count++; endforeach;
+
+				echo "</div>";; // end innings divs
+
+				?>
 
 				<?php else: ?>
 				<?php $batting_team_id = $innings['@attributes']['batting_team_id']; ?>

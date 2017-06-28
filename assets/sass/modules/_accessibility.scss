@@ -12,7 +12,6 @@
 		color: $text-screen;
 		display: block;
 		@include rem(font-size, 15px);
-		font-weight: bold;
 		height: auto;
 		@include rem(left, 5px);
 		line-height: normal;

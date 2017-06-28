@@ -88,7 +88,7 @@
 			line-height: 50px;
 			text-align: center;
 			color: white;
-			font-weight: $base-weight;
+			font-weight: $heavy-weight;
 			border-radius: 50%;
 			position: absolute;
 			left: 50%;
@@ -336,7 +336,7 @@
 			top: 18px;
 			font-size: 16px;
 			color: white;
-			font-weight: $base-weight;
+			font-weight: $medium-weight;
 		}
 
 		&:nth-child(even) {
@@ -414,7 +414,6 @@
 			margin: 0 0 20px 0;
 			text-transform: uppercase;
 			text-align: center;
-			font-weight: $base-weight;
 
 			@include media($medium-screen-up) {
 				font-size: 30px;
@@ -465,7 +464,6 @@
 				background: $brand-primary;
 				border-color: $brand-primary;
 				color: white;
-				font-weight: $base-weight;
 				line-height: 1.75;
 
 				&:hover, &:active {
@@ -677,7 +675,6 @@
 		border-radius:3px 3px 0px 0px;
 		background:#7FB5DA;
 		font-size:16px;
-		font-weight: $base-weight;
 		color:#4c4c4c;
 		transition:all linear 0.15s;
 

@@ -66,6 +66,7 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
   document.addEventListener('DOMContentLoaded', loadbar, false);
 })(jQuery);
 
+// OPEN CHILD ELEMETS ON MAN NAV
 
 (function($){
 	$('#primary-menu > li > a').on('hover', function(event) {
@@ -221,16 +222,6 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 	});
 })(jQuery);
 
-// MOBILE SIDE MENU
-
-// (function($) {
-// 	$('.widget_child_pages_widget h2').on('click', function(event) {
-// 		event.preventDefault();
-// 		alert('clicked');
-// 		$(this).parent().toggleClass('open');
-// 	});
-// })(jQuery);
-
 // FILTERS
 
 (function($) {
@@ -351,10 +342,25 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 	});
 })(jQuery);
 
+// GRID
 
 (function($) {
 	var $grid = $('.og-grid');
 	if ($grid.length) {
 		Grid.init();
 	}
+})(jQuery);
+
+// KEEP POSITION
+
+(function($) {
+	$(window).scroll(function() {
+		sessionStorage.scrollTop = $(this).scrollTop();
+	});
+
+	$(document).ready(function() {
+		if (sessionStorage.scrollTop != "undefined") {
+			$(window).scrollTop(sessionStorage.scrollTop);
+		}
+	});
 })(jQuery);

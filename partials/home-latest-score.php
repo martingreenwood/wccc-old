@@ -120,6 +120,13 @@ if ($days_since_game < $number_days ): ?>
 			<?php if (is_array($innings) && array_key_exists('0', $innings)): // multiple innings ?>
 
 			<?php 
+
+			if ($number_days >= 2 ):
+				echo "<div class='innings multiple'>";
+			elseif ($number_days < 2 ):
+				echo "<div class='innings'>";
+			endif;
+
 			$innings_count = 0;
 			$innings_counter = 0;
 			foreach ($innings as $inning):
@@ -132,7 +139,7 @@ if ($days_since_game < $number_days ): ?>
 				
 				++$innings_counter;
 				if($innings_counter == 1) {  
-					echo "<div class='inning'>";
+					echo "<div class='inning row'>";
 				}
 
 				if ($batting_team_id === $home_team_id) {
@@ -179,9 +186,14 @@ if ($days_since_game < $number_days ): ?>
 				echo "</div>";
 				$innings_counter = 0;
 			}
+
 			?>
 
-			<?php $innings_count++; endforeach; ?>
+			<?php $innings_count++; endforeach; 
+
+			echo "</div>"; // end days chck div 
+			
+			?>
 
 			<?php else: // innings are not in array with [0] key ?>
 			<div class="one_innings">

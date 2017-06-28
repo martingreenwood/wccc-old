@@ -13,7 +13,6 @@
 		text-transform: uppercase;
 		font-size: 20px;
 		margin-bottom: 25px;
-		font-weight: $base-weight;
 	}
 
 	.site-info {
@@ -41,7 +40,6 @@
 						color: white;
 						text-transform: uppercase;
 						font-size: 13px;
-						font-weight: $base-weight;
 					}
 				}
 			}
@@ -83,7 +81,7 @@
 		
 		a {
 			color: inherit;
-			font-weight: $base-weight;
+			font-weight: $heavy-weight;
 		}
 	}
 }

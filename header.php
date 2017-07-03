@@ -113,9 +113,9 @@
 
 										<div class="tabs">
 											<ul class="tab-links">
-												<li class="active"><a href="#tab1">County Championship</a></li>
+												<li class="<?php if (!get_field( 'enable_t20_mode', 'option' )): ?> active <?php endif; ?>"><a href="#tab1">County Championship</a></li>
 												<li><a href="#tab2">One Day Cup</a></li>
-												<li><a href="#tab3">T20 Blast</a></li>
+												<li class="<?php if (get_field( 'enable_t20_mode', 'option' )): ?> active <?php endif; ?>"><a href="#tab3">T20 Blast</a></li>
 											</ul>
 
 											<div class="tab-content">
@@ -314,41 +314,34 @@
 							    	<div class="row">
                                     <?php 
                                     $i = 0;
-                                    $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 4 ) );
+                                    $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 6 ) );
                                     while ( $loop->have_posts() ) : $loop->the_post(); 
                                         ?>
-                                        <div class="match-info span3">
-
-                                        	<?php 
-											if (has_post_thumbnail()) 
-											{
-												the_post_thumbnail( 'poster' ); 
-											} 
-											else 
-											{
-												echo "<img src='".get_stylesheet_directory_uri()."/assets/images/poster-holder.jpg'>";
-											}
-											?>
-
-                                            <p class="date-time">
-                                                <?php echo the_date( ); ?>
-                                            </p>
-
-                                            <p class="match">
-                                                <?php the_title( ); ?>
-                                            </p>
-
-                                            <p class="links">
-                                                <a class="info" href="<?php echo the_permalink(); ?>">Read More</a>
-                                            </p>
-
-                                        </div>
+										<div class="slide">
+											<a href="<?php the_permalink(); ?>">
+												<div class="image">
+													<?php 
+													if (has_post_thumbnail()) {
+														the_post_thumbnail( 'slide-thumb' ); 
+													}
+													else {
+														echo "<img src='".get_stylesheet_directory_uri()."/assets/images/slide-holder.jpg'>";
+													}
+													?>
+												</div>
+												<div class="content">
+													<h3><?php the_title( ); ?></h3>
+													<a class="more" href="<?php the_permalink(); ?>">Read More</a>
+												</div>
+											</a>
+										</div>
 
                                         <?php 
                                     endwhile; 
                                     wp_reset_query(); wp_reset_postdata();
                                     ?>
                                     </div>
+                                    <a class="viewall" href="<?php echo home_url( '/news' ); ?>">View All News</a>
 								
 								</div><!-- END TAB -->
 

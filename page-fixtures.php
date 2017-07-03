@@ -203,7 +203,7 @@ get_header(); ?>
 							}
 							
 							if (isset($match['@attributes']['away_team_name'])) {
-								$match_away_team_name = $match['@attributes']['away_team_name']; 
+								$match_away_team_name = trim($match['@attributes']['away_team_name']); 
 							} else {
 								$match_away_team_name = ucwords(strtolower($fixture_title[2]));
 							}
@@ -219,7 +219,7 @@ get_header(); ?>
 							}
 
 							if (isset($match['@attributes']['home_team_name'])) {
-								$match_home_team_name = $match['@attributes']['home_team_name'];
+								$match_home_team_name = trim($match['@attributes']['home_team_name']);
 							} else {
 								$match_home_team_name = ucwords(strtolower($fixture_title[0]));
 							}
@@ -293,11 +293,11 @@ get_header(); ?>
 							<div class="row match <?php echo $match_live_game_class; ?>"  <?php if ( $match_game_date >= $today ): ?> data-match-type="fixture"  <?php else: ?> data-match-type="result" <?php endif; ?> data-game-id="<?php echo $match_id; ?>" data-compid="comp-<?php echo $match_comp_id; ?>"  data-team="<?php echo $team_type; ?>">
 
 								<div class="team home">
-									<?php if ($match_away_team !== '56' && $match_away_team !== 'Worcestershire' && $match_away_team !== 'Rapids' && $match_away_team !== 'TBC' ) { ?>
-										<img src="<?php echo team_image($match_away_team); ?>">
+									<?php if ($match_away_team !== '56' && $match_away_team !== 'Worcestershire' ) { ?>
+										<img class="awayimg" src="<?php echo team_image($match_away_team); ?>">
 									<?php } ?>
-									<?php if($match_home_team !== '56' && $match_home_team !== 'Worcestershire' && $match_home_team !== 'Rapids' && $match_home_team !== 'TBC' ) { ?>
-										<img src="<?php echo team_image($match_home_team); ?>">
+									<?php if($match_home_team !== '56' && $match_home_team !== 'Worcestershire' && $match_home_team !== 'Tbc' && $match_home_team !== 'Vs' ) { ?>
+										<img class="homeimg" src="<?php echo team_image($match_home_team); ?>">
 									<?php } ?>
 
 									<div class="name">

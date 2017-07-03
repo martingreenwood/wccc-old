@@ -9,7 +9,7 @@
 	top: 0;
 	padding-top: 120px;
 	padding-bottom: 50px;
-	background: rgba(17, 50, 33, 0.8);
+	background: rgba(17, 50, 33, 0.9);
 	overflow: hidden;
 
 	&.toggled {
@@ -55,16 +55,20 @@
 
 				&:last-of-type {
 					float: right;
-					background: #cf9c23;
+					background: white;
+					color: #202020;
 					margin: 0;
 					padding: 0 20px;
 					border-bottom: 0;
 
 					a {
-						color: white;
+						color: #202020;
 					}
 
 					&:hover {
+						background: #cf9c23;
+						color: white;
+
 						a {
 							color: white;
 						}
@@ -363,9 +367,70 @@
 
 		&#news {
 
-			.match-info {
-
+			a.viewall {
+				display: block;
+				width: 100%;
+				text-align: center;
+				color: white;
+				background: green;
+				padding: 10px;
+				font-weight: 600;
+				text-transform: uppercase;
 			}
+
+			.slide {
+				background: white;
+				border: 2px solid white;
+				box-sizing: border-box;
+				float: left;
+				width: 32.66%;
+				margin-right: 1%;
+				margin-bottom: 1%;
+				position: relative;
+
+				&:nth-child(3n) {
+					margin-right: 0;
+				}
+
+				img {
+					display: block;
+				}
+
+				a {
+					display: block;
+				}
+
+				h2, h3, h4, a {
+					text-transform: uppercase;
+					color: $brand-primary;
+				}
+
+				// h3 {
+				// 	width: 171px;
+				// 	white-space: nowrap;
+				// 	text-overflow: ellipsis;
+				// 	overflow: hidden;
+				// }
+
+				.more {
+					position: absolute;
+					font-size: 13px;
+					bottom: 7px;
+					color: $brand-primary;
+				}
+
+				.image {
+					float: left;
+					width: 50%;
+				}
+
+				.content {
+					float: left;
+					width: 50%;
+					padding: 10px;
+				}
+			}
+
 		}
 
 		.memberships {

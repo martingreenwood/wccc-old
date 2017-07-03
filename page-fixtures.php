@@ -83,7 +83,12 @@ get_header(); ?>
 		$top_image = get_field( 'top_image' ); 
 		$top_image = $top_image['url']; 
 	} else {
-		$top_image = get_template_directory_uri() ."/assets/images/player.png";
+
+		if (get_field( 'enable_t20_mode', 'option' )):
+			$top_image = get_template_directory_uri() ."/assets/images/player-t20.png";
+		else: 
+			$top_image = get_template_directory_uri() ."/assets/images/player.png";
+		endif; 
 	}
 	
 	$start = 1;
@@ -189,7 +194,7 @@ get_header(); ?>
 								$match_id = $match['ID'];
 							}
 
-							$fixture_title = explode(" ", get_the_title( $match['ID'] ));
+							$fixture_title = explode(" ", get_the_title( $match_id ));
 
 							if (isset($match['@attributes']['away_team'])) {
 								$match_away_team = $match['@attributes']['away_team']; 
@@ -255,7 +260,11 @@ get_header(); ?>
 								$match_game_date_string = date("dS F Y", strtotime(get_field( 'start_date', $match['ID'] )));
 							}
 
-							$match_live_game = $match['@attributes']['live_game'];
+							if (isset($match['@attributes']['game_date_string'])) {
+								$match_live_game = $match['@attributes']['live_game'];
+							} else {
+								$match_live_game = 0;
+							}
 							$match_live_game_class = null;
 							if ($match_live_game > 0) {
 								$match_live_game_class = 'live-game';
@@ -284,10 +293,10 @@ get_header(); ?>
 							<div class="row match <?php echo $match_live_game_class; ?>"  <?php if ( $match_game_date >= $today ): ?> data-match-type="fixture"  <?php else: ?> data-match-type="result" <?php endif; ?> data-game-id="<?php echo $match_id; ?>" data-compid="comp-<?php echo $match_comp_id; ?>"  data-team="<?php echo $team_type; ?>">
 
 								<div class="team home">
-									<?php if ($match_away_team !== '56' && $match_away_team !== 'Worcestershire' && $match_away_team !== 'TBC') { ?>
+									<?php if ($match_away_team !== '56' && $match_away_team !== 'Worcestershire' && $match_away_team !== 'Rapids' && $match_away_team !== 'TBC' ) { ?>
 										<img src="<?php echo team_image($match_away_team); ?>">
 									<?php } ?>
-									<?php if($match_home_team !== '56' && $match_home_team !== 'Worcestershire' ) { ?>
+									<?php if($match_home_team !== '56' && $match_home_team !== 'Worcestershire' && $match_home_team !== 'Rapids' && $match_home_team !== 'TBC' ) { ?>
 										<img src="<?php echo team_image($match_home_team); ?>">
 									<?php } ?>
 

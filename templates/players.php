@@ -85,7 +85,22 @@ get_header(); ?>
 					$filter = get_terms( 'filter', $args );
 					?>
 					<div class="person span3" data-filter="<?php echo $filter->slug; ?>">
-						<?php the_post_thumbnail( 'poster' ); ?>
+					
+						<?php	
+						if (get_field( 'enable_t20_mode', 'option' )):
+							if (get_field( 't20shot' )) {
+								$t2oimage = get_field( 't20shot' );
+								echo "<img src='".$t2oimage['sizes']['poster']."'>";
+							} else {
+								the_post_thumbnail( 'poster' );
+							}
+						else: 
+							the_post_thumbnail( 'poster' );
+						endif; 
+						?>
+
+						
+
 						<h2><?php the_title(); ?></h2>
 
 						<div class="info">

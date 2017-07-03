@@ -17,7 +17,12 @@ if (get_field( 'top_image' )) {
 	$top_image = get_field( 'top_image' ); 
 	$top_image = $top_image['url']; 
 } else {
-	$top_image = get_template_directory_uri() ."/assets/images/player.png";
+
+	if (get_field( 'enable_t20_mode', 'option' )):
+		$top_image = get_template_directory_uri() ."/assets/images/player-t20.png";
+	else: 
+		$top_image = get_template_directory_uri() ."/assets/images/player.png";
+	endif; 
 }
 
 $feedID = get_post_meta($post->ID,'_wcc_feed_id',true);
@@ -557,17 +562,17 @@ get_header();
 
 			<div class="data-feed" id="scorecard">
 				<h1>SCORECARD</h1>
-				<opta-widget sport="cricket" widget="score_card" template="normal" live="true" competition="<?php echo $competition_id; ?>" season="1" match="<?php echo $feedID; ?>" show_match_header="false" show_crests="false" show_competition_name="true" show_match_description="true" show_date="true" date_format="dddd D MMMM YYYY HH:mm" show_venue="true" show_officials="on_field" show_toss="true" show_innings_breakdown="true" show_current_batting="true" show_best_batting="1" show_best_bowling="1" show_state_of_play="true" navigation="tabs" default_nav="1" show_batting="true" show_mins_batted="true" show_fours="false" show_sixes="false" show_strike_rate="false" show_bowling="true" show_economy="false" show_dot_balls="false" show_bowling_extras="false" show_fow="true" show_partnerships="true" show_unfinished_partnerships="true" team_naming="full" player_naming="last_name" show_logo="false" show_title="false" breakpoints="400, 700"></opta-widget>
+				<opta-widget sport="cricket" widget="score_card" template="normal" live="true" competition="<?php echo $competition_id; ?>" season="1" match="<?php echo $feedID; ?>" show_match_header="false" show_crests="false" show_competition_name="true" show_match_description="true" show_date="true" date_format="dddd D MMMM YYYY HH:mm" show_venue="true" show_officials="on_field" show_toss="true" show_innings_breakdown="true" show_current_batting="true" show_best_batting="1" show_best_bowling="1" show_state_of_play="true" navigation="tabs" default_nav="1" show_batting="true" show_mins_batted="true" show_fours="false" show_sixes="false" show_strike_rate="false" show_bowling="true" show_economy="false" show_dot_balls="false" show_bowling_extras="false" show_fow="true" show_partnerships="true" show_unfinished_partnerships="true" team_naming="full" load_when_visible="false" player_naming="last_name" show_logo="false" show_title="false" breakpoints="400, 700"></opta-widget>
 			</div>
 
 			<div class="data-feed" id="wagonwheel">
 				<h1>WAGON WHEEL</h1>
-				<opta-widget sport="cricket" widget="wagonwheel" template="normal" competition="<?php echo $competition_id; ?>" season="1" match="<?php echo $feedID; ?>" live="true" show_match_header="false" show_crests="true" show_state_of_play="true" show_team_sheets="true" show_innings="all" side="both" show_key="true" show_runs_summary="true" show_segments="true" show_tooltips="true" team_naming="full" player_naming="full" show_logo="true" show_live="true" show_title="false" breakpoints="400, 700"></opta-widget>
+				<opta-widget sport="cricket" load_when_visible="false" widget="wagonwheel" template="normal" competition="<?php echo $competition_id; ?>" season="1" match="<?php echo $feedID; ?>" live="true" show_match_header="false" show_crests="true" show_state_of_play="true" show_team_sheets="true" show_innings="all" side="both" show_key="true" show_runs_summary="true" show_segments="true" show_tooltips="true" team_naming="full" player_naming="full" show_logo="true" show_live="true" show_title="false" breakpoints="400, 700"></opta-widget>
 			</div>
 
 			<div class="data-feed" id="manhattan">
 				<h1>MANHATTAN</h1>
-				<opta-widget sport="cricket" widget="manhattan" template="normal" competition="<?php echo $competition_id; ?>" season="0" match="<?php echo $feedID; ?>" live="true" show_match_header="false" show_crests="true" show_competition_name="true" show_state_of_play="true" show_graphs="all" side="both" show_key="true" show_innings="both" show_tooltips="true" show_officials="on_field" show_axis_labels="true" show_timecontrols="true" team_naming="full" player_naming="full" show_live="true" show_logo="true" show_title="false" breakpoints="400, 700"></opta-widget>
+				<opta-widget sport="cricket" load_when_visible="false" widget="manhattan" template="normal" competition="<?php echo $competition_id; ?>" season="0" match="<?php echo $feedID; ?>" live="true" show_match_header="false" show_crests="true" show_competition_name="true" show_state_of_play="true" show_graphs="all" side="both" show_key="true" show_innings="both" show_tooltips="true" show_officials="on_field" show_axis_labels="true" show_timecontrols="true" team_naming="full" player_naming="full" show_live="true" show_logo="true" show_title="false" breakpoints="400, 700"></opta-widget>
 			</div>
 			<?php endif; ?>
 			<?php endif; ?>

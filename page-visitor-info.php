@@ -25,7 +25,12 @@ get_header(); ?>
 		$top_image = get_field( 'top_image' ); 
 		$top_image = $top_image['url']; 
 	} else {
-		$top_image = get_template_directory_uri() ."/assets/images/player.png";
+
+		if (get_field( 'enable_t20_mode', 'option' )):
+			$top_image = get_template_directory_uri() ."/assets/images/player-t20.png";
+		else: 
+			$top_image = get_template_directory_uri() ."/assets/images/player.png";
+		endif; 
 	}
 
 	?>

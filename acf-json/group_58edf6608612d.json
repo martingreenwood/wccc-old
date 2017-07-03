@@ -102,7 +102,77 @@
             "mime_types": ""
         },
         {
-            "key": "field_590b01106531f",
+            "key": "field_595a5b05337ac",
+            "label": "Homepage Banner",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_595a5b1a337ad",
+            "label": "Title",
+            "name": "Hompage_title",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_595a5b30337ae",
+            "label": "Intro",
+            "name": "hompage_intro",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_595a5b594d40e",
+            "label": "Link",
+            "name": "hompage_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_595a5afd337aa",
             "label": "Club Info",
             "name": "",
             "type": "tab",
@@ -293,5 +363,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1496390153
+    "modified": 1499094239
 }

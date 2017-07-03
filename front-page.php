@@ -29,10 +29,13 @@ get_header(); ?>
 			<div class="table"><div class="cell middle">
 				<div class="container">
 					<div class="span6">
-						<h2><span>WCCC</span> <small>VS</small><br>
-						NORTHANTS</h2>
-						<p>Day 2 saw Worcestershire facing a stubborn tail end of Northants still at the crease but boweler friendly conditions in front of them.</p>
-						<a href="#">Read More</a>
+						<h2>
+							<?php the_field( 'Hompage_title', 'option' ); ?>
+						</h2>
+						<p>
+							<?php the_field( 'hompage_intro', 'option' ); ?>
+						</p>
+						<a href="<?php the_field( 'hompage_link', 'option' ); ?>">Read More</a>
 					</div>
 				</div>
 			</div></div>

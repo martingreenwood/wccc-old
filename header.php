@@ -119,16 +119,16 @@
 											</ul>
 
 											<div class="tab-content">
-												<div id="tab1" class="tab active">
-													<opta-widget sport="cricket" widget="standings" template="normal" live="false" competition="1969" season="0" team="56" navigation="none" default_nav="1" show_key="false" show_crests="false" points_in_first_column="true" competition_naming="full" team_naming="full" sorting="false" show_live="true" show_logo="false" show_title="false" breakpoints="400, 700"></opta-widget>
+												<div id="tab1" class="tab <?php if (!get_field( 'enable_t20_mode', 'option' )): ?> active <?php endif; ?>"">
+													<opta-widget sport="cricket" widget="standings" template="normal" live="false" competition="1969" season="0" team="56" load_when_visible="false" navigation="none" default_nav="1" show_key="false" show_crests="false" points_in_first_column="true" competition_naming="full" team_naming="full" sorting="false" show_live="true" show_logo="false" show_title="false" breakpoints="400, 700"></opta-widget>
 												</div>
 
 												<div id="tab2" class="tab">
-													<opta-widget sport="cricket" widget="standings" template="normal" live="false" competition="1970" season="0" team="56" navigation="none" default_nav="1" show_key="false" show_crests="false" points_in_first_column="true" competition_naming="full" team_naming="full" sorting="false" show_live="true" show_logo="false" show_title="false" breakpoints="400, 700"></opta-widget>
+													<opta-widget sport="cricket" widget="standings" template="normal" live="false" competition="1970" season="0" team="56" load_when_visible="false" navigation="none" default_nav="1" show_key="false" show_crests="false" points_in_first_column="true" competition_naming="full" team_naming="full" sorting="false" show_live="true" show_logo="false" show_title="false" breakpoints="400, 700"></opta-widget>
 												</div>
 
-												<div id="tab3" class="tab">
-													<opta-widget sport="cricket" widget="standings" template="normal" live="false" competition="1971" season="0" team="56" navigation="none" default_nav="1" show_key="false" show_crests="false" points_in_first_column="true" competition_naming="full" team_naming="full" sorting="false" show_live="true" show_logo="false" show_title="false" breakpoints="400, 700"></opta-widget>
+												<div id="tab3" class="tab <?php if (get_field( 'enable_t20_mode', 'option' )): ?> active <?php endif; ?>">
+													<opta-widget sport="cricket" widget="standings" template="normal" live="false" competition="1971" season="0" team="56" load_when_visible="false" navigation="none" default_nav="1" show_key="false" show_crests="false" points_in_first_column="true" competition_naming="full" team_naming="full" sorting="false" show_live="true" show_logo="false" show_title="false" breakpoints="400, 700"></opta-widget>
 												</div>
 											</div>
 										</div>
@@ -276,7 +276,18 @@
 											?>
 											<div class="person <?php echo $filter->slug; ?>">
 												<a href="<?php the_permalink(); ?>">
-													<?php the_post_thumbnail( 'thumbnail' ); ?>
+													<?php	
+													if (get_field( 'enable_t20_mode', 'option' )):
+														if (get_field( 't20shot' )) {
+															$t2oimage = get_field( 't20shot' );
+															echo "<img src='".$t2oimage['sizes']['thumbnail']."'>";
+														} else {
+															the_post_thumbnail( 'thumbnail' );
+														}
+													else: 
+														the_post_thumbnail( 'thumbnail' );
+													endif; 
+													?>
 													<div class="info">
 														<div class="table"><div class="cell middle">
 														<h2><?php the_title(); ?></h2>

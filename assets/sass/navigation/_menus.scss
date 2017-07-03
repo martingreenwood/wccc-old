@@ -140,8 +140,8 @@
 		background-color: green;
 		background-position: 50%;
 		background-repeat: no-repeat;
-		background-size: 13px;
-		width: 25px;
+		background-size: 12px;
+		width: 21px;
 		position: absolute;
 		right: -25px;
 		height: 100%;
@@ -389,7 +389,7 @@
 
 					.copy {
 						padding: 0;
-						position: absolute;
+						position: relative;
 						top: 0;
 
 						h3 {
@@ -399,6 +399,7 @@
 						}
 
 						h4 {
+							display: none;
 							margin: 0;
 							color: white;
 							font-size: 14px;
@@ -411,8 +412,9 @@
 					}
 
 					.links {
+						
 						a {
-							background: green;
+							background: $brand-primary;
 							text-align: center;
 							font-size: 14px;
 							text-transform: uppercase;

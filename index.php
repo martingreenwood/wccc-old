@@ -21,10 +21,16 @@ get_header(); ?>
 		$bannerimage = get_template_directory_uri() ."/assets/images/banner.png";
 	endif; 
 
-	//if (get_field( 'top_image' )) {
-		//$top_image = get_field( 'top_image', get_the_id() ); 
-	//} else {
-		$top_image = get_template_directory_uri() ."/assets/images/player.png";
+	// if (get_field( 'top_image' )) {
+	// 	$top_image = get_field( 'top_image' ); 
+	// 	$top_image = $top_image['url']; 
+	// } else {
+
+		if (get_field( 'enable_t20_mode', 'option' )):
+			$top_image = get_template_directory_uri() ."/assets/images/player-t20.png";
+		else: 
+			$top_image = get_template_directory_uri() ."/assets/images/player.png";
+		endif; 
 	//}
 
 	?>
@@ -32,7 +38,7 @@ get_header(); ?>
 		<div class="overlay" style="background-image: url(<?php echo $bannerimage; ?>)"></div>
 
 		<div class="news" style="background-image: url(<?php echo $top_image; ?>)">
-			<div class="table"><div class="cell bottom
+			<div class="table"><div class="cell middle
 			.">
 				<div class="container">
 					<div class="span6">

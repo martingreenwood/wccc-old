@@ -1,4 +1,67 @@
 .t20 {
+	font-weight: $medium-weight;
+
+	.widget {
+
+		ul {
+
+			li.current_page_item {
+
+				a {
+					font-weight: $heavy-weight;
+				}
+			}
+		}
+	}
+
+
+
+	#filter {
+
+		.row {
+			
+			&:after {
+				background: $brand-primary-dark-t20;
+			}
+		}
+
+		form {
+			background-color: $brand-primary-dark-t20;
+
+			ul {
+
+				li {
+
+					input[type="checkbox"] {
+						border-color: $brand-primary-t20;
+					}
+				}
+			}
+		}
+
+		h3 {
+			color: $brand-primary-t20;
+
+			&.active {
+				background-color: $brand-primary-t20;
+			}
+		}
+	}
+
+	#loader {
+		background-image: url(assets/images/logo-rapids.svg);
+
+		#progstat {
+			color: $brand-primary-t20;
+		}
+		#progress {
+			background: $brand-primary-t20;
+		}
+	}
+
+	a {
+		color: $brand-primary-t20;
+	}
 
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: $super-weight;
@@ -24,11 +87,60 @@
 		}
 	}
 
+	.squadies {
+
+		.person {
+
+			h2 {
+				background: $brand-primary-dark-t20;
+			}
+
+			.info {
+				background: $brand-primary-dark-t20;
+
+				a {
+					background-color: $brand-primary-t20;
+				}
+			}
+		}
+	}
+
 	.menu-childs {
+
 		.child {
 
 			h2 {
 				border-bottom-color: $brand-primary-t20;
+			}
+
+			.menu-sub-menu {
+
+				ul  {
+
+					li {
+						border-bottom-color: $brand-primary-t20;
+					}
+				}
+			}
+
+			.memberships {
+
+				.viewall {
+					background: $brand-primary-t20;
+				}
+
+				.packages {
+
+					.package {
+
+						.links  {
+
+							a {
+								background: $brand-primary-t20;
+							}
+						}
+					}
+				}
 			}
 
 			.tabs {
@@ -40,23 +152,23 @@
 						border-bottom-color: $brand-primary-t20;
 						border-left-color : $brand-primary-t20;
 					}
+				}
 
-					.tab-content {
+				.tab-content {
 
-						.Opta {
+					.Opta {
 
-							tfoot {
-								
-								th {
-									border-bottom-color: 2px solid #1ac036;
-								}
+						tfoot {
+							
+							th {
+								border-bottom-color: $brand-primary-t20;
 							}
+						}
 
-							thead  {
+						thead  {
 
-								th {
-									border-bottom-color: 2px solid #1ac036;
-								}
+							th {
+								border-bottom-color: $brand-primary-t20;
 							}
 						}
 					}
@@ -83,6 +195,7 @@
 
 	.live-view {
 		background: $brand-primary-t20;
+		color: white;
 
 		&:after {
 			background-color: $brand-primary-t20;
@@ -192,6 +305,36 @@
 			&:before, &:after {
 				background-color: $brand-primary-t20;
 			}
+
+			&#results, &#fixtures {
+				background: white;
+			}
+		}
+
+		.link {
+
+			.matchlink {
+				background-color: $brand-primary-t20;
+				color: white;
+			}
+		}
+
+		.tab-links {
+
+			li {
+
+				a {
+					background: $brand-primary-dark-t20;
+					font-weight: 500;
+				}
+
+				&.active {
+
+					a {
+						background: $brand-primary-t20;
+					}
+				}
+			}
 		}
 
 		.team {
@@ -258,6 +401,22 @@
 			}
 		}
 
+		aside {
+
+			nav {
+
+				ul {
+
+					li {
+
+						a.nav-active {
+							background-color: $brand-primary-t20;
+						}
+					}
+				}
+			}
+		}
+
 		.data-feed {
 			border-color: $brand-primary-t20;
 		}
@@ -301,6 +460,17 @@
 			}
 		}
 
+		#sidebar {
+			
+			.widget {
+
+				ul {
+					border-top-color: $brand-primary-t20;
+					border-bottom-color: $brand-primary-t20;
+				}
+			}
+		}
+
 		#primary {
 
 			article {
@@ -331,6 +501,23 @@
 				button {
 					background: $brand-primary-t20;
 					border-color: $brand-primary-t20;
+				}
+			}
+		}
+	}
+
+	.Opta {
+
+		.Opta_C_S {
+
+			table {
+
+				tr {
+
+					td.Opta-Strong {
+						border-top-color: $brand-primary-t20;
+						border-bottom-color: $brand-primary-t20;
+					}
 				}
 			}
 		}

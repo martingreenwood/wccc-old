@@ -55,7 +55,7 @@ get_header(); ?>
 			<center>
 			<h1><?php the_title(); ?></h1>
 			<?php
-			while ( have_posts() ) : the_post();
+			while ( have_posts() ) : the_post();	
 
 				get_template_part( 'template-parts/content', 'page' );
 

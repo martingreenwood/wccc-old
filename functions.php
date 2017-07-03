@@ -249,20 +249,20 @@ function makePretty($value)
 
 
 function wccc_acf_init() {
-	
 	acf_update_setting('google_api_key', 'AIzaSyAT5vS9U3S5QkN-f2cwPN-Am4C1vc7zElE');
 }
 add_action('acf/init', 'wccc_acf_init');
 
 
-// insert ft image into post
-function insert_featured_image( $content ) {
-	if (is_singular( 'post' )) {
-		$content = preg_replace( "/<\/p>/", "</p>" . get_the_post_thumbnail($post->ID, 'post-single'), $content, 1 );
-		return $content;
-	}
-}
-add_filter( 'the_content', 'insert_featured_image', 20 );
+// Adds $img content after after first paragraph (!.e. after first `</p>` tag)
+add_filter('the_content', function($content)
+	{
+	global $post;
+	$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+	$img = '<img src="'.$url.'" alt="" title=""/>';
+	$content = preg_replace('#(<p>.*?</p>)#','$1'.$img, $content, 1);
+	return $content;
+});
 
 
 /*================================

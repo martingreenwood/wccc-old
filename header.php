@@ -196,7 +196,7 @@
 													echo $result;
 													?>
 												</a>
-												<?php endwhile; wp_reset_postdata(); endif; ?>
+												<?php endwhile; wp_reset_query(); wp_reset_postdata(); endif; ?>
 											</p>
 											
 										</div>
@@ -228,7 +228,7 @@
 											</div>
 											<?php 
 										endwhile; 
-										wp_reset_query(); 
+										wp_reset_query(); wp_reset_postdata();
 										?>
 
 
@@ -289,7 +289,7 @@
 											<div class="row">
 											<?php endif;
 											$i++; endwhile; 
-											wp_reset_postdata(); 
+											wp_reset_query(); wp_reset_postdata(); 
 										endif; 
 										?>
 										</div>
@@ -335,7 +335,7 @@
 
                                         <?php 
                                     endwhile; 
-                                    wp_reset_query(); 
+                                    wp_reset_query(); wp_reset_postdata();
                                     ?>
                                     </div>
 								
@@ -385,7 +385,7 @@
 													<a target="_blank" href="<?php the_field( 'purchase_link' ); ?>">Buy Membership</a>
 												</div>
 											</div>
-											<?php endwhile; wp_reset_postdata(); endif; ?>
+											<?php endwhile; wp_reset_query(); wp_reset_postdata(); endif; ?>
 										</div>
 										<a class="viewall" href="<?php echo home_url( '/downloads' ); ?>">View All Memberships</a>
 									</div>

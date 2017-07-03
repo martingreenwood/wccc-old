@@ -51,7 +51,7 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', get_post_format() );
 
 			if ( function_exists( 'sharing_display' ) ) {
-			sharing_display( '', true );
+				sharing_display( '', true );
 			}
 
 			the_post_navigation();

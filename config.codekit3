@@ -4540,6 +4540,12 @@
 		"oAP": "\/template-parts\/content-search.php",
 		"oF": 0
 		},
+	"\/template-parts\/content-single.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/template-parts\/content-single.php",
+		"oF": 0
+		},
 	"\/template-parts\/content.php": {
 		"ft": 8192,
 		"oA": 2,

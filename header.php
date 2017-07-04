@@ -239,7 +239,7 @@
 								<div id="cricket" class="child">
 
 									<div class="span3 menu-sub-menu">
-										<h2>CRIICKET</h2>
+										<h2>CRICKET</h2>
 										<div class="clear"></div>
 										<?php
 										$cricketPID = get_id_by_slug('cricket');
@@ -252,57 +252,170 @@
 									</div>
 
 									<div class="span9 players">
-										<h2>The Squad</h2>
-										<div class="row">
-										<?php
-										$i = 1;
-										$args = array( 
-											'post_type' 		=> 'players',
-											'posts_per_page' 	=> -1,
-											'tax_query'   => [
-												[
-													'taxonomy' => 'filter',
-													'field'    => 'slug',
-													'terms'    => 'senior-squad '
-												]
-											]
-										);
-										$match_query = new WP_Query( $args );
-										$filter = null;
-										if ( $match_query->have_posts() ) : 
-											while ( $match_query->have_posts() ): $match_query->the_post();
-											$filter = get_the_terms( get_the_id(), 'filter');
-											$filter = current($filter);
-											?>
-											<div class="person <?php echo $filter->slug; ?>">
-												<a href="<?php the_permalink(); ?>">
-													<?php	
-													if (get_field( 'enable_t20_mode', 'option' )):
-														if (get_field( 't20shot' )) {
-															$t2oimage = get_field( 't20shot' );
-															echo "<img src='".$t2oimage['sizes']['thumbnail']."'>";
-														} else {
-															the_post_thumbnail( 'thumbnail' );
-														}
-													else: 
-														the_post_thumbnail( 'thumbnail' );
-													endif; 
-													?>
-													<div class="info">
-														<div class="table"><div class="cell middle">
-														<h2><?php the_title(); ?></h2>
-														</div></div>
-													</div>
-												</a>
-											</div>
-											<?php if ( $i % 6 == 0 ) : ?>
-											</div>
+										
+										<div id="seniorsquad" class="boxofsquads active">
+											<h2>Senior Squad</h2>
 											<div class="row">
-											<?php endif;
-											$i++; endwhile; 
-											wp_reset_query(); wp_reset_postdata(); 
-										endif; 
-										?>
+											<?php
+											$i = 1;
+											$args = array( 
+												'post_type' 		=> 'players',
+												'posts_per_page' 	=> -1,
+												'tax_query'   => [
+													[
+														'taxonomy' => 'filter',
+														'field'    => 'slug',
+														'terms'    => 'senior-squad '
+													]
+												]
+											);
+											$match_query = new WP_Query( $args );
+											$filter = null;
+											if ( $match_query->have_posts() ) : 
+												while ( $match_query->have_posts() ): $match_query->the_post();
+												$filter = get_the_terms( get_the_id(), 'filter');
+												$filter = current($filter);
+												?>
+												<div class="person <?php echo $filter->slug; ?>">
+													<a href="<?php the_permalink(); ?>">
+														<?php	
+														if (get_field( 'enable_t20_mode', 'option' )):
+															if (get_field( 't20shot' )) {
+																$t2oimage = get_field( 't20shot' );
+																echo "<img src='".$t2oimage['sizes']['thumbnail']."'>";
+															} else {
+																the_post_thumbnail( 'thumbnail' );
+															}
+														else: 
+															the_post_thumbnail( 'thumbnail' );
+														endif; 
+														?>
+														<div class="info">
+															<div class="table"><div class="cell middle">
+															<h2><?php the_title(); ?></h2>
+															</div></div>
+														</div>
+													</a>
+												</div>
+												<?php if ( $i % 6 == 0 ) : ?>
+												</div>
+												<div class="row">
+												<?php endif;
+												$i++; endwhile; 
+												wp_reset_query(); wp_reset_postdata(); 
+											endif; 
+											?>
+											</div>
+										</div>
+
+										<div id="academysquad" class="boxofsquads">
+											<h2>Academy</h2>
+											<div class="row">
+											<?php
+											$i = 1;
+											$args = array( 
+												'post_type' 		=> 'players',
+												'posts_per_page' 	=> -1,
+												'tax_query'   => [
+													[
+														'taxonomy' => 'filter',
+														'field'    => 'slug',
+														'terms'    => 'academy '
+													]
+												]
+											);
+											$match_query = new WP_Query( $args );
+											$filter = null;
+											if ( $match_query->have_posts() ) : 
+												while ( $match_query->have_posts() ): $match_query->the_post();
+												$filter = get_the_terms( get_the_id(), 'filter');
+												$filter = current($filter);
+												?>
+												<div class="person <?php echo $filter->slug; ?>">
+													<a href="<?php the_permalink(); ?>">
+														<?php	
+														if (get_field( 'enable_t20_mode', 'option' )):
+															if (get_field( 't20shot' )) {
+																$t2oimage = get_field( 't20shot' );
+																echo "<img src='".$t2oimage['sizes']['thumbnail']."'>";
+															} else {
+																the_post_thumbnail( 'thumbnail' );
+															}
+														else: 
+															the_post_thumbnail( 'thumbnail' );
+														endif; 
+														?>
+														<div class="info">
+															<div class="table"><div class="cell middle">
+															<h2><?php the_title(); ?></h2>
+															</div></div>
+														</div>
+													</a>
+												</div>
+												<?php if ( $i % 6 == 0 ) : ?>
+												</div>
+												<div class="row">
+												<?php endif;
+												$i++; endwhile; 
+												wp_reset_query(); wp_reset_postdata(); 
+											endif; 
+											?>
+											</div>
+										</div>
+
+										<div id="coachingstaff" class="boxofsquads">
+											<h2>Coaching Staff</h2>
+											<div class="row">
+											<?php
+											$i = 1;
+											$args = array( 
+												'post_type' 		=> 'players',
+												'posts_per_page' 	=> -1,
+												'tax_query'   => [
+													[
+														'taxonomy' => 'filter',
+														'field'    => 'slug',
+														'terms'    => 'coaching-staff '
+													]
+												]
+											);
+											$match_query = new WP_Query( $args );
+											$filter = null;
+											if ( $match_query->have_posts() ) : 
+												while ( $match_query->have_posts() ): $match_query->the_post();
+												$filter = get_the_terms( get_the_id(), 'filter');
+												$filter = current($filter);
+												?>
+												<div class="person <?php echo $filter->slug; ?>">
+													<a href="<?php the_permalink(); ?>">
+														<?php	
+														if (get_field( 'enable_t20_mode', 'option' )):
+															if (get_field( 't20shot' )) {
+																$t2oimage = get_field( 't20shot' );
+																echo "<img src='".$t2oimage['sizes']['thumbnail']."'>";
+															} else {
+																the_post_thumbnail( 'thumbnail' );
+															}
+														else: 
+															the_post_thumbnail( 'thumbnail' );
+														endif; 
+														?>
+														<div class="info">
+															<div class="table"><div class="cell middle">
+															<h2><?php the_title(); ?></h2>
+															</div></div>
+														</div>
+													</a>
+												</div>
+												<?php if ( $i % 6 == 0 ) : ?>
+												</div>
+												<div class="row">
+												<?php endif;
+												$i++; endwhile; 
+												wp_reset_query(); wp_reset_postdata(); 
+											endif; 
+											?>
+											</div>
 										</div>
 									</div>
 

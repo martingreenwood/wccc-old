@@ -66,16 +66,30 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
   document.addEventListener('DOMContentLoaded', loadbar, false);
 })(jQuery);
 
-// OPEN CHILD ELEMETS ON MAN NAV
+// OPEN  ELEMETS ON MAN NAV
+
+(function($){
+	$('#cricket .menu-sub-menu ul li a').on('hover', function(event) {
+		event.preventDefault();
+		var target = $(this).attr('href'),
+			res = target.split("/"),
+			boxofsquads = res[4].replace('-', '');
+
+			console.log(boxofsquads);
+
+		$('.boxofsquads').removeClass('active');
+		$('#' + boxofsquads).addClass('active');
+	});
+})(jQuery);
+
+// OPEN CHILD NAV ELEMETS ON MAIN NAV HOVER
 
 (function($){
 	$('#primary-menu > li > a').on('hover', function(event) {
 		event.preventDefault();
 		var target = $(this).attr('data-tab');
 		$('.menu-childs .child').removeClass('open');
-		
 		$('.menu-childs #' + target).addClass('open');
-		console.log(target);
 	});
 })(jQuery);
 

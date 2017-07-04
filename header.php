@@ -473,7 +473,7 @@
 									<div class="span3 menu-sub-menu">
 										<h2>Downloads</h2>
 										<?php 
-										$downloadspage = get_id_by_slug('downloads');
+										$downloadspage = get_id_by_slug('membership');
 										if( have_rows('downloads', $downloadspage) ): ?>
 										<ul>
 										<?php while ( have_rows('downloads', $downloadspage) ) : the_row(); $file = get_sub_field( 'files' ); ?>

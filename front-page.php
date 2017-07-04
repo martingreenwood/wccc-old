@@ -12,14 +12,26 @@ get_header(); ?>
 	<?php 
 	if (get_field( 'enable_t20_mode', 'option' )):
 		$bannerimage = get_template_directory_uri() . "/assets/images/rapids-banner.png";
-		$top_image = get_field( 'top_t20_image', 'option' ); 
-		$top_image = $top_image['url']; 
+
+		$top_image_array = array();
+		$top_t20_images = get_field( 'top_t20_image', 'option' );
+
+		foreach ($top_t20_images as $top_t20_image) {
+			$top_image_array[] = $top_t20_image['url'];
+		}
+		$ri = array_rand($top_image_array);
+		$top_image = $top_image_array[$ri];
 	else: 
 		$bannerimage = get_template_directory_uri() ."/assets/images/banner.png";
-		$top_image = get_field( 'top_image', 'option' ); 
-		$top_image = $top_image['url']; 
-	endif; 
 
+		$top_image_array = array();
+		$top_images = get_field( 'top_image', 'option' );
+		foreach ($top_images as $top_image) {
+			$top_image_array[] = $top_image['url'];
+		}
+		$ri = array_rand($top_image_array);
+		$top_image = $top_image_array[$ri];
+	endif; 
 	?>
 
 	<section id="jumbrotron">

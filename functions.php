@@ -255,18 +255,69 @@ add_action('acf/init', 'wccc_acf_init');
 
 
 // Adds $img content after after first paragraph (!.e. after first `</p>` tag)
-add_filter('the_content', 'add_image_here');
-function add_image_here() {
-	global $post;
-	if (is_singular('post')) {
-		$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-		$img = '<img src="'.$url.'" alt="" title=""/>';
-		$content = preg_replace('#(<p>.*?</p>)#','$1'.$img, $content, 1);
-	} else {
-		$content = get_the_content($post->ID);
+add_filter('the_content', function($content)
+	{
+		global $post;
+		if (is_singular('post')) {
+			$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+			$img = '<img src="'.$url.'" alt="" title=""/>';
+			$content = preg_replace('#(<p>.*?</p>)#','$1'.$img, $content, 1);
+			return $content;
+		}
+		else {
+			return $content;
+		}
+});
+
+add_filter( 'get_the_archive_title', function ($title) {
+
+	if ( is_category() ) {
+
+		$title = single_cat_title( '', false );
+
+	} elseif ( is_tag() ) {
+
+		$title = single_tag_title( '', false );
+
+	} elseif ( is_author() ) {
+
+		$title = '<span class="vcard">' . get_the_author() . '</span>' ;
+
 	}
-	return $content;
+
+	return $title;
+
+});
+
+/*================================
+=            INCLUDES            =
+================================*/
+
+function coooooookies() { 
+	?>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+	<script>
+	window.addEventListener("load", function(){
+	window.cookieconsent.initialise({
+		"palette": {
+			"popup": {
+				"background": "#3c404d",
+				"text": "#d6d6d6"
+			},
+			"button": {
+				"background": "#8bed4f"
+			}
+		},
+		"theme": "edgeless",
+		"position": "bottom-right"
+		})
+	});
+	</script>
+	<?php
+
 }
+add_action('wp_head', 'coooooookies');
 
 
 /*================================

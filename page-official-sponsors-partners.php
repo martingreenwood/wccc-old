@@ -10,23 +10,29 @@
 get_header(); ?>
 
 	<?php 
+
 	if (get_field( 'enable_t20_mode', 'option' )):
 		$bannerimage = get_template_directory_uri() . "/assets/images/rapids-banner.png";
+
+		$top_image_array = array();
+		$top_t20_images = get_field( 'header_images_t20', 'option' );
+
+		foreach ($top_t20_images as $top_t20_image) {
+			$top_image_array[] = $top_t20_image['url'];
+		}
+		$ri = array_rand($top_image_array);
+		$top_image = $top_image_array[$ri];
 	else: 
 		$bannerimage = get_template_directory_uri() ."/assets/images/banner.png";
+
+		$top_image_array = array();
+		$top_images = get_field( 'header_images', 'option' );
+		foreach ($top_images as $top_image) {
+			$top_image_array[] = $top_image['url'];
+		}
+		$ri = array_rand($top_image_array);
+		$top_image = $top_image_array[$ri];
 	endif; 
-
-	if (get_field( 'top_image' )) {
-		$top_image = get_field( 'top_image' ); 
-		$top_image = $top_image['url']; 
-	} else {
-
-		if (get_field( 'enable_t20_mode', 'option' )):
-			$top_image = get_template_directory_uri() ."/assets/images/player-t20.png";
-		else: 
-			$top_image = get_template_directory_uri() ."/assets/images/player.png";
-		endif; 
-	}
 
 	?>
 	<section id="jumbrotron">
@@ -36,8 +42,8 @@ get_header(); ?>
 			<div class="table"><div class="cell middle">
 				<div class="container">
 					<div class="span6">
-						&nbsp;
-						<h1><?php the_title(); ?></h1>
+						<h1>Official Club<br>
+						<span>Sponsors &amp; Partners</span></h1>
 					</div>
 					<div class="span6">
 					</div>

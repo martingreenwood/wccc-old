@@ -13,22 +13,26 @@ get_header(); ?>
 
 	if (get_field( 'enable_t20_mode', 'option' )):
 		$bannerimage = get_template_directory_uri() . "/assets/images/rapids-banner.png";
+
+		$top_image_array = array();
+		$top_t20_images = get_field( 'header_images_t20', 'option' );
+
+		foreach ($top_t20_images as $top_t20_image) {
+			$top_image_array[] = $top_t20_image['url'];
+		}
+		$ri = array_rand($top_image_array);
+		$top_image = $top_image_array[$ri];
 	else: 
 		$bannerimage = get_template_directory_uri() ."/assets/images/banner.png";
+
+		$top_image_array = array();
+		$top_images = get_field( 'header_images', 'option' );
+		foreach ($top_images as $top_image) {
+			$top_image_array[] = $top_image['url'];
+		}
+		$ri = array_rand($top_image_array);
+		$top_image = $top_image_array[$ri];
 	endif; 
-
-	if (get_field( 'top_image' )) {
-		$top_image = get_field( 'top_image' ); 
-		$top_image = $top_image['url']; 
-	} else {
-
-		if (get_field( 'enable_t20_mode', 'option' )):
-			$top_image = get_template_directory_uri() ."/assets/images/player-t20.png";
-		else: 
-			$top_image = get_template_directory_uri() ."/assets/images/player.png";
-		endif; 
-	}
-
 	?>
 
 	<section id="jumbrotron">
@@ -39,16 +43,17 @@ get_header(); ?>
 			.">
 				<div class="container">
 					<div class="span6">
-						<h1><span>Four oh</span><br>
-						Fucking four</h1>
+						<h1><span>well,</span><br>
+						I'm stumped</h1>
 					</div>
 				</div>
 			</div></div>
 		</div>
 	</section>
 
+
 	<div id="primary" class="content-area container">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main span9" role="main">
 
 			<section class="error-404 not-found">
 				<header class="page-header">
@@ -59,7 +64,6 @@ get_header(); ?>
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'wccc' ); ?></p>
 
 					<?php
-						get_search_form();
 
 						the_widget( 'WP_Widget_Recent_Posts' );
 
@@ -96,7 +100,9 @@ get_header(); ?>
 			</section><!-- .error-404 -->
 
 		</main><!-- #main -->
-	</div><!-- #primary -->
+
+		<?php get_sidebar('pages'); ?>
+	</div>
 
 <?php
 get_footer();

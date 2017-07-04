@@ -152,7 +152,7 @@
 	}
 
 	button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
-		background: $brand-primary-t20;
+		background-color: $brand-primary-t20;
 	}
 
 	#no-feed {
@@ -163,7 +163,40 @@
 		background: rgba(32, 32, 32, 0.9);
 		padding-top: 170px;
 
+		ul.nav-menu {
+
+			li {
+
+				a {
+					color: white;
+					font-weight: 700;
+				}
+
+				&:hover > a, 
+				&.focus > a {
+					color: $brand-primary-t20;
+				}
+			}
+		}
+
 		li {
+
+			a {
+				color: white;
+				font-weight: 700;
+
+				&#newroad {
+					background-color: transparent;
+					color: $brand-primary-t20;
+
+					&:hover, 
+					&.focus {
+						color: white;
+						background-color: #cf9c23;
+					}
+				}
+			}
+
 			&:hover > a, 
 			&.focus > a {
 				color: $brand-primary-t20;
@@ -175,7 +208,7 @@
 		.current_page_ancestor > a, 
 		.current-menu-ancestor > a {
 			color: $brand-primary-t20;
-			font-weight: 600;
+			font-weight: 900;
 		}
 	}
 
@@ -302,10 +335,18 @@
 
 	.slick-prev {
 		background-image: url(assets/images/slide-prev-blue.svg);
+
+		&:hover {
+			background-color: transparent;
+		}
 	}
 
 	.slick-next {
 		background-image: url(assets/images/slide-next-blue.svg);
+
+		&:hover {
+			background-color: transparent;
+		}
 	}
 
 	.live-view {
@@ -320,14 +361,17 @@
 	#jumbrotron {
 		background-color: $brand-primary-dark-t20;
 
-		.info {
+		h1, h2 {
 
-			h2 {
-
-				span {
-					color: $brand-primary-t20;
-				}
+			span {
+				color: $brand-primary-t20;
 			}
+
+			small {
+			}
+		}
+
+		.info {
 
 			a {
 				border-color: $brand-primary-t20;
@@ -669,6 +713,78 @@
 						border-top-color: $brand-primary-t20;
 						border-bottom-color: $brand-primary-t20;
 					}
+				}
+			}
+		}
+	}
+
+	&.archive, &.blog {
+		
+		#sidebar {
+			
+			.widget {
+				
+				ul {
+					
+					li.current-cat, li:hover {
+						background-color: $brand-primary-t20;
+					}
+				}
+			}
+		}
+	}
+
+	&.single-players {
+
+		#primary {
+
+			article {
+
+				.stats {
+
+					dl {
+
+						dt {
+							color: $brand-primary-t20;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.contact {
+
+		table {
+
+			thead {
+				background-color: $brand-primary-dark-t20;
+
+				th {
+					border-bottom-color: $brand-primary-dark-t20;
+				}
+			}
+		}
+
+		.gform_wrapper {
+
+			.gform_body {
+
+				ul {
+
+					.gfield {
+
+						.gfield_label {
+							color: $brand-primary-dark-t20;
+						}
+					}
+				}
+			}
+
+			.gform_footer {
+
+				input.button, input[type=image], input[type=submit] {
+					background-color: $brand-primary-dark-t20;
 				}
 			}
 		}

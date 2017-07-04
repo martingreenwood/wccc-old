@@ -7,86 +7,92 @@
  * @package wccc
  */
 
-if (get_field( 'enable_t20_mode', 'option' )):
-	$bannerimage = get_template_directory_uri() . "/assets/images/rapids-banner.png";
-else: 
-	$bannerimage = get_template_directory_uri() ."/assets/images/banner.png";
-endif; 
-
-if (get_field( 'top_image' )) {
-	$top_image = get_field( 'top_image' ); 
-	$top_image = $top_image['url']; 
-} else {
-
 	if (get_field( 'enable_t20_mode', 'option' )):
-		$top_image = get_template_directory_uri() ."/assets/images/player-t20.png";
+		$bannerimage = get_template_directory_uri() . "/assets/images/rapids-banner.png";
+
+		$top_image_array = array();
+		$top_t20_images = get_field( 'header_images_t20', 'option' );
+
+		foreach ($top_t20_images as $top_t20_image) {
+			$top_image_array[] = $top_t20_image['url'];
+		}
+		$ri = array_rand($top_image_array);
+		$top_image = $top_image_array[$ri];
 	else: 
-		$top_image = get_template_directory_uri() ."/assets/images/player.png";
+		$bannerimage = get_template_directory_uri() ."/assets/images/banner.png";
+
+		$top_image_array = array();
+		$top_images = get_field( 'header_images', 'option' );
+		foreach ($top_images as $top_image) {
+			$top_image_array[] = $top_image['url'];
+		}
+		$ri = array_rand($top_image_array);
+		$top_image = $top_image_array[$ri];
 	endif; 
-}
-
-$feedID = get_post_meta($post->ID,'_wcc_feed_id',true);
-
-if (file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')):
-	$xml = simplexml_load_file(FEED_DIR . '/crml-'.$feedID.'.xml');
-	$json = json_encode($xml);
-	$matchinfo = json_decode($json,TRUE);
-	
-	$game_status = game_status($matchinfo['MatchDetail']['@attributes']['status_id']);
-	$toss = $matchinfo['MatchDetail']['@attributes']['toss'];
-	$game_date_time = $matchinfo['MatchDetail']['@attributes']['game_date'];
-	$game_time = $matchinfo['MatchDetail']['@attributes']['game_time'];
-	$game_date = date("d M Y", strtotime($game_date_time));
-
-	$venue_name = $matchinfo['MatchDetail']['Venue']['@attributes']['venue_name'];
-	$venue_city = $matchinfo['MatchDetail']['Venue']['@attributes']['venue_city'];
-	
-	$official_1_first_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_1_first_name'];
-	$official_1_last_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_1_last_name'];
-	$official_1_name = $official_1_first_name. ' ' .$official_1_last_name;
-
-	$official_2_first_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_2_first_name'];
-	$official_2_last_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_2_last_name'];
-	$official_2_name = $official_2_first_name. ' ' .$official_2_last_name;
-
-	$match_id = $matchinfo['MatchDetail']['@attributes']['game_id']; 
-	$result = $matchinfo['MatchDetail']['@attributes']['result']; 
-	$competition_id = $matchinfo['MatchDetail']['@attributes']['competition_id']; 
-	$competition_name = $matchinfo['MatchDetail']['@attributes']['competition_name']; 
 
 
-	if (isset($matchinfo['MatchDetail']['@attributes']['number_days'])) {
-		$number_days = $matchinfo['MatchDetail']['@attributes']['number_days'];
-	} else {
-		$number_days = 0;
-	}
+	$feedID = get_post_meta($post->ID,'_wcc_feed_id',true);
 
-	
-	$home_team = $matchinfo['MatchDetail']['@attributes']['home_team']; 
-	// if ($home_team == "Worcestershire") {
-	// 	$home_team = "WCCC";
-	// }
-	$home_team_id = $matchinfo['MatchDetail']['@attributes']['home_team_id']; 
+	if (file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')):
+		$xml = simplexml_load_file(FEED_DIR . '/crml-'.$feedID.'.xml');
+		$json = json_encode($xml);
+		$matchinfo = json_decode($json,TRUE);
+		
+		$game_status = game_status($matchinfo['MatchDetail']['@attributes']['status_id']);
+		$toss = $matchinfo['MatchDetail']['@attributes']['toss'];
+		$game_date_time = $matchinfo['MatchDetail']['@attributes']['game_date'];
+		$game_time = $matchinfo['MatchDetail']['@attributes']['game_time'];
+		$game_date = date("d M Y", strtotime($game_date_time));
 
-	$away_team = $matchinfo['MatchDetail']['@attributes']['away_team']; 
-	// if ($away_team == "Worcestershire") {
-	// 	$away_team = "WCCC";
-	// }
-	$away_team_id = $matchinfo['MatchDetail']['@attributes']['away_team_id']; 
+		$venue_name = $matchinfo['MatchDetail']['Venue']['@attributes']['venue_name'];
+		$venue_city = $matchinfo['MatchDetail']['Venue']['@attributes']['venue_city'];
+		
+		$official_1_first_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_1_first_name'];
+		$official_1_last_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_1_last_name'];
+		$official_1_name = $official_1_first_name. ' ' .$official_1_last_name;
 
-	// $batting_team_id 
-	if (array_key_exists('Innings', $matchinfo)) {
-		$innings = $matchinfo['Innings'];
-	} else {
-		$innings = null;
-	}
-	if (array_key_exists('PlayerDetail', $matchinfo)) {
-		$PlayerDetail = $matchinfo['PlayerDetail'];
-	} else {
-		$PlayerDetail = null;
-	}
+		$official_2_first_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_2_first_name'];
+		$official_2_last_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_2_last_name'];
+		$official_2_name = $official_2_first_name. ' ' .$official_2_last_name;
 
-endif; 
+		$match_id = $matchinfo['MatchDetail']['@attributes']['game_id']; 
+		$result = $matchinfo['MatchDetail']['@attributes']['result']; 
+		$competition_id = $matchinfo['MatchDetail']['@attributes']['competition_id']; 
+		$competition_name = $matchinfo['MatchDetail']['@attributes']['competition_name']; 
+
+
+		if (isset($matchinfo['MatchDetail']['@attributes']['number_days'])) {
+			$number_days = $matchinfo['MatchDetail']['@attributes']['number_days'];
+		} else {
+			$number_days = 0;
+		}
+
+		
+		$home_team = $matchinfo['MatchDetail']['@attributes']['home_team']; 
+		// if ($home_team == "Worcestershire") {
+		// 	$home_team = "WCCC";
+		// }
+		$home_team_id = $matchinfo['MatchDetail']['@attributes']['home_team_id']; 
+
+		$away_team = $matchinfo['MatchDetail']['@attributes']['away_team']; 
+		// if ($away_team == "Worcestershire") {
+		// 	$away_team = "WCCC";
+		// }
+		$away_team_id = $matchinfo['MatchDetail']['@attributes']['away_team_id']; 
+
+		// $batting_team_id 
+		if (array_key_exists('Innings', $matchinfo)) {
+			$innings = $matchinfo['Innings'];
+		} else {
+			$innings = null;
+		}
+		if (array_key_exists('PlayerDetail', $matchinfo)) {
+			$PlayerDetail = $matchinfo['PlayerDetail'];
+		} else {
+			$PlayerDetail = null;
+		}
+
+	endif; 
 
 get_header();
 

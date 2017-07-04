@@ -26,19 +26,21 @@
 			bottom: 0;
 
 			.span6 {
-				position: static;
+				position: relative;
+				margin-top: 100px;
 
 				h1 {
 					margin: 0;
-					position: absolute;
-					top: 50%;
-					    width: 50%;
+					width: 100%;
+					// position: absolute;
+					// top: 50%;
+					// width: 50%;
 				}
 
 				h3 {
-					position: absolute;
-					bottom: 5%;
-					margin: 0;
+					// position: absolute;
+					// bottom: 5%;
+					// margin: 0;
 				}
 
 				img {

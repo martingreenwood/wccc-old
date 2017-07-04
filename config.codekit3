@@ -4361,6 +4361,12 @@
 		"oAP": "\/page-roll-of-honour.php",
 		"oF": 0
 		},
+	"\/page-tickets.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-tickets.php",
+		"oF": 0
+		},
 	"\/page-visitor-info.php": {
 		"ft": 8192,
 		"oA": 2,

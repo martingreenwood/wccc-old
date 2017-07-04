@@ -15,3 +15,4 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 <aside id="sidebar" class="widget-area span3 animated fadeIn delay1" role="complementary">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </aside>
+

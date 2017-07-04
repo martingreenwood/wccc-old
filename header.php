@@ -87,7 +87,11 @@
 								</li>
 
 								<li>
-									<a id="shop" data-tab="shop" href="https://www.hogeweb1002.co.uk/event_listing.aspx" target="_blank">Shop</a> 
+									<a id="shop" data-tab="shop" href="http://speedonesports.com/worcestershire-ccc-clubshop/" target="_blank">Shop</a> 
+								</li>
+
+								<li>
+									<a id="tickets" data-tab="tickets" href="https://www.hogeweb1002.co.uk/event_listing.aspx" target="_blank">Ticket</a> 
 								</li>
 
 								<li>
@@ -493,18 +497,20 @@
 											$query->the_post();
 											?>
 											<div class="package">
+												<a href="<?php echo home_url( '/membership' ); ?>">
 												<?php the_post_thumbnail( ); ?>
 												<div class="copy">
 													<h3><?php the_title( ); ?></h3>
 													<h4><?php the_field('price'); ?></h4>
 												</div>
+												</a>
 												<div class="links">
 													<a target="_blank" href="<?php the_field( 'purchase_link' ); ?>">Buy Membership</a>
 												</div>
 											</div>
 											<?php endwhile; wp_reset_query(); wp_reset_postdata(); endif; ?>
 										</div>
-										<a class="viewall" href="<?php echo home_url( '/downloads' ); ?>">View All Memberships</a>
+										<a class="viewall" href="<?php echo home_url( '/membership' ); ?>">View All Memberships</a>
 									</div>
 
 								</div><!-- END TAB -->

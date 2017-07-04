@@ -255,14 +255,18 @@ add_action('acf/init', 'wccc_acf_init');
 
 
 // Adds $img content after after first paragraph (!.e. after first `</p>` tag)
-add_filter('the_content', function($content)
-	{
+add_filter('the_content', 'add_image_here');
+function add_image_here() {
 	global $post;
-	$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-	$img = '<img src="'.$url.'" alt="" title=""/>';
-	$content = preg_replace('#(<p>.*?</p>)#','$1'.$img, $content, 1);
+	if (is_singular('post')) {
+		$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+		$img = '<img src="'.$url.'" alt="" title=""/>';
+		$content = preg_replace('#(<p>.*?</p>)#','$1'.$img, $content, 1);
+	} else {
+		$content = get_the_content($post->ID);
+	}
 	return $content;
-});
+}
 
 
 /*================================

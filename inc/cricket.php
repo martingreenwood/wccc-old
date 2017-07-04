@@ -19,7 +19,7 @@ function t20_name($teamname) {
 			$team_name = "Lancashire Lightning";
 			break;
 		case "Warwickshire":
-			$team_name = "Birmingahm Bears";
+			$team_name = "Birmingham Bears";
 			break;
 		case "Hampshire":
 			$team_name = "Hampshire";

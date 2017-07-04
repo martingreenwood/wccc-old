@@ -97,7 +97,7 @@ get_header(); ?>
 
 						<div class="sponsor">
 							<div class="image">
-								<?php the_post_thumbnail( ); ?>
+								<img src="<?php the_field( 'sponsor_image' ); ?>">
 							</div>
 							<div class="copy">
 								<h2><?php the_title( ); ?></h2>

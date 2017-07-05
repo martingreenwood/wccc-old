@@ -74,6 +74,8 @@ get_header(); ?>
 				?>
 				</div>
 
+				<?php wp_pagenavi(); ?>
+
 			</main>
 		</div>
 

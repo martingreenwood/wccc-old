@@ -133,6 +133,7 @@
 	}
 
 	#loader {
+		background-color: black;
 		background-image: url(assets/images/logo-rapids.svg);
 
 		#progstat {
@@ -336,7 +337,7 @@
 	.slick-prev {
 		background-image: url(assets/images/slide-prev-blue.svg);
 
-		&:hover {
+		&:hover, &:focus {
 			background-color: transparent;
 		}
 	}
@@ -344,7 +345,7 @@
 	.slick-next {
 		background-image: url(assets/images/slide-next-blue.svg);
 
-		&:hover {
+		&:hover, &:focus {
 			background-color: transparent;
 		}
 	}
@@ -379,9 +380,21 @@
 		}
 
 		.stories, .news {
+			
 			.slide {
+				
 				h2, h3, h4, a {
-					color: $brand-primary-t20;
+					color: $brand-primary-dark-t20;
+				}
+
+				a {
+					&:hover {
+						color: $brand-primary-t20;
+
+						h2, h3, h4 {
+							color: $brand-primary-t20;
+						}
+					}
 				}
 			}
 		}

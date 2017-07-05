@@ -49,7 +49,7 @@
 			<div class="row">
 				<div class="sponsors span12 club">
 					<header>
-						<h3>Official Club Sponsors</h3>
+						<h3>Official Club Partners</h3>
 					</header>
 					<?php 
 					$loop = new WP_Query( array( 'post_type' => 'sponsors', 'posts_per_page' => -1 ) );

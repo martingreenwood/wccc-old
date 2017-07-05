@@ -65,6 +65,16 @@
 				color: white;
 				font-weight: $medium-weight;
 				text-transform: uppercase;
+				border-right: 1px solid white;
+				padding-right: 10px;
+				margin-right: 5px;
+				line-height: 1;
+				
+				&:last-of-type {
+					border-right: 0;
+					padding-right: 0;
+					margin-right: 0;
+				}
 			}
 
 			.match-info {
@@ -166,12 +176,22 @@
 				padding-bottom: 0;
 			}
 
+			.match-result {
+				font-size: 19px;
+				margin-bottom: 0;
+				color: white;
+				line-height: 42px;
+				text-transform: uppercase;
+				font-weight: 900;
+			}
+
 			.match-info {
 
 				.date-time {
 					background: $brand-primary;
 				}
 			}
+
 		}
 
 		.fixture {

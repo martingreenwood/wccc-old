@@ -77,19 +77,24 @@
 
 			a {
 				display: block;
+				display: table;
+
+				&:hover {
+					color: $brand-primary;
+
+					h2, h3, h4, a {
+						color: $brand-primary;
+					}
+				}
 			}
 
 			h2, h3, h4, a {
 				text-transform: uppercase;
-				color: $brand-primary;
+				color: $brand-primary-dark;
+				margin: 0;
+				font-size: 18px;
+				line-height: 1.2;
 			}
-
-			// h3 {
-			// 	width: 171px;
-			// 	white-space: nowrap;
-			// 	text-overflow: ellipsis;
-			// 	overflow: hidden;
-			// }
 
 			.more {
 				position: absolute;

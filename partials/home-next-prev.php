@@ -54,6 +54,60 @@ $next_match = current($matches);
 // get the last match
 $last_match = end($past_matches);
 
+$last_match_alt = end($past_dates);
+$last_match_id = explode('_', $last_match_alt);
+$last_match_id = end($last_match_id);
+
+
+if (file_exists(FEED_DIR .'/crml-'.$last_match_id.'.xml')):
+	$fixture_xml = simplexml_load_file(FEED_DIR .'/crml-'. $last_match_id.'.xml');
+	$fixture_json = json_encode($fixture_xml);
+	$fixture_array = json_decode($fixture_json,TRUE);
+	
+	// live / trea / dinner
+	$status_id = $fixture_array['MatchDetail']['@attributes']['status_id'];
+	$game_id = $fixture_array['MatchDetail']['@attributes']['game_id'];
+	$match_game_date = str_replace("-","",$fixture_array['MatchDetail']['@attributes']['game_date']); 
+	$days_since_game = $today - $match_game_date;
+
+	$MatchDetail = $fixture_array['MatchDetail'];
+	$away_team = $fixture_array['MatchDetail']['@attributes']['away_team'];
+	$away_team_id = $fixture_array['MatchDetail']['@attributes']['away_team_id'];
+	$home_team = $fixture_array['MatchDetail']['@attributes']['home_team'];
+	$home_team_id = $fixture_array['MatchDetail']['@attributes']['home_team_id'];
+
+	$competition_id = $fixture_array['MatchDetail']['@attributes']['competition_id']; 
+	$competition_name = $fixture_array['MatchDetail']['@attributes']['competition_name']; 
+
+	$result = $fixture_array['MatchDetail']['@attributes']['result'];
+	if (isset($fixture_array['MatchDetail']['@attributes']['number_days'])) {
+		$number_days = $fixture_array['MatchDetail']['@attributes']['number_days'];
+	}
+
+	// $batting_team_id 
+	if (array_key_exists('Innings', $fixture_array)) {
+		$innings = $fixture_array['Innings'];
+	} else {
+		$innings = null;
+	}
+	if (array_key_exists('PlayerDetail', $fixture_array)) {
+		$PlayerDetail = $fixture_array['PlayerDetail'];
+	} else {
+		$PlayerDetail = null;
+	}
+
+	if (array_key_exists('Innings', $fixture_array)):	
+		// batting team	
+		$bowling_team_id = $fixture_array['Innings']['@attributes']['bowling_team_id'];
+		$batting_team_id = $fixture_array['Innings']['@attributes']['batting_team_id'];
+
+		$runs_scored = $fixture_array['Innings']['Total']['@attributes']['runs_scored'];
+		$wickets = $fixture_array['Innings']['Total']['@attributes']['wickets'];
+		$overs = $fixture_array['Innings']['Total']['@attributes']['overs'];
+	endif;
+
+endif;
+
 ?>
 	<section id="fixtures">
 
@@ -83,12 +137,12 @@ $last_match = end($past_matches);
 						if ( $match_query->have_posts() ) : while ( $match_query->have_posts() ):
 						$match_query->the_post();
 						?>
-						<a class="info" href="<?php echo the_permalink(); ?>">Match Report</a>
+						<p class="match-result"><?php echo $result; ?></p>
 						<?php endwhile; wp_reset_postdata(); endif; ?>
 					</div>
 					
 				</div>
-				<a href="<?php echo home_url('cricket/fixtures-results/results'); ?>">SEE ALL RESULTS</a>
+				<a class="info" href="<?php echo the_permalink(); ?>">Match Report</a> <a href="<?php echo home_url('cricket/fixtures-results/results'); ?>">SEE ALL RESULTS</a>
 			</div>
 			<div class="fixture">
 				<?php 

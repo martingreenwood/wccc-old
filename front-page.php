@@ -73,7 +73,6 @@ get_header(); ?>
 							</div>
 							<div class="content">
 								<h3><?php the_title( ); ?></h3>
-								<a class="more" href="<?php the_permalink(); ?>">Read More</a>
 							</div>
 						</a>
 					</div>

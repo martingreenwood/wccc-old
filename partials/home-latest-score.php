@@ -112,7 +112,7 @@ if ($days_since_game < $number_days ): ?>
 				if ( $match_query->have_posts() ) : while ( $match_query->have_posts() ):
 				$match_query->the_post();
 				?>
-				<a class="info" href="<?php echo the_permalink(); ?>">Match Report</a>
+				<a class="info" href="<?php echo the_permalink(); ?>">MATCH DETAILS</a>
 				<?php endwhile; wp_reset_postdata(); endif; ?>
 			</div>
 			<div class="mid"><p>VS</p></div>

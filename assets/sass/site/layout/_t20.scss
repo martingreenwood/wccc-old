@@ -6,7 +6,11 @@
 	}
 
 	.cc-btn.cc-dismiss {
-	background-color: $brand-primary-t20 !important;	
+		background-color: $brand-primary-t20 !important;	
+	}
+
+	#topnavbar {
+		background-color: $brand-primary-t20;
 	}
 
 	#main {
@@ -166,6 +170,25 @@
 
 	#no-feed {
 		background-color: $brand-primary-dark-t20;
+	}
+
+	.whats-on {
+
+		#main {
+
+			.row {
+
+				.package {
+
+					header {
+
+						h3 {
+							background-color: $brand-primary-t20;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	.main-menu-container {

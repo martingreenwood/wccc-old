@@ -114,7 +114,7 @@ endif;
 		<div class="container">
 
 			<div class="result">
-				<h2>RESULTS</h2>
+				<h2>LAST MATCH</h2>
 				<div class="match-info">
 					<p class="date-time">
 						<span class="date">
@@ -127,8 +127,19 @@ endif;
 					</p>
 
 					<h2 class="match">
-						<?php echo $last_match['@attributes']['home_team_name']; ?> <span>VS</span><br>
+						<?php if (strpos($last_match['@attributes']['comp_name'], 'T20') !== false): ?>
+						<?php echo t20_name($last_match['@attributes']['home_team_name']); ?>
+						<?php else: ?>
+						<?php echo $last_match['@attributes']['home_team_name']; ?>
+						<?php endif; ?>
+
+						<span>VS</span><br>
+
+						<?php if (strpos($last_match['@attributes']['comp_name'], 'T20') !== false): ?>
+						<?php echo t20_name($last_match['@attributes']['away_team_name']); ?>
+						<?php else: ?>
 						<?php echo $last_match['@attributes']['away_team_name']; ?>
+						<?php endif; ?>
 					</h2>
 
 					<div class="links">
@@ -177,8 +188,21 @@ endif;
 					</p>
 
 					<h2 class="match">
-						<?php echo $next_match['@attributes']['home_team_name']; ?> <span>VS</span><br>
+
+						<?php if (strpos($next_match['@attributes']['comp_name'], 'T20') !== false): ?>
+						<?php echo t20_name($next_match['@attributes']['home_team_name']); ?>
+						<?php else: ?>
+						<?php echo $next_match['@attributes']['home_team_name']; ?>
+						<?php endif; ?>
+
+						<span>VS</span><br>
+
+						<?php if (strpos($next_match['@attributes']['comp_name'], 'T20') !== false): ?>
+						<?php echo t20_name($next_match['@attributes']['away_team_name']); ?>
+						<?php else: ?>
 						<?php echo $next_match['@attributes']['away_team_name']; ?>
+						<?php endif; ?>
+
 					</h2>
 
 					<div class="links">

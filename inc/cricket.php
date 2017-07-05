@@ -10,16 +10,16 @@
 function t20_name($teamname) {
 	switch ($teamname) {
 		case "Essex":
-			$team_name = "Essex Eagles";
+			$team_name = "Eagles";
 			break;
 		case "Yorkshire":
-			$team_name = "Yorkshire Vikings";
+			$team_name = "Vikings";
 			break;
 		case "Lancashire":
-			$team_name = "Lancashire Lightning";
+			$team_name = "Lightning";
 			break;
 		case "Warwickshire":
-			$team_name = "Birmingham Bears";
+			$team_name = "Bears";
 			break;
 		case "Hampshire":
 			$team_name = "Hampshire";
@@ -37,31 +37,31 @@ function t20_name($teamname) {
 			$team_name = "Sussex";
 			break;
 		case "Northamptonshire":
-			$team_name = "Northants Steelbacks";
+			$team_name = "Steelbacks";
 			break;
 		case "Derbyshire":
-			$team_name = "Derbyshire Falcons";
+			$team_name = "Falcons";
 			break;
 		case "Durham":
-			$team_name = "Durham Jets";
+			$team_name = "Jets";
 			break;
 		case "Glamorgan":
 			$team_name = "Glamorgan";
 			break;
 		case "Nottinghamshire":
-			$team_name = "Notts Outlaws";
+			$team_name = "Outlaws";
 			break;
 		case "Gloucestershire":
 			$team_name = "Gloucestershire";
 			break;
 		case "Leicestershire":
-			$team_name = "Leicestershire Foxes";
+			$team_name = "Foxes";
 			break;
 		case "Worcestershire":
-			$team_name = "Worcestershire Rapids";
+			$team_name = "Rapids";
 			break;
 		case "Kent":
-			$team_name = "Kent Spifires";
+			$team_name = "Spifires";
 			break;
 		default:
 			$team_name = $teamname;

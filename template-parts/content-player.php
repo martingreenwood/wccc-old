@@ -13,13 +13,11 @@
 	
 		<div class="span4">
 		<?php 
-		if (has_post_thumbnail()) 
-		{
-			the_post_thumbnail( 'poster' ); 
-		} 
-		else 
-		{
-			echo "<img src='".get_stylesheet_directory_uri()."/assets/images/poster-holder.jpg'>";
+		if (get_field( 't20shot' )) {
+			$t2oimage = get_field( 't20shot' );
+			echo "<img src='".$t2oimage['sizes']['poster']."'>";
+		} else {
+			the_post_thumbnail( 'poster' );
 		}
 		?>
 		</div>
@@ -28,6 +26,8 @@
 			<?php the_content(); ?>
 
 			<div class="stats">
+
+				<h2>PLAYER STATS</h2>
 
 				<?php if (get_field( 'role' )): ?>
 				<dl>

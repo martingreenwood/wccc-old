@@ -59,8 +59,6 @@ get_header(); ?>
 				sharing_display( '', true );
 			}
 
-			the_post_navigation();
-
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
 			endif;

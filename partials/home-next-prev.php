@@ -143,17 +143,18 @@ endif;
 					</h2>
 
 					<div class="links">
-						<?php $args = array( 'post_type' => 'matches', 'meta_query' => array( array('key' => '_wcc_feed_id', 'value' => $last_match['@attributes']['id'], 'compare' => '=' )));
+						<p class="match-result"><?php echo $result; ?></p>
+					</div>
+					
+				</div>
+				<?php $args = array( 'post_type' => 'matches', 'meta_query' => array( array('key' => '_wcc_feed_id', 'value' => $last_match['@attributes']['id'], 'compare' => '=' )));
 						$match_query = new WP_Query( $args );
 						if ( $match_query->have_posts() ) : while ( $match_query->have_posts() ):
 						$match_query->the_post();
 						?>
-						<p class="match-result"><?php echo $result; ?></p>
+						<a class="info" href="<?php echo the_permalink(); ?>">Match Report</a>
 						<?php endwhile; wp_reset_postdata(); endif; ?>
-					</div>
-					
-				</div>
-				<a class="info" href="<?php echo the_permalink(); ?>">Match Report</a> <a href="<?php echo home_url('cricket/fixtures-results/results'); ?>">SEE ALL RESULTS</a>
+				 <a href="<?php echo home_url('cricket/fixtures-results/results'); ?>">SEE ALL RESULTS</a>
 			</div>
 			<div class="fixture">
 				<?php 

@@ -2,6 +2,17 @@
 ## GLOBAL
 --------------------------------------------------------------*/
 
+.cc-window.cc-floating.cc-type-info {
+	color: white !important;
+	background-color: $brand-primary-dark !important;
+}
+
+.cc-btn.cc-dismiss {
+	color: white !important;
+	text-transform: uppercase;
+	background-color: $brand-primary !important;	
+}
+
 #twitter {
 	text-align: center;
 	padding: 40px 0;

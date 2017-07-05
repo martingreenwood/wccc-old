@@ -68,16 +68,19 @@
 		}
 
 		
-		$home_team = $matchinfo['MatchDetail']['@attributes']['home_team']; 
-		// if ($home_team == "Worcestershire") {
-		// 	$home_team = "WCCC";
-		// }
+		if (strpos($competition_name, 'T20') !== false):
+			$home_team = t20_name($matchinfo['MatchDetail']['@attributes']['home_team']);
+		else:
+			$home_team = $matchinfo['MatchDetail']['@attributes']['home_team'];
+		endif;
 		$home_team_id = $matchinfo['MatchDetail']['@attributes']['home_team_id']; 
 
-		$away_team = $matchinfo['MatchDetail']['@attributes']['away_team']; 
-		// if ($away_team == "Worcestershire") {
-		// 	$away_team = "WCCC";
-		// }
+		
+		if (strpos($competition_name, 'T20') !== false):
+			$away_team = t20_name($matchinfo['MatchDetail']['@attributes']['away_team']);
+		else:
+			$away_team = $matchinfo['MatchDetail']['@attributes']['away_team'];
+		endif;
 		$away_team_id = $matchinfo['MatchDetail']['@attributes']['away_team_id']; 
 
 		// $batting_team_id 
@@ -111,15 +114,15 @@ get_header();
 						?>
 						<?php if (file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')): ?>
 						<h1>
-							<?php if ($home_team === "Worcestershire"): ?><span><?php endif; ?>
+							<?php if ($home_team === "Worcestershire" || $home_team === "Rapids"): ?><span><?php endif; ?>
 							<?php echo $home_team; ?>
-							<?php if ($home_team === "Worcestershire"): ?></span><?php endif; ?>
+							<?php if ($home_team === "Worcestershire" || $home_team === "Rapids"): ?></span><?php endif; ?>
 							
 							<small>VS</small><br>
 
-							<?php if ($away_team === "Worcestershire"): ?><span><?php endif; ?>
+							<?php if ($away_team === "Worcestershire" || $away_team === "Rapids"): ?><span><?php endif; ?>
 							<?php echo $away_team; ?>
-							<?php if ($away_team === "Worcestershire"): ?></span><?php endif; ?>
+							<?php if ($away_team === "Worcestershire" || $away_team === "Rapids"): ?></span><?php endif; ?>
 							<?php if($game_status == "Result"): ?>
 							<br><small style="font-size: 40%"><?php echo $result; ?></small>
 							<?php endif; ?>
@@ -161,7 +164,7 @@ get_header();
 				<div class="tab"><?php echo $competition_name; ?></div>
 				<div class="link">
 					<span class="status"><?php echo $game_status; ?></span>
-					<?php echo $result; ?>
+					<strong style="color: black; text-transform: uppercase;"><?php echo $result; ?></strong>
 				</div>
 				<div class="mid"><p>VS</p></div>
 
@@ -250,11 +253,7 @@ get_header();
 						<img src="<?php echo team_image($home_team_id); ?>">
 						<div class="name">
 							
-							<?php if (strpos($competition_name, 'T20') !== false): ?>
-							<h3><?php echo t20_name($home_team); ?></h3>
-							<?php else: ?>
 							<h3><?php echo $home_team; ?></h3>
-							<?php endif; ?>
 
 							<?php if (array_key_exists('Innings', $matchinfo)): ?>
 							<?php if ($home_team_id == $batting_team_id): ?>
@@ -279,11 +278,7 @@ get_header();
 						<img src="<?php echo team_image($away_team_id); ?>">
 						<div class="name">
 							
-							<?php if (strpos($competition_name, 'T20') !== false): ?>
-							<h3><?php echo t20_name(team_name($away_team_id, $competition_id)); ?></h3>
-							<?php else: ?>
-							<h3><?php echo team_name($away_team_id, $competition_id); ?></h3>
-							<?php endif; ?>
+							<h3><?php echo $away_team; ?></h3>
 
 							<?php if (array_key_exists('Innings', $matchinfo)): ?>
 							<?php if ($away_team_id == $batting_team_id): ?>
@@ -340,13 +335,13 @@ get_header();
 				</div>
 				<?php endif; ?>
 
-				<div class="match-weather">
+				<!-- <div class="match-weather">
 
 					<?php
 
-					$BASE_URL = "http://query.yahooapis.com/v1/public/yql";
-					$yql_query = 'select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text="'.$venue_city.', GB")';
-					$yql_query_url = $BASE_URL . "?q=" . urlencode($yql_query) . "&format=json";
+					// $BASE_URL = "http://query.yahooapis.com/v1/public/yql";
+					// $yql_query = 'select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text="'.$venue_city.', GB")';
+					// $yql_query_url = $BASE_URL . "?q=" . urlencode($yql_query) . "&format=json";
 
 					// if(cached_and_valid(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt')){
 					// 	$weather_data = file_get_contents(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt');
@@ -357,39 +352,39 @@ get_header();
 					// 	$weather_obj = json_decode($weather_data);
 					// }
 
-					if(cached_and_valid(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt')){
-						$weather_data = file_get_contents(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt');
-						$weather_obj = json_decode($weather_data);
-					} else {
-						$weather_data = get_data($yql_query_url);
-						file_put_contents(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt', $weather_data);
-						$weather_obj = json_decode($weather_data);
-					}
+					// if(cached_and_valid(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt')){
+					// 	$weather_data = file_get_contents(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt');
+					// 	$weather_obj = json_decode($weather_data);
+					// } else {
+					// 	$weather_data = get_data($yql_query_url);
+					// 	file_put_contents(get_stylesheet_directory() . '/cache/'.$venue_city.'-venueweather.txt', $weather_data);
+					// 	$weather_obj = json_decode($weather_data);
+					// }
 					
 					?>
 
-				<?php if (file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')): ?>
-				<?php if ($game_status != "Result" && $game_status != "Pre Game"): ?>
+				<?php //if (file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')): ?>
+				<?php //if ($game_status != "Result" && $game_status != "Pre Game"): ?>
 					<h3>Match Weather</h3>
 					<div class="weather">
 
 						<div class="icon">
-							<?php echo weather_icon($weather_obj->query->results->channel->item->condition->code); ?>
+							<?php //echo weather_icon($weather_obj->query->results->channel->item->condition->code); ?>
 							<?php //echo weather_icon($weather_obj->weather[0]->icon); ?>
 						</div>
 
 						<div class="temp">
-						<?php echo fahrenheit_to_celsius($weather_obj->query->results->channel->item->condition->temp); ?> &deg;C
-						<?php echo $weather_obj->query->results->channel->item->condition->text; ?>
+						<?php //echo fahrenheit_to_celsius($weather_obj->query->results->channel->item->condition->temp); ?> &deg;C
+						<?php //echo $weather_obj->query->results->channel->item->condition->text; ?>
 
 						<?php //echo kelvin_to_celsius($weather_obj->main->temp); ?>
 						<?php //echo weather_type($weather_obj->weather[0]->description); ?>
 						</div>
 					</div>
-				<?php endif; ?>
-				<?php endif; ?>
+				<?php //endif; ?>
+				<?php //endif; ?>
 
-				</div>
+				</div> -->
 
 				<?php if (file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')): ?>
 				<?php if ($game_status != "Result" && $game_status != "Pre Game"): ?>

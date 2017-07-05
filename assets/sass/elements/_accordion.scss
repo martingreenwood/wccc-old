@@ -38,13 +38,14 @@
 	font-weight: $heavy-weight;
 	font-family: $heading-font-family;
 	text-transform: uppercase;
+    position: relative;
 }
 
 [data-accordion] > [data-control]:after {
     content: "";
     position: absolute;
-    right: 10px;
-    top: 12px;
+    right: 17px;
+    top: 21px;
     font-size: 25px;
     color: #444;
     height: 15px;

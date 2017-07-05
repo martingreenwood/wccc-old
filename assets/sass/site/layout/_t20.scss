@@ -1,6 +1,14 @@
 .t20 {
 	font-weight: $medium-weight;
 
+	.cc-window.cc-floating.cc-type-info {
+		background-color: $brand-primary-dark-t20 !important;
+	}
+
+	.cc-btn.cc-dismiss {
+	background-color: $brand-primary-t20 !important;	
+	}
+
 	#main {
 
 		article h2, article h3, article h4, article h5 {
@@ -361,6 +369,13 @@
 
 	#jumbrotron {
 		background-color: $brand-primary-dark-t20;
+
+		.slick-prev {
+			background-image: url(assets/images/slide-prev-white.svg);
+		}
+		.slick-next {
+			background-image: url(assets/images/slide-next-white.svg);
+		}
 
 		h1, h2 {
 

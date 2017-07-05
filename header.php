@@ -87,7 +87,7 @@
 								</li>
 
 								<li>
-									<a id="shop" data-tab="shop" href="http://speedonesports.com/worcestershire-ccc-clubshop/" target="_blank">Shop</a> 
+									<a id="shop" data-tab="shop" href="http://speedonesports.com/worcestershire-ccc-clubshop/" target="_blank">Club Shop</a> 
 								</li>
 
 								<li>

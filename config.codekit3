@@ -760,6 +760,27 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/assets\/images\/thumb-holder.jpg": {
+		"ft": 16384,
+		"iS": 32879,
+		"oA": 0,
+		"oAP": "\/assets\/images\/thumb-holder.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/assets\/images\/thumb-holder.png": {
+		"ft": 32768,
+		"iS": 21386,
+		"oA": 0,
+		"oAP": "\/assets\/images\/thumb-holder.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/assets\/images\/top-image-home-t20.png": {
 		"ft": 32768,
 		"iS": 865140,

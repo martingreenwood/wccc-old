@@ -20,7 +20,7 @@
 		} 
 		else 
 		{
-			echo "<img src='".get_stylesheet_directory_uri()."/assets/images/poster-holder.jpg'>";
+			echo "<img src='".get_stylesheet_directory_uri()."/assets/images/thumb-holder.jpg'>";
 		}
 		?>
 

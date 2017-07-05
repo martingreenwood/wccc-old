@@ -13,6 +13,20 @@
 	background-color: $brand-primary !important;	
 }
 
+.wp-pagenavi {
+	margin-bottom: 40px;
+
+	.wp-pagenavi a, .wp-pagenavi span {
+		text-decoration: none;
+		border: 1px solid #cccccc;
+		padding: 5px;
+		margin: 1px;
+		display: inline-block;
+		min-width: 32px;
+		text-align: center;
+	}
+}
+
 #twitter {
 	text-align: center;
 	padding: 40px 0;

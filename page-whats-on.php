@@ -45,7 +45,7 @@ get_header(); ?>
 			<div class="table"><div class="cell middle">
 				<div class="container">
 					<div class="span6">
-						<h1><?php the_title(); ?></h1>
+						<h1>What’s on this year<br>at New Road</h1>
 					</div>
 				</div>
 			</div></div>
@@ -91,9 +91,10 @@ get_header(); ?>
 				?>
 				<div class="package span3">
 					<a href="<?php the_permalink(); ?>">
-						<?php the_post_thumbnail( ); ?>
+						<?php the_post_thumbnail( thumbnail ); ?>
 						<header>
-							<h3><?php the_title( ); ?></h3>
+							<h3><?php the_title( ); ?><br>
+							<small><?php echo date("dS F Y", strtotime(get_field( 'event_date' ))); ?></small></h3>
 						</header>
 					</a>
 				</div>

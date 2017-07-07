@@ -8,9 +8,13 @@
 		.news {
 			.span6 {
 				h1, h2 {
-					font-size: 55px;
+					font-size: 29px;
 					line-height: 0.875;
 					color: white;
+
+					@include media ($medium-screen-up) {
+						font-size: 55px;
+					}
 
 					span {
 						color: #1ac036;
@@ -61,15 +65,21 @@
 			color: white;
 			font-weight: $medium-weight;
 			text-transform: uppercase;
-			font-size: 14px;
+			font-size: 10px;
 			display: block;
 			padding: 8px 12px;
 			width: auto;
 			max-width: 460px;
-			max-width: 50%;
+			max-width: 100%;
 			text-align: center;
 			margin: 0 auto;
 			white-space: nowrap;
+
+			@include media ($medium-screen-up) {
+				max-width: 460px;
+				max-width: 50%;
+				font-size: 14px;
+			}
 
 			&:before, &:after {
 				background-color: $brand-primary;
@@ -83,12 +93,16 @@
 
 			&:after {
 				left: -20px;
-				transform: skew(40deg,0deg);
+				@include media ($medium-screen-up) {
+					transform: skew(40deg,0deg);
+				}
 			}
 
 			&:before {
 				right: -20px;
-				transform: skew(-40deg,0deg);
+				@include media ($medium-screen-up) {
+					transform: skew(-40deg,0deg);
+				}
 			}
 
 		}
@@ -100,14 +114,22 @@
 
 			img {
 				height: 96px;
-
 				position: absolute;
 				top: 0;
+				display: none;
+
+				@include media ($medium-screen-up) {
+					display: block;
+				}
 			}
 
 			.name {
-				width: 300px;
+				width: 100%;
 				text-align: center;
+
+				@include media ($medium-screen-up) {
+					width: 300px;
+				}
 
 				h3, h4 {
 					margin: 0;
@@ -116,14 +138,22 @@
 				}
 
 				h3 {
-					font-size: 20px;
+					font-size: 13px;
 					color: $brand-primary-dark-t20;
+
+					@include media ($medium-screen-up) {
+						font-size: 20px;
+					}
 				}
 
 				h4 {
-					font-size: 34px;
+					font-size: 18px;
 					color: $brand-primary;
 					position: relative;
+
+					@include media ($medium-screen-up) {
+						font-size: 34px;
+					}
 
 					small {
 						font-size: 15px;
@@ -137,7 +167,11 @@
 
 			&.home {
 				float: left;
-				padding-right: 150px;
+				padding-right: 10%;
+				
+				@include media ($medium-screen-up) {
+					padding-right: 150px;
+				}
 
 				img {
 					float: left;
@@ -146,12 +180,30 @@
 
 				.name {
 					float: right;
+					text-align: right;
+
+					h3 {
+						float: right;
+
+						@include media ($medium-screen-up) {
+							float: none;
+						}
+					}
+
+					@include media ($medium-screen-up) {
+						text-align: center;
+					}
 				}
 
 			}
 			&.away {
 				float: right;
-				padding-left: 150px;
+				padding-left: 10%;
+
+				@include media ($medium-screen-up) {
+					padding-left: 150px;
+				}
+
 
 				img {
 					float: right;
@@ -160,6 +212,20 @@
 
 				.name {
 					float: left;
+					text-align: left;
+
+					h3 {
+						float: left;
+
+						@include media ($medium-screen-up) {
+							float: none;
+						}
+					}
+
+					@include media ($medium-screen-up) {
+						text-align: center;
+					}
+
 				}
 			}
 		}
@@ -172,11 +238,15 @@
 			
 			p {
 				margin: 0;
-				font-size: 20px;
+				font-size: 14px;
 				font-family: $heading-font-family;
 				color: $brand-primary-dark-t20;
 				padding: 26px 0;
 				font-weight: $heavy-weight;
+
+				@include media ($medium-screen-up) {
+					font-size: 20px;
+				}
 			}
 		}
 
@@ -186,15 +256,19 @@
 			bottom: 0;
 			width: 100%;
 			left: 0;
-			bottom: 20px;
+			bottom: 10px;
 
-				.status {
-					font-weight: $medium-weight;
-					color: #333;
-					text-transform: uppercase;
-					line-height: 1;
-					display: block;
-				}
+			@include media ($medium-screen-up) {
+				bottom: 20px;
+			}
+
+			.status {
+				font-weight: $medium-weight;
+				color: #333;
+				text-transform: uppercase;
+				line-height: 1;
+				display: block;
+			}
 
 			a {
 				color: $brand-primary;
@@ -216,6 +290,42 @@
 
 				img {
 					position: relative;
+				}
+			}
+		}
+	}
+
+	#primary {
+
+		aside {
+
+			.toggle-quick {
+				position: fixed;
+				z-index: 9999999;
+				border: 0;
+				background: #009DE0;
+				color: white;
+				text-transform: uppercase;
+				bottom: 20px;
+				left: 19px;
+			}
+
+			nav {
+				display: none;
+
+				&.show { 
+					display: block;
+					position: fixed;
+					top: auto;
+					bottom: 50px;
+					margin: 0;
+					background: #f9f9f9;
+					border: 0;
+					left: 19px;
+				}
+
+				@include media ($medium-screen-up) {
+					display: block;
 				}
 			}
 		}
@@ -250,9 +360,13 @@
 			padding-bottom: 30px;
 
 			dl {
-				width: 50%;
+				width: 100%;
 				float: left;
 				margin: 0;
+
+				@include media ($medium-screen-up) {
+					width: 50%;
+				}
 
 				dt {
 					float: left;

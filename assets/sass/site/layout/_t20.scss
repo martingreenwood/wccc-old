@@ -13,6 +13,20 @@
 		background-color: $brand-primary-t20;
 	}
 
+	#masthead {
+
+		.site-header {
+
+			.branding {
+				width: 50%;
+				
+				@include media($medium-screen-up) {
+					width: auto;
+				}
+			}
+		}
+	}
+
 	#main {
 
 		article h2, article h3, article h4, article h5 {
@@ -137,6 +151,10 @@
 
 		h3 {
 			color: $brand-primary-t20;
+
+			&:before {
+				background-color: $brand-primary-dark-t20;
+			}
 
 			&.active {
 				background-color: $brand-primary-t20;
@@ -384,6 +402,11 @@
 	.live-view {
 		background: $brand-primary-t20;
 		color: white;
+		margin-right: 23px;
+
+		@include media($medium-screen-up) {
+			margin-right: 33px;
+		}
 
 		&:after {
 			background-color: $brand-primary-t20;
@@ -439,7 +462,11 @@
 	}
 
 	#fixtures {
-		background: linear-gradient(90deg, $brand-primary-t20 50%, $brand-primary-dark-t20 50%);
+		background: linear-gradient(180deg, $brand-primary-t20 50%, $brand-primary-dark-t20 50%);
+
+		@include media($medium-screen-up) {
+			background: linear-gradient(90deg, $brand-primary-t20 50%, $brand-primary-dark-t20 50%);
+		}
 
 		.result, .fixture {
 			
@@ -753,6 +780,44 @@
 	}
 
 	.Opta {
+
+		.Opta_C {
+
+			.Opta-CricketInningsBreakdown {
+
+				.Opta-Team {
+					background-color: $brand-primary-t20;
+
+					&.Opta-Away {
+						background-color: $brand-primary-dark-t20;
+					}
+				}
+			}
+		}
+
+		.Opta-Nav {
+
+			li.Opta-On {
+
+				a {
+					background-color: $brand-primary-t20;
+				}
+			}
+		}
+
+		.Opta-Teamsheet-Holder {
+
+			.Opta-Teamsheet-Button {
+				background-color: $brand-primary-t20;
+			}
+		}
+
+		.Opta-Away {
+
+			.Opta-Teamsheet-Button {
+				background-color: $brand-primary-dark-t20;
+			}
+		}
 
 		.Opta_C_S {
 

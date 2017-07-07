@@ -23,6 +23,17 @@
 
 <div id="page" class="site <?php echo $pagename; ?>">
 
+	<div id="turnmeon">
+		<div class="table">
+			<div class="cell middle">
+				<center>
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/rotate-phone.svg">
+					Please Use Portrait Mode
+				</center>
+			</div>
+		</div>
+	</div>
+
 	<div id="loader">
 		<div id="loading">
 			<div id="progstat"></div>
@@ -91,7 +102,7 @@
 								</li>
 
 								<li>
-									<a id="tickets" data-tab="tickets" href="https://www.hogeweb1002.co.uk/event_listing.aspx" target="_blank">Ticket</a> 
+									<a id="tickets" data-tab="tickets" href="https://www.hogeweb1002.co.uk/event_listing.aspx" target="_blank">Tickets</a> 
 								</li>
 
 								<li>

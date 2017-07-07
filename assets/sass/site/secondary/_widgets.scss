@@ -2,6 +2,16 @@ aside {
 	margin-bottom: 40px;
 }
 
+#primary {
+	
+	.widget_child_pages_widget{
+		
+		.toggle-subs {
+			display: none;
+		}
+	}
+}
+
 .widget {
 	@include rem(margin, 0 0 40px);
 

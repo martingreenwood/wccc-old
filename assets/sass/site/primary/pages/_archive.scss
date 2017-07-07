@@ -1,4 +1,4 @@
-/*--------------------------------------------------------------
+article/*--------------------------------------------------------------
 ## Archive
 --------------------------------------------------------------*/
 
@@ -59,9 +59,10 @@
 
 		article {
 			position: relative;
-			margin-bottom: 5px;
+			margin-bottom: 15px;
 
 			@include media($medium-screen-up) {
+				margin-bottom: 5px;
 
 				&:nth-child(4n) {
 				}
@@ -69,6 +70,11 @@
 
 			img {
 				display: block;
+				width: 100%;
+
+				@include media($medium-screen-up) {
+					width: auto;
+				}
 			}
 
 			header {

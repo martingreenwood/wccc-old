@@ -62,13 +62,24 @@ if (file_exists(FEED_DIR .'/crml-'.$last_match_id.'.xml')):
 	$days_since_game = $today - $match_game_date;
 
 	$MatchDetail = $fixture_array['MatchDetail'];
-	$away_team = $fixture_array['MatchDetail']['@attributes']['away_team'];
-	$away_team_id = $fixture_array['MatchDetail']['@attributes']['away_team_id'];
-	$home_team = $fixture_array['MatchDetail']['@attributes']['home_team'];
-	$home_team_id = $fixture_array['MatchDetail']['@attributes']['home_team_id'];
-
 	$competition_id = $fixture_array['MatchDetail']['@attributes']['competition_id']; 
 	$competition_name = $fixture_array['MatchDetail']['@attributes']['competition_name']; 
+
+	if (strpos($competition_name, 'T20') !== false):
+		$home_team = t20_name($fixture_array['MatchDetail']['@attributes']['home_team']);
+	else:
+		$home_team = $fixture_array['MatchDetail']['@attributes']['home_team'];
+	endif;
+
+	if (strpos($competition_name, 'T20') !== false):
+		$away_team = t20_name($fixture_array['MatchDetail']['@attributes']['away_team']);
+	else:
+		$away_team = $fixture_array['MatchDetail']['@attributes']['away_team'];
+	endif;
+
+
+	$away_team_id = $fixture_array['MatchDetail']['@attributes']['away_team_id'];
+	$home_team_id = $fixture_array['MatchDetail']['@attributes']['home_team_id'];
 
 	$result = $fixture_array['MatchDetail']['@attributes']['result'];
 	if (isset($fixture_array['MatchDetail']['@attributes']['number_days'])) {
@@ -201,11 +212,7 @@ if ($days_since_game < $number_days ): ?>
 					<img src="<?php echo team_image($home_team_id); ?>">
 					<div class="name">
 						
-						<?php if (strpos($competition_name, 'T20') !== false): ?>
-						<h3><?php echo t20_name(team_name($home_team_id, $competition_id)); ?></h3>
-						<?php else: ?>
-						<h3><?php echo team_name($home_team_id, $competition_id); ?></h3>
-						<?php endif; ?>
+						<h3><?php echo $home_team; ?></h3>
 
 						<?php if (array_key_exists('Innings', $fixture_array)): ?>
 						<?php if ($home_team_id == $batting_team_id): ?>
@@ -222,6 +229,8 @@ if ($days_since_game < $number_days ): ?>
 						<?php else: ?>
 							<h4>YET TO BAT</h4>
 						<?php endif; ?>
+						<?php else: ?>
+							<h4>YET TO BAT</h4>
 						<?php endif; ?>
 					</div>
 				</div>
@@ -229,11 +238,7 @@ if ($days_since_game < $number_days ): ?>
 				<div class="team two">
 					<div class="name">
 
-						<?php if (strpos($competition_name, 'T20') !== false): ?>
-						<h3><?php echo t20_name(team_name($away_team_id, $competition_id)); ?></h3>
-						<?php else: ?>
-						<h3><?php echo team_name($away_team_id, $competition_id); ?></h3>
-						<?php endif; ?>
+						<h3><?php echo $away_team; ?></h3>
 
 						<?php if (array_key_exists('Innings', $fixture_array)): ?>
 						<?php if ($away_team_id == $batting_team_id): ?>
@@ -250,6 +255,8 @@ if ($days_since_game < $number_days ): ?>
 						<?php else: ?>
 							<h4>YET TO BAT</h4>
 						<?php endif; ?>
+						<?php else: ?>
+							<h4>YET TO BAT</h4>
 						<?php endif; ?>
 					</div>
 					<img src="<?php echo team_image($away_team_id); ?>">

@@ -256,20 +256,22 @@ get_header();
 							<h3><?php echo $home_team; ?></h3>
 
 							<?php if (array_key_exists('Innings', $matchinfo)): ?>
-							<?php if ($home_team_id == $batting_team_id): ?>
-								<h4>
-									<?php echo $innings['Total']['@attributes']['runs_scored']; ?>
-									<?php 
-									if ($innings['Total']['@attributes']['wickets'] < 10) {
-										echo "/ " . $innings['Total']['@attributes']['wickets'];
-									} else {
-										echo "All Out";
-									}
-									?>
-								</h4>
+								<?php if ($home_team_id == $batting_team_id): ?>
+									<h4>
+										<?php echo $innings['Total']['@attributes']['runs_scored']; ?>
+										<?php 
+										if ($innings['Total']['@attributes']['wickets'] < 10) {
+											echo "/ " . $innings['Total']['@attributes']['wickets'];
+										} else {
+											echo "All Out";
+										}
+										?>
+									</h4>
+								<?php else: ?>
+									<h4>YET TO BAT</h4>
+								<?php endif; ?>
 							<?php else: ?>
-								<h4>YET TO BAT</h4>
-							<?php endif; ?>
+							<h4>YET TO BAT</h4>
 							<?php endif; ?>
 
 						</div>
@@ -281,20 +283,22 @@ get_header();
 							<h3><?php echo $away_team; ?></h3>
 
 							<?php if (array_key_exists('Innings', $matchinfo)): ?>
-							<?php if ($away_team_id == $batting_team_id): ?>
-								<h4>
-									<?php echo $innings['Total']['@attributes']['runs_scored']; ?>
-									<?php 
-									if ($innings['Total']['@attributes']['wickets'] < 10) {
-										echo "/ " . $innings['Total']['@attributes']['wickets'];
-									} else {
-										echo "All Out";
-									}
-									?>
-								</h4>
+								<?php if ($away_team_id == $batting_team_id): ?>
+									<h4>
+										<?php echo $innings['Total']['@attributes']['runs_scored']; ?>
+										<?php 
+										if ($innings['Total']['@attributes']['wickets'] < 10) {
+											echo "/ " . $innings['Total']['@attributes']['wickets'];
+										} else {
+											echo "All Out";
+										}
+										?>
+									</h4>
+								<?php else: ?>
+									<h4>YET TO BAT</h4>
+								<?php endif; ?>
 							<?php else: ?>
-								<h4>YET TO BAT</h4>
-							<?php endif; ?>
+							<h4>YET TO BAT</h4>
 							<?php endif; ?>
 						</div>
 					</div>

@@ -29,6 +29,8 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 =            FUNCTIONS & CALLS            =
 =========================================*/
 
+// DETECT ORIENTATION CHANGE
+
 window.addEventListener("orientationchange", function() {
 	if (window.matchMedia("(orientation: portrait)").matches) {
 		// you're in PORTRAIT mode
@@ -43,7 +45,8 @@ window.addEventListener("orientationchange", function() {
 	}
 }, false);
 
-// LOADER
+
+// PAGE LOADER
 
 (function(){
   function id(v){ return document.getElementById(v); }
@@ -79,7 +82,9 @@ window.addEventListener("orientationchange", function() {
   document.addEventListener('DOMContentLoaded', loadbar, false);
 })(jQuery);
 
-// OPEN  ELEMETS ON MAN NAV
+
+
+// OPEN ELEMETS ON MAN NAV
 
 (function($){
 	$('#cricket .menu-sub-menu ul li a').on('hover', function(event) {
@@ -95,6 +100,24 @@ window.addEventListener("orientationchange", function() {
 	});
 })(jQuery);
 
+
+
+// OPEN FIRST CHILD ITEM
+
+(function($){
+	$('.menu-toggle').on('click', function(event) {
+		event.preventDefault();
+		$('.mega-menu > li:first-of-type').addClass('mega-toggle-on');
+
+		// $('.mega-menu > li:first-of-type .mega-sub-menu').css({
+		// 	'visibility': 'visible',
+		// 	'opacity': 1
+		// });
+	});
+})(jQuery);
+
+
+
 // OPEN CHILD NAV ELEMETS ON MAIN NAV HOVER
 
 (function($){
@@ -107,7 +130,8 @@ window.addEventListener("orientationchange", function() {
 })(jQuery);
 
 
-//widget_child_pages_widget
+
+// TOGGLE FOR PAGE WIDGET
 
 (function($){
 
@@ -122,7 +146,7 @@ window.addEventListener("orientationchange", function() {
 })(jQuery);
 
 
-// quick nav
+// QUICK NAV FOR MATCHES
 
 (function($){
 
@@ -249,6 +273,9 @@ window.addEventListener("orientationchange", function() {
 				breakpoint: 480,
 				settings: {
 					arrows: false,
+					slidesToScroll: 1,
+					autoplay: true,
+					autoplaySpeed: 3000,
 				}
 			}
 		]
@@ -339,7 +366,6 @@ window.addEventListener("orientationchange", function() {
 	});
 
 })(jQuery);
-
 
 (function($) {
 

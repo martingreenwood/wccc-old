@@ -108,8 +108,8 @@
 	}
 
 	#jumbrotron {
-		height: 250px;
-		max-height: 250px;
+		height: 300px;
+		max-height: 300px;
 
 		@include media($medium-screen-up) {
 			height: 420px;
@@ -122,6 +122,14 @@
 			font-size: 38px;
 			line-height: 1.1;
 			margin: 0 0 40px 0;
+
+			br {
+				display: none;
+
+				@include media($medium-screen-up) {
+					display: block;
+				}
+			}
 		}
 
 		h3 {
@@ -1010,10 +1018,15 @@
 
 			.package {
 				position: relative;
-				margin-bottom: 5px;
+				margin-bottom: 20px;
+
+				@include media($medium-screen-up) {
+					margin-bottom: 5px;
+				}
 
 				img {
 					display: block;
+					width: 100%;
 				}
 
 				header {

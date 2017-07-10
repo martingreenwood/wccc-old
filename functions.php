@@ -290,7 +290,7 @@ add_filter( 'get_the_archive_title', function ($title) {
 });
 
 /*================================
-=            INCLUDES            =
+=            COOKIES            =
 ================================*/
 
 function coooooookies() { 
@@ -318,6 +318,19 @@ function coooooookies() {
 
 }
 add_action('wp_head', 'coooooookies');
+
+/*==============================================
+=            ADD PHP TO TEXT WIDETS            =
+==============================================*/
+
+function php_execute($html){
+	if(strpos($html,"<"."?php")!==false){ ob_start(); eval("?".">".$html);
+		$html=ob_get_contents();
+		ob_end_clean();
+	}
+	return $html;
+}
+add_filter('widget_text','php_execute',100);
 
 
 /*================================

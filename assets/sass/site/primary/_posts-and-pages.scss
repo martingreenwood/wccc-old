@@ -2,6 +2,273 @@
 ## GLOBAL
 --------------------------------------------------------------*/
 
+#vs {
+	position: relative;
+	background: #f9f9f9;
+	padding: 0 0 40px 0;
+
+	.row {
+		margin-bottom: 0;
+
+		h3 {
+			color: $brand-primary;
+			font-size: 30px;
+			margin: 0 0 20px 0;
+			text-transform: uppercase;
+			text-align: center;
+		}
+
+		.innings {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+
+		.inning {
+			&:nth-child(1) {
+				.team {
+					.name {
+					}
+				}
+			}
+		}
+	}
+
+	.tab {
+		position: relative;
+		background-color: $brand-primary;
+		color: white;
+		font-weight: $medium-weight;
+		text-transform: uppercase;
+		font-size: 10px;
+		display: block;
+		padding: 8px 12px;
+		width: auto;
+		max-width: 460px;
+		max-width: 100%;
+		text-align: center;
+		margin: 0 auto;
+		white-space: nowrap;
+
+		@include media ($medium-screen-up) {
+			max-width: 460px;
+			max-width: 50%;
+			font-size: 14px;
+		}
+
+		&:before, &:after {
+			background-color: $brand-primary;
+			content: "";
+			width: 35px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			z-index: 0;
+		}
+
+		&:after {
+			left: -20px;
+			@include media ($medium-screen-up) {
+				transform: skew(40deg,0deg);
+			}
+		}
+
+		&:before {
+			right: -20px;
+			@include media ($medium-screen-up) {
+				transform: skew(-40deg,0deg);
+			}
+		}
+
+	}
+
+	.team {
+		float: left;
+		width: 50%;
+		position: relative;
+
+		img {
+			height: 96px;
+			position: absolute;
+			top: 0;
+			display: none;
+
+			@include media ($medium-screen-up) {
+				display: block;
+			}
+		}
+
+		.name {
+			width: 100%;
+			text-align: center;
+
+			@include media ($medium-screen-up) {
+				width: 300px;
+			}
+
+			h3, h4 {
+				margin: 0;
+				line-height: 1;
+				text-transform: uppercase;
+			}
+
+			h3 {
+				font-size: 13px;
+				color: $brand-primary-dark-t20;
+
+				@include media ($medium-screen-up) {
+					font-size: 20px;
+				}
+			}
+
+			h4 {
+				font-size: 18px;
+				color: $brand-primary;
+				position: relative;
+
+				@include media ($medium-screen-up) {
+					font-size: 34px;
+				}
+
+				small {
+					font-size: 15px;
+					position: absolute;
+					bottom: -17px;
+					left: 0;
+					width: 100%;
+				}
+			}
+		}
+
+		&.home {
+			float: left;
+			padding-right: 10%;
+			
+			@include media ($medium-screen-up) {
+				padding-right: 150px;
+			}
+
+			img {
+				float: left;
+				left: 0;
+			}
+
+			.name {
+				float: right;
+				text-align: right;
+
+				h3 {
+					float: right;
+
+					@include media ($medium-screen-up) {
+						float: none;
+					}
+				}
+
+				@include media ($medium-screen-up) {
+					text-align: center;
+				}
+			}
+
+		}
+		&.away {
+			float: right;
+			padding-left: 10%;
+
+			@include media ($medium-screen-up) {
+				padding-left: 150px;
+			}
+
+
+			img {
+				float: right;
+				right: 0;
+			}
+
+			.name {
+				float: left;
+				text-align: left;
+
+				h3 {
+					float: left;
+
+					@include media ($medium-screen-up) {
+						float: none;
+					}
+				}
+
+				@include media ($medium-screen-up) {
+					text-align: center;
+				}
+
+			}
+		}
+	}
+
+	.mid {
+		position: absolute;
+		text-align: center;
+		width: 100%;
+		left: 0;
+		
+		p {
+			margin: 0;
+			font-size: 14px;
+			font-family: $heading-font-family;
+			color: $brand-primary-dark-t20;
+			padding: 26px 0;
+			font-weight: $heavy-weight;
+
+			@include media ($medium-screen-up) {
+				font-size: 20px;
+			}
+		}
+	}
+
+	.link {
+		position: absolute;
+		text-align: center;
+		bottom: 0;
+		width: 100%;
+		left: 0;
+		bottom: 10px;
+
+		@include media ($medium-screen-up) {
+			bottom: 20px;
+		}
+
+		.status {
+			font-weight: $medium-weight;
+			color: #333;
+			text-transform: uppercase;
+			line-height: 1;
+			display: block;
+		}
+
+		a {
+			color: $brand-primary;
+			font-weight: $heavy-weight;
+			text-transform: uppercase;
+			font-size: 14px;
+
+
+		}
+	}
+
+	.one_innings {
+		
+		.team {
+
+			.name {
+				padding: 21px 0px;
+			}
+
+			img {
+				position: relative;
+			}
+		}
+	}
+}
+
 #turnmeon {
 	display: none;
 	position: fixed;
@@ -584,6 +851,11 @@
 	padding-bottom: 40px;
 
 	.item {
+		margin-bottom: 20px;
+
+		@include media($medium-screen-up) {
+			margin-bottom: 0;
+		}
 
 		img {
 			display: block;

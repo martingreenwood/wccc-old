@@ -58,8 +58,12 @@
 		width: 100%;
 		height: 100%;
 		top: 0;
-		background-position: 50%;
+		background-position: 75%;
 		background-repeat: no-repeat;
+
+		@include media($medium-screen-up) {
+			background-position: 50%;
+		}
 	}
 
 	.stories {

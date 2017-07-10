@@ -1,16 +1,144 @@
 .main-menu-container {
-	display: none;
-
+	// display: none;
 	position: absolute;
 	z-index: -1;
-	//height: 100vh;
 	left: 0;
 	width: 100%;
-	top: 0;
+	top: -115vh;
 	padding-top: 120px;
-	padding-bottom: 50px;
 	background: rgba(17, 50, 33, 0.9);
-	overflow: hidden;
+	-webkit-transition: top .25s ease-in-out;
+	   -moz-transition: top .25s ease-in-out;
+	    -ms-transition: top .25s ease-in-out;
+	     -o-transition: top .25s ease-in-out;
+	        transition: top .25s ease-in-out;
+
+	#mega-menu-wrap-menu-1 {
+		border-top: 2px solid white;
+		border-bottom: 2px solid white;
+		float: left;
+		width: 100%;
+		margin-bottom: 20px;
+		margin-top: 40px;
+
+		#mega-menu-menu-1 {
+
+			&[data-effect="fade_up"] li.mega-menu-item.mega-toggle-on > ul.mega-sub-menu, 
+			&[data-effect="fade_up"] li.mega-menu-item.mega-menu-megamenu.mega-toggle-on ul.mega-sub-menu {
+				margin-top: 1px;
+				padding: 0;
+				border-top: 1px solid #666;
+
+				@include media ($medium-screen-up) {
+					background: rgba(17, 50, 33, 0.9);
+					border-top: 0;
+				}
+			}
+
+			p {
+				margin-bottom: 0;
+			}
+
+			> .mega-menu-item {
+				position: relative;
+				float: left;
+				margin: 0 20px 0 0;
+				text-transform: uppercase;
+				font-size: 14px;
+
+				width: 100%;
+				padding: 0 10px;
+				border-bottom: 1px solid #666;
+
+				@include media($medium-screen-up) {
+					border-bottom: 0;
+					padding: 0;
+					width: auto;
+				}
+
+				> .mega-menu-link {
+					padding: 10px 0;
+					font-weight: $medium-weight;
+					line-height: normal;
+					height: auto;
+					text-transform: inherit;
+					background: transparent;
+
+					&:hover, &:focus, &:active {
+						background: transparent;
+						color: $brand-primary;
+					}
+				}
+
+				&.mega-current-menu-item, .mega-toggle-on {
+					> .mega-menu-link {
+						background: transparent;
+						color: $brand-primary;
+						font-weight: 700;
+						text-decoration: none;
+						border-color: transparent;
+					}
+				}
+
+				&:last-of-type {
+					float: right;
+					background: white;
+					color: #202020;
+					margin: 0;
+					padding: 0;
+					border-bottom: 0;
+
+					a {
+						color: #202020;
+						padding-left: 10px;
+						padding-right: 10px;
+
+						@include media($medium-screen-up) {
+							padding-left: 20px;
+							padding-right: 20px;
+						}
+					}
+
+					&:hover {
+						background: #cf9c23;
+						color: white;
+
+						a {
+							color: white;
+						}
+					}
+
+					@include media($medium-screen-up) {
+						border-left: 2px solid white;
+						border-right: 2px solid white;
+					}
+				}
+
+				> .mega-sub-menu {
+
+					> .mega-menu-item {
+						padding: 10px 0px 0px;
+						width: 100%;
+
+						@include media($medium-screen-up) {
+							padding: 40px 20px 20px;
+							width: inherit;
+						}
+
+						> .execphpwidget {
+							@include outer-container();
+							padding: 0 20px;
+
+							@include media($medium-screen-up) {
+								padding: 0 40px;
+							}
+
+						}
+					}
+				}
+			}
+		}
+	}
 
 	&.toggled {
 		display: block;
@@ -135,6 +263,11 @@
 	margin-right: 33px;
 	cursor: pointer;
 	color: white;
+	clear: right;
+
+	@include media($medium-screen-up) {
+		clear: none;
+	}
 
 	&:hover {
 		color: white;
@@ -170,19 +303,21 @@
 
 .toggled {
 	.main-menu-container {
-		display: block;
+		//display: block;
+		top: 0;
 	}
 }
 
-.menu-childs {
+.menu-childs, .mega-sub-menu {
 	display: none;
+	background-color: transparent;
 
 	@include media($medium-screen-up) {
 		display: block;
 	}
 
 	.child {
-		display: none;
+		// display: none;
 
 		&.open {
 			display: block;
@@ -212,6 +347,7 @@
 				a {
 					font-size: 14px;
 					color: $brand-primary;
+					padding: 0 !important;
 				}
 			}
 		}
@@ -232,25 +368,45 @@
 				li {
 					border-bottom: 2px solid $brand-primary;
 					border-left: 2px solid $brand-primary;
+					border-right: 0;
 					margin: 0;
 					width: 25%;
+					background: transparent;
 
-					a, a:hover {
+					&:hover {
 						background: transparent;
 						color: white;
 					}
 
+					a, a:hover, a:focus {
+						background: transparent;
+						color: white; 
+						width: 100%;
+						overflow: hidden;
+						white-space: nowrap;
+						padding: 10px;
+						line-height: 1;
+						margin-bottom: -7px;
+					}
+
 					&.active {
 						border-bottom: 0;
+						color: white;
 
 						a {
 							border-bottom: 0;
+							color: white;
 						}
 					}
 
 					&:first-of-type {
 						width: 50%;
 						border-left: none;
+					}
+
+					&:last-of-type {
+						background: transparent;
+						color: white;
 					}
 				}
 			}
@@ -296,6 +452,15 @@
 					text-transform: uppercase;
 					background: transparent;
 					border-bottom: 2px solid $brand-primary;
+					width: 6%;
+
+					@include media($medium-screen-up) {
+						width: auto;
+					}
+				}
+
+				.Opta thead th:last-of-type, .Opta tbody td:last-of-type, .Opta thead th:first-of-type, .Opta tbody td:first-of-type {
+					display: none;
 				}
 			}
 		}
@@ -317,6 +482,10 @@
 
 				&:last-of-type {
 					margin-right: 0;
+				}
+
+				a {
+					padding: 0;
 				}
 
 				.info {
@@ -366,11 +535,21 @@
 				li {
 					width: 100%;
 					border-bottom: 2px solid $brand-primary;
+					background-color: transparent;
+
+					&:last-of-type {
+						background-color: transparent;
+						border-right: 0; 
+						border-left: 0; 
+					}
 
 					a {
 						width: 100%;
 						line-height: 3;
+						padding: 0;
 						font-weight: $medium-weight;
+						background-color: transparent;
+						text-align: left;
 					}
 				}
 			}
@@ -387,6 +566,7 @@
 				padding: 10px;
 				font-weight: 600;
 				text-transform: uppercase;
+				margin-bottom: 20px;
 			}
 
 			.slide {
@@ -394,10 +574,16 @@
 				border: 2px solid white;
 				box-sizing: border-box;
 				float: left;
-				width: 32.66%;
-				margin-right: 1%;
+				width: 100%;
 				margin-bottom: 1%;
 				position: relative;
+				padding: 10px;
+
+				@include media ($medium-screen-up) {
+					width: 32.66%;
+					margin-right: 1%;
+					padding: 0;
+				}
 
 				&:nth-child(3n) {
 					margin-right: 0;
@@ -409,6 +595,7 @@
 
 				a {
 					display: block;
+					padding: 0;
 				}
 
 				h2, h3, h4, a {
@@ -424,6 +611,7 @@
 				// }
 
 				.more {
+					display: none;
 					position: absolute;
 					font-size: 13px;
 					bottom: 7px;
@@ -432,13 +620,32 @@
 
 				.image {
 					float: left;
-					width: 50%;
+					width: 25%;
+
+					@include media ($medium-screen-up) {
+						width: 50%;
+					}
 				}
 
 				.content {
 					float: left;
-					width: 50%;
-					padding: 10px;
+					width: 75%;
+					padding: 0 10px;
+
+					h3 {
+						line-height: 1.2;
+						font-size: 14px;
+						color: #202020;
+
+						@include media ($medium-screen-up) {
+							font-size: 16px;
+						}
+					}
+
+					@include media ($medium-screen-up) {
+						width: 50%;
+						padding: 10px;
+					}
 				}
 			}
 
@@ -447,22 +654,32 @@
 		.memberships {
 
 			.viewall {
-				background: $brand-primary;
-				display: inline-block;
-				float: right;
-				margin-top: 20px;
-				text-transform: uppercase;
-				font-weight: $heavy-weight;
-				padding: 5px 10px;
+				display: block;
+				width: 100%;
+				text-align: center;
 				color: white;
+				background: $brand-primary;
+				padding: 10px;
+				font-weight: 600;
+				text-transform: uppercase;
+				margin-bottom: 20px;
 			}
 
 			.packages {
-				column-count: 4;
+				column-count: 1;
 				vertical-align: top;
+
+				@include media ($medium-screen-up) {
+					column-count: 4;
+				}
 
 				.package {
 					position: relative;
+					margin-bottom: 20px;
+
+					a {
+						padding: 0;
+					}
 
 					.copy {
 						padding: 0;

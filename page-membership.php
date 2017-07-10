@@ -26,6 +26,7 @@ get_header(); ?>
 		}
 		$ri = array_rand($top_image_array);
 		$top_image = $top_image_array[$ri];
+		$clubname = "The Rapids";
 	else: 
 		$bannerimage = get_template_directory_uri() ."/assets/images/banner.png";
 
@@ -36,6 +37,7 @@ get_header(); ?>
 		}
 		$ri = array_rand($top_image_array);
 		$top_image = $top_image_array[$ri];
+		$clubname = "The Pears";
 	endif; 
 	?>
 	<section id="jumbrotron">
@@ -45,7 +47,8 @@ get_header(); ?>
 			<div class="table"><div class="cell middle">
 				<div class="container">
 					<div class="span6">
-						<h1><?php the_title(); ?></h1>
+						<h1>Join <?php echo $clubname; ?>
+						<br><?php echo date('Y'); ?> Memberships On Sale</h1>
 					</div>
 					<div class="span6">
 					</div>

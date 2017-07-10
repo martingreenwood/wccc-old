@@ -150,7 +150,7 @@ get_header(); ?>
 			endwhile; // End of the loop.
 			?>
 
-			<div id="vs">
+			<div id="fixres">
 
 				<div class="tabs">
 					<ul class="tab-links">

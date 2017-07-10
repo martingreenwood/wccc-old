@@ -160,7 +160,7 @@ get_header(); ?>
 
 					<div class="tab-content">
 
-						<div id="results" class="active tab">
+						<div class="active tab">
 							<?php 
 							$prev = null;
 							foreach ($matches_played as $match_played):

@@ -190,7 +190,7 @@ get_header(); ?>
 					</ul>
 
 					<div class="tab-content">
-						<div id="fixtures" class="tab active">
+						<div class="tab active">
 
 							<?php 
 							$prev = null;

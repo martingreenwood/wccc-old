@@ -10,6 +10,7 @@
 	if (get_field( 'enable_t20_mode', 'option' )):
 		$bannerimage = get_template_directory_uri() . "/assets/images/rapids-banner.png";
 
+		$top_image = null;
 		$top_image_array = array();
 		$top_t20_images = get_field( 'header_images_t20', 'option' );
 
@@ -21,10 +22,11 @@
 	else: 
 		$bannerimage = get_template_directory_uri() ."/assets/images/banner.png";
 
+		$top_image = null;
 		$top_image_array = array();
 		$top_images = get_field( 'header_images', 'option' );
-		foreach ($top_images as $top_image) {
-			$top_image_array[] = $top_image['url'];
+		foreach ($top_images as $top_wccc_image) {
+			$top_image_array[] = $top_wccc_image['url'];
 		}
 		$ri = array_rand($top_image_array);
 		$top_image = $top_image_array[$ri];

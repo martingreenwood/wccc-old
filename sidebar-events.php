@@ -7,11 +7,11 @@
  * @package wccc
  */
 
-if ( ! is_active_sidebar( 'sidebar-2' ) ) {
+if ( ! is_active_sidebar( 'sidebar-5' ) ) {
 	return;
 }
 ?>
 
 <aside id="sidebar" class="widget-area animated fadeIn delay1" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-2' ); ?>
+	<?php dynamic_sidebar( 'sidebar-5' ); ?>
 </aside>

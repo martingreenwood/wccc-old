@@ -4592,6 +4592,12 @@
 		"oAP": "\/sidebar-archive.php",
 		"oF": 0
 		},
+	"\/sidebar-events.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/sidebar-events.php",
+		"oF": 0
+		},
 	"\/sidebar-pages.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -4654,6 +4660,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/template-parts\/content-box.php",
+		"oF": 0
+		},
+	"\/template-parts\/content-events.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/template-parts\/content-events.php",
 		"oF": 0
 		},
 	"\/template-parts\/content-none.php": {

@@ -11,6 +11,22 @@
 
 	#topnavbar {
 		background-color: $brand-primary-t20;
+
+		#sidebar, .widget {
+
+			ul {
+				
+				li {
+					
+					&.current_page_item {
+
+						a {
+							font-weight: 700;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	#masthead {
@@ -29,8 +45,10 @@
 
 	#main {
 
-		article h2, article h3, article h4, article h5 {
-			color: $brand-primary-dark-t20;
+		article {
+			h2, h3, h4, h5 {
+				color: $brand-primary-dark-t20;
+			}
 		}
 
 		.downloads {

@@ -586,6 +586,56 @@
 		background: $brand-primary-t20;	
 	}
 
+	#fixres {
+
+		.tab-links {
+
+			li {
+
+				a {
+					background: $brand-primary-dark-t20;
+					font-weight: 500;
+				}
+
+				&.active {
+
+					a {
+						background: $brand-primary-t20;
+					}
+				}
+			}
+		}
+
+		.team {
+
+			.name {
+				h3 {
+					color: $brand-primary-dark-t20;
+				}
+				h4 {
+					color: $brand-primary-t20;
+				}
+			}
+		}
+
+		.link {
+
+			a {
+				color: white;
+
+				&.ticketlink {
+					background-color: $brand-primary-t20;
+				}
+
+				&.matchlink {
+					background-color: $brand-primary-dark-t20;
+				}
+
+			}
+		}
+
+	}
+
 	#vs {
 
 		.tab {
@@ -605,24 +655,6 @@
 			.matchlink {
 				background-color: $brand-primary-t20;
 				color: white;
-			}
-		}
-
-		.tab-links {
-
-			li {
-
-				a {
-					background: $brand-primary-dark-t20;
-					font-weight: 500;
-				}
-
-				&.active {
-
-					a {
-						background: $brand-primary-t20;
-					}
-				}
 			}
 		}
 

@@ -70,7 +70,11 @@
 					}
 				}
 
-				&.mega-current-menu-item, .mega-toggle-on {
+
+				&.mega-current-page-ancestor,
+				&.mega-current-menu-ancestor, 
+				&.mega-current-menu-item, 
+				.mega-toggle-on {
 					> .mega-menu-link {
 						background: transparent;
 						color: $brand-primary;

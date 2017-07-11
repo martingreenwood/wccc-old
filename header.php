@@ -9,7 +9,12 @@
  * @package wccc
  */
 
-?><!DOCTYPE html>
+?>
+<!-- 
+ Built by
+ Martin Greenwood, Lead Developer @WEAREBEARD
+-->
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">

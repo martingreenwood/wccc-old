@@ -19,8 +19,7 @@
 								<img src="<?php echo $image['sizes']['poster']; ?>">
 							</a>
 							<div class="info">
-								<h3><?php echo $name; ?></h3>
-								<a href="<?php echo $link; ?>">Details &amp; Tickets &raquo;</a>
+								<h3><a href="<?php echo $link; ?>"><?php echo $name; ?></a></h3>
 							</div>
 						</div>
 						<?php

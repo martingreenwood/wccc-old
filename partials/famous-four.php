@@ -12,16 +12,12 @@
 				        // display a sub field value
 						$image = get_sub_field('image');
  						$name = get_sub_field('name');
- 						$link = null;
-						if (get_sub_field('internal_external_link')) {
-							$link = get_sub_field('link');
-						}
-						else {
-							$link = get_sub_field('page');
-						}
+						$link = get_sub_field('link');
 						?>
 						<div class="item span3">
-							<img src="<?php echo $image['sizes']['poster']; ?>">
+							<a href="<?php echo $link; ?>">
+								<img src="<?php echo $image['sizes']['poster']; ?>">
+							</a>
 							<div class="info">
 								<h3><?php echo $name; ?></h3>
 								<a href="<?php echo $link; ?>">Details &amp; Tickets &raquo;</a>

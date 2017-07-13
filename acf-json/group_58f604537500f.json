@@ -65,71 +65,13 @@
                     "new_lines": "br"
                 },
                 {
-                    "key": "field_58f604922893d",
-                    "label": "Internal \/ External Link",
-                    "name": "internal_external_link",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "",
-                    "default_value": 0,
-                    "ui": 1,
-                    "ui_on_text": "Internal",
-                    "ui_off_text": "External"
-                },
-                {
-                    "key": "field_58f6048b2893c",
-                    "label": "Page",
-                    "name": "page",
-                    "type": "page_link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_58f604922893d",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-
-                    ],
-                    "taxonomy": [
-
-                    ],
-                    "allow_null": 0,
-                    "allow_archives": 1,
-                    "multiple": 0
-                },
-                {
                     "key": "field_58f604772893b",
                     "label": "Link",
                     "name": "link",
                     "type": "url",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_58f604922893d",
-                                "operator": "!=",
-                                "value": "1"
-                            }
-                        ]
-                    ],
+                    "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -158,5 +100,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1492521685
+    "modified": 1499939082
 }

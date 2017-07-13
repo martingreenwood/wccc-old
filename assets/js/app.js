@@ -135,7 +135,7 @@ window.addEventListener("orientationchange", function() {
 
 (function($){
 
-	var r = $('<input class="toggle-subs" type="button" value="Show Pages"/>');
+	var r = $('<input class="toggle-subs" type="button" value="Show Menu"/>');
         $(".widget_child_pages_widget ul").before(r);
 
         $('.widget_child_pages_widget .toggle-subs').on('click', function(event) {

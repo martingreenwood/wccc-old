@@ -57,6 +57,28 @@
 		$official_2_last_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_2_last_name'];
 		$official_2_name = $official_2_first_name. ' ' .$official_2_last_name;
 
+		$official_3_first_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_3_first_name'];
+		$official_3_last_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_3_last_name'];
+		$official_3_name = $official_3_first_name. ' ' .$official_3_last_name;
+
+		$official_4_first_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_4_first_name'];
+		$official_4_last_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_4_last_name'];
+		$official_4_name = $official_4_first_name. ' ' .$official_4_last_name;
+
+		$official_5_first_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_5_first_name'];
+		$official_5_last_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_5_last_name'];
+		$official_5_name = $official_5_first_name. ' ' .$official_5_last_name;
+
+		$official_6_first_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_6_first_name'];
+		$official_6_last_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_6_last_name'];
+		$official_6_umpire_type = $matchinfo['MatchDetail']['Officials']['@attributes']['official_6_umpire_type'];
+		$official_6_name = $official_6_first_name. ' ' .$official_6_last_name;
+
+		$official_7_first_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_7_first_name'];
+		$official_7_last_name = $matchinfo['MatchDetail']['Officials']['@attributes']['official_7_last_name'];
+		$official_7_umpire_type = $matchinfo['MatchDetail']['Officials']['@attributes']['official_7_umpire_type'];
+		$official_7_name = $official_7_first_name. ' ' .$official_7_last_name;
+
 		$match_id = $matchinfo['MatchDetail']['@attributes']['game_id']; 
 		$result = $matchinfo['MatchDetail']['@attributes']['result']; 
 		$competition_id = $matchinfo['MatchDetail']['@attributes']['competition_id']; 
@@ -68,7 +90,6 @@
 		} else {
 			$number_days = 0;
 		}
-
 		
 		if (strpos($competition_name, 'T20') !== false):
 			$home_team = t20_name($matchinfo['MatchDetail']['@attributes']['home_team']);
@@ -470,6 +491,14 @@ get_header();
 					<dl class="details-toss">
 						<dt>Toss:</dt>
 						<dd><?php echo $toss; ?></dd>
+					</dl>
+					<dl class="details-umpires">
+						<dt><?php echo $official_6_umpire_type; ?></dt>
+						<dd><?php echo $official_6_name; ?></dd>
+					</dl>
+					<dl class="details-umpires">
+						<dt><?php echo $official_7_umpire_type; ?></dt>
+						<dd><?php echo $official_7_name; ?></dd>
 					</dl>
 					<div class="clear"></div>
 				</div>

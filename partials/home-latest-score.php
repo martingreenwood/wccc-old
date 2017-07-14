@@ -208,7 +208,7 @@ if ($days_since_game < $number_days ): ?>
 
 			<?php else: // innings are not in array with [0] key ?>
 			<div class="one_innings">
-				<div class="team one">
+				<div class="team home">
 					<img src="<?php echo team_image($home_team_id); ?>">
 					<div class="name">
 						
@@ -235,7 +235,7 @@ if ($days_since_game < $number_days ): ?>
 					</div>
 				</div>
 				<div class="mid"><p>VS</p></div>
-				<div class="team two">
+				<div class="team away">
 					<div class="name">
 
 						<h3><?php echo $away_team; ?></h3>

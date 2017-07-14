@@ -453,10 +453,25 @@
 	// float: left;
 	width: 100%;
 
+	.row {
+		margin-bottom: 0;
+
+		@include media($medium-screen-up) {
+			margin-bottom: 20px;
+		}
+	}
+
 	.person {
 		position: relative;
-		margin-bottom: 5px;
+		margin-bottom: 2%;
 		overflow: hidden;
+		width: 48%;
+		margin-right: 2%;
+
+		@include media($medium-screen-up) {
+			width: inherit;
+			margin-right: inherit;
+		}
 
 		img {
 			display: block;
@@ -505,18 +520,16 @@
 				margin-bottom: 5px;
 			}
 
-			ul {
+			dl {
 				margin: 0;
-				list-style: none;
 
-				li {
+				dt, dd {
 					color: white;
+					margin: 0;
 					text-transform: capitalize;
-
-					span {
-						width: 75px;
-						display: inline-block;
-					}
+					width: 50%;
+					float: left;
+					font-size: 12px;
 				}
 			}
 

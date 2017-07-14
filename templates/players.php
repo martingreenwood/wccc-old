@@ -118,26 +118,41 @@ get_header(); ?>
 						<div class="info">
 							<h3><?php the_title(); ?></h3>
 							<h4>Stats</h4>
-							<ul>
-								<li>
-									<span>Role</span>
+							
+							<dl>
+								<dt>Role:</dt>
+								<dd>
 									<?php echo str_replace("-", " ", get_field( 'role' )); ?>
-								</li>
-								<li>
-									<span>Bats</span>
+								</dd>
+							</dl>
+
+							<?php if (get_field( 'bats' )): ?>
+							<dl>
+								<dt>Bats:</dt>
+								<dd>
 									<?php the_field( 'bats' ); ?>
-								</li>
-								<?php if (get_field( 'bowls' )): ?>
-								<li>
-									<span>Bowls</span>
+								</dd>
+							</dl>
+							<?php endif; ?>
+
+							<?php if (get_field( 'bowls' )): ?>
+							<dl>
+								<dt>Bowls:</dt>
+								<dd>
 									<?php echo implode(', ', get_field( 'bowls' )); ?>
-								</li>
-								<?php endif; ?>
-								<li>
-									<span>Shirt No.</span>
+								</dd>
+							</dl>
+							<?php endif; ?>
+
+							<?php if (get_field( 'shirt_number' )): ?>
+							<dl>
+								<dt>Shirt No:</dt>
+								<dd>
 									<?php the_field( 'shirt_number' );?>
-								</li>
-							</ul>
+								</dd>
+							</dl>
+							<?php endif; ?>
+
 							<a href="<?php the_permalink(); ?>">Read More</a>
 						</div>
 					</div>

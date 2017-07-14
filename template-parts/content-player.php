@@ -101,7 +101,7 @@
 						date of birth
 					</dt>
 					<dd>
-						<?php the_field( 'date_of_birth' ); ?>
+						<?php echo date("j/m/Y", strtotime(get_field( 'date_of_birth') )); ?>
 					</dd>
 				</dl>
 				<?php endif; ?>

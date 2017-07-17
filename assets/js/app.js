@@ -447,3 +447,4 @@ window.addEventListener("orientationchange", function() {
 		}
 	});
 })(jQuery);
+

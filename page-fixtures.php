@@ -141,10 +141,6 @@ get_header(); ?>
 								<input class="teamfilter" type="checkbox" name="team" value="secondxi">
 								<label for="second">Second XI</label>
 							</li>
-							<li>
-								<input class="teamfilter" type="checkbox" name="team" value="rapids">
-								<label for="rapids">Rapids</label>
-							</li>
 						</ul>
 					</form>
 				</div>
@@ -277,7 +273,6 @@ get_header(); ?>
 							if ($match_live_game > 0) {
 								$match_live_game_class = 'live-game';
 							}
-							
 
 							if (isset($match['@attributes']['time'])) {
 								$match_time = $match['@attributes']['time'];

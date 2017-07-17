@@ -1099,6 +1099,48 @@
 	}
 }
 
+#directions {
+	background: #202020;
+	padding: 50px 0;
+
+	label {
+		float: left;
+		width: 50%;
+		margin: 0;
+		font-size: 17px;
+		color: white;
+		text-transform: uppercase;
+		line-height: 36px;
+	}
+
+	.right {
+		float: right;
+		width: 35%;
+
+		input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], textarea {
+			border-radius: 0;
+			border: 0;
+			margin: 0;
+			padding: 0 10px;
+			float: left;
+			width: 65%;
+			line-height: 36px;
+			text-align: center;
+		}
+
+		button {
+			float: left;
+			width: 35%;
+			border: 0;
+			background: $brand-primary;
+			color: white;
+			line-height: 36px;
+			padding: 0;
+			text-transform: uppercase;
+			text-align: center;
+		}
+	}
+}
 
 /*--------------------------------------------------------------
 ## Pages

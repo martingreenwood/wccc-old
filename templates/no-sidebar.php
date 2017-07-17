@@ -131,6 +131,26 @@ get_header(); ?>
 	<?php endif; ?>
 
 	<?php if (is_page( 'contact' )): ?>
+
+	<section id="directions">
+
+		<div class="container">
+
+			<form class="directions clearfix" action="http://maps.google.com/maps" method="get" target="_blank">
+            <label>
+                Get directions from your postcode by filling out this form:
+            </label>
+            <div class="right">
+                <input type="text" name="saddr" placeholder="Enter Postcode" data-com.agilebits.onepassword.user-edited="yes">
+                <input type="hidden" name="daddr" value="WR2 4QQ UK">
+                <button>Get Directions</button>
+            </div>
+        </form>
+			
+		</div>
+		
+	</section>
+
 	<?php 
 	$location = get_field('location', 'options');
 	if( !empty($location) ): ?>

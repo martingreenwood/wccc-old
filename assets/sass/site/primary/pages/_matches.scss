@@ -41,6 +41,10 @@
 				text-transform: uppercase;
 				bottom: 20px;
 				left: 19px;
+
+				@include media ($medium-screen-up) {
+					display: none;
+				}
 			}
 
 			nav {

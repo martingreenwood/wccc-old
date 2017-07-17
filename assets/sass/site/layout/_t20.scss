@@ -1010,5 +1010,16 @@
 			}
 		}
 	}
+
+	#directions {
+		background: #202020;
+
+		.right {
+
+			button {
+				background: $brand-primary-t20;
+			}
+		}
+	}
 }
 

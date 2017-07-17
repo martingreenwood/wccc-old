@@ -79,8 +79,7 @@ get_header(); ?>
 			</center>
 
 		</main><!-- #main -->
-
-		<!-- <?php get_sidebar('pages'); ?> -->
+		
 	</div>
 
 	<?php if( have_rows('sections') ): ?>

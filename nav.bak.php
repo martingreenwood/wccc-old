@@ -67,7 +67,7 @@
 					</ul>
 
 					<div class="tab-content">
-						<div id="tab1" class="tab <?php if (!get_field( 'enable_t20_mode', 'option' )): ?> active <?php endif; ?>"">
+						<div id="tab1" class="tab <?php if (!get_field( 'enable_t20_mode', 'option' )): ?> active <?php endif; ?>">
 							<h3>Specsavers County Championship 2017</h3>
 							<opta-widget sport="cricket" widget="standings" template="normal" live="false" competition="1969" season="0" team="56" load_when_visible="false" navigation="none" default_nav="1" show_key="false" show_crests="false" points_in_first_column="true" competition_naming="full" team_naming="full" sorting="false" show_live="true" show_logo="false" show_title="false" breakpoints="400, 700"></opta-widget>
 						</div>

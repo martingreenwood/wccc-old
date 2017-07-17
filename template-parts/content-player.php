@@ -13,6 +13,10 @@
 	
 		<div class="span4">
 		<?php 
+
+		$terms = get_the_terms( get_the_id(), 'filter' );
+		$terms = current($terms);
+
 		if (get_field( 't20shot' )) {
 			$t2oimage = get_field( 't20shot' );
 			echo "<img src='".$t2oimage['sizes']['poster']."'>";
@@ -27,7 +31,7 @@
 
 			<div class="stats">
 
-				<h2>PLAYER STATS</h2>
+				<h2>STATS</h2>
 
 				<?php if (get_field( 'role' )): ?>
 				<dl>

@@ -17,11 +17,18 @@
 	}
 
 	#fixtures {
-		background: linear-gradient(180deg, $brand-primary 50%, $brand-primary-dark 50%);
-		padding: 50px 0;
 
 		@include media($medium-screen-up) {
 			background: linear-gradient(90deg, $brand-primary 50%, $brand-primary-dark 50%);
+			padding: 50px 0;
+		}
+
+		.container {
+
+			@include media ($medium-screen-down) {
+				padding-left: 0;
+				padding-right: 0;
+			}
 		}
 
 		.fixture {
@@ -43,6 +50,10 @@
 		.result, .fixture {
 			float: left;
 			width: 100%;
+			
+			@include media ($medium-screen-down) {
+				padding: 20px;
+			}
 
 			@include media($medium-screen-up) {
 				width: 50%;
@@ -169,6 +180,7 @@
 
 		.result {
 			padding-bottom: 20px;
+			background-color: $brand-primary;
 
 			@include media($medium-screen-up) {
 				padding-right: 20px;
@@ -182,6 +194,7 @@
 				line-height: 42px;
 				text-transform: uppercase;
 				font-weight: 900;
+				line-height: normal;
 			}
 
 			.match-info {
@@ -195,6 +208,7 @@
 
 		.fixture {
 			padding-top: 20px;
+			background-color: $brand-primary-dark;
 
 			@include media($medium-screen-up) {
 				padding-left: 20px;

@@ -851,6 +851,13 @@
 	padding-bottom: 40px;
 
 	.item {
+		
+		@include media($medium-screen-down) {
+			width: 49%;
+			margin-right: 1%;
+			margin-bottom: 5px;
+		}	
+
 		margin-bottom: 20px;
 
 		@include media($medium-screen-up) {
@@ -864,12 +871,20 @@
 		.info {
 			background-color: $brand-primary-dark-t20;
 			border-top: 2px solid white;
-			padding: 20px;
+			padding: 10px;
+
+			@include media($medium-screen-up) {
+				padding: 20px;
+			}
 
 			h3 {
 				color: white;
-				font-size: 25px;
+				font-size: 16px;
 				line-height: 1;
+
+				@include media($medium-screen-up) {
+					font-size: 25px;
+				}
 			}
 			
 			a {
@@ -1071,6 +1086,17 @@
 
 .tab.active {
 	display:block;
+}
+
+
+.page {
+
+	.visitor-info #parts .section .column.twentyfive {
+
+		@include media ($medium-screen-down) {
+			display: none;
+		}
+	}
 }
 
 

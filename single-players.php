@@ -32,6 +32,10 @@ get_header(); ?>
 		$ri = array_rand($top_image_array);
 		$top_image = $top_image_array[$ri];
 	endif; 
+
+	$terms = get_the_terms( get_the_id(), 'filter' );
+	$terms = current($terms);
+
 	?>
 	<section id="jumbrotron">
 		<div class="overlay" style="background-image: url(<?php echo $bannerimage; ?>)"></div>
@@ -40,7 +44,7 @@ get_header(); ?>
 			<div class="table"><div class="cell middle">
 				<div class="container">
 					<div class="span6">
-						<h1>Player Bio:<br>
+						<h1><?php echo $terms->name; ?> Bio:<br>
 						<span><?php the_title(); ?></span></h1>
 					</div>
 					<div class="span6">

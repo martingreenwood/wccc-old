@@ -311,7 +311,7 @@
 			}
 
 			> .mega-sub-menu {
-				background: rgba(32, 32, 32, 0.9);
+				background: transparent;
 			}
 
 			> .mega-menu-item {
@@ -345,7 +345,7 @@
 				}
 
 				.mega-sub-menu {
-					background: rgba(32, 32, 32, 0.9);
+					background: transparent;
 				}
 			}
 		}
@@ -534,7 +534,6 @@
 	}
 
 	#fixtures {
-		background: linear-gradient(180deg, $brand-primary-t20 50%, $brand-primary-dark-t20 50%);
 
 		@include media($medium-screen-up) {
 			background: linear-gradient(90deg, $brand-primary-t20 50%, $brand-primary-dark-t20 50%);
@@ -554,6 +553,7 @@
 		}
 
 		.fixture {
+			background-color: $brand-primary-dark-t20;
 
 			.match-info {
 
@@ -574,6 +574,7 @@
 		}
 
 		.result {
+			background-color: $brand-primary-t20;
 
 			.match-info {
 

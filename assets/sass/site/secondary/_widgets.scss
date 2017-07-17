@@ -13,13 +13,30 @@ aside {
 }
 
 .widget {
+	
 	@include rem(margin, 0 0 40px);
+
+	.tab h3 {
+		text-transform: uppercase;
+		line-height: normal;
+		font-size: 14px;
+		color: black;
+		border-bottom: 1px solid #ccc;
+		padding-bottom: 5px;
+		margin-bottom: 5px;
+	}
+
+	&.files a {
+		display: inline-block;
+		margin-bottom: 5px;
+	}
 
 	i {
 		color: darkred;
 		font-size: 23px;
 		display: inline-block;
 		margin-right: 8px;
+		float: left;
 	}
 
 	.tab-links {

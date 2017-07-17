@@ -260,5 +260,9 @@ get_header(); ?>
 
 	</div><!-- #primary -->
 
+	<?php 
+		get_template_part( 'partials/sponsor', 'boxes' );
+	?>
+
 <?php
 get_footer();

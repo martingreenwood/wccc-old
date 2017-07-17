@@ -465,12 +465,10 @@
 		position: relative;
 		margin-bottom: 2%;
 		overflow: hidden;
-		width: 48%;
-		margin-right: 2%;
 
-		@include media($medium-screen-up) {
-			width: inherit;
-			margin-right: inherit;
+		@include media($medium-screen-down) {
+			width: 48%;
+			margin-right: 2%;
 		}
 
 		img {

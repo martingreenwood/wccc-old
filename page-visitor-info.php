@@ -139,5 +139,9 @@ get_header(); ?>
 	</section>
 	<?php endif; ?>
 
+	<?php 
+		get_template_part( 'partials/sponsor', 'boxes' );
+	?>
+
 <?php
 get_footer();

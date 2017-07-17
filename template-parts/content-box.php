@@ -25,7 +25,8 @@
 		?>
 
 		<header>
-			<h1><?php the_title(); ?></h1>
+			<h1><?php the_title(); ?><br>
+			<small>Posted on <?php echo date("j/m/Y", strtotime(get_the_date())); ?></small></h1>
 		</header>
 
 	</a>

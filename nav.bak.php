@@ -378,7 +378,24 @@
 	    	<div class="row">
             <?php 
             $i = 0;
-            $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 6 ) );
+			$loop = new WP_Query( 
+				array( 
+					'post_type' => 'post', 
+					'posts_per_page' => 6 ,
+					'meta_query' => array( 
+						array(
+							// Require post to have Featured Image
+							'key' => '_thumbnail_id'
+						),
+						array(
+							// Key = ACF Field Name (True/False field)
+							'key' => 'feature_on_homepage',
+							// Value = 1, so 'True' radio button is selected 
+							'value' => '1'
+						),
+					)
+				)
+			);
             while ( $loop->have_posts() ) : $loop->the_post(); 
                 ?>
 				<div class="slide">
@@ -469,6 +486,55 @@
 		</div><!-- END TAB -->
 
 		<div id="whatson" class="child">
+
+			<h2>Latest News</h2>
+			<div class="row">
+			<?php 
+			$today = date("Ymd", strtotime('today UTC'));
+
+			$i = 1;
+			$loop = new WP_Query( 
+				array( 
+					'post_type' => 'events',
+					'posts_per_page' => 3,
+					'order'   => 'ASC',
+					'meta_query' => array(
+						array(
+							'key'     => 'event_date',
+							'value'   => $today, // in da future
+							'compare' => '>',
+						),
+					),
+				)
+			);
+			while ( $loop->have_posts() ) : $loop->the_post(); 
+			    ?>
+				<div class="slide">
+					<a href="<?php the_permalink(); ?>">
+						<div class="image">
+							<?php 
+							if (has_post_thumbnail()) {
+								the_post_thumbnail( 'slide-thumb' ); 
+							}
+							else {
+								echo "<img src='".get_stylesheet_directory_uri()."/assets/images/slide-holder.jpg'>";
+							}
+							?>
+						</div>
+						<div class="content">
+							<h3><?php the_title( ); ?><br>
+							<small><?php echo date("dS F Y", strtotime(get_field( 'event_date' ))); ?></small></h3>
+						</div>
+					</a>
+				</div>
+
+			    <?php 
+			endwhile; 
+			wp_reset_query(); wp_reset_postdata();
+			?>
+			</div>
+			<a class="viewall" href="<?php echo home_url( '/whats-on' ); ?>">View All Events</a>
+
 		</div><!-- END TAB -->
 
 		<div id="contact" class="child">

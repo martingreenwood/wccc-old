@@ -618,6 +618,10 @@ get_header();
 
 	</div>
 
+	<?php 
+		get_template_part( 'partials/sponsor', 'boxes' );
+	?>
+
 <?php if (!file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')): ?>
 <script type="text/javascript">
 jQuery('#vs').addClass('blur');

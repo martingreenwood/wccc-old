@@ -56,7 +56,24 @@ get_header(); ?>
 			<div class="container">
 				<div class="slides">
 				<?php 
-				$loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 6 ) );
+				$loop = new WP_Query( 
+					array( 
+						'post_type' => 'post', 
+						'posts_per_page' => 6 ,
+						'meta_query' => array( 
+							array(
+								// Require post to have Featured Image
+								'key' => '_thumbnail_id'
+							),
+							array(
+								// Key = ACF Field Name (True/False field)
+								'key' => 'feature_on_homepage',
+								// Value = 1, so 'True' radio button is selected 
+								'value' => '1'
+							),
+						)
+					)
+				);
 				while ( $loop->have_posts() ) : $loop->the_post(); 
 					?>
 					<div class="slide">

@@ -87,5 +87,9 @@ get_header(); ?>
 		<?php get_sidebar('pages'); ?>
 	</div><!-- #primary -->
 
+	<?php 
+		get_template_part( 'partials/sponsor', 'boxes' );
+	?>
+
 <?php
 get_footer();

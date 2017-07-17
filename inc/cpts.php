@@ -57,7 +57,7 @@ function cpts_register() {
 	    'show_ui' 				=> true,
 	    'publicly_queryable' 	=> true,
 	    'query_var' 			=> true,
-	    'capability_type' 		=> 'post',
+	    'capability_type' 		=> 'page',
 	    'hierarchical' 			=> false,
 	    'rewrite' 				=> true,
 	    'show_in_rest' 			=> true,

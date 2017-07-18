@@ -82,7 +82,7 @@ get_header(); ?>
 
 			if ( $query->have_posts() ) : 
 				while ( $query->have_posts() ): $query->the_post();
-				$pdf - get_field( 'pdf' );
+				$pdf = get_field( 'pdf' );
 				?>
 				<a href="<?php echo $pdf['url']; ?>" class="<?php echo $pdf['type']; ?>">
 					<i class="fa fa-file-pdf-o" aria-hidden="true"></i> <?php the_title( ); ?>

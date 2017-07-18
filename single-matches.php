@@ -175,7 +175,7 @@ get_header();
 	<section id="no-feed">
 		<div class="table">
 			<div class="cell middle">
-				<h1>Sorry, this match does not have any data yet,</h1>
+				<h1>Sorry, this match does not have any data yet.</h1>
 			</div>
 		</div>
 	</section>

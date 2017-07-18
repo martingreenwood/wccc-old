@@ -273,9 +273,9 @@ get_header(); ?>
 							endif;
 
 							if (isset($match['@attributes']['game_date'])) {
-								$match_game_date = date("H:i", strtotime($match['@attributes']['game_date'])); 
+								$match_game_date = date("j/m/Y", strtotime($match['@attributes']['game_date'])); 
 							} else {
-								$match_game_date = date("H:i", strtotime(get_field( 'start_date', $match['ID'] )));
+								$match_game_date = date("j/m/Y", strtotime(get_field( 'start_date', $match['ID'] )));
 							}
 							
 							if (isset($match['@attributes']['game_date_string'])) {
@@ -295,9 +295,9 @@ get_header(); ?>
 							}
 
 							if (isset($match['@attributes']['time'])) {
-								$match_time = $match['@attributes']['time'];
+								$match_time = date("H:i", strtotime($match['@attributes']['time']));
 							} else {
-								$match_time = get_field( 'start_time', $match["ID"] );
+								$match_time = date("H:i", strtotime(get_field( 'start_time', $match["ID"] )));
 							}
 
 							if (isset($match['@attributes']['venue'])) {

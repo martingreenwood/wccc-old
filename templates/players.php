@@ -117,14 +117,17 @@ get_header(); ?>
 
 						<div class="info">
 							<h3><?php the_title(); ?></h3>
+							
 							<h4>Stats</h4>
 							
+							<?php if (get_field( 'role' )): ?>
 							<dl>
 								<dt>Role:</dt>
 								<dd>
 									<?php echo str_replace("-", " ", get_field( 'role' )); ?>
 								</dd>
 							</dl>
+							<?php endif; ?>
 
 							<?php if (get_field( 'bats' )): ?>
 							<dl>

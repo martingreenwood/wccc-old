@@ -348,7 +348,7 @@ get_header(); ?>
 
 								<div class="link">
 									<?php if (get_field( 'match_link', $match['ID'] )): ?>
-									<a class="matchlink" target="_blank" href="<?php echo get_field( 'match_link' ); ?>">Match Report</a>
+									<a class="matchlink" target="_blank" href="<?php echo get_field( 'match_link', $match['ID'] ); ?>">Match Report</a>
 									<?php else: ?>
 									<a class="matchlink" href="<?php echo get_the_permalink( $match['ID'] ); ?>">Match Report</a>
 									<?php endif; ?>

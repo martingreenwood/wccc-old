@@ -786,6 +786,27 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/assets\/images\/thumb-holder-t20.jpg": {
+		"ft": 16384,
+		"iS": 48739,
+		"oA": 0,
+		"oAP": "\/assets\/images\/thumb-holder-t20.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/assets\/images\/thumb-holder-t20.png": {
+		"ft": 32768,
+		"iS": 36750,
+		"oA": 0,
+		"oAP": "\/assets\/images\/thumb-holder-t20.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/assets\/images\/thumb-holder.jpg": {
 		"ft": 16384,
 		"iS": 32879,

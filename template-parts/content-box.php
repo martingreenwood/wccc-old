@@ -20,7 +20,11 @@
 		} 
 		else 
 		{
-			echo "<img src='".get_stylesheet_directory_uri()."/assets/images/thumb-holder.jpg'>";
+			if (get_field( 'enable_t20_mode', 'option' )):
+				echo "<img src='".get_stylesheet_directory_uri()."/assets/images/thumb-holder-t20.jpg'>";
+			else:
+				echo "<img src='".get_stylesheet_directory_uri()."/assets/images/thumb-holder.jpg'>";
+			endif;
 		}
 		?>
 

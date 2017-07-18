@@ -55,7 +55,7 @@ $match_query = new WP_Query( $args );
 
 if ( $match_query->have_posts() ) : 
 	while ( $match_query->have_posts() ): $match_query->the_post();
-		$matches[] = (array) $match_query;
+		$matches[] = (array) $post;
 	endwhile; 
 wp_reset_postdata(); 
 endif; 

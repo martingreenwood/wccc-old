@@ -274,15 +274,15 @@ get_header(); ?>
 							}
 
 							if (isset($match['@attributes']['game_date'])) {
-								$match_game_date_code = date("d-F-Y", strtotime($match['@attributes']['game_date']));
+								$match_game_date_code = date("j/m/Y", strtotime($match['@attributes']['game_date']));
 							} else {
-								$match_game_date_code = date("d-F-Y", strtotime(get_field( 'start_date', $match['ID'] )));
+								$match_game_date_code = date("j/m/Y", strtotime(get_field( 'start_date', $match['ID'] )));
 							}
 							
 							if (isset($match['@attributes']['game_date_string'])) {
-								$match_game_date_string = date("jS F Y", strtotime( $match['@attributes']['game_date'] ));
+								$match_game_date_string = date("j/m/Y", strtotime( $match['@attributes']['game_date'] ));
 							} else {
-								$match_game_date_string = date("jS F Y", strtotime(get_field( 'start_date', $match['ID'] )));
+								$match_game_date_string = date("j/m/Y", strtotime(get_field( 'start_date', $match['ID'] )));
 							}
 
 							if (isset($match['@attributes']['game_date_string'])) {

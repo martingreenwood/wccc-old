@@ -281,7 +281,7 @@ get_header(); ?>
 							if (isset($match['@attributes']['game_date_string'])) {
 								$match_game_date_string = $match['@attributes']['game_date_string'];
 							} else {
-								$match_game_date_string = date("dS F Y", strtotime(get_field( 'start_date', $match['ID'] )));
+								$match_game_date_string = date("j/m/Y", strtotime(get_field( 'start_date', $match['ID'] )));
 							}
 
 							if (isset($match['@attributes']['game_date_string'])) {

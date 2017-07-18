@@ -30,7 +30,7 @@
                 "director-of-cricket": "Director of Cricket"
             },
             "default_value": [],
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 1,
             "ajax": 1,
@@ -91,7 +91,7 @@
                 "none": "N\/A"
             },
             "default_value": [],
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 1,
             "ui": 1,
             "ajax": 1,
@@ -350,5 +350,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1496657700
+    "modified": 1500389878
 }

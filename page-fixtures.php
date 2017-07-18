@@ -273,9 +273,9 @@ get_header(); ?>
 							endif;
 
 							if (isset($match['@attributes']['game_date'])) {
-								$match_game_date = $match['@attributes']['game_date']; 
+								$match_game_date = date("H:i", strtotime($match['@attributes']['game_date'])); 
 							} else {
-								$match_game_date = get_field( 'start_date', $match['ID'] );
+								$match_game_date = date("H:i", strtotime(get_field( 'start_date', $match['ID'] )));
 							}
 							
 							if (isset($match['@attributes']['game_date_string'])) {
@@ -341,7 +341,7 @@ get_header(); ?>
 											<?php endif; ?>
 											
 										</h3>
-										<h4><span><?php echo $match_game_date_string; ?></span> <span><?php echo date('g:i', strtotime($match_time)); ?></span></h4>
+										<h4><span><?php echo $match_game_date_string; ?></span> <span><?php $match_time; ?></span></h4>
 										<p><span><?php echo $match_venue; ?></span> <span><?php echo $match_comp_name; ?></span></p>
 									</div>
 								</div>

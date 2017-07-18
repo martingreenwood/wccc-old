@@ -367,6 +367,18 @@
 					position: relative;
 					margin-bottom: 15px;
 
+					span {
+						margin-right: 5px;
+						padding-right: 10px;
+						border-right: 1px solid #333;
+
+						&:last-of-type {
+							margin-right: 0;
+							padding-right: 0;
+							border-right: 0;
+						}
+					}
+
 					small {
 						font-size: 15px;
 						position: absolute;

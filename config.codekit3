@@ -4456,6 +4456,12 @@
 		"oAP": "\/nav.bak.php",
 		"oF": 0
 		},
+	"\/page-agm.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-agm.php",
+		"oF": 0
+		},
 	"\/page-fixtures.php": {
 		"ft": 8192,
 		"oA": 2,

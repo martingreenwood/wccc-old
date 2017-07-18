@@ -84,9 +84,14 @@ get_header(); ?>
 				while ( $query->have_posts() ): $query->the_post();
 				$pdf = get_field( 'pdf' );
 				?>
-				<a href="<?php echo $pdf['url']; ?>" class="<?php echo $pdf['type']; ?>">
-					<i class="fa fa-file-pdf-o" aria-hidden="true"></i> <?php the_title( ); ?>
-				</a>
+				<dl>
+					<dt>
+						<i class="fa fa-file-pdf-o" aria-hidden="true"></i> <?php the_title( ); ?>
+					</dt>
+					<dd>
+						<a href="<?php echo $pdf['url']; ?>" class="<?php echo $pdf['type']; ?>">Download</a>
+					</dd>
+				</dl>
 				<?php
 				endwhile; 
 			wp_reset_postdata(); 
@@ -145,6 +150,10 @@ get_header(); ?>
 
 	</section>
 	<?php endif; ?>
+
+	<?php 
+		get_template_part( 'partials/social', 'tweets' );
+	?>
 
 	<?php 
 		get_template_part( 'partials/sponsor', 'boxes' );

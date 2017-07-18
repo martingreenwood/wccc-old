@@ -2,6 +2,34 @@
 ## GLOBAL
 --------------------------------------------------------------*/
 
+#files {
+
+	dl {
+		border-bottom: 1px solid #ccc;
+		padding: 0 0 20px;
+		margin: 0 0 20px;
+		float: left;
+		width: 100%;
+
+		dt, dd {
+			width: 50%;
+			float: left;
+			margin: 0;
+		}
+
+		dt {
+			text-transform: uppercase;
+
+			i {
+				font-size: 26px;
+				vertical-align: middle;
+				margin-right: 10px;
+				color: darkred;
+			}
+		}
+	}
+}
+
 #vs {
 	position: relative;
 	background: #f9f9f9;

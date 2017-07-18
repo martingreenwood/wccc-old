@@ -29,6 +29,7 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 =            FUNCTIONS & CALLS            =
 =========================================*/
 
+
 // DETECT ORIENTATION CHANGE
 
 window.addEventListener("orientationchange", function() {

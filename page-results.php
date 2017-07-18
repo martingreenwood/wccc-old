@@ -24,27 +24,30 @@ if (file_exists(FEED_DIR .'/'. $results_file)):
 	$results = $results_array['results'];
 endif;
 
-foreach ($results as $result):
-	$result_game_date = $result['@attributes']['game_date']; 
-	$result_away_team = $result['@attributes']['away_team'];
-	$result_home_team = $result['@attributes']['home_team'];
+// foreach ($results as $result):
+// 	$result_game_date = $result['@attributes']['game_date']; 
+// 	$result_away_team = $result['@attributes']['away_team'];
+// 	$result_home_team = $result['@attributes']['home_team'];
 	
-	// Worcester Only Games
-	if ($result_away_team == '56' || $result_home_team == '56' ) {
-		$matches[] = $result;
-	}
-endforeach;
-$matches = array_reverse($matches);
+// 	// Worcester Only Games
+// 	if ($result_away_team == '56' || $result_home_team == '56' ) {
+// 		$matches[] = $result;
+// 	}
+// endforeach;
 
-// NON OPTA
+
+// // NON OPTA
 $args = array( 
-	'post_type' => 'fixtures',
-	'posts_per_page' => -1,
-	'meta_query' => array(
+	'post_type' 		=> 'matches',
+	'posts_per_page' 	=> -1,
+	'meta_key' 			=> 'start_date',
+	'orderby' 			=> 'meta_value',
+	'order'      		=> 'DESC',
+	'meta_query' 		=> array(
 		array(
-			'key'     => 'start_date',
-			'value'   => $today, // in da past
-			'compare' => '<',
+			'key'     	=> 'start_date',
+			'value'   	=> $today, // in da past
+			'compare' 	=> '<',
 		),
 	),
 );
@@ -57,12 +60,14 @@ if ( $match_query->have_posts() ) :
 wp_reset_postdata(); 
 endif; 
 
-foreach ($matches as $match_played):
-	$match_comp_name = $match_played['@attributes']['comp_name'];
-	$match_comp_id = $match_played['@attributes']['comp_id'];
-	$all_comp[] = $match_comp_id ."_". $match_comp_name;
-endforeach;
-$comps = array_unique($all_comp);
+//$matches = array_reverse($matches);
+
+// foreach ($matches as $match_played):
+// 	$match_comp_name = $match_played['@attributes']['comp_name'];
+// 	$match_comp_id = $match_played['@attributes']['comp_id'];
+// 	$all_comp[] = $match_comp_id ."_". $match_comp_name;
+// endforeach;
+// $comps = array_unique($all_comp);
 
 get_header(); ?>
 
@@ -143,6 +148,7 @@ get_header(); ?>
 					<form>
 						<ul>
 						<?php
+						/*
 						foreach ($comps as $comp):
 							$comp_data = explode("_", $comp)
 							?>
@@ -151,7 +157,8 @@ get_header(); ?>
 								<label for="comp-<?php echo $comp_data[0]; ?>"><?php echo $comp_data[1]; ?></label>
 							</li>
 							<?php 
-						endforeach;
+						endforeach; 
+						*/
 						?>
 						</ul>
 					</form>
@@ -254,15 +261,21 @@ get_header(); ?>
 							endif;
 
 							if (isset($match['@attributes']['game_date'])) {
-								$match_game_date = $match['@attributes']['game_date']; 
+								$match_game_date = $match['@attributes']['game_date'];
 							} else {
 								$match_game_date = get_field( 'start_date', $match['ID'] );
 							}
+
+							if (isset($match['@attributes']['game_date'])) {
+								$match_game_date_code = date("d-F-Y", strtotime($match['@attributes']['game_date']));
+							} else {
+								$match_game_date_code = date("d-F-Y", strtotime(get_field( 'start_date', $match['ID'] )));
+							}
 							
 							if (isset($match['@attributes']['game_date_string'])) {
-								$match_game_date_string = $match['@attributes']['game_date_string'];
+								$match_game_date_string = date("jS F Y", strtotime( $match['@attributes']['game_date'] ));
 							} else {
-								$match_game_date_string = date("dS F Y", strtotime(get_field( 'start_date', $match['ID'] )));
+								$match_game_date_string = date("jS F Y", strtotime(get_field( 'start_date', $match['ID'] )));
 							}
 
 							if (isset($match['@attributes']['game_date_string'])) {
@@ -293,9 +306,13 @@ get_header(); ?>
 								<h2 id="<?php echo strtolower($match_month); ?>"><?php echo $match_month; ?></h2>
 								<?php 
 								$prev = $match_month;
-							}
+							}						
 							?>
-							<div class="row match result <?php echo $match_live_game_class; ?>" data-game-id="<?php echo $match_id; ?>" data-compid="comp-<?php echo $match_comp_id; ?>"  data-team="<?php echo $team_type; ?>">
+							<div class="row match result <?php echo $match_live_game_class; ?>" data-game-id="<?php echo $match_id; ?>" data-compid="comp-<?php echo $match_comp_id; ?>" data-event-date="<?php echo $match_game_date_code; ?>" data-team="<?php echo $team_type; ?>">
+
+								<!-- <pre>
+								<?php print_r($match); ?>
+								</pre> -->
 
 								<div class="team home">
 									<?php if ($match_away_team !== '56' && $match_away_team !== 'Worcestershire' ) { ?>
@@ -324,7 +341,7 @@ get_header(); ?>
 											
 										</h3>
 										<h4><?php echo $result_text; ?></h4>
-										<p><span><?php echo $match_venue; ?></span> <span><?php echo $match_comp_name; ?></span></p>
+										<p><span><?php echo $match_venue; ?></span> <span><?php echo $match_game_date_string; ?></span> <span><?php echo $match_comp_name; ?></span></p>
 									</div>
 								</div>
 

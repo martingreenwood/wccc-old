@@ -202,9 +202,11 @@ add_action( 'wp_head', 'typekit_me', 99 );
 function opta_me() {
 ?><script>
 var opta_settings = {
-	subscription_id: '7f86c9ef2677acc7481e8ea18f9d16b8',
-	language: 'en_GB',
-	timezone: 'Europe/London'
+	subscription_id: 	'7f86c9ef2677acc7481e8ea18f9d16b8',
+	language: 			'en_GB',
+	timezone: 			'Europe/London',
+	load_when_visible: 	false
+
 };
 function openCity(evt, cityName) {
     // Declare all variables

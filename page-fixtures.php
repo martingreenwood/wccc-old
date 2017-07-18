@@ -25,22 +25,32 @@ if (file_exists(FEED_DIR .'/'. $fixture_file)):
 	$fixtures = $fixtures_array['fixture'];
 endif;
 
-foreach ($fixtures as $fixture):
-	$match_game_date = $fixture['@attributes']['game_date']; 
-	$match_away_team = $fixture['@attributes']['away_team'];
-	$match_home_team = $fixture['@attributes']['home_team'];
-	// Worcester Only Games
-	//if ( $match_game_date > $today ) {
-		if ($match_away_team == '56' || $match_home_team == '56' ) {
-			$matches[] = $fixture;
-		}
-	//}
-endforeach;
+// foreach ($fixtures as $fixture):
+// 	$match_game_date = $fixture['@attributes']['game_date']; 
+// 	$match_away_team = $fixture['@attributes']['away_team'];
+// 	$match_home_team = $fixture['@attributes']['home_team'];
+// 	// Worcester Only Games
+// 	//if ( $match_game_date > $today ) {
+// 		if ($match_away_team == '56' || $match_home_team == '56' ) {
+// 			$matches[] = $fixture;
+// 		}
+// 	//}
+// endforeach;
 
 // NON OPTA
 $args = array( 
-	'post_type' => 'fixtures',
+	'post_type' => 'matches',
 	'posts_per_page' => -1,
+	'meta_key' 			=> 'start_date',
+	'orderby' 			=> 'meta_value',
+	'order'      		=> 'ASC',
+	'meta_query' => array(
+		array(
+			'key'     => 'start_date',
+			'value'   => $today, // in da past
+			'compare' => '>',
+		),
+	),
 );
 $match_query = new WP_Query( $args );
 
@@ -51,23 +61,24 @@ if ( $match_query->have_posts() ) :
 wp_reset_postdata(); 
 endif; 
 
-foreach ($matches as $match):
 
-	if (isset($match['@attributes']['comp_name'])) {
-		$match_comp_name = $match['@attributes']['comp_name'];
-	} else {
-		$match_comp_name = get_field( 'type', $match['ID'] );
-	}
+// foreach ($matches as $match):
 
-	if (isset($match['@attributes']['comp_id'])) {
-		$match_comp_id = $match['@attributes']['comp_id'];
-	} else {
-		$match_comp_id = str_replace(" ","-",strtolower(get_field( 'type', $match['ID'] )));
-	}
+// 	if (isset($match['@attributes']['comp_name'])) {
+// 		$match_comp_name = $match['@attributes']['comp_name'];
+// 	} else {
+// 		$match_comp_name = get_field( 'type', $match['ID'] );
+// 	}
 
-	$all_comp[] = $match_comp_id ."_". $match_comp_name;
-endforeach;
-$comps = array_unique($all_comp);
+// 	if (isset($match['@attributes']['comp_id'])) {
+// 		$match_comp_id = $match['@attributes']['comp_id'];
+// 	} else {
+// 		$match_comp_id = str_replace(" ","-",strtolower(get_field( 'type', $match['ID'] )));
+// 	}
+
+// 	$all_comp[] = $match_comp_id ."_". $match_comp_name;
+// endforeach;
+// $comps = array_unique($all_comp);
 
 
 get_header(); ?>
@@ -149,15 +160,17 @@ get_header(); ?>
 					<form>
 						<ul>
 						<?php
+						/* 
 						foreach ($comps as $comp):
 							$comp_data = explode("_", $comp)
-							?>
-							<li>
-								<input class="compfilter" type="checkbox" name="comp-<?php echo $comp_data[0]; ?>" value="comp-<?php echo $comp_data[0]; ?>">
-								<label for="comp-<?php echo $comp_data[0]; ?>"><?php echo $comp_data[1]; ?></label>
-							</li>
-							<?php 
+						 	?>
+						 	<li>
+						 		<input class="compfilter" type="checkbox" name="comp-<?php echo $comp_data[0]; ?>" value="comp-<?php echo $comp_data[0]; ?>">
+						 		<label for="comp-<?php echo $comp_data[0]; ?>"><?php echo $comp_data[1]; ?></label>
+						 	</li>
+						 	<?php 
 						endforeach;
+						*/
 						?>
 						</ul>
 					</form>

@@ -1,7 +1,24 @@
 {
     "key": "group_590c40b4ee117",
-    "title": "Fixture Type",
+    "title": "Match Info",
     "fields": [
+        {
+            "key": "field_596ccf1e8381e",
+            "label": "Enter Match Info",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Enter the details for the match if not using Opta to generate a report.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
         {
             "key": "field_590c410ae0dcb",
             "label": "Start Date",
@@ -104,9 +121,9 @@
         },
         {
             "key": "field_590c4155e0dcf",
-            "label": "Type",
+            "label": "Type \/ Comp",
             "name": "type",
-            "type": "radio",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -115,17 +132,11 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "1969_Specsavers County Championship Division Two 2017": "Specsavers County Championship Division Two 2017",
-                "1970_Royal London One-Day Cup 2017": "Royal London One-Day Cup 2017",
-                "1971_NatWest T20 Blast 2017": "NatWest T20 Blast 2017"
-            },
-            "allow_null": 0,
-            "other_choice": 1,
-            "save_other_choice": 0,
             "default_value": "",
-            "layout": "horizontal",
-            "return_format": "value"
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_590c416ce0dd0",
@@ -187,7 +198,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "fixtures"
+                "value": "matches"
             }
         ]
     ],
@@ -196,8 +207,10 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1496141386
+    "modified": 1500366392
 }

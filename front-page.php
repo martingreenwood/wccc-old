@@ -89,7 +89,8 @@ get_header(); ?>
 								?>
 							</div>
 							<div class="content">
-								<h3><?php the_title( ); ?></h3>
+								<h3><small><?php echo date("j/m/Y", strtotime(get_the_date())); ?></small><br>
+								<?php the_title( ); ?></h3>
 							</div>
 						</a>
 					</div>

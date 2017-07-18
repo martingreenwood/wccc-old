@@ -340,13 +340,12 @@ get_header(); ?>
 								</div>
 
 								<div class="link">
-									<?php $args = array( 'post_type' => 'matches', 'meta_query' => array( array('key' => '_wcc_feed_id', 'value' => $match_id, 'compare' => '=' )));
-									$match_query = new WP_Query( $args );
-									if ( $match_query->have_posts() ) : while ( $match_query->have_posts() ):
-									$match_query->the_post();
-									?>
+									<?php if (get_field( 'match_link', $match['ID'] )): ?>
+									<a class="matchlink" target="_blank" href="<?php echo get_field( 'match_link' ); ?>">Match Report</a>
+									<?php else: ?>
 									<a class="matchlink" href="<?php echo the_permalink(); ?>">Match Report</a>
-									<?php endwhile; wp_reset_postdata(); endif; ?>
+									<?php endif; ?>
+									
 									<?php if ( $match_game_date > $today ): ?>
 									<a class="ticketlink" target="_blank" href="https://www.hogeweb1002.co.uk/event_listing.aspx">Buy Tickets</a>
 									<?php endif; ?>

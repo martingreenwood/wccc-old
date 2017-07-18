@@ -211,7 +211,7 @@ get_header(); ?>
 							if (isset($match['@attributes']['away_team_name'])) {
 								$match_away_team_name = trim($match['@attributes']['away_team_name']); 
 							} else {
-								$match_away_team_name = ucwords(get_field( 'away_team' )));
+								$match_away_team_name = ucwords(get_field( 'away_team' ));
 							}
 
 							if (isset($match['@attributes']['result_text'])) {

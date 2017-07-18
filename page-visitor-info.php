@@ -65,9 +65,8 @@ get_header(); ?>
 	</div>
 
 	<div id="primary" class="content-area container">
-		<main id="main" class="site-main span23" role="main">
+		<main id="main" class="site-main span9" role="main">
 
-			<center>
 			<h1><?php the_title(); ?></h1>
 			<?php
 			while ( have_posts() ) : the_post();
@@ -76,10 +75,10 @@ get_header(); ?>
 
 			endwhile; // End of the loop.
 			?>
-			</center>
 
 		</main><!-- #main -->
-		
+
+		<?php get_sidebar('pages'); ?>		
 	</div>
 
 	<?php if( have_rows('sections') ): ?>

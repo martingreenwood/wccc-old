@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_592d5784d8af0",
-            "label": "",
+            "label": "Team Playing",
             "name": "team_playing",
             "type": "select",
             "instructions": "",
@@ -17,11 +17,10 @@
             },
             "choices": {
                 "firstxi": "First XI",
-                "secondxi": "Second XI"
+                "secondxi": "Second XI",
+                "other": "Other"
             },
-            "default_value": [
-                "secondxi"
-            ],
+            "default_value": [],
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -47,5 +46,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1500302555
+    "modified": 1500384053
 }

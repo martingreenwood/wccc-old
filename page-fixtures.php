@@ -343,9 +343,9 @@ get_header(); ?>
 									<?php if (get_field( 'match_link', $match['ID'] )): ?>
 									<a class="matchlink" target="_blank" href="<?php echo get_field( 'match_link' ); ?>">Match Report</a>
 									<?php else: ?>
-									<a class="matchlink" href="<?php echo the_permalink(); ?>">Match Report</a>
+									<a class="matchlink" href="<?php echo get_the_permalink( $match['ID'] ); ?>">Match Report</a>
 									<?php endif; ?>
-									
+
 									<?php if ( $match_game_date > $today ): ?>
 									<a class="ticketlink" target="_blank" href="https://www.hogeweb1002.co.uk/event_listing.aspx">Buy Tickets</a>
 									<?php endif; ?>

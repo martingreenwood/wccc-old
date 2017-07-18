@@ -341,8 +341,8 @@ get_header(); ?>
 											<?php endif; ?>
 											
 										</h3>
-										<h4><span><?php echo $match_game_date_string; ?></span> <span><?php echo $match_time; ?></span></h4>
-										<p><span><?php echo $match_venue; ?></span> <span><?php echo $match_comp_name; ?></span></p>
+										<h4><span><?php echo $match_game_date_string; ?></span> | <span><?php echo $match_time; ?></span></h4>
+										<p><span><?php echo $match_venue; ?></span> | <span><?php echo $match_comp_name; ?></span></p>
 									</div>
 								</div>
 

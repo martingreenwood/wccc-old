@@ -1119,6 +1119,14 @@
 
 .page {
 
+	#twitter {
+		margin: 40px 0 0 0;
+	}
+
+	#sponsors {
+		padding: 40px 0;
+	}
+
 	.visitor-info #parts .section .column.twentyfive {
 
 		@include media ($medium-screen-down) {

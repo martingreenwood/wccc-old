@@ -39,8 +39,7 @@ get_header(); ?>
 		<div class="overlay" style="background-image: url(<?php echo $bannerimage; ?>)"></div>
 
 		<div class="news" style="background-image: url(<?php echo $top_image; ?>)">
-			<div class="table"><div class="cell middle
-			.">
+			<div class="table"><div class="cell middle">
 				<div class="container">
 					<div class="span6">
 						<h1><span>well,</span><br>
@@ -101,7 +100,6 @@ get_header(); ?>
 
 		</main><!-- #main -->
 
-		<?php get_sidebar('pages'); ?>
 	</div>
 
 <?php

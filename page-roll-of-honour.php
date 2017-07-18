@@ -178,6 +178,10 @@ get_header(); ?>
 	<?php endif; ?>
 
 	<?php 
+		get_template_part( 'partials/social', 'tweets' );
+	?>
+
+	<?php 
 		get_template_part( 'partials/sponsor', 'boxes' );
 	?>
 

@@ -211,7 +211,7 @@ get_header(); ?>
 							if (isset($match['@attributes']['away_team_name'])) {
 								$match_away_team_name = trim($match['@attributes']['away_team_name']); 
 							} else {
-								$match_away_team_name = ucwords(strtolower($fixture_title[2]));
+								$match_away_team_name = ucwords(get_field( 'away_team' )));
 							}
 
 							if (isset($match['@attributes']['result_text'])) {
@@ -364,6 +364,10 @@ get_header(); ?>
 		</main><!-- #main -->
 
 	</div><!-- #primary -->
+
+	<?php 
+		get_template_part( 'partials/social', 'tweets' );
+	?>
 
 	<?php 
 		get_template_part( 'partials/sponsor', 'boxes' );

@@ -81,5 +81,13 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
+	<?php 
+		get_template_part( 'partials/social', 'tweets' );
+	?>
+
+	<?php 
+		get_template_part( 'partials/sponsor', 'boxes' );
+	?>
+
 <?php
 get_footer();

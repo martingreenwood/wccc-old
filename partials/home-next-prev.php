@@ -207,7 +207,7 @@ endif;
 					</h2>
 
 					<div class="links">
-						<a class="tickets" href="#">Buy Tickets</a>
+						<a class="tickets" target="_blank" href="https://www.hogeweb1002.co.uk/event_listing.aspx">Buy Tickets</a>
 						<?php $args = array( 'post_type' => 'matches', 'meta_query' => array( array('key' => '_wcc_feed_id', 'value' => $next_match['@attributes']['id'], 'compare' => '=' )));
 						$match_query = new WP_Query( $args );
 						if ( $match_query->have_posts() ) : while ( $match_query->have_posts() ):
@@ -218,7 +218,7 @@ endif;
 					</div>
 					
 				</div>
-				<a href="<?php echo home_url('cricket/fixtures-results'); ?>">SEE ALL UPCOMING FIXTURES</a>
+				<a href="<?php echo home_url('cricket/fixtures'); ?>">SEE ALL UPCOMING FIXTURES</a>
 			</div>
 
 		</div>

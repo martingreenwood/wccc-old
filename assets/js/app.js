@@ -385,18 +385,18 @@ window.addEventListener("orientationchange", function() {
 			$('.compfilter').not(this).prop('checked', false);
 
 			// get val
-			var team = $('.compfilter:checked').val();
-			console.log(team);
+			var comp = $('.compfilter:checked').val();
+			console.log(comp);
 
 			// remove selected classes and add class to this
 			$('.compfilter').removeClass('selected');
 			$(this).addClass('selected');
 
 			$('.match').fadeTo('fast',0.1);
-			$('.match[data-team='+team+']').fadeTo('fast',1);
+			$('.match[data-compid='+comp+']').fadeTo('fast',1);
 
 			$('html, body').animate({
-				scrollTop: $('.match[data-team='+team+']:first').offset().top - 80
+				scrollTop: $('.match[data-compid='+comp+']:first').offset().top - 80
 			}, 400);
 		}
 	});

@@ -222,7 +222,7 @@ get_header(); ?>
 							if (isset($match['@attributes']['away_team_name'])) {
 								$match_away_team_name = trim($match['@attributes']['away_team_name']); 
 							} else {
-								$match_away_team_name = ucwords(strtolower($fixture_title[2]));
+								$match_away_team_name = ucwords(get_field( 'away_team', $match['ID'] ) );
 							}
 
 							if (empty(trim($match_away_team_name))) {
@@ -238,7 +238,7 @@ get_header(); ?>
 							if (isset($match['@attributes']['home_team_name'])) {
 								$match_home_team_name = trim($match['@attributes']['home_team_name']);
 							} else {
-								$match_home_team_name = ucwords(strtolower($fixture_title[0]));
+								$match_home_team_name = ucwords(get_field( 'home_team', $match['ID'] ) );
 							}
 
 							if (empty(trim($match_home_team_name))) {

@@ -143,11 +143,25 @@ function team_name($team_id, $comp_id) {
 	return $teamname;
 }
 
-function team_image($team_id) {
-	//if (filesize(BADGE_DIR . $team_id . '.png') > 0) {
-	//	$image = home_url() . '/wp-content/badges/' . $team_id . '.png';
-	//} else {
-		$image = 'http://omo.akamai.opta.net/image.php?h=omo.akamai.opta.net&sport=cricket&entity=team&description=badges&dimensions=150&id=' . $team_id;
-	//}
+function save_image($inPath,$outPath)
+{ //Download images from remote server
+	$in=    fopen($inPath, "rb");
+	$out=   fopen($outPath, "wb");
+	while ($chunk = fread($in,8192))
+	{
+		fwrite($out, $chunk, 8192);
+	}
+	fclose($in);
+	fclose($out);
+}
+
+function team_image($teamname) {
+
+	$teamname = strtolower($teamname);
+	$image = get_template_directory_uri() . '/assets/images/badges/' . $teamname . '-logo.png';
+
+	if (!file_exists(get_template_directory() . '/assets/images/badges/' . $teamname . '-logo.png')) {
+		$image = get_template_directory_uri() . '/assets/images/badges/fallback-logo.png';
+	}
 	return $image;
 }

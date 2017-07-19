@@ -24,18 +24,6 @@ if (file_exists(FEED_DIR .'/'. $results_file)):
 	$results = $results_array['results'];
 endif;
 
-// foreach ($results as $result):
-// 	$result_game_date = $result['@attributes']['game_date']; 
-// 	$result_away_team = $result['@attributes']['away_team'];
-// 	$result_home_team = $result['@attributes']['home_team'];
-	
-// 	// Worcester Only Games
-// 	if ($result_away_team == '56' || $result_home_team == '56' ) {
-// 		$matches[] = $result;
-// 	}
-// endforeach;
-
-
 // // NON OPTA
 $args = array( 
 	'post_type' 		=> 'matches',
@@ -52,22 +40,6 @@ $args = array(
 	),
 );
 $match_query = new WP_Query( $args );
-
-if ( $match_query->have_posts() ) : 
-	while ( $match_query->have_posts() ): $match_query->the_post();
-		$matches[] = (array) $pos;
-	endwhile; 
-wp_reset_postdata(); 
-endif; 
-
-//$matches = array_reverse($matches);
-
-// foreach ($matches as $match_played):
-// 	$match_comp_name = $match_played['@attributes']['comp_name'];
-// 	$match_comp_id = $match_played['@attributes']['comp_id'];
-// 	$all_comp[] = $match_comp_id ."_". $match_comp_name;
-// endforeach;
-// $comps = array_unique($all_comp);
 
 get_header(); ?>
 
@@ -197,14 +169,14 @@ get_header(); ?>
 
 						<div class="active tab">
 							
-							<?php 
-							$prev = null;
-							foreach ($matches as $match):
+						<?php 
+						if ( $match_query->have_posts() ) : 
+							while ( $match_query->have_posts() ): $match_query->the_post();
 							
 							if (isset($match['@attributes']['id'])) {
 								$match_id = $match['@attributes']['id']; 
 							} else {
-								$match_id = $match['ID'];
+								$match_id = get_the_id();
 							}
 
 							$fixture_title = explode(" ", get_the_title( $match_id ));
@@ -212,19 +184,19 @@ get_header(); ?>
 							if (isset($match['@attributes']['away_team'])) {
 								$match_away_team = $match['@attributes']['away_team']; 
 							} else {
-								$match_away_team = ucwords(strtolower($fixture_title[2]));
+								$match_away_team = get_field('away_team');
 							}
 							
 							if (isset($match['@attributes']['away_team_name'])) {
 								$match_away_team_name = trim($match['@attributes']['away_team_name']); 
 							} else {
-								$match_away_team_name = ucwords(get_field( 'away_team', $match_id ) );
+								$match_away_team_name = get_field( 'away_team' );;
 							}
 
 							if (isset($match['@attributes']['result_text'])) {
 								$result_text = $match['@attributes']['result_text'];
 							} else {
-								$result_text = ucwords(strtolower(get_field( 'result', $match_id ) ));
+								$result_text = ucwords(strtolower(get_field( 'result' ) ));
 							}
 
 							if (empty(trim($match_away_team_name))) {
@@ -234,13 +206,13 @@ get_header(); ?>
 							if (isset($match['@attributes']['home_team'])) {
 								$match_home_team = $match['@attributes']['home_team'];
 							} else {
-								$match_home_team = ucwords(strtolower($fixture_title[0]));
+								$match_home_team = get_field( 'home_team' );
 							}
 
 							if (isset($match['@attributes']['home_team_name'])) {
 								$match_home_team_name = trim($match['@attributes']['home_team_name']);
 							} else {
-								$match_home_team_name = ucwords(get_field( 'home_team', $match_id ) );
+								$match_home_team_name = get_field( 'home_team' );
 							}
 
 							if (empty(trim($match_home_team_name))) {
@@ -250,19 +222,19 @@ get_header(); ?>
 							if (isset($match['@attributes']['comp_name'])) {
 								$match_comp_name = $match['@attributes']['comp_name'];
 							} else {
-								$match_comp_name = get_field( 'type', $match_id );
+								$match_comp_name = get_field( 'type' );
 							}
 
 							if (isset($match['@attributes']['comp_id'])) {
 								$match_comp_id = $match['@attributes']['comp_id'];
 							} else {
-								$match_comp_id = str_replace(" ","_",strtolower(get_field( 'type', $match_id )));
+								$match_comp_id = str_replace(" ","_",strtolower(get_field( 'type' )));
 							}
 
 							if (strpos($match_comp_name, 'T20') !== false):
 								$team_type = "rapids";
 							elseif(isset($match['ID'])):
-								$team_type = get_field( 'team_playing', $match_id );
+								$team_type = get_field( 'team_playing' );
 							else:
 								$team_type = "firstxi";
 							endif;
@@ -270,19 +242,19 @@ get_header(); ?>
 							if (isset($match['@attributes']['game_date'])) {
 								$match_game_date = $match['@attributes']['game_date'];
 							} else {
-								$match_game_date = get_field( 'start_date', $match_id );
+								$match_game_date = get_field( 'start_date' );
 							}
 
 							if (isset($match['@attributes']['game_date'])) {
 								$match_game_date_code = date("j/m/Y", strtotime($match['@attributes']['game_date']));
 							} else {
-								$match_game_date_code = date("j/m/Y", strtotime(get_field( 'start_date', $match_id )));
+								$match_game_date_code = date("j/m/Y", strtotime(get_field( 'start_date' )));
 							}
 							
 							if (isset($match['@attributes']['game_date_string'])) {
 								$match_game_date_string = date("j/m/Y", strtotime( $match['@attributes']['game_date'] ));
 							} else {
-								$match_game_date_string = date("j/m/Y", strtotime(get_field( 'start_date', $match_id )));
+								$match_game_date_string = date("j/m/Y", strtotime(get_field( 'start_date' )));
 							}
 
 							if (isset($match['@attributes']['game_date_string'])) {
@@ -299,32 +271,39 @@ get_header(); ?>
 							if (isset($match['@attributes']['time'])) {
 								$match_time = date("H:i", strtotime($match['@attributes']['time']));
 							} else {
-								$match_time = date("H:i", strtotime(get_field( 'start_time', $match_id )));
+								$match_time = date("H:i", strtotime(get_field( 'start_time' )));
 							}
 
 							if (isset($match['@attributes']['venue'])) {
 								$match_venue = $match['@attributes']['venue'];
 							} else {
-								$match_venue = get_field( 'venue', $match_id );
+								$match_venue = get_field( 'venue' );
 							}
-
-							$match_month = date("F", strtotime($match_game_date));
-							if ($match_month != $prev) { ?>
-								<h2 id="<?php echo strtolower($match_month); ?>"><?php echo $match_month; ?></h2>
-								<?php 
-								$prev = $match_month;
-							}						
 							?>
 							<div class="row match result <?php echo $match_live_game_class; ?>" data-game-id="<?php echo $match_id; ?>" data-compid="comp-<?php echo $match_comp_id; ?>" data-event-date="<?php echo $match_game_date_code; ?>" data-team="<?php echo $team_type; ?>">
 
 								<div class="team home">
-									<?php if ($match_away_team !== '56' && $match_away_team !== 'Worcestershire' ) { ?>
-										<img class="awayimg" src="<?php echo team_image($match_away_team); ?>">
-									<?php } ?>
-									<?php if($match_home_team !== '56' && $match_home_team !== 'Worcestershire' && $match_home_team !== 'Tbc' && $match_home_team !== 'Vs' ) { ?>
-										<img class="homeimg" src="<?php echo team_image($match_home_team); ?>">
+
+									<?php if(strtolower($match_home_team) !== 'worcestershire' && strtolower($match_home_team) !== 'rapids' ) { ?>
+										
+										<?php if (strpos($match_comp_name, 'T20') !== false): ?>
+										<img src="<?php echo team_image( t20_name($match_home_team) ); ?>">
+										<?php else: ?>
+										<img src="<?php echo team_image($match_home_team); ?>">
+										<?php endif; ?>
+
 									<?php } ?>
 
+									<?php if (strtolower($match_away_team) !== 'worcestershire' && strtolower($match_away_team) !== 'rapids' ) { ?>
+										
+										<?php if (strpos($match_comp_name, 'T20') !== false): ?>
+										<img src="<?php echo team_image( t20_name($match_away_team) ); ?>">
+										<?php else: ?>
+										<img src="<?php echo team_image($match_away_team); ?>">
+										<?php endif; ?>
+
+									<?php } ?>
+									
 									<div class="name">
 
 										<h3>
@@ -350,15 +329,19 @@ get_header(); ?>
 
 								<div class="link">
 
-									<?php if (get_field( 'match_link', $match_id )): ?>
-									<a class="matchlink" target="_blank" href="<?php echo get_field( 'match_link', $match_id ); ?>">Match Report</a>
+									<?php if (get_field( 'match_link' )): ?>
+										<a class="matchlink" target="_blank" href="<?php echo get_field( 'match_link' ); ?>">Match Report</a>
 									<?php else: ?>
-									<a class="matchlink" href="<?php echo get_the_permalink( $match_id ); ?>">Match Report</a>
+										<a class="matchlink" href="<?php echo get_the_permalink(  ); ?>">Match Report</a>
 									<?php endif; ?>
 
 								</div>
 							</div>
-							<?php endforeach; ?>
+							<?php
+							endwhile; 
+						wp_reset_postdata(); 
+						endif; 
+						?>
 
 						</div>
 					</div>

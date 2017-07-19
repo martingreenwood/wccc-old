@@ -161,7 +161,11 @@ if ($days_since_game < $number_days ): ?>
 			?>
 			<div class="team <?php echo $side; ?>">
 				<?php if($innings_count <= 1): ?>
-				<img src="<?php echo team_image($batting_team_id); ?>">
+					<?php if (strpos($competition_name, 'T20') !== false): ?>
+						<img src="<?php echo team_image(t20_name(team_name($batting_team_id, $competition_id))); ?>">
+					<?php else: ?>
+						<img src="<?php echo team_image(team_name($batting_team_id, $competition_id)); ?>">
+					<?php endif; ?>
 				<?php endif; ?>
 				<div class="name">
 					
@@ -209,7 +213,11 @@ if ($days_since_game < $number_days ): ?>
 			<?php else: // innings are not in array with [0] key ?>
 			<div class="one_innings">
 				<div class="team home">
-					<img src="<?php echo team_image($home_team_id); ?>">
+					<?php if (strpos($competition_name, 'T20') !== false): ?>
+						<img src="<?php echo team_image(t20_name(team_name($home_team_id, $competition_id))); ?>">
+					<?php else: ?>
+						<img src="<?php echo team_image(team_name($home_team_id, $competition_id)); ?>">
+					<?php endif; ?>
 					<div class="name">
 						
 						<h3><?php echo $home_team; ?></h3>
@@ -259,7 +267,11 @@ if ($days_since_game < $number_days ): ?>
 							<h4>YET TO BAT</h4>
 						<?php endif; ?>
 					</div>
-					<img src="<?php echo team_image($away_team_id); ?>">
+					<?php if (strpos($competition_name, 'T20') !== false): ?>
+						<img src="<?php echo team_image(t20_name(team_name($away_team_id, $competition_id))); ?>">
+					<?php else: ?>
+						<img src="<?php echo team_image(team_name($away_team_id, $competition_id)); ?>">
+					<?php endif; ?>
 				</div>
 			</div>
 			<?php endif; ?>

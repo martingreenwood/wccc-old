@@ -82,7 +82,7 @@ function game_status($status_id) {
 			$status = "Having Lunch";
 			break;
 		case 4:
-			$status = "Betwwen Innings";
+			$status = "Between Innings";
 			break;
 		case 5:
 			$status = "Stumps";
@@ -157,7 +157,7 @@ function save_image($inPath,$outPath)
 
 function team_image($teamname) {
 
-	$teamname = strtolower($teamname);
+	$teamname = strtolower(str_replace(" ","", $teamname));
 	$image = get_template_directory_uri() . '/assets/images/badges/' . $teamname . '-logo.png';
 
 	if (!file_exists(get_template_directory() . '/assets/images/badges/' . $teamname . '-logo.png')) {

@@ -507,8 +507,21 @@
 
 		.info {
 
+			$t20images: (
+				'assets/images/banners/T20-Cox.jpg',
+				'assets/images/banners/T20-Clarke.jpg',
+				'assets/images/banners/T20-Moeen.jpg'
+			);
+
+			$t20image: nth($t20images, random(length($t20images)));
+
+			@include media ($medium-screen-down) {
+				background-image: url($t20image) !important;
+			}
+
 			a {
 				border-color: $brand-primary-t20;
+				background-color: $brand-primary-t20;
 			}
 		}
 

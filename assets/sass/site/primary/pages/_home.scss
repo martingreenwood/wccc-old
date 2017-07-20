@@ -16,6 +16,11 @@
 		}
 	}
 
+	#twitter {
+		margin-top: 0;
+		margin-bottom: 40px;
+	}
+
 	#fixtures {
 
 		@include media($medium-screen-up) {

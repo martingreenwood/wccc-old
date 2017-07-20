@@ -564,6 +564,20 @@
 			}
 		}
 
+		&#theclub {
+
+			.menu-sub-menu {
+
+				li {
+
+					@include media ($medium-screen-up) {
+						width: calc(25% - 20px);
+						float: left;
+					}
+				}
+			}
+		}
+
 		&#news, &#whatson  {
 
 			a.viewall {

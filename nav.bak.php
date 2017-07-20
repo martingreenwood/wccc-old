@@ -427,6 +427,20 @@
 		</div><!-- END TAB -->
 
 		<div id="theclub" class="child">
+
+			<div class="span12 menu-sub-menu">	
+				<h2>The Club</h2>
+				<div class="clear"></div>
+				<?php
+				$cricketPID = get_id_by_slug('the-club');
+				$children = wp_list_pages( 'title_li=&child_of='.$cricketPID.'&echo=0' );
+				if ( $children) : ?>
+				<ul>
+					<?php echo $children; ?>
+				</ul>
+				<?php endif; ?>
+			</div>
+
 		</div><!-- END TAB -->
 
 		<div id="visitors" class="child">

@@ -580,9 +580,7 @@
 		}
 
 		.fixture {
-			@include media($medium-screen-up) {
-				background-color: $brand-primary-dark-t20;
-			}
+			background-color: $brand-primary-dark-t20;
 
 			.match-info {
 
@@ -603,9 +601,7 @@
 		}
 
 		.result {
-			@include media($medium-screen-up) {
-				background-color: $brand-primary-t20;
-			}
+			background-color: $brand-primary-t20;
 
 			.match-info {
 

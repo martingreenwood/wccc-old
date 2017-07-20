@@ -19,18 +19,28 @@
 				<div class="span12">
 
 					<h3>Sign Up to our Newsletter</h3>
-					<form action="https://ventutec.createsend.com/t/r/s/tdtutid/" method="post" id="subForm">
-						<p>
-							<input id="fieldName" name="cm-name" type="text" placeholder="Your name" />
-						</p>
-						<p>
-							<input id="fieldEmail" name="cm-tdtutid-tdtutid" type="email" required placeholder="Your email" />
-						</p>
-						<p>
-							<button type="submit">Sign Up</button>
-						</p>
-					</form>
-				</div>
+
+					<div id="mc_embed_signup">
+						<form action="//wccc.us16.list-manage.com/subscribe/post?u=a86308683637e5d7bf8d84cfc&amp;id=004757c1c4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+							<div id="mc_embed_signup_scroll">
+								<p>
+									<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+								</p>
+								<p>
+									<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+								</p>
+						    	<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a86308683637e5d7bf8d84cfc_004757c1c4" tabindex="-1" value=""></div>
+    							<p>
+    								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+								</p>
+							</div>
+						</form>
+					</div>
+					<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+					<script type='text/javascript'>
+						(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);
+					</script>
+
 				</div>
 			</div>
 		</div>

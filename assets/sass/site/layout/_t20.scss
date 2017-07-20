@@ -229,7 +229,7 @@
 
 	.main-menu-container {
 		background: rgba(32, 32, 32, 0.9);
-		padding-top: 170px;
+		padding-top: 130px;
 
 		ul.nav-menu {
 
@@ -531,9 +531,15 @@
 				
 				h2, h3, h4, a {
 					color: $brand-primary-dark-t20;
+					font-weight: 700;
+
+					small {
+						color: $brand-primary-t20;
+					}
 				}
 
 				a {
+
 					&:hover {
 						color: $brand-primary-t20;
 

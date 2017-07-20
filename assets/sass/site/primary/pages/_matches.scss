@@ -5,8 +5,27 @@
 .single-matches {
 
 	#jumbrotron {
+
+		.info {
+			$ccimages: (
+				'assets/images/banners/CC-ClarkeAlt.jpg',
+				'assets/images/banners/CC-HastingsAlt.jpg',
+				'assets/images/banners/CC-LeachAlt.jpg',
+				'assets/images/banners/CC-MitchDollyAlt.jpg',
+			);
+
+			$ccimage: nth($ccimages, random(length($ccimages)));
+
+			@include media ($medium-screen-down) {
+				background-image: url($ccimage) !important;
+				background-size: cover;
+			}
+		}
+
 		.news {
+
 			.span6 {
+				
 				h1, h2 {
 					font-size: 29px;
 					line-height: 0.875;

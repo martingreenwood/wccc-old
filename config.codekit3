@@ -855,11 +855,31 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/assets\/images\/banners\/CC-ClarkeAlt.jpg": {
+		"ft": 16384,
+		"iS": 232512,
+		"oA": 0,
+		"oAP": "\/assets\/images\/banners\/CC-ClarkeAlt.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/assets\/images\/banners\/CC-Hastings.jpg": {
 		"ft": 16384,
 		"iS": 284347,
 		"oA": 0,
 		"oAP": "\/assets\/images\/banners\/CC-Hastings.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/assets\/images\/banners\/CC-HastingsAlt.jpg": {
+		"ft": 16384,
+		"iS": 170401,
+		"oA": 0,
+		"oAP": "\/assets\/images\/banners\/CC-HastingsAlt.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -875,11 +895,31 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/assets\/images\/banners\/CC-LeachAlt.jpg": {
+		"ft": 16384,
+		"iS": 223322,
+		"oA": 0,
+		"oAP": "\/assets\/images\/banners\/CC-LeachAlt.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/assets\/images\/banners\/CC-MitchDolly.jpg": {
 		"ft": 16384,
 		"iS": 457786,
 		"oA": 0,
 		"oAP": "\/assets\/images\/banners\/CC-MitchDolly.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/assets\/images\/banners\/CC-MitchDollyAlt.jpg": {
+		"ft": 16384,
+		"iS": 285594,
+		"oA": 0,
+		"oAP": "\/assets\/images\/banners\/CC-MitchDollyAlt.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -895,6 +935,16 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/assets\/images\/banners\/T20-ClarkeAlt.jpg": {
+		"ft": 16384,
+		"iS": 245446,
+		"oA": 0,
+		"oAP": "\/assets\/images\/banners\/T20-ClarkeAlt.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/assets\/images\/banners\/T20-Cox.jpg": {
 		"ft": 16384,
 		"iS": 294038,
@@ -905,11 +955,31 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/assets\/images\/banners\/T20-CoxAlt.jpg": {
+		"ft": 16384,
+		"iS": 206020,
+		"oA": 0,
+		"oAP": "\/assets\/images\/banners\/T20-CoxAlt.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/assets\/images\/banners\/T20-Moeen.jpg": {
 		"ft": 16384,
 		"iS": 481157,
 		"oA": 0,
 		"oAP": "\/assets\/images\/banners\/T20-Moeen.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/assets\/images\/banners\/T20-MoeenAlt.jpg": {
+		"ft": 16384,
+		"iS": 335733,
+		"oA": 0,
+		"oAP": "\/assets\/images\/banners\/T20-MoeenAlt.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

@@ -756,6 +756,24 @@
 
 	&.single {
 
+		#junbrotron {
+
+			.info {
+				$ccimages: (
+					'assets/images/banners/T20-ClarkeAlt.jpg',
+					'assets/images/banners/T20-CoxAlt.jpg',
+					'assets/images/banners/T20-MoeenAlt.jpg',
+				);
+
+				$ccimage: nth($ccimages, random(length($ccimages)));
+
+				@include media ($medium-screen-down) {
+					background-image: url($ccimage) !important;
+					background-size: cover;
+				}
+			}
+		}
+
 		#jumbrotron {
 
 			.news {
@@ -796,6 +814,22 @@
 					span {
 						color: $brand-primary-t20;
 					}
+				}
+			}
+
+			.info {
+				
+				$ccimages: (
+					'assets/images/banners/T20-ClarkeAlt.jpg',
+					'assets/images/banners/T20-CoxAlt.jpg',
+					'assets/images/banners/T20-MoeenAlt.jpg',
+				);
+
+				$ccimage: nth($ccimages, random(length($ccimages)));
+
+				@include media ($medium-screen-down) {
+					background-image: url($ccimage) !important;
+					background-size: cover;
 				}
 			}
 		}
@@ -1000,6 +1034,24 @@
 	}
 
 	&.archive, &.blog {
+
+		#junbrotron {
+
+			.info {
+				$ccimages: (
+					'assets/images/banners/T20-ClarkeAlt.jpg',
+					'assets/images/banners/T20-CoxAlt.jpg',
+					'assets/images/banners/T20-MoeenAlt.jpg',
+				);
+
+				$ccimage: nth($ccimages, random(length($ccimages)));
+
+				@include media ($medium-screen-down) {
+					background-image: url($ccimage) !important;
+					background-size: cover;
+				}
+			}
+		}
 		
 		#sidebar {
 			
@@ -1016,6 +1068,25 @@
 	}
 
 	&.single-players {
+
+		#junbrotron {
+
+			.info {
+				$ccimages: (
+					'assets/images/banners/T20-ClarkeAlt.jpg',
+					'assets/images/banners/T20-CoxAlt.jpg',
+					'assets/images/banners/T20-MoeenAlt.jpg',
+				);
+
+				$ccimage: nth($ccimages, random(length($ccimages)));
+
+				@include media ($medium-screen-down) {
+					background-image: url($ccimage) !important;
+					background-size: cover;
+				}
+			}
+		}
+
 
 		#primary {
 
@@ -1080,6 +1151,28 @@
 				background: $brand-primary-t20;
 			}
 		}
+	}
+
+	&.page {
+		
+		#junbrotron {
+
+			.info {
+				$ccimages: (
+					'assets/images/banners/T20-ClarkeAlt.jpg',
+					'assets/images/banners/T20-CoxAlt.jpg',
+					'assets/images/banners/T20-MoeenAlt.jpg',
+				);
+
+				$ccimage: nth($ccimages, random(length($ccimages)));
+
+				@include media ($medium-screen-down) {
+					background-image: url($ccimage) !important;
+					background-size: cover;
+				}
+			}
+		}
+
 	}
 }
 

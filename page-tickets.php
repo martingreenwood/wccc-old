@@ -58,7 +58,6 @@ get_header(); ?>
 		</div>
 	</section>
 
-
 	<div id="primary" class="content-area container">
 		<main id="main" class="site-main span9" role="main">
 

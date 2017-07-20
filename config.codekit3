@@ -5149,12 +5149,6 @@
 		"oAP": "\/sidebar-pages.php",
 		"oF": 0
 		},
-	"\/sidebar-top.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/sidebar-top.php",
-		"oF": 0
-		},
 	"\/sidebar.php": {
 		"ft": 8192,
 		"oA": 2,

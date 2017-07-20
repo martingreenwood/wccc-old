@@ -91,12 +91,6 @@ get_header(); ?>
 		</div>
 	</section>
 
-	<div id="topnavbar" class="pagenav">
-		<div class="container">
-		<?php get_sidebar('top'); ?>
-		</div>
-	</div>
-
 	<div id="filter">
 		<div class="container">
 			<div class="row">

@@ -51,12 +51,6 @@ get_header(); ?>
 		</div>
 	</section>
 
-	<div id="topnavbar" class="pagenav">
-		<div class="container">
-		<?php get_sidebar('top'); ?>
-		</div>
-	</div>
-
 	<div id="primary" class="content-area container">
 		<main id="main" class="site-main span12" role="main">
 

@@ -751,6 +751,19 @@
 
 		#jumbrotron {
 
+			.news {
+
+				.span6 {
+
+					h1 {
+
+						small {
+							color: $brand-primary-t20;
+						}
+					}
+				}
+			}
+
 			h3 {
 				color: $brand-primary-t20;
 			}

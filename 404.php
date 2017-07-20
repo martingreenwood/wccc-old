@@ -52,25 +52,28 @@ get_header(); ?>
 
 
 	<div id="primary" class="content-area container">
-		<main id="main" class="site-main span9" role="main">
+		<main id="main" class="site-main" role="main">
 
 			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'wccc' ); ?></h1>
-				</header><!-- .page-header -->
+				
+				<div class="row">
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'wccc' ); ?></p>
+					<article class="span12">
+						<h2><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'wccc' ); ?></h2>
+						<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below.', 'wccc' ); ?></p>
+					</article>
 
+				</div>
+
+				<div class="row page-content">
+
+					<div class="span6">
 					<?php
-
 						the_widget( 'WP_Widget_Recent_Posts' );
-
-						// Only show the widget if site has multiple categories.
-						if ( wccc_categorized_blog() ) :
 					?>
+					</div>
 
-					<div class="widget widget_categories">
+					<div class="widget widget_categories span6">
 						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'wccc' ); ?></h2>
 						<ul>
 						<?php
@@ -83,22 +86,12 @@ get_header(); ?>
 							) );
 						?>
 						</ul>
-					</div><!-- .widget -->
+					</div>
 
-					<?php
-						endif;
+				</div>
+			</section>
 
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'wccc' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
+		</main>
 
 	</div>
 

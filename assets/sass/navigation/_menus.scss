@@ -629,6 +629,14 @@
 
 				h2, h3, h4, a {
 					text-transform: uppercase;
+					font-weight: 700;
+
+					small {
+						color: $brand-primary;
+					}
+				}
+
+				a:hover {
 					color: $brand-primary;
 				}
 

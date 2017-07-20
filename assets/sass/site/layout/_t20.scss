@@ -443,7 +443,14 @@
 
 				.slide {
 
-					a, .more, h3 {
+					h2, h3, h4, a {
+
+						small {
+							color: $brand-primary-t20;
+						}
+					}
+
+					a:hover {
 						color: $brand-primary-t20;
 					}
 				}

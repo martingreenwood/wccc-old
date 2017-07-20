@@ -12,6 +12,19 @@ aside {
 	}
 }
 
+.rpwwt-widget {
+	
+	ul {
+		
+		li {
+			
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
+
 .widget {
 	
 	@include rem(margin, 0 0 40px);

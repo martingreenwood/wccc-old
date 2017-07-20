@@ -913,7 +913,7 @@
 
 		#subForm {
 			p {
-				button {
+				button, input[type="submit"] {
 					background: $brand-primary-t20;
 					border-color: $brand-primary-t20;
 				}

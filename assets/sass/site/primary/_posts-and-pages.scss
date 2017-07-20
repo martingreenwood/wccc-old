@@ -843,6 +843,7 @@
 			input[type="time"], 
 			input[type="url"], 
 			input[type="week"], 
+			input[type="submit"], 
 			input:not([type]), 
 			textarea, 
 			select[multiple=multiple], 
@@ -856,10 +857,10 @@
 				font-family: $heading-font-family;
 			}
 
-			button {
+			button, input[type="submit"] {
 				text-transform: uppercase;
 				background: $brand-primary;
-				border-color: $brand-primary;
+				border: 0;
 				color: white;
 				line-height: 1.75;
 

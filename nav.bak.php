@@ -444,6 +444,34 @@
 		</div><!-- END TAB -->
 
 		<div id="visitors" class="child">
+
+			<div class="span3 menu-sub-menu">	
+				<h2>Visitor Info</h2>
+				<div class="clear"></div>
+				<?php
+				$cricketPID = get_id_by_slug('visitor-info');
+				$children = wp_list_pages( 'title_li=&child_of='.$cricketPID.'&echo=0' );
+				if ( $children) : ?>
+				<ul>
+					<?php echo $children; ?>
+				</ul>
+				<?php endif; ?>
+			</div>
+
+			<div class="span9 mappy">
+			<h2>Location</h2>
+				<?php 
+				$location = get_field('location', 'options');
+				if( !empty($location) ): ?>
+				<section id="location">
+					<div class="map">
+						<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
+					</div>
+				</section>
+				<?php endif; ?>
+				
+			</div>
+
 		</div><!-- END TAB -->
 
 		<div id="memberships" class="child">
@@ -494,6 +522,20 @@
 		</div><!-- END TAB -->
 
 		<div id="commercial" class="child">
+
+			<div class="span12 menu-sub-menu">	
+				<h2>Commercial</h2>
+				<div class="clear"></div>
+				<?php
+				$cricketPID = get_id_by_slug('commercial');
+				$children = wp_list_pages( 'title_li=&child_of='.$cricketPID.'&echo=0' );
+				if ( $children) : ?>
+				<ul>
+					<?php echo $children; ?>
+				</ul>
+				<?php endif; ?>
+			</div>
+
 		</div><!-- END TAB -->
 
 		<div id="shop" class="child">

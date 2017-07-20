@@ -89,12 +89,15 @@ article/*--------------------------------------------------------------
 					display: inline-block;
 					color: white;
 					text-transform: uppercase;
-					padding: 0 6px;
+					padding: 10px;
 					font-size: 16px;
 					font-weight: 700;
-
-					background: $brand-primary-dark;
+					background: #202020;
 					color: white;
+
+					small {
+						color: $brand-primary;
+					}
 
 					&:hover {
 						background: $brand-primary;

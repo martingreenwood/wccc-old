@@ -913,7 +913,10 @@
 				header {
 
 					h1 {
-						background: $brand-primary-t20;
+						
+						small {
+							color: $brand-primary;
+						}
 
 						&:hover {
 							background: $brand-primary-dark-t20;

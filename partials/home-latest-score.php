@@ -232,7 +232,7 @@ if ($days_since_game < $number_days ): ?>
 									echo "All Out";
 								}
 								?>
-								<br><small><?php echo $overs; ?> overs bowled</small>
+								<br><small><?php echo $overs; ?> <span class="overs">overs bowled</span></small>
 							</h4>
 						<?php else: ?>
 							<h4>YET TO BAT</h4>
@@ -258,7 +258,7 @@ if ($days_since_game < $number_days ): ?>
 									echo "All Out";
 								}
 								?>
-								<br><small><?php echo $overs; ?> overs bowled</small>
+								<br><small><?php echo $overs; ?> <span class="overs">overs bowled</span></small>
 							</h4>
 						<?php else: ?>
 							<h4>YET TO BAT</h4>

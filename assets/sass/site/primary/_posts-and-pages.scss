@@ -1114,6 +1114,12 @@
 	display:none;
 }
 
+span.overs {
+	@include media ($medium-screen-down) {
+		display: none;
+	}
+}
+
 .tab.active {
 	display:block;
 }

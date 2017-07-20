@@ -78,15 +78,19 @@
 
 		h1 {
 			position: absolute;
-			-webkit-transform: rotate(90deg);
-			   -moz-transform: rotate(90deg);
-			    -ms-transform: rotate(90deg);
-			     -o-transform: rotate(90deg);
-			        transform: rotate(90deg);
-
-			transform-origin: 0 0;
-			top: -10px;
-			left: -10px;
+			top: -45px;
+			left: 0;
+			
+			@include media ($medium-screen-up) {
+				top: -10px;
+				left: -10px;
+				transform-origin: 0 0;
+				-webkit-transform: rotate(90deg);
+				   -moz-transform: rotate(90deg);
+				    -ms-transform: rotate(90deg);
+				     -o-transform: rotate(90deg);
+				        transform: rotate(90deg);
+			}
 		}
 
 		.details {

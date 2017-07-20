@@ -68,6 +68,10 @@
 						background: transparent;
 						color: $brand-primary;
 					}
+
+					&:after {
+						display: none;
+					}
 				}
 
 

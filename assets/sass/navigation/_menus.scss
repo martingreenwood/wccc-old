@@ -70,7 +70,9 @@
 					}
 
 					&:after {
-						display: none;
+						@include media($medium-screen-up) {
+							display: none;
+						}
 					}
 				}
 

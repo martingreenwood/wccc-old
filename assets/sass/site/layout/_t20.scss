@@ -302,6 +302,10 @@
 
 		#mega-menu-menu-1 {
 
+			p {
+				font-weight: 700;
+			}
+
 			&[data-effect="fade_up"] li.mega-menu-item.mega-toggle-on > ul.mega-sub-menu, 
 			&[data-effect="fade_up"] li.mega-menu-item.mega-menu-megamenu.mega-toggle-on ul.mega-sub-menu {
 

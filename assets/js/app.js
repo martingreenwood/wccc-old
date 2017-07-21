@@ -108,6 +108,7 @@ window.addEventListener("orientationchange", function() {
 (function($){
 	$('.menu-toggle').on('click', function(event) {
 		event.preventDefault();
+		$('#mega-menu-item-5399').removeClass('mega-toggle-on');
 		
 		setTimeout( function() {
 			$('#mega-menu-item-5399').addClass('mega-toggle-on');

@@ -108,7 +108,10 @@ window.addEventListener("orientationchange", function() {
 (function($){
 	$('.menu-toggle').on('click', function(event) {
 		event.preventDefault();
-		$('.mega-menu > li:first-of-type').addClass('mega-toggle-on');
+		
+		setTimeout( function() {
+			$('#mega-menu-item-5399').addClass('mega-toggle-on');
+		}, 100);
 
 		// $('.mega-menu > li:first-of-type .mega-sub-menu').css({
 		// 	'visibility': 'visible',

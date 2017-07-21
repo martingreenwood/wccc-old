@@ -200,6 +200,10 @@
 				text-transform: uppercase;
 				font-weight: 900;
 				line-height: normal;
+
+				@include media($medium-screen-up) {
+					line-height: 33px;
+				}
 			}
 
 			.match-info {

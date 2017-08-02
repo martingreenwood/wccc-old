@@ -22,10 +22,14 @@
 	}
 
 	h1, h2 {
-		font-size: 55px;
+		font-size: 45px;
 		line-height: 0.875;
 		color: white;
 		text-transform: uppercase;
+
+		@include media ($medium-screen-up) {
+			font-size: 55px;
+		}
 
 		span {
 			color: $brand-primary;

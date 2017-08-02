@@ -359,6 +359,12 @@
 				@include media($medium-screen-up) {
 					width: auto;
 					text-align: left;
+					max-width: 83%;
+				}
+
+				@include media($large-screen-up) {
+					max-width: 100%;
+
 				}
 
 				h3, h4 {
@@ -403,8 +409,12 @@
 			@include media($medium-screen-up) {
 				float: right;
 				text-align: right;
-				width: auto;
+				width: 50%;
 				margin-top: 0;
+			}
+
+			@include media($large-screen-up) {
+				width:auto;
 			}
 
 			.status {
@@ -643,8 +653,12 @@
 				position: relative;
 
 				@include media($medium-screen-up) {
-					width: 35%;
+					width: 47%;
 					margin: 0 1% 30px;
+				}
+
+				@include media($large-screen-up) {
+					width: 35%;
 				}
 
 
@@ -704,7 +718,15 @@
 						color: white;
 
 						@include media($medium-screen-up) {
+							left: 20px;
+							right: auto;
+							top: 41px;
+						}
+
+						@include media($large-screen-up) {
 							right: 20px;
+							left: auto;
+							top: 0;
 						}
 					}
 
@@ -1045,6 +1067,11 @@
 					bottom: 0;
 					padding: 20px;
 					box-sizing: border-box;
+
+					@include media($medium-screen-up) {
+						position: relative;
+						padding: 0;
+					}
 
 					h3 {
 						margin: 0;

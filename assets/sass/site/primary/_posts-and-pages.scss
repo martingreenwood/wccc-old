@@ -872,12 +872,14 @@
 	#subForm {
 		
 		p {
-			width: 32.52%;
+			width: 32.36%;
 			float: left;
 			margin: 0 1% 0 0;
 			
-			@include media($medium-screen-up) {
+			@include media($large-screen-up) {
+				width: 32.52%;
 				margin: 0 10px 0 0;
+
 			}
 
 			input[type="color"], 
@@ -954,7 +956,7 @@
 			border-top: 2px solid white;
 			padding: 10px;
 
-			@include media($medium-screen-up) {
+			@include media($large-screen-up) {
 				padding: 20px;
 			}
 
@@ -963,7 +965,7 @@
 				font-size: 16px;
 				line-height: 1;
 
-				@include media($medium-screen-up) {
+				@include media($large-screen-up) {
 					font-size: 25px;
 				}
 			}
@@ -1022,14 +1024,14 @@
 			width: 100%;
 			text-align: center;
 
-			@include media($medium-screen-up) {
+			@include media($large-screen-up) {
 				width: 18.146%; // 225px for large 
 			}
 
 			.sponsor {
 				width: 100%;
 
-				@include media($medium-screen-up) {
+				@include media($large-screen-up) {
 					border-right: 1px solid#ccc;
 					padding-right: 20px;
 				}
@@ -1056,7 +1058,7 @@
 			width: 100%;
 			text-align: center;
 			
-			@include media($medium-screen-up) {
+			@include media($large-screen-up) {
 				width: 81.856%; // 1015px for large 
 			}
 

@@ -245,6 +245,14 @@ window.addEventListener("orientationchange", function() {
 		arrows: true,
 		responsive: [
 			{
+				breakpoint: 860,
+				settings: {
+					arrows: false,
+					slidesToShow: 2,
+					slidesToScroll: 1
+				}
+			},
+			{
 				breakpoint: 600,
 				settings: {
 					arrows: false,

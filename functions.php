@@ -214,7 +214,7 @@ if (is_singular( 'matches' );):
 <?php
 endif;
 }
-add_action( 'wp_head', 'wp_head', 98 );
+add_action( 'wp_head', 'keep_pos', 98 );
 
 
 /*================================

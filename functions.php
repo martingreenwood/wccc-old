@@ -196,7 +196,7 @@ function typekit_me() {
 add_action( 'wp_head', 'typekit_me', 99 );
 
 function keep_pos() {
-if (is_singular( 'matches' );):
+if (is_singular( 'matches' )):
 ?>
 <script>
  (function($) {
@@ -214,7 +214,7 @@ if (is_singular( 'matches' );):
 <?php
 endif;
 }
-add_action( 'wp_head', 'keep_pos', 98 );
+add_action( 'wp_head', 'keep_pos', 95 );
 
 
 /*================================

@@ -154,7 +154,7 @@ endif;
 						?>
 						<a class="info" href="<?php echo the_permalink(); ?>">Match Report</a>
 						<?php endwhile; wp_reset_postdata(); endif; ?>
-				 <a href="<?php echo home_url('cricket/fixtures-results/results'); ?>">SEE ALL RESULTS</a>
+				 <a href="<?php echo home_url('cricket/results'); ?>">SEE ALL RESULTS</a>
 			</div>
 			<div class="fixture">
 				<?php 

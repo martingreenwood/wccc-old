@@ -441,15 +441,15 @@ window.addEventListener("orientationchange", function() {
 
 // KEEP POSITION
 
-(function($) {
-	$(window).scroll(function() {
-		sessionStorage.scrollTop = $(this).scrollTop();
-	});
+// (function($) {
+// 	$(window).scroll(function() {
+// 		sessionStorage.scrollTop = $(this).scrollTop();
+// 	});
 
-	$(document).ready(function() {
-		if (sessionStorage.scrollTop != "undefined") {
-			$(window).scrollTop(sessionStorage.scrollTop);
-		}
-	});
-})(jQuery);
+// 	$(document).ready(function() {
+// 		if (sessionStorage.scrollTop != "undefined") {
+// 			$(window).scrollTop(sessionStorage.scrollTop);
+// 		}
+// 	});
+// })(jQuery);
 

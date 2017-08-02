@@ -195,6 +195,28 @@ function typekit_me() {
 }
 add_action( 'wp_head', 'typekit_me', 99 );
 
+function keep_pos() {
+if (is_singular( 'matches' );):
+?>
+<script>
+ (function($) {
+	$(window).scroll(function() {
+		sessionStorage.scrollTop = $(this).scrollTop();
+	});
+
+	$(document).ready(function() {
+		if (sessionStorage.scrollTop != "undefined") {
+			$(window).scrollTop(sessionStorage.scrollTop);
+		}
+	});
+})(jQuery);
+</script>
+<?php
+endif;
+}
+add_action( 'wp_head', 'wp_head', 98 );
+
+
 /*================================
 =            ADD OPTA            =
 ================================*/

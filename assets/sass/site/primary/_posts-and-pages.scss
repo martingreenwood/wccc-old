@@ -962,8 +962,13 @@
 
 			h3 {
 				color: white;
-				font-size: 16px;
+				font-size: 12px;
 				line-height: 1;
+				margin-bottom: 0;
+
+				@include media($medium-screen-up) {
+					font-size: 16px;
+				}
 
 				@include media($large-screen-up) {
 					font-size: 25px;

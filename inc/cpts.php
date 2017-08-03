@@ -16,13 +16,55 @@
 global $cpts;
 
 $cpts = array(
-	array('sponsors','Sponsor','Sponsors','dashicons-slides',array('title','editor','thumbnail', 'page-attributes')),
-	array('events','Event','Events','dashicons-tickets',array('title','editor','thumbnail')),
-	array('players','Player','Players','dashicons-groups',array('title','editor','thumbnail', 'page-attributes')),
-	array('wcccagm','WCCC AGM Report','Minutes & Reports','dashicons-analytics',array('title')),
-	array('matches','Matches','Matches','dashicons-microphone',array('title', 'editor', 'thumbnail', 'custom-fields')),
+	array(
+		'sponsors',
+		'Sponsor',
+		'Sponsors',
+		'dashicons-slides',
+		array('title','editor','thumbnail', 'page-attributes'),
+		'rewrite' => array('slug' => 'sponsors','with_front' => false),
+	),
+	array(
+		'events',
+		'Event',
+		'Events',
+		'dashicons-tickets',
+		array('title','editor','thumbnail'),
+		'rewrite' => array('slug' => 'events','with_front' => false),
+	),
+	array(
+		'players',
+		'Player',
+		'Players',
+		'dashicons-groups',
+		array('title','editor','thumbnail', 'page-attributes'),
+		'rewrite' => array('slug' => 'players','with_front' => false),
+	),
+	array(
+		'wcccagm',
+		'WCCC AGM Report',
+		'Minutes & Reports',
+		'dashicons-analytics',
+		array('title'),
+		'rewrite' => array('slug' => 'wcccagm','with_front' => false),
+	),
+	array(
+		'matches',
+		'Matches',
+		'Matches',
+		'dashicons-microphone',
+		array('title', 'editor', 'thumbnail', 'custom-fields'),
+		'rewrite' => array('slug' => 'matches','with_front' => false),
+	),
 	//array('fixtures','Fixture','Fixtures','dashicons-forms',array('title')),
-	array('memberships','Membership','Memberships','dashicons-nametag',array('title','editor','thumbnail')),
+	array(
+		'memberships',
+		'Membership',
+		'Memberships',
+		'dashicons-nametag',
+		array('title','editor','thumbnail'),
+		'rewrite' => array('slug' => 'memberships','with_front' => false),
+	),
 );
 
 
@@ -37,6 +79,7 @@ function cpts_register() {
 		// $cpt[2] = Plural
 		// $cpt[3] = image / icon
 		// $cpt[4] = supports
+		// $cpt[5] = rewrite
 
 		$labels = array(
 	  	'name' 					=> _x($cpt[2], 'post type general name'),
@@ -59,7 +102,7 @@ function cpts_register() {
 	    'query_var' 			=> true,
 	    'capability_type' 		=> 'page',
 	    'hierarchical' 			=> false,
-	    'rewrite' 				=> true,
+	    'rewrite' 				=> $cpt[5],
 	    'show_in_rest' 			=> true,
 	    'supports' 				=> $cpt[4],
 	    'menu_icon'   			=> $cpt[3],

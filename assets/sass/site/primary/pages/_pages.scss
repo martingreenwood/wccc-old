@@ -829,6 +829,9 @@
 							padding: 0 0 0 20px;
 						}
 
+						table {
+							width: 100% !important;
+						}
 					}
 				}
 			}
@@ -951,6 +954,7 @@
 					width: 49%;
 					float: left;
 					clear: none;
+					padding-right: 0;
 
 					&:nth-child(2n) {
 						float: right;

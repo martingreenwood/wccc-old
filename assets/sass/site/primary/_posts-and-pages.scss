@@ -872,14 +872,18 @@
 	#subForm {
 		
 		p {
-			width: 32.36%;
+			width: 100%;
 			float: left;
-			margin: 0 1% 0 0;
+			margin: 0 0 5px 0;
 			
+			@include media($large-screen-up) {
+				width: 32.36%;
+				margin: 0 1% 0 0;
+			}
+
 			@include media($large-screen-up) {
 				width: 32.52%;
 				margin: 0 10px 0 0;
-
 			}
 
 			input[type="color"], 
@@ -1214,17 +1218,28 @@ span.overs {
 
 	label {
 		float: left;
-		width: 50%;
+		width: 100%;
 		margin: 0;
 		font-size: 17px;
 		color: white;
 		text-transform: uppercase;
-		line-height: 36px;
+		line-height: 1.4;
+		text-align: center;
+
+		@include media($medium-screen-up) {
+			width: 50%;
+			text-align: left;
+			line-height: 36px;
+		}
 	}
 
 	.right {
 		float: right;
-		width: 35%;
+		width: 100%;
+
+		@include media($medium-screen-up) {
+			width: 35%;
+		}
 
 		input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], textarea {
 			border-radius: 0;
@@ -1232,14 +1247,21 @@ span.overs {
 			margin: 0;
 			padding: 0 10px;
 			float: left;
-			width: 65%;
+			width: 100%;
 			line-height: 36px;
 			text-align: center;
+			margin-top: 5px;
+
+			@include media($medium-screen-up) {
+				width: 65%;
+				margin-top: 0;
+			}
 		}
 
 		button {
 			float: left;
-			width: 35%;
+			width: 100%;
+			margin-top: 5px;
 			border: 0;
 			background: $brand-primary;
 			color: white;
@@ -1247,6 +1269,11 @@ span.overs {
 			padding: 0;
 			text-transform: uppercase;
 			text-align: center;
+
+			@include media($medium-screen-up) {
+				width: 35%;
+				margin-top: 0;
+			}
 		}
 	}
 }

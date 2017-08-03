@@ -262,9 +262,12 @@ get_header(); ?>
 							} else {
 								$match_venue = get_field( 'venue' );
 							}
+
+							$todaysdate = strtotime('now');
+							$matchdate = strtotime($match_game_date);
 							
 							?>
-							<div class="row match <?php echo $match_live_game_class; ?>"  <?php if ( $match_game_date >= $today ): ?> data-match-type="fixture"  <?php else: ?> data-match-type="result" <?php endif; ?> data-game-id="<?php echo $match_id; ?>" data-compid="comp-<?php echo $match_comp_id; ?>"  data-team="<?php echo $team_type; ?>">
+							<div class="row match <?php echo $match_live_game_class; ?>" data-game-id="<?php echo $match_id; ?>" data-compid="comp-<?php echo $match_comp_id; ?>"  data-team="<?php echo $team_type; ?>">
 
 								<div class="team home">
 
@@ -306,7 +309,7 @@ get_header(); ?>
 											<?php endif; ?>
 											
 										</h3>
-										<h4><span><?php echo $match_game_date_string; ?></span> | <span><?php echo $match_time; ?></span></h4>
+										<h4><span><?php echo $match_game_date; ?></span> | <span><?php echo $match_time; ?></span></h4>
 										<p><span><?php echo $match_venue; ?></span> | <span><?php echo $match_comp_name; ?></span></p>
 									</div>
 								</div>
@@ -318,7 +321,10 @@ get_header(); ?>
 									<a class="matchlink" href="<?php echo get_the_permalink( ); ?>">Match Report</a>
 								<?php endif; ?>
 
-								<?php if ( $match_game_date > $today ): ?>
+								<?php
+								$pos = strpos(strtolower($match_comp_name), 'second');
+
+								if ( $pos === false ): ?>
 									<a class="ticketlink" target="_blank" href="https://www.hogeweb1002.co.uk/event_listing.aspx">Buy Tickets</a>
 								<?php endif; ?>
 								</div>

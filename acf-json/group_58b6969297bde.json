@@ -30,7 +30,7 @@
                 "director-of-cricket": "Director of Cricket"
             },
             "default_value": [],
-            "allow_null": 1,
+            "allow_null": 0,
             "multiple": 0,
             "ui": 1,
             "ajax": 1,
@@ -91,7 +91,7 @@
                 "none": "N\/A"
             },
             "default_value": [],
-            "allow_null": 1,
+            "allow_null": 0,
             "multiple": 1,
             "ui": 1,
             "ajax": 1,
@@ -214,7 +214,7 @@
             "key": "field_58b69fb81f78c",
             "label": "Height",
             "name": "height",
-            "type": "number",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -224,18 +224,16 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
+            "placeholder": "eg: 5ft 11in",
             "prepend": "",
-            "append": "cm",
-            "min": "",
-            "max": "",
-            "step": ""
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_58b69ff91f78d",
             "label": "Weight",
             "name": "weight",
-            "type": "number",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -245,12 +243,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
+            "placeholder": "eg: 9st 7lbs",
             "prepend": "",
-            "append": "kg",
-            "min": "",
-            "max": "",
-            "step": ""
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_58b6a00f1f78e",
@@ -350,5 +346,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1500389878
+    "modified": 1501762645
 }

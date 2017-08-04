@@ -41,8 +41,10 @@ get_header(); ?>
 			<div class="table"><div class="cell middle">
 				<div class="container">
 					<div class="span6">
-						<h1><?php the_title(); ?></h1>
-						<h3><?php echo date("dS F Y", strtotime(get_field( 'event_date' ))); ?></h3>
+						<h1>
+							<?php the_title(); ?><br>
+							<small><?php the_time('dS F Y'); ?></small>
+						</h1>
 					</div>
 					<div class="span6">
 					</div>

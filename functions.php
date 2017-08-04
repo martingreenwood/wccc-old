@@ -158,11 +158,11 @@ add_action( 'widgets_init', 'wccc_widgets_init' );
  */
 function wccc_scripts() {
 	wp_enqueue_style( 'wccc-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'wccc-opta-css', '//widget.cloud.opta.net/v3/css/v3.cricket.opta-widgets.css' );
+	wp_enqueue_style( 'wccc-opta-css', 'http://widget.cloud.opta.net/v3/css/v3.cricket.opta-widgets.css' );
 
 	wp_enqueue_script( 'jquery' );
 
-	wp_enqueue_script( 'wccc_opt', '//widget.cloud.opta.net/v3/v3.opta-widgets.js', '', '', false);
+	wp_enqueue_script( 'wccc_opt', 'http://widget.cloud.opta.net/v3/v3.opta-widgets.js', '', '', false);
 	wp_enqueue_script( 'wccc_ggl', '//maps.googleapis.com/maps/api/js?key=AIzaSyAT5vS9U3S5QkN-f2cwPN-Am4C1vc7zElE', '', '', false);
 	wp_enqueue_script( 'wccc-fnt', '//use.fontawesome.com/06a97ff7a0.js', '', '', true );
 	wp_enqueue_script( 'wccc-mod', get_template_directory_uri() . '/assets/js/modernizr.js', '', '', true );

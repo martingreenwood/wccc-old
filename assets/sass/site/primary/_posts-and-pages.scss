@@ -633,7 +633,7 @@
 				max-width: 86%;
 
 				@include media ($medium-screen-up) {
-					max-width: auto;
+					max-width: inherit;
 				}
 			}
 

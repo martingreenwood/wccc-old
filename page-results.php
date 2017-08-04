@@ -227,7 +227,7 @@ get_header(); ?>
 
 							if (strpos($match_comp_name, 'T20') !== false):
 								$team_type = "rapids";
-							elseif(isset($match['ID'])):
+							elseif(get_field( 'team_playing' )):
 								$team_type = get_field( 'team_playing' );
 							else:
 								$team_type = "firstxi";

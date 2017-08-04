@@ -223,7 +223,7 @@ get_header(); ?>
 
 							if (strpos($match_comp_name, 'T20') !== false):
 								$team_type = "rapids";
-							elseif(isset($match['ID'])):
+							elseif(get_field( 'team_playing')):
 								$team_type = get_field( 'team_playing' );
 							else:
 								$team_type = "firstxi";
@@ -271,7 +271,7 @@ get_header(); ?>
 
 								<div class="team home">
 
-									<?php if(strtolower($match_home_team) !== 'worcestershire' && strtolower($match_home_team) !== 'rapids' ) { ?>
+									<?php if(strtolower($match_home_team) !== 'worcestershire' && strtolower($match_home_team) !== 'worcestershire 2nd xi' && strtolower($match_home_team) !== 'rapids' ) { ?>
 										
 										<?php if (strpos($match_comp_name, 'T20') !== false): ?>
 										<img src="<?php echo team_image( t20_name($match_home_team) ); ?>">
@@ -281,7 +281,7 @@ get_header(); ?>
 
 									<?php } ?>
 
-									<?php if (strtolower($match_away_team) !== 'worcestershire' && strtolower($match_away_team) !== 'rapids' ) { ?>
+									<?php if (strtolower($match_away_team) !== 'worcestershire' && strtolower($match_away_team) !== 'worcestershire 2nd xi' && strtolower($match_away_team) !== 'rapids' ) { ?>
 										
 										<?php if (strpos($match_comp_name, 'T20') !== false): ?>
 										<img src="<?php echo team_image( t20_name($match_away_team) ); ?>">

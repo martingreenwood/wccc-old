@@ -130,10 +130,10 @@ get_header();
 		<div class="news" style="background-image: url(<?php echo $top_image; ?>)">
 			<div class="table"><div class="cell middle">
 				<div class="container">
-					<div class="span6">&nbsp;
+					<div class="span6">
 						<?php 
 						$title = get_the_title( ); 
-						$title = explode(" ", $title);
+						$title = explode("vs", $title);
 						?>
 						<?php if (file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')): ?>
 						<h1>
@@ -152,15 +152,15 @@ get_header();
 						</h1>
 						<?php else: ?>
 						<h1>
-							<?php if ($title[0] === "Worcestershire"): ?><span><?php endif; ?>
-							<?php echo $title[0]; ?>
-							<?php if ($title[0] === "Worcestershire"): ?></span><?php endif; ?>
+							<?php if (get_field( 'home_team' ) === "Worcestershire"): ?><span><?php endif; ?>
+							<?php echo get_field( 'home_team' ); ?>
+							<?php if (get_field( 'home_team' ) === "Worcestershire"): ?></span><?php endif; ?>
 							
 							<small>VS</small><br>
 
-							<?php if ($title[2] === "Worcestershire"): ?><span><?php endif; ?>
-							<?php echo $title[2]; ?>
-							<?php if ($title[2] === "Worcestershire"): ?></span><?php endif; ?>
+							<?php if (get_field( 'away_team' ) === "Worcestershire"): ?><span><?php endif; ?>
+							<?php echo get_field( 'away_team' ); ?>
+							<?php if (get_field( 'away_team' ) === "Worcestershire"): ?></span><?php endif; ?>
 						</h1>
 						<?php endif; ?>
 					</div>

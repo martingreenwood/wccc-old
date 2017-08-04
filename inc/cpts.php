@@ -22,7 +22,7 @@ $cpts = array(
 		'Sponsors',
 		'dashicons-slides',
 		array('title','editor','thumbnail', 'page-attributes'),
-		'rewrite' => array('slug' => 'sponsors','with_front' => false),
+		array('slug' => 'sponsors','with_front' => false),
 	),
 	array(
 		'events',
@@ -30,7 +30,7 @@ $cpts = array(
 		'Events',
 		'dashicons-tickets',
 		array('title','editor','thumbnail'),
-		'rewrite' => array('slug' => 'events','with_front' => false),
+		array('slug' => 'events','with_front' => false),
 	),
 	array(
 		'players',
@@ -38,7 +38,7 @@ $cpts = array(
 		'Players',
 		'dashicons-groups',
 		array('title','editor','thumbnail', 'page-attributes'),
-		'rewrite' => array('slug' => 'players','with_front' => false),
+		array('slug' => 'players','with_front' => false),
 	),
 	array(
 		'wcccagm',
@@ -46,7 +46,7 @@ $cpts = array(
 		'Minutes & Reports',
 		'dashicons-analytics',
 		array('title'),
-		'rewrite' => array('slug' => 'wcccagm','with_front' => false),
+		array('slug' => 'wcccagm','with_front' => false),
 	),
 	array(
 		'matches',
@@ -54,7 +54,7 @@ $cpts = array(
 		'Matches',
 		'dashicons-microphone',
 		array('title', 'editor', 'thumbnail', 'custom-fields'),
-		'rewrite' => array('slug' => 'matches','with_front' => false),
+		array('slug' => 'matches','with_front' => false),
 	),
 	//array('fixtures','Fixture','Fixtures','dashicons-forms',array('title')),
 	array(
@@ -63,7 +63,7 @@ $cpts = array(
 		'Memberships',
 		'dashicons-nametag',
 		array('title','editor','thumbnail'),
-		'rewrite' => array('slug' => 'memberships','with_front' => false),
+		array('slug' => 'memberships','with_front' => false),
 	),
 );
 

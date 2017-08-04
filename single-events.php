@@ -43,7 +43,7 @@ get_header(); ?>
 					<div class="span6">
 						<h1>
 							<?php the_title(); ?><br>
-							<small><?php the_time('dS F Y'); ?></small>
+							<?php echo date("dS F Y", strtotime(get_field( 'event_date' ))); ?>
 						</h1>
 					</div>
 					<div class="span6">

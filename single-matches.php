@@ -355,12 +355,12 @@ get_header();
 					<?php if( have_rows('reports') ): ?>
 					<li><a href="#reports">Reports</a></li>
 					<?php endif; ?>
-					<li><a href="#matchinfo">Match Information</a></li>
 					<?php if (file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')): ?>
 					<?php if ($game_status != "Pre Game"): ?>
 					<li><a href="#scorecard">Scorecard</a></li>
 					<li><a href="#wagonwheel">Wagon Wheel</a></li>
 					<li><a href="#manhattan">Manhattan</a></li>
+					<li><a href="#matchinfo">Match Information</a></li>
 					<?php endif; ?>
 					<?php endif; ?>
 				</ul>

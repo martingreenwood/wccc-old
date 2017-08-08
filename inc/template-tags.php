@@ -139,3 +139,29 @@ if( function_exists('acf_add_options_page') ) {
 	//));
 	
 }
+
+
+
+
+add_action( 'the_post', 'wpse_94856_title_update' );
+
+function wpse_94856_title_update( $post )
+{
+    if ( empty ( $post->post_title ) )
+        return;
+
+    $new_title = mb_convert_case( $post->post_title, MB_CASE_TITLE, "UTF-8" );
+
+    if ( $post->post_title === $new_title )
+        return;
+
+    wp_update_post(
+        array (
+            'ID'         => $post->ID,
+            'post_title' => $new_title
+        )
+    );
+
+    // $post is passed by reference, so we update this property in real time
+    $post->post_title = $new_title;
+}

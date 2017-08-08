@@ -433,4 +433,3 @@ require get_template_directory() . '/inc/twitteroauth/twitteroauth.php';
  * Load OpenWeatherMapAPI API
  */
 require get_template_directory() . '/inc/cmfcmf/OpenWeatherMap.php';
-

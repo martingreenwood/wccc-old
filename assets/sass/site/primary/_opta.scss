@@ -1,6 +1,44 @@
 .Opta {
 	font-family: $heading-font-family;
 
+	.Opta_C {
+
+		.Opta-CricketInningsBreakdown {
+
+			.Opta-Team {
+				background-color: $brand-primary-dark;
+
+				&.Opta-Home {
+					background-color: $brand-primary;
+				}
+			}
+		}
+	}
+
+	.Opta-Nav {
+
+		li.Opta-On {
+
+			a {
+				background-color: $brand-primary-dark;
+			}
+		}
+	}
+
+	.Opta_C_SC_N {
+
+		.Opta-Ranking-Bars {
+
+			td.Opta-Score {
+
+				div {
+					background-color: $brand-primary;
+					border-color: $brand-primary;
+				}
+			}
+		}
+	}
+
 	.Opta_C_S {
 		
 		table {
@@ -11,6 +49,31 @@
 					border-top: 1px solid $brand-primary;
 					border-bottom: 1px solid $brand-primary;
 				}
+			}
+		}
+	}
+
+	.Opta-Teamsheet-Holder {
+
+		.Opta-Teamsheet-Button {
+			background-color: $brand-primary-dark;
+
+			&.Opta-Team-Left {
+				background-color: $brand-primary;
+			}
+		}
+	}
+
+	.Opta-TimeControls {
+
+		.Opta-TimeSpan {
+			fill: $brand-primary;
+		}
+
+		.Opta-Dragger {
+
+			path {
+				fill: $brand-primary;
 			}
 		}
 	}

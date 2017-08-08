@@ -67,16 +67,19 @@
 		}
 	}
 
-	.Opta-TimeControls {
+	.Opta-Timestrip {
 
-		.Opta-TimeSpan {
-			fill: $brand-primary;
-		}
+		.Opta-TimeControls {
 
-		.Opta-Dragger {
-
-			path {
+			.Opta-TimeSpan {
 				fill: $brand-primary;
+			}
+
+			.Opta-Dragger {
+
+				path {
+					fill: $brand-primary;
+				}
 			}
 		}
 	}

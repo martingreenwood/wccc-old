@@ -15,12 +15,15 @@
 		}
 	}
 
-	.Opta-Nav {
+	.Opta-Tabs {
 
-		li.Opta-On {
+		.Opta-Nav {
 
-			a {
-				background-color: $brand-primary-dark;
+			li.Opta-On {
+
+				a {
+					background-color: $brand-primary-dark;
+				}
 			}
 		}
 	}
@@ -74,6 +77,16 @@
 
 			path {
 				fill: $brand-primary;
+			}
+		}
+	}
+
+	.Opta_C_W_N {
+
+		.Opta-Innings {
+
+			.Opta-On {
+				background-color: $brand-primary-dark;
 			}
 		}
 	}

@@ -300,7 +300,7 @@ get_header(); ?>
 											<?php echo $match_home_team_name; if (strpos($match_comp_name, 'XI')): ?> 2<sup>nd</sup> XI<?php endif; ?>
 											<?php endif; ?>
 
-											<small>vs</small> 
+											<small> vs </small>
 
 											<?php if (strpos($match_comp_name, 'T20') !== false): ?>
 											<?php echo t20_name($match_away_team_name); if (strpos($match_comp_name, 'XI')): ?> 2<sup>nd</sup> XI<?php endif; ?>

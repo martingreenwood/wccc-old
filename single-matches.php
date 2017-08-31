@@ -146,8 +146,7 @@ get_header();
 							<?php if ($home_team === "Worcestershire" || $home_team === "Rapids"): ?><span><?php endif; ?>
 							<?php echo $home_team; if (strpos($competition_name, 'XI')): ?> 2<sup>nd</sup> XI<?php endif; ?>
 							<?php if ($home_team === "Worcestershire" || $home_team === "Rapids"): ?></span><?php endif; ?>
-							
-							<small>VS <?php echo $competition_name; ?></small><br>
+							<small> VS </small><br>
 
 							<?php if ($away_team === "Worcestershire" || $away_team === "Rapids"): ?><span><?php endif; ?>
 							<?php echo $away_team; if (strpos($competition_name, 'XI')): ?> 2<sup>nd</sup> XI<?php endif; ?>

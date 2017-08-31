@@ -118,7 +118,13 @@
 			$PlayerDetail = null;
 		}
 
-	endif; 
+	else:
+
+		$home_team = get_field( 'home_team' ); 
+		$away_team = get_field( 'away_team' ); 
+		$competition_name = get_field( 'type' ); 
+
+	endif;
 
 get_header();
 
@@ -130,7 +136,7 @@ get_header();
 		<div class="news" style="background-image: url(<?php echo $top_image; ?>)">
 			<div class="table"><div class="cell middle">
 				<div class="container">
-					<div class="span6">
+					<div class="span8 game-title">
 						<?php 
 						$title = get_the_title( ); 
 						$title = explode("vs", $title);
@@ -138,13 +144,13 @@ get_header();
 						<?php if (file_exists(FEED_DIR . '/crml-'.$feedID.'.xml')): ?>
 						<h1>
 							<?php if ($home_team === "Worcestershire" || $home_team === "Rapids"): ?><span><?php endif; ?>
-							<?php echo $home_team; ?>
+							<?php echo $home_team; if (strpos($competition_name, 'XI')): ?> 2<sup>nd</sup> XI<?php endif; ?>
 							<?php if ($home_team === "Worcestershire" || $home_team === "Rapids"): ?></span><?php endif; ?>
 							
-							<small>VS</small><br>
+							<small>VS <?php echo $competition_name; ?></small><br>
 
 							<?php if ($away_team === "Worcestershire" || $away_team === "Rapids"): ?><span><?php endif; ?>
-							<?php echo $away_team; ?>
+							<?php echo $away_team; if (strpos($competition_name, 'XI')): ?> 2<sup>nd</sup> XI<?php endif; ?>
 							<?php if ($away_team === "Worcestershire" || $away_team === "Rapids"): ?></span><?php endif; ?>
 							<?php if($game_status == "Result"): ?>
 							<br><small style="font-size: 40%"><?php echo $result; ?></small>
@@ -153,18 +159,16 @@ get_header();
 						<?php else: ?>
 						<h1>
 							<?php if (get_field( 'home_team' ) === "Worcestershire"): ?><span><?php endif; ?>
-							<?php echo get_field( 'home_team' ); ?>
+							<?php echo get_field( 'home_team' ); if (strpos($competition_name, 'XI')): ?> 2<sup>nd</sup> XI<?php endif; ?>
 							<?php if (get_field( 'home_team' ) === "Worcestershire"): ?></span><?php endif; ?>
 							
 							<small>VS</small><br>
 
 							<?php if (get_field( 'away_team' ) === "Worcestershire"): ?><span><?php endif; ?>
-							<?php echo get_field( 'away_team' ); ?>
+							<?php echo get_field( 'away_team' ); if (strpos($competition_name, 'XI')): ?> 2<sup>nd</sup> XI<?php endif; ?>
 							<?php if (get_field( 'away_team' ) === "Worcestershire"): ?></span><?php endif; ?>
 						</h1>
 						<?php endif; ?>
-					</div>
-					<div class="span6">
 					</div>
 				</div>
 			</div></div>

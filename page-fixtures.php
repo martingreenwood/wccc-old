@@ -332,8 +332,12 @@ get_header(); ?>
 							<?php
 							endwhile; 
 							wp_reset_postdata(); 
-						endif; 
-						?>
+
+						else: ?>
+							<h2 style="width: 100%; text-align: center; padding: 0;">
+							<?php echo date("Y", strtotime("+1 year")); ?> Fixtures to be annouced soon
+							</h2>
+						<?php endif;  ?>
 						</div>
 					</div>
 				</div>

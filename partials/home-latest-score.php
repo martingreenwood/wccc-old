@@ -50,8 +50,6 @@ $last_match = end($dates);
 $last_match_id = explode('_', $last_match);
 $last_match_id = end($last_match_id);
 
-echo $last_match_id;
-
 if (file_exists(FEED_DIR .'/crml-'.$last_match_id.'.xml')):
 	$fixture_xml = simplexml_load_file(FEED_DIR .'/crml-'. $last_match_id.'.xml');
 	$fixture_json = json_encode($fixture_xml);

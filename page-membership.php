@@ -47,8 +47,12 @@ get_header(); ?>
 			<div class="table"><div class="cell middle">
 				<div class="container">
 					<div class="span6">
+						<?php if (get_field( 'custom_title' )): ?>
+							<h1><?php the_field( 'custom_title' ); ?></h1>
+						<?php else: ?>
 						<h1>Join <?php echo $clubname; ?>
 						<br><?php echo date('Y'); ?> Memberships On Sale</h1>
+						<?php endif; ?>
 					</div>
 					<div class="span6">
 					</div>

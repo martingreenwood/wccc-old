@@ -24,15 +24,16 @@
 
 		.news {
 
-			.span6 {
+			.game-title {
 				
 				h1, h2 {
 					font-size: 29px;
 					line-height: 0.875;
 					color: white;
+					margin-bottom: 0;
 
 					@include media ($medium-screen-up) {
-						font-size: 55px;
+						font-size: 50px;
 					}
 
 					span {

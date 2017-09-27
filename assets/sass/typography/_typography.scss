@@ -18,3 +18,8 @@ textarea {
 @import "headings";
 
 @import "copy";
+
+sup, sub {
+    font-size: 50%;
+    top: -12px;
+}

@@ -424,7 +424,7 @@
 		},
 	"\/assets\/images\/badges\/derbyshire-logo.png": {
 		"ft": 32768,
-		"iS": 22068,
+		"iS": 21073,
 		"oA": 0,
 		"oAP": "\/assets\/images\/badges\/derbyshire-logo.png",
 		"oF": 0,
@@ -754,7 +754,7 @@
 		},
 	"\/assets\/images\/badges\/steelbacks-logo.png": {
 		"ft": 32768,
-		"iS": 33571,
+		"iS": 30940,
 		"oA": 0,
 		"oAP": "\/assets\/images\/badges\/steelbacks-logo.png",
 		"oF": 0,
@@ -1247,7 +1247,7 @@
 		},
 	"\/assets\/images\/slide-next-blue.png": {
 		"ft": 32768,
-		"iS": 1805,
+		"iS": 1751,
 		"oA": 0,
 		"oAP": "\/assets\/images\/slide-next-blue.png",
 		"oF": 0,
@@ -1495,7 +1495,7 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/app-min.js",
 		"oF": 0,
-		"sC": 1,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/assets\/js\/countdown-min.js": {
@@ -1582,7 +1582,7 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/assets\/js\/map-min.js",
 		"oF": 1,
 		"sC": 0,
@@ -1612,7 +1612,7 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/assets\/js\/navigation-min.js",
 		"oF": 1,
 		"sC": 1,

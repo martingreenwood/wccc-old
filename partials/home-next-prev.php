@@ -165,6 +165,7 @@ endif;
 				<h2>NEXT MATCH</h2>
 				<div class="match-info">
 					<p class="date-time">
+						<?php if (isset($next_match['@attributes']['game_date'])): ?>
 						<span class="date">
 							<?php echo date("d/m/Y", strtotime($next_match['@attributes']['game_date'])); ?>
 						</span>
@@ -182,13 +183,20 @@ endif;
 								));
 							});
 						</script>
+					<?php endif; ?>
 					</p>
 
 					<p class="comp">
+						<?php if(isset($next_match['@attributes']['comp_name'])): ?>
 						<?php echo $next_match['@attributes']['comp_name']; ?>
+						<?php else: ?>
+						No upcomming matches
+						<?php endif; ?>
 					</p>
 
 					<h2 class="match">
+
+						<?php if(isset($next_match['@attributes']['home_team_name'])): ?>
 
 						<?php if (strpos($next_match['@attributes']['comp_name'], 'T20') !== false): ?>
 						<?php echo t20_name($next_match['@attributes']['home_team_name']); ?>
@@ -204,9 +212,17 @@ endif;
 						<?php echo $next_match['@attributes']['away_team_name']; ?>
 						<?php endif; ?>
 
+						<?php else: ?>
+
+							<?php echo date('Y', strtotime('+1 year')); ?> Fixtures <br>
+							announcing soon
+
+						<?php endif; ?>
+
 					</h2>
 
 					<div class="links">
+						<?php if(isset($next_match['@attributes']['home_team_name'])): ?>
 						<a class="tickets" target="_blank" href="https://www.hogeweb1002.co.uk/event_listing.aspx">Buy Tickets</a>
 						<?php $args = array( 'post_type' => 'matches', 'meta_query' => array( array('key' => '_wcc_feed_id', 'value' => $next_match['@attributes']['id'], 'compare' => '=' )));
 						$match_query = new WP_Query( $args );
@@ -215,10 +231,15 @@ endif;
 						?>
 						<a class="info" href="<?php echo the_permalink(); ?>">Match Info</a>
 						<?php endwhile; wp_reset_postdata(); endif; ?>
+						<?php else: ?>
+							<span style="width: 1px; height: 33px; display: block;"></span>
+						<?php endif; ?>
 					</div>
 					
 				</div>
-				<a href="<?php echo home_url('cricket/fixtures'); ?>">SEE ALL UPCOMING FIXTURES</a>
+				<?php if(isset($next_match['@attributes']['home_team_name'])): ?>
+					<a href="<?php echo home_url('cricket/fixtures'); ?>">SEE ALL UPCOMING FIXTURES</a>
+				<?php endif; ?>
 			</div>
 
 		</div>

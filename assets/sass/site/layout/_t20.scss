@@ -519,9 +519,9 @@
 		.info {
 
 			$t20images: (
-				'assets/images/banners/T20-Cox.jpg',
-				'assets/images/banners/T20-Clarke.jpg',
-				'assets/images/banners/T20-Moeen.jpg'
+				'assets/images/banners/T20-Cox-min.jpg',
+				'assets/images/banners/T20-Clarke-min.jpg',
+				'assets/images/banners/T20-Moeen-min.jpg'
 			);
 
 			$t20image: nth($t20images, random(length($t20images)));
@@ -564,9 +564,9 @@
 
 		.news {
 			$t20images: (
-				'assets/images/banners/T20-Cox.jpg',
-				'assets/images/banners/T20-Clarke.jpg',
-				'assets/images/banners/T20-Moeen.jpg'
+				'assets/images/banners/T20-Cox-min.jpg',
+				'assets/images/banners/T20-Clarke-min.jpg',
+				'assets/images/banners/T20-Moeen-min.jpg'
 			);
 
 			$t20image: nth($t20images, random(length($t20images)));
@@ -764,9 +764,9 @@
 
 			.info {
 				$ccimages: (
-					'assets/images/banners/T20-ClarkeAlt.jpg',
-					'assets/images/banners/T20-CoxAlt.jpg',
-					'assets/images/banners/T20-MoeenAlt.jpg',
+					'assets/images/banners/T20-ClarkeAlt-min.jpg',
+					'assets/images/banners/T20-CoxAlt-min.jpg',
+					'assets/images/banners/T20-MoeenAlt-min.jpg',
 				);
 
 				$ccimage: nth($ccimages, random(length($ccimages)));
@@ -824,9 +824,9 @@
 			.info {
 				
 				$ccimages: (
-					'assets/images/banners/T20-ClarkeAlt.jpg',
-					'assets/images/banners/T20-CoxAlt.jpg',
-					'assets/images/banners/T20-MoeenAlt.jpg',
+					'assets/images/banners/T20-ClarkeAlt-min.jpg',
+					'assets/images/banners/T20-CoxAlt-min.jpg',
+					'assets/images/banners/T20-MoeenAlt-min.jpg',
 				);
 
 				$ccimage: nth($ccimages, random(length($ccimages)));
@@ -1043,9 +1043,9 @@
 
 			.info {
 				$ccimages: (
-					'assets/images/banners/T20-ClarkeAlt.jpg',
-					'assets/images/banners/T20-CoxAlt.jpg',
-					'assets/images/banners/T20-MoeenAlt.jpg',
+					'assets/images/banners/T20-ClarkeAlt-min.jpg',
+					'assets/images/banners/T20-CoxAlt-min.jpg',
+					'assets/images/banners/T20-MoeenAlt-min.jpg',
 				);
 
 				$ccimage: nth($ccimages, random(length($ccimages)));
@@ -1077,9 +1077,9 @@
 
 			.info {
 				$ccimages: (
-					'assets/images/banners/T20-ClarkeAlt.jpg',
-					'assets/images/banners/T20-CoxAlt.jpg',
-					'assets/images/banners/T20-MoeenAlt.jpg',
+					'assets/images/banners/T20-ClarkeAlt-min.jpg',
+					'assets/images/banners/T20-CoxAlt-min.jpg',
+					'assets/images/banners/T20-MoeenAlt-min.jpg',
 				);
 
 				$ccimage: nth($ccimages, random(length($ccimages)));
@@ -1163,9 +1163,9 @@
 
 			.info {
 				$ccimages: (
-					'assets/images/banners/T20-ClarkeAlt.jpg',
-					'assets/images/banners/T20-CoxAlt.jpg',
-					'assets/images/banners/T20-MoeenAlt.jpg',
+					'assets/images/banners/T20-ClarkeAlt-min.jpg',
+					'assets/images/banners/T20-CoxAlt-min.jpg',
+					'assets/images/banners/T20-MoeenAlt-min.jpg',
 				);
 
 				$ccimage: nth($ccimages, random(length($ccimages)));

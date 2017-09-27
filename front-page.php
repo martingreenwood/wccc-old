@@ -47,7 +47,7 @@ get_header(); ?>
 						<p>
 							<?php the_field( 'hompage_intro', 'option' ); ?>
 						</p>
-						<a href="<?php the_field( 'hompage_link', 'option' ); ?>">Read More</a>
+						<a href="<?php the_field( 'hompage_link', 'option' ); ?>"><?php the_field( 'hompage_link_text', 'option' ); ?></a>
 					</div>
 				</div>
 			</div></div>

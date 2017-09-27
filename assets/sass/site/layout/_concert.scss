@@ -1,0 +1,1183 @@
+.classic {
+	font-weight: $medium-weight;
+
+	.cc-window.cc-floating.cc-type-info {
+		background-color: $brand-primary-dark-concert !important;
+	}
+
+	.cc-btn.cc-dismiss {
+		background-color: $brand-primary-concert !important;	
+	}
+
+	#topnavbar {
+		background-color: $brand-primary-concert;
+
+		#sidebar, .widget {
+
+			ul {
+				
+				li {
+					
+					&.current_page_item {
+
+						a {
+							font-weight: 700;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#masthead {
+
+		.site-header {
+
+			.branding {
+				width: 50%;
+				
+				@include media($medium-screen-up) {
+					width: auto;
+				}
+			}
+		}
+	}
+
+	#main {
+
+		article {
+			h2, h3, h4, h5 {
+				color: $brand-primary-dark-concert;
+			}
+		}
+
+		.downloads {
+			
+			a {
+				background-color: $brand-primary-concert;
+			}
+		}
+
+		.memberships {
+
+			.package {
+
+				.copy {
+
+					h3 {
+						background-color: $brand-primary-dark-concert;
+					}
+
+					h4 {
+						background-color: $brand-primary-concert;
+					}
+				}
+
+				.links {
+
+					a {
+						background-color: $brand-primary-dark-concert;
+					}
+				}
+			}
+		}
+
+		.quick-links {
+
+			ul {
+				border-top-color: $brand-primary-concert;
+
+				li {
+
+					a {
+						background-color: $brand-primary-concert;
+					}
+				}
+			}
+		}
+
+		#cd-timeline {
+
+			&:before {
+				background-color: $brand-primary-concert;
+			}
+
+			h1 {
+				background-color: $brand-primary-dark-concert;
+			}
+
+			.cd-timeline-img {
+				background-color: $brand-primary-concert;
+			}
+
+			.cd-timeline-content {
+				background-color: $brand-primary-concert;
+			}
+		}
+
+		.hours {
+
+			table {
+
+				tr {
+
+					td.title {
+						background-color: $brand-primary-dark-concert;
+						border-top-color: $brand-primary-dark-concert;
+						border-left-color: $brand-primary-dark-concert;
+					}
+				}
+			}
+		}
+	}
+
+	.widget {
+
+		ul {
+
+			li.current_page_item {
+
+				a {
+					font-weight: $heavy-weight;
+				}
+			}
+		}
+	}
+
+	#filter {
+
+		.row {
+			
+			&:after {
+				background: $brand-primary-dark-concert;
+			}
+		}
+
+		form {
+			background-color: $brand-primary-dark-concert;
+
+			ul {
+
+				li {
+
+					input[type="checkbox"] {
+						border-color: $brand-primary-concert;
+					}
+				}
+			}
+		}
+
+		h3 {
+			color: $brand-primary-concert;
+
+			&:before {
+				background-color: $brand-primary-dark-concert;
+			}
+
+			&.active {
+				background-color: $brand-primary-concert;
+			}
+		}
+	}
+
+	#loader {
+		background-color: black;
+		background-image: url(assets/images/logo-white.svg);
+
+		#progstat {
+			color: $brand-primary-concert;
+		}
+		#progress {
+			background: $brand-primary-concert;
+		}
+	}
+
+	a {
+		color: $brand-primary-concert;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: $super-weight;
+	}
+
+	button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
+		background-color: $brand-primary-concert;
+	}
+
+	#no-feed {
+		background-color: $brand-primary-dark-concert;
+	}
+
+	.whats-on {
+
+		#main {
+
+			.row {
+
+				.package {
+
+					header {
+
+						h3 {
+							background-color: $brand-primary-concert;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.main-menu-container {
+		background: rgba(32, 32, 32, 0.9);
+		padding-top: 130px;
+
+		ul.nav-menu {
+
+			li {
+
+				a {
+					color: white;
+					font-weight: 700;
+				}
+
+				&:hover > a, 
+				&.focus > a {
+					color: $brand-primary-concert;
+				}
+			}
+		}
+
+		li {
+
+			a {
+				color: white;
+				font-weight: 700;
+
+				&#newroad {
+					background-color: transparent;
+					color: $brand-primary-concert;
+
+					&:hover, 
+					&.focus {
+						color: white;
+						background-color: #cf9c23;
+					}
+				}
+			}
+
+			&:hover > a, 
+			&.focus > a {
+				color: inherit;
+			}
+		}
+
+		.current_page_item > a, 
+		.current-menu-item > a, 
+		.current_page_ancestor > a, 
+		.current-menu-ancestor > a {
+			color: $brand-primary-concert;
+			font-weight: 900;
+		}
+	}
+
+	.squadies {
+
+		.person {
+
+			h2 {
+				background: $brand-primary-dark-concert;
+			}
+
+			.info {
+				background: $brand-primary-dark-concert;
+
+				a {
+					background-color: $brand-primary-concert;
+				}
+			}
+		}
+	}
+
+	#mega-menu-wrap-menu-1 {
+
+		#mega-menu-menu-1 {
+
+			p {
+				font-weight: 700;
+			}
+
+			&[data-effect="fade_up"] li.mega-menu-item.mega-toggle-on > ul.mega-sub-menu, 
+			&[data-effect="fade_up"] li.mega-menu-item.mega-menu-megamenu.mega-toggle-on ul.mega-sub-menu {
+
+				@include media ($medium-screen-up) {
+					background: rgba(32, 32, 32, 0.9);
+				}
+			}
+
+			> .mega-sub-menu {
+				background: transparent;
+			}
+
+			> .mega-menu-item {
+
+				> .mega-menu-link {
+					font-weight: 700;
+
+					&:hover, &:focus, &:active {
+						color: $brand-primary-concert;
+						font-weight: 700;
+					}
+				}
+
+				&.mega-toggle-on {
+
+					> a.mega-menu-link {
+						font-weight: 700;
+						color: $brand-primary-concert;
+					}
+				}
+
+				&.mega-current-page-ancestor,
+				&.mega-current-menu-ancestor, 
+				&.mega-current-menu-item {
+					font-weight: 700;
+					
+					> .mega-menu-link {
+						color: $brand-primary-concert;
+						font-weight: 700;
+					}
+				}
+
+				.mega-sub-menu {
+					background: transparent;
+				}
+			}
+		}
+	}
+
+	.menu-childs, .mega-sub-menu {
+		background: rgba(32, 32, 32, 0.9);
+
+		.child {
+
+			h2 {
+				border-bottom-color: $brand-primary-concert;
+			}
+
+			.menu-sub-menu {
+
+				ul  {
+
+					li {
+						border-bottom-color: $brand-primary-concert;
+					}
+				}
+			}
+
+			.memberships {
+
+				.viewall {
+					background: $brand-primary-concert;
+				}
+
+				.packages {
+
+					.package {
+
+						h3 {
+							background: $brand-primary-concert;
+						}
+
+						h4 {
+							background: $brand-primary-dark-concert;
+						}
+
+						.links  {
+
+							a {
+								background: $brand-primary-concert;
+								color: white;
+							}
+						}
+					}
+				}
+			}
+
+			.tabs {
+				border-color: $brand-primary-concert;
+
+				.tab-links {
+
+					li {
+						border-bottom-color: $brand-primary-concert;
+						border-left-color : $brand-primary-concert;
+					}
+				}
+
+				.tab-content {
+
+					.Opta {
+
+						tfoot {
+							
+							th {
+								border-bottom-color: $brand-primary-concert;
+							}
+						}
+
+						thead  {
+
+							th {
+								border-bottom-color: $brand-primary-concert;
+							}
+						}
+					}
+				}
+			}
+
+			.match-info {
+				p {
+					a {
+						color: $brand-primary-concert;
+					}
+				}	
+			}
+
+			&#news, &#whatson {
+
+				.slide {
+
+					h2, h3, h4, a {
+
+						small {
+							color: $brand-primary-concert;
+						}
+					}
+
+					a:hover {
+						color: $brand-primary-concert;
+					}
+				}
+
+				.viewall {
+					background-color: $brand-primary-concert;
+				}
+			}
+		}
+	}
+
+	.slick-prev {
+		background-image: url(assets/images/slide-prev-blue.svg);
+
+		&:hover, &:focus {
+			background-color: transparent;
+		}
+	}
+
+	.slick-next {
+		background-image: url(assets/images/slide-next-blue.svg);
+
+		&:hover, &:focus {
+			background-color: transparent;
+		}
+	}
+
+	.live-view {
+		background: $brand-primary-concert;
+		color: white;
+		margin-right: 23px;
+
+		@include media($medium-screen-up) {
+			margin-right: 33px;
+		}
+
+		&:after {
+			background-color: $brand-primary-concert;
+		}
+	}
+
+	#jumbrotron {
+		background-color: $brand-primary-dark-concert;
+
+		.slick-prev {
+			background-image: url(assets/images/slide-prev-white.svg);
+		}
+		.slick-next {
+			background-image: url(assets/images/slide-next-white.svg);
+		}
+
+		h1, h2 {
+
+			span {
+				color: $brand-primary-concert;
+			}
+
+			small {
+			}
+		}
+
+		.info {
+
+			$concertimages: (
+				'assets/images/banners/T20-Cox-min.jpg',
+				'assets/images/banners/T20-Clarke-min.jpg',
+				'assets/images/banners/T20-Moeen-min.jpg'
+			);
+
+			$concertimage: nth($concertimages, random(length($concertimages)));
+
+			@include media ($medium-screen-down) {
+				background-image: url($concertimage) !important;
+			}
+
+			a {
+				border-color: $brand-primary-concert;
+				background-color: $brand-primary-concert;
+			}
+		}
+
+		.stories, .news {
+			
+			.slide {
+				
+				h2, h3, h4, a {
+					color: $brand-primary-dark-concert;
+					font-weight: 700;
+
+					small {
+						color: $brand-primary-concert;
+					}
+				}
+
+				a {
+
+					&:hover {
+						color: $brand-primary-concert;
+
+						h2, h3, h4 {
+							color: $brand-primary-concert;
+						}
+					}
+				}
+			}
+		}
+
+		.news {
+			$concertimages: (
+				'assets/images/banners/concert-Cox-min.jpg',
+				'assets/images/banners/concert-Clarke-min.jpg',
+				'assets/images/banners/concert-Moeen-min.jpg'
+			);
+
+			$concertimage: nth($concertimages, random(length($concertimages)));
+
+			@include media ($medium-screen-down) {
+				background-image: url($concertimage) !important;
+			}
+		}
+	}
+
+	#fixtures {
+
+		@include media($medium-screen-up) {
+			background: linear-gradient(90deg, $brand-primary-concert 50%, $brand-primary-dark-concert 50%);
+		}
+
+		.result, .fixture {
+			
+			.match-info {
+
+				.links {
+
+					a {
+						background: $brand-primary-concert;
+					}
+				}
+			}
+		}
+
+		.fixture {
+			background-color: $brand-primary-dark-concert;
+
+			.match-info {
+
+				.date-time {
+					background: $brand-primary-dark-concert;
+				}
+
+				.comp {
+					color: $brand-primary-concert;
+				}
+
+				.match {
+					span {
+						color: $brand-primary-concert;
+					}
+				}
+			}
+		}
+
+		.result {
+			background-color: $brand-primary-concert;
+
+			.match-info {
+
+				.date-time {
+					background: $brand-primary-concert;
+				}
+
+				.comp {
+					color: $brand-primary-dark-concert;
+				}
+
+				.match {
+					span {
+						color: $brand-primary-dark-concert;
+					}
+				}
+			}
+		}
+	}
+
+	#colophon {
+		background: $brand-primary-dark-concert;
+
+		h3 {
+			color: $brand-primary-concert;
+		}
+	}
+
+	#copyright {
+		background: $brand-primary-concert;	
+	}
+
+	#fixres {
+
+		.tab-links {
+
+			li {
+
+				a {
+					background: $brand-primary-dark-concert;
+					font-weight: 500;
+				}
+
+				&.active {
+
+					a {
+						background: $brand-primary-concert;
+					}
+				}
+			}
+		}
+
+		.team {
+
+			.name {
+				h3 {
+					color: $brand-primary-dark-concert;
+				}
+				h4 {
+					color: $brand-primary-concert;
+				}
+			}
+		}
+
+		.link {
+
+			a {
+				color: white;
+
+				&.ticketlink {
+					background-color: $brand-primary-concert;
+				}
+
+				&.matchlink {
+					background-color: $brand-primary-dark-concert;
+				}
+
+			}
+		}
+
+	}
+
+	#vs {
+
+		.tab {
+			background-color: $brand-primary-concert;
+
+			&:before, &:after {
+				background-color: $brand-primary-concert;
+			}
+
+			&#results, &#fixtures {
+				background: white;
+			}
+		}
+
+		.link {
+
+			.matchlink {
+				background-color: $brand-primary-concert;
+				color: white;
+			}
+		}
+
+		.team {
+
+			.name {
+				h3 {
+					color: $brand-primary-dark-concert;
+				}
+				h4 {
+					color: $brand-primary-concert;
+				}
+			}
+		}
+
+		.link {
+
+			a {
+				color: $brand-primary-concert;
+
+				&.ticketlink {
+					color: white;
+				}
+			}
+		}
+	}
+
+	#twitter {
+
+		h2 {
+			color: $brand-primary-concert;
+		}
+
+		a {
+			color: $brand-primary-concert;
+		}
+	}
+
+	&.single {
+
+		#junbrotron {
+
+			.info {
+				$ccimages: (
+					'assets/images/banners/concert-ClarkeAlt-min.jpg',
+					'assets/images/banners/concert-CoxAlt-min.jpg',
+					'assets/images/banners/concert-MoeenAlt-min.jpg',
+				);
+
+				$ccimage: nth($ccimages, random(length($ccimages)));
+
+				@include media ($medium-screen-down) {
+					background-image: url($ccimage) !important;
+					background-size: cover;
+				}
+			}
+		}
+
+		#jumbrotron {
+
+			.news {
+
+				.span6 {
+
+					h1 {
+
+						small {
+							color: $brand-primary-concert;
+						}
+					}
+				}
+			}
+
+			h3 {
+				color: $brand-primary-concert;
+			}
+		}
+
+		#primary {
+
+			article {
+				h2, h3, h4, h5 {
+					color: $brand-primary-dark-concert;
+				}
+			}
+		}
+	}
+
+	&.single-matches {
+
+		#jumbrotron {
+
+			.news {
+				
+				h1 {
+					span {
+						color: $brand-primary-concert;
+					}
+				}
+			}
+
+			.info {
+				
+				$ccimages: (
+					'assets/images/banners/concert-ClarkeAlt-min.jpg',
+					'assets/images/banners/concert-CoxAlt-min.jpg',
+					'assets/images/banners/concert-MoeenAlt-min.jpg',
+				);
+
+				$ccimage: nth($ccimages, random(length($ccimages)));
+
+				@include media ($medium-screen-down) {
+					background-image: url($ccimage) !important;
+					background-size: cover;
+				}
+			}
+		}
+
+		.match-weather {
+
+			h3 {
+				background-color: $brand-primary-dark-concert;
+			}
+
+			.weather {
+				background-color: $brand-primary-concert;
+			}
+		}
+
+		.time, .listen-live {
+
+			#pause, #resume, #play {
+				background-color: $brand-primary-dark-concert;
+			}
+		}
+
+		.time, .listen-live {
+
+			span {
+				color: $brand-primary-concert;
+			}
+
+			#progressBar {
+
+				div {
+					background-color: $brand-primary-concert;
+				}
+			}
+		}
+
+		aside {
+
+			nav {
+
+				ul {
+
+					li {
+
+						a.nav-active {
+							background-color: $brand-primary-concert;
+						}
+					}
+				}
+			}
+		}
+
+		.data-feed {
+			border-color: $brand-primary-concert;
+		}
+	}
+
+	.widget {
+
+		h2 {
+			border-color: $brand-primary-concert;
+			color: $brand-primary-dark-concert;
+		}
+
+		ul {
+
+			li {
+				border-color: $brand-primary-concert;
+
+				a {
+					font-weight: $heavy-weight;
+				}
+			}
+		}
+
+		.tab-links {
+
+			li {
+
+				&.active a, &.active a:hover {
+					background-color: $brand-primary-dark-concert;
+				}
+			}
+		}
+
+		.tab-content {
+			border-color: $brand-primary-dark-concert;
+		}
+	}
+
+	&.archive, &.blog {
+
+		#jumbrotron {
+
+			h3 {
+				color: $brand-primary-concert;
+			}
+		}
+
+		#sidebar {
+			
+			.widget {
+
+				ul {
+					border-top-color: $brand-primary-concert;
+					border-bottom-color: $brand-primary-concert;
+				}
+			}
+		}
+
+		#primary {
+
+			article {
+
+				header {
+
+					h1 {
+						
+						small {
+							color: $brand-primary-concert;
+						}
+
+						&:hover {
+							background: $brand-primary-dark-concert;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#signup {
+		.row {
+			h3 {
+				color: $brand-primary-concert;
+			}
+		}
+
+		#subForm {
+			p {
+				button, input[type="submit"] {
+					background: $brand-primary-concert;
+					border-color: $brand-primary-concert;
+				}
+			}
+		}
+	}
+
+	.Opta {
+
+		.Opta_C {
+
+			.Opta-CricketInningsBreakdown {
+
+				.Opta-Team {
+					background-color: $brand-primary-concert;
+
+					&.Opta-Away {
+						background-color: $brand-primary-dark-concert;
+					}
+				}
+			}
+		}
+
+		.Opta-Nav {
+
+			li.Opta-On {
+
+				a {
+					background-color: $brand-primary-concert;
+				}
+			}
+		}
+
+		.Opta-Teamsheet-Holder {
+
+			.Opta-Teamsheet-Button {
+				background-color: $brand-primary-concert;
+			}
+		}
+
+		.Opta-Away {
+
+			.Opta-Teamsheet-Button {
+				background-color: $brand-primary-dark-concert;
+			}
+		}
+
+		.Opta_C_S {
+
+			table {
+
+				tr {
+
+					td.Opta-Strong {
+						border-top-color: $brand-primary-concert;
+						border-bottom-color: $brand-primary-concert;
+					}
+				}
+			}
+		}
+	}
+
+	&.archive, &.blog {
+
+		#junbrotron {
+
+			.info {
+				$ccimages: (
+					'assets/images/banners/concert-ClarkeAlt-min.jpg',
+					'assets/images/banners/concert-CoxAlt-min.jpg',
+					'assets/images/banners/concert-MoeenAlt-min.jpg',
+				);
+
+				$ccimage: nth($ccimages, random(length($ccimages)));
+
+				@include media ($medium-screen-down) {
+					background-image: url($ccimage) !important;
+					background-size: cover;
+				}
+			}
+		}
+		
+		#sidebar {
+			
+			.widget {
+				
+				ul {
+					
+					li.current-cat, li:hover {
+						background-color: $brand-primary-concert;
+					}
+				}
+			}
+		}
+	}
+
+	&.single-players {
+
+		#junbrotron {
+
+			.info {
+				$ccimages: (
+					'assets/images/banners/concert-ClarkeAlt-min.jpg',
+					'assets/images/banners/concert-CoxAlt-min.jpg',
+					'assets/images/banners/concert-MoeenAlt-min
+					.jpg',
+				);
+
+				$ccimage: nth($ccimages, random(length($ccimages)));
+
+				@include media ($medium-screen-down) {
+					background-image: url($ccimage) !important;
+					background-size: cover;
+				}
+			}
+		}
+
+
+		#primary {
+
+			article {
+
+				.stats {
+
+					dl {
+
+						dt {
+							color: $brand-primary-concert;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.contact {
+
+		table {
+
+			thead {
+				background-color: $brand-primary-dark-concert;
+
+				th {
+					border-bottom-color: $brand-primary-dark-concert;
+				}
+			}
+		}
+
+		.gform_wrapper {
+
+			.gform_body {
+
+				ul {
+
+					.gfield {
+
+						.gfield_label {
+							color: $brand-primary-dark-concert;
+						}
+					}
+				}
+			}
+
+			.gform_footer {
+
+				input.button, input[type=image], input[type=submit] {
+					background-color: $brand-primary-dark-concert;
+				}
+			}
+		}
+	}
+
+	#directions {
+		background: #202020;
+
+		.right {
+
+			button {
+				background: $brand-primary-concert;
+			}
+		}
+	}
+
+	&.page {
+		
+		#junbrotron {
+
+			.info {
+				$ccimages: (
+					'assets/images/banners/concert-ClarkeAlt-min.jpg',
+					'assets/images/banners/concert-CoxAlt-min.jpg',
+					'assets/images/banners/concert-MoeenAlt-min.jpg',
+				);
+
+				$ccimage: nth($ccimages, random(length($ccimages)));
+
+				@include media ($medium-screen-down) {
+					background-image: url($ccimage) !important;
+					background-size: cover;
+				}
+			}
+		}
+
+	}
+}
+

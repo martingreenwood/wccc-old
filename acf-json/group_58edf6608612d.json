@@ -1,6 +1,6 @@
 {
     "key": "group_58edf6608612d",
-    "title": "WCCC Options",
+    "title": "Wccc Options",
     "fields": [
         {
             "key": "field_58edf668a0deb",
@@ -91,20 +91,47 @@
                 "class": "",
                 "id": ""
             },
+            "min": "",
+            "max": "",
+            "insert": "append",
             "library": "all",
-            "min": 0,
-            "max": 0,
-            "min_width": 0,
-            "min_height": 0,
-            "min_size": 0,
-            "max_width": 0,
-            "max_height": 0,
-            "max_size": 0,
-            "mime_types": "",
-            "insert": "append"
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
-            "key": "field_595a5b05337ac",
+            "key": "field_599194ee949b2",
+            "label": "Enable Classic Concert Mode",
+            "name": "enable_classic_mode",
+            "type": "true_false",
+            "instructions": "Use this to make the website appear in Classic Concert Mode.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58edf676a0dec",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Turn T20 Mode On",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_59cb8cdb112f3",
             "label": "Homepage Banner",
             "name": "",
             "type": "tab",
@@ -120,9 +147,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_595a5b1a337ad",
+            "key": "field_59cb8d15112f4",
             "label": "Title",
-            "name": "Hompage_title",
+            "name": "hompage_title",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -139,7 +166,7 @@
             "new_lines": "br"
         },
         {
-            "key": "field_595a5b30337ae",
+            "key": "field_59cb8d31112f5",
             "label": "Intro",
             "name": "hompage_intro",
             "type": "textarea",
@@ -158,7 +185,7 @@
             "new_lines": "br"
         },
         {
-            "key": "field_595a5b594d40e",
+            "key": "field_59cb8d49112f6",
             "label": "Link",
             "name": "hompage_link",
             "type": "url",
@@ -174,7 +201,26 @@
             "placeholder": ""
         },
         {
-            "key": "field_595b7c3d9759a",
+            "key": "field_59cb8d56112f7",
+            "label": "Link Text",
+            "name": "hompage_link_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59cb8d92112f8",
             "label": "Inner Header",
             "name": "",
             "type": "tab",
@@ -190,7 +236,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_595b7c4f9759c",
+            "key": "field_59cb8d9f112f9",
             "label": "Header Images",
             "name": "header_images",
             "type": "gallery",
@@ -215,7 +261,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_595b7c8ebd93f",
+            "key": "field_59cb8deb112fa",
             "label": "Header Images T20",
             "name": "header_images_t20",
             "type": "gallery",
@@ -240,7 +286,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_595a5afd337aa",
+            "key": "field_590b01106531f",
             "label": "Club Info",
             "name": "",
             "type": "tab",
@@ -431,5 +477,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1499167903
+    "modified": 1506512412
 }

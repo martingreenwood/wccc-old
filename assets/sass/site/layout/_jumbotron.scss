@@ -49,10 +49,10 @@
 		background-position: center;
 
 		$ccimages: (
-			'assets/images/banners/CC-Clarke.jpg',
-			'assets/images/banners/CC-Hastings.jpg',
-			'assets/images/banners/CC-Leach.jpg',
-			'assets/images/banners/CC-MitchDolly.jpg',
+			'assets/images/banners/CC-Clarke-min.jpg',
+			'assets/images/banners/CC-Hastings-min.jpg',
+			'assets/images/banners/CC-Leach-min.jpg',
+			'assets/images/banners/CC-MitchDolly-min.jpg',
 		);
 
 		$ccimage: nth($ccimages, random(length($ccimages)));
@@ -87,10 +87,10 @@
 		background-repeat: no-repeat;
 
 		$ccimages: (
-			'assets/images/banners/CC-Clarke.jpg',
-			'assets/images/banners/CC-Hastings.jpg',
-			'assets/images/banners/CC-Leach.jpg',
-			'assets/images/banners/CC-MitchDolly.jpg',
+			'assets/images/banners/CC-Clarke-min.jpg',
+			'assets/images/banners/CC-Hastings-min.jpg',
+			'assets/images/banners/CC-Leach-min.jpg',
+			'assets/images/banners/CC-MitchDolly-min.jpg',
 		);
 
 		$ccimage: nth($ccimages, random(length($ccimages)));

@@ -18,8 +18,11 @@
 
 <?php wp_head(); ?>
 </head>
-<?php $enable_t20_mode = null; if (get_field( 'enable_t20_mode', 'option' )): $enable_t20_mode = 't20'; endif; ?>
-<body <?php body_class($enable_t20_mode); ?>>
+<?php $enable_alt_mode = null; 
+if (get_field( 'enable_t20_mode', 'option' )): $enable_alt_mode = 't20'; endif;
+if (get_field( 'enable_classic_mode', 'option' )): $enable_alt_mode = 'classic'; endif;
+?>
+<body <?php body_class($enable_alt_mode); ?>>
 
 <div id="page" class="site <?php echo $pagename; ?>">
 
@@ -39,6 +42,8 @@
 					<a href="<?php echo home_url('/'); ?>">
 						<?php if (get_field( 'enable_t20_mode', 'option' )): ?>
 							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/rapids-logo.svg" width="133" alt="Rapds Logo">
+						<?php elseif (get_field( 'enable_classic_mode', 'option' )): ?>
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.svg" width="415" alt="WCCC Logo">
 						<?php else: ?>
 							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" width="415" alt="WCCC Logo">
 						<?php endif; ?>

@@ -24,10 +24,10 @@ article/*--------------------------------------------------------------
 
 		.info {
 			$ccimages: (
-				'assets/images/banners/CC-ClarkeAlt.jpg',
-				'assets/images/banners/CC-HastingsAlt.jpg',
-				'assets/images/banners/CC-LeachAlt.jpg',
-				'assets/images/banners/CC-MitchDollyAlt.jpg',
+				'assets/images/banners/CC-ClarkeAlt-min.jpg',
+				'assets/images/banners/CC-HastingsAlt-min.jpg',
+				'assets/images/banners/CC-LeachAlt-min.jpg',
+				'assets/images/banners/CC-MitchDollyAlt-min.jpg',
 			);
 
 			$ccimage: nth($ccimages, random(length($ccimages)));

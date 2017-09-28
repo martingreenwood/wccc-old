@@ -190,7 +190,7 @@ endif;
 						<?php if(isset($next_match['@attributes']['comp_name'])): ?>
 						<?php echo $next_match['@attributes']['comp_name']; ?>
 						<?php else: ?>
-						No upcomming matches
+						No upcoming matches
 						<?php endif; ?>
 					</p>
 

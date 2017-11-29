@@ -324,9 +324,13 @@ get_header(); ?>
 								<?php
 								$pos = strpos(strtolower($match_comp_name), 'second');
 
-								if ( $pos === false && strtolower($match_home_team) == 'worcestershire' || $pos === false && strtolower($match_home_team) == 'rapids' ): ?>
-									<a class="ticketlink" target="_blank" href="https://www.hogeweb1002.co.uk/event_listing.aspx">Buy Tickets</a>
-								<?php endif; ?>
+								if (get_field( 'disable_buy_tickets_button' ) === 'false') {
+									if ( $pos === false && strtolower($match_home_team) == 'worcestershire' || $pos === false && strtolower($match_home_team) == 'rapids' ): ?>
+										<a class="ticketlink" target="_blank" href="https://www.hogeweb1002.co.uk/event_listing.aspx">Buy Tickets</a>
+										<?php 
+									endif; 
+								}
+								?>
 								</div>
 							</div>
 							<?php

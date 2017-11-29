@@ -131,6 +131,25 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_5a1ede275b0a1",
+            "label": "Disable Buy Tickets Button",
+            "name": "disable_buy_tickets_button",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Disable buy tickets button on fixtures page",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_59cb8cdb112f3",
             "label": "Homepage Banner",
             "name": "",
@@ -477,5 +496,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1506512412
+    "modified": 1511972609
 }

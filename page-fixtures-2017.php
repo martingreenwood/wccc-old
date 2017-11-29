@@ -116,24 +116,24 @@ get_header(); ?>
 					<form>
 						<ul>
 						 	<li>
-						 		<input class="compfilter" type="checkbox" name="comp-natwest_t20_blast_2018" value="comp-natwest_t20_blast_2018">
-						 		<label for="comp-natwest_t20_blast_2018">Natwest T20 Blast 2018</label>
+						 		<input class="compfilter" type="checkbox" name="comp-natwest_t20_blast_2017" value="comp-natwest_t20_blast_2017">
+						 		<label for="comp-natwest_t20_blast_2017">Natwest T20 Blast 2017</label>
 						 	</li>
 						 	<li>
-						 		<input class="compfilter" type="checkbox" name="comp-specsavers_county_championship_division_two_2018" value="comp-specsavers_county_championship_division_two_2018">
-						 		<label for="comp-specsavers_county_championship_division_two_2018">specsavers county championship division two 2018</label>
+						 		<input class="compfilter" type="checkbox" name="comp-specsavers_county_championship_division_two_2017" value="comp-specsavers_county_championship_division_two_2017">
+						 		<label for="comp-specsavers_county_championship_division_two_2017">specsavers county championship division two 2017</label>
 						 	</li>
 						 	<li>
-						 		<input class="compfilter" type="checkbox" name="comp-royal_london_one-day_cup_2018" value="comp-royal_london_one-day_cup_2018">
-						 		<label for="comp-royal_london_one-day_cup_2018">royal london one-day cup 2018</label>
+						 		<input class="compfilter" type="checkbox" name="comp-royal_london_one-day_cup_2017" value="comp-royal_london_one-day_cup_2017">
+						 		<label for="comp-royal_london_one-day_cup_2017">royal london one-day cup 2017</label>
 						 	</li>
 						 	<li>
 						 		<input class="compfilter" type="checkbox" name="comp-second_xi_championship" value="comp-second_xi_championship">
-						 		<label for="comp-second_xi_championship">second xi championship 2018</label>
+						 		<label for="comp-second_xi_championship">second xi championship 2017</label>
 						 	</li>
 						 	<li>
-						 		<input class="compfilter" type="checkbox" name="comp-second_xi_t20_2018" value="comp-second_xi_t20_2018">
-						 		<label for="comp-second_xi_t20_2018">comp second xi t20 2018</label>
+						 		<input class="compfilter" type="checkbox" name="comp-second_xi_t20_2017" value="comp-second_xi_t20_2017">
+						 		<label for="comp-second_xi_t20_2017">comp second xi t20 2017</label>
 						 	</li>
 						</ul>
 					</form>

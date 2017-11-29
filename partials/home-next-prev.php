@@ -222,15 +222,22 @@ endif;
 					</h2>
 
 					<div class="links">
-						<?php if(isset($next_match['@attributes']['home_team_name'])): ?>
-						<a class="tickets" target="_blank" href="https://www.hogeweb1002.co.uk/event_listing.aspx">Buy Tickets</a>
-						<?php $args = array( 'post_type' => 'matches', 'meta_query' => array( array('key' => '_wcc_feed_id', 'value' => $next_match['@attributes']['id'], 'compare' => '=' )));
-						$match_query = new WP_Query( $args );
-						if ( $match_query->have_posts() ) : while ( $match_query->have_posts() ):
-						$match_query->the_post();
-						?>
-						<a class="info" href="<?php echo the_permalink(); ?>">Match Info</a>
-						<?php endwhile; wp_reset_postdata(); endif; ?>
+						<?php 
+						if (get_field( 'disable_buy_tickets_button' ) === 'false'):
+							if(isset($next_match['@attributes']['home_team_name'])): ?>
+								<a class="tickets" target="_blank" href="https://www.hogeweb1002.co.uk/event_listing.aspx">Buy Tickets</a>
+
+								<?php $args = array( 'post_type' => 'matches', 'meta_query' => array( array('key' => '_wcc_feed_id', 'value' => $next_match['@attributes']['id'], 'compare' => '=' )));
+								$match_query = new WP_Query( $args );
+								if ( $match_query->have_posts() ) : while ( $match_query->have_posts() ):
+									$match_query->the_post();
+									?>
+									<a class="info" href="<?php echo the_permalink(); ?>">Match Info</a>
+									<?php endwhile; wp_reset_postdata(); 
+								endif; ?>
+							<?php else: ?>
+								<span style="width: 1px; height: 33px; display: block;"></span>
+							<?php endif; ?>
 						<?php else: ?>
 							<span style="width: 1px; height: 33px; display: block;"></span>
 						<?php endif; ?>

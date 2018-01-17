@@ -115,26 +115,37 @@ get_header(); ?>
 					<h3>By Competition</h3>
 					<form>
 						<ul>
-						 	<li>
-						 		<input class="compfilter" type="checkbox" name="comp-natwest_t20_blast_2018" value="comp-natwest_t20_blast_2018">
-						 		<label for="comp-natwest_t20_blast_2018">Natwest T20 Blast 2018</label>
-						 	</li>
-						 	<li>
-						 		<input class="compfilter" type="checkbox" name="comp-specsavers_county_championship_division_two_2018" value="comp-specsavers_county_championship_division_two_2018">
-						 		<label for="comp-specsavers_county_championship_division_two_2018">specsavers county championship division two 2018</label>
-						 	</li>
-						 	<li>
-						 		<input class="compfilter" type="checkbox" name="comp-royal_london_one-day_cup_2018" value="comp-royal_london_one-day_cup_2018">
-						 		<label for="comp-royal_london_one-day_cup_2018">royal london one-day cup 2018</label>
-						 	</li>
-						 	<li>
-						 		<input class="compfilter" type="checkbox" name="comp-second_xi_championship" value="comp-second_xi_championship">
-						 		<label for="comp-second_xi_championship">second xi championship 2018</label>
-						 	</li>
-						 	<li>
-						 		<input class="compfilter" type="checkbox" name="comp-second_xi_t20_2018" value="comp-second_xi_t20_2018">
-						 		<label for="comp-second_xi_t20_2018">comp second xi t20 2018</label>
-						 	</li>
+						 	<?php 
+							$match_comp = array();
+							if ( $match_query->have_posts() ) : 
+								while ( $match_query->have_posts() ): $match_query->the_post();
+
+									if (isset($match['@attributes']['comp_id'])) {
+										if (isset($match['@attributes']['comp_name'])) {
+											$match_comp[] = $match['@attributes']['comp_name']."|".$match['@attributes']['comp_id'];
+										}
+									} else {
+										$match_comp[] = get_field( 'type' ) ."|". str_replace(" ","_",strtolower(get_field( 'type' )));
+									}
+
+								endwhile; 
+							wp_reset_postdata(); 
+							endif;
+							$match_comp = array_unique($match_comp);
+							?>
+							<!-- <pre>
+								<?php print_r($match_comp); ?>
+							</pre> -->
+							<?php foreach ($match_comp as $mcomp ): 
+								$mcomp = explode("|", $mcomp);
+								?>
+
+								<li>
+						 			<input class="compfilter" type="checkbox" name="comp-<?php echo $mcomp[1]; ?>" value="comp-<?php echo $mcomp[1]; ?>">
+						 			<label for="comp-<?php echo $mcomp[1]; ?>"><?php echo $mcomp[0]; ?></label>
+						 		</li>
+								
+							<?php endforeach ?>
 						</ul>
 					</form>
 				</div>

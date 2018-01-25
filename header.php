@@ -62,7 +62,12 @@ if (get_field( 'enable_classic_mode', 'option' )): $enable_alt_mode = 'classic';
 						<?php elseif (get_field( 'enable_classic_mode', 'option' )): ?>
 							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.svg" width="415" alt="WCCC Logo">
 						<?php else: ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" width="415" alt="WCCC Logo">
+							<div class="wccc logo">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/wccc-logo.png" width="150" alt="WCCC Logo">
+							</div>
+							<div class="nr logo">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/nr-logo.png" width="130" alt="WCCC Logo">
+							</div>
 						<?php endif; ?>
 					</a>
 				</div>

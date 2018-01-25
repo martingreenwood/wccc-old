@@ -58,9 +58,38 @@
 			float: left;
 			width: 100%;
 			height: auto;
+			text-align: center;
 
 			@include media($medium-screen-up) {
-				width: 415px;
+				text-align: left;
+			}
+
+			.logo {
+				display: inline-block;
+				vertical-align: middle;
+
+				&.wccc {
+					border-right: 2px solid white;
+					padding-right: 20px;
+					margin-right: 20px;
+
+					@include media($medium-screen-down) {
+						width: 110px;
+					}
+				}
+
+				&.nr {
+					img {
+
+						@include media($medium-screen-down) {
+							width: 95px;
+						}
+					}
+				}
+			}
+
+			@include media($medium-screen-up) {
+				width: 50%;
 				height: 92px;
 			}
 

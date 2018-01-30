@@ -7,7 +7,7 @@
 		"uuidString": "A9C3228A-7C7C-4E33-9DB2-44B962136E12"
 		}
 	],
-"creatorBuild": "26148",
+"creatorBuild": "26261",
 "files": {
 	"\/.gitignore": {
 		"cB": 0,
@@ -1134,6 +1134,27 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/assets\/images\/nr-logo.png": {
+		"ft": 32768,
+		"iS": 26110,
+		"oA": 0,
+		"oAP": "\/assets\/images\/nr-logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/images\/nr-logo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/nr-logo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/assets\/images\/player-t20.png": {
 		"ft": 32768,
 		"iS": 348481,
@@ -1462,6 +1483,27 @@
 		"opt": 1,
 		"oT": 1,
 		"q": 100
+		},
+	"\/assets\/images\/wccc-logo.png": {
+		"ft": 32768,
+		"iS": 34409,
+		"oA": 0,
+		"oAP": "\/assets\/images\/wccc-logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/images\/wccc-logo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/assets\/images\/wccc-logo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"\/assets\/images\/wicket.png": {
 		"ft": 32768,
@@ -6218,6 +6260,10 @@
 		"id-match": {
 			"active": 0,
 			"optionString": "'^[a-z]+([A-Z][a-z]+)*$', {'properties': false, 'onlyDeclarations': true}"
+			},
+		"implicit-arrow-linebreak": {
+			"active": 0,
+			"optionString": "'beside'"
 			},
 		"indent": {
 			"active": 0,

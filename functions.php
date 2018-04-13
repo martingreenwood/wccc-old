@@ -159,12 +159,18 @@ add_action( 'widgets_init', 'wccc_widgets_init' );
 function wccc_scripts() {
 	wp_enqueue_style( 'wccc-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'wccc-opta-css', 'http://widget.cloud.opta.net/v3/css/v3.cricket.opta-widgets.css' );
+	
+	wp_enqueue_style( 'wccc-nvplay', 'https://widgets.nvplay.com/1.0/css/widgets.nvplay.css' );
+	wp_enqueue_style( 'wccc-nvplay-wccc', 'https://widgets.nvplay.com/1.0/css/skins/widgets.nvplay.worcestershire.css' );
 
 	wp_enqueue_script( 'jquery' );
 
 	wp_enqueue_script( 'wccc_opt', 'http://widget.cloud.opta.net/v3/v3.opta-widgets.js', '', '', false);
 	wp_enqueue_script( 'wccc_ggl', '//maps.googleapis.com/maps/api/js?key=AIzaSyAT5vS9U3S5QkN-f2cwPN-Am4C1vc7zElE', '', '', false);
 	wp_enqueue_script( 'wccc-fnt', '//use.fontawesome.com/06a97ff7a0.js', '', '', true );
+	
+	wp_enqueue_script( 'wccc-nv', 'https://widgets.nvplay.com/1.0/js/widgets.nvplay.js', '', '', true );
+
 	wp_enqueue_script( 'wccc-mod', get_template_directory_uri() . '/assets/js/modernizr.js', '', '', true );
 	wp_enqueue_script( 'wccc-acc', get_template_directory_uri() . '/assets/js/jquery.accordion.js', '', '', true );
 	wp_enqueue_script( 'wccc-nav', get_template_directory_uri() . '/assets/js/navigation.js', '', '', true );

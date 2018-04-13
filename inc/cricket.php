@@ -130,7 +130,7 @@ function game_status($status_id) {
 }
 
 function team_name($team_id, $comp_id) {
-	$xml = simplexml_load_file(FEED_DIR . '/rankings-'.$comp_id.'.xml');
+	$xml = simplexml_load_file(FEED_DIR . "/rankings-".$comp_id.".xml");
 	$json = json_encode($xml);
 	$team_info = json_decode($json,TRUE);
 	$teams = $team_info['Teams']['Team'];
@@ -160,8 +160,8 @@ function team_image($teamname) {
 	$teamname = strtolower(str_replace(" ","", $teamname));
 	$image = get_template_directory_uri() . '/assets/images/badges/' . $teamname . '-logo.png';
 
-	if (!file_exists(get_template_directory() . '/assets/images/badges/' . $teamname . '-logo.png')) {
-		$image = get_template_directory_uri() . '/assets/images/badges/fallback-logo.png';
-	}
+	// if (!file_exists(get_template_directory() . '/assets/images/badges/' . $teamname . '-logo.png')) {
+	// 	$image = get_template_directory_uri() . '/assets/images/badges/fallback-logo.png';
+	// }
 	return $image;
 }

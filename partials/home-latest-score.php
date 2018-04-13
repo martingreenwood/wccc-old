@@ -214,9 +214,9 @@ if ($days_since_game < $number_days ): ?>
 			<div class="one_innings">
 				<div class="team home">
 					<?php if (strpos($competition_name, 'T20') !== false): ?>
-						<img src="<?php echo team_image(t20_name(team_name($home_team_id, $competition_id))); ?>">
+						<img src="<?php echo team_image(t20_name($home_team)); ?>">
 					<?php else: ?>
-						<img src="<?php echo team_image(team_name($home_team_id, $competition_id)); ?>">
+						<img src="<?php echo team_image($home_team); ?>">
 					<?php endif; ?>
 					<div class="name">
 						
@@ -268,9 +268,9 @@ if ($days_since_game < $number_days ): ?>
 						<?php endif; ?>
 					</div>
 					<?php if (strpos($competition_name, 'T20') !== false): ?>
-						<img src="<?php echo team_image(t20_name(team_name($away_team_id, $competition_id))); ?>">
+						<img src="<?php echo team_image(t20_name($away_team)); ?>">
 					<?php else: ?>
-						<img src="<?php echo team_image(team_name($away_team_id, $competition_id)); ?>">
+						<img src="<?php echo team_image($away_team); ?>">
 					<?php endif; ?>
 				</div>
 			</div>

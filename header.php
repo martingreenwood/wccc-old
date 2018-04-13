@@ -40,14 +40,7 @@ if (get_field( 'enable_classic_mode', 'option' )): $enable_alt_mode = 'classic';
 				</center>
 			</div>
 		</div>
-	</div>
-
-	<div id="loader">
-		<div id="loading">
-			<div id="progstat"></div>
-			<div id="progress"></div>
-		</div>
-	</div>
+	</div> 
 
 	<header id="masthead">
 

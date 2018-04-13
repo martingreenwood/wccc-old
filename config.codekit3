@@ -824,6 +824,28 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/assets\/images\/badges\/worcestershire2ndxi-logo.png": {
+		"ft": 32768,
+		"iS": 5700,
+		"oA": 0,
+		"oAP": "\/assets\/images\/badges\/worcestershire2ndxi-logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/images\/badges\/worcestershireacademy-logo.png": {
+		"ft": 32768,
+		"iS": 5700,
+		"oA": 0,
+		"oAP": "\/assets\/images\/badges\/worcestershireacademy-logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/assets\/images\/badges\/yorkshire-logo.png": {
 		"ft": 32768,
 		"iS": 10027,

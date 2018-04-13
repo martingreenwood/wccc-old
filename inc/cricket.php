@@ -160,8 +160,8 @@ function team_image($teamname) {
 	$teamname = strtolower(str_replace(" ","", $teamname));
 	$image = get_template_directory_uri() . '/assets/images/badges/' . $teamname . '-logo.png';
 
-	// if (!file_exists(get_template_directory() . '/assets/images/badges/' . $teamname . '-logo.png')) {
-	// 	$image = get_template_directory_uri() . '/assets/images/badges/fallback-logo.png';
-	// }
+	if (!file_exists(get_template_directory() . '/assets/images/badges/' . $teamname . '-logo.png')) {
+		$image = get_template_directory_uri() . '/assets/images/badges/fallback-logo.png';
+	}
 	return $image;
 }

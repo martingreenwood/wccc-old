@@ -207,7 +207,7 @@ get_header();
 				$innings_count = 0;
 				$innings_counter = 0;
 				foreach ($innings as $inning):
-					print_r($inning);
+					//print_r($inning);
 					$batting_team_id = $inning['@attributes']['batting_team_id']; 
 
 					if ($batting_team_id === $home_team_id) {

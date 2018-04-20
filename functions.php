@@ -169,7 +169,7 @@ function wccc_scripts() {
 	wp_enqueue_script( 'wccc_ggl', '//maps.googleapis.com/maps/api/js?key=AIzaSyAT5vS9U3S5QkN-f2cwPN-Am4C1vc7zElE', '', '', false);
 	wp_enqueue_script( 'wccc-fnt', '//use.fontawesome.com/06a97ff7a0.js', '', '', true );
 	
-	wp_enqueue_script( 'wccc-nv', 'https://widgets.nvplay.com/1.0/js/widgets.nvplay.js', '', '', true );
+	wp_enqueue_script( 'wccc-nv', 'https://widgets.nvplay.com/1.0/js/widgets.nvplay.js', '', '', false );
 
 	wp_enqueue_script( 'wccc-mod', get_template_directory_uri() . '/assets/js/modernizr.js', '', '', true );
 	wp_enqueue_script( 'wccc-acc', get_template_directory_uri() . '/assets/js/jquery.accordion.js', '', '', true );

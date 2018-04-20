@@ -168,7 +168,7 @@ get_header(); ?>
 					<ul class="tab-links">
 						<li><a href="<?php echo home_url( 'cricket/fixtures' ); ?>">Fixtures</a></li>
 						<li class="active"><a href="<?php echo home_url( 'cricket/results' ); ?>">Results</a></li>
-						<!-- <li><a href="<?php echo home_url( 'cricket/highlights' ); ?>">Highlights</a></li> -->
+						<li><a href="<?php echo home_url( 'cricket/highlights' ); ?>">Highlights</a></li>
 					</ul>
 
 					<div class="tab-content">

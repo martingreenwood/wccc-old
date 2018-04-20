@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Fixtures
+ * Template Name: Highlights
  *
  * The template for displaying fixtures
  *
@@ -170,7 +170,7 @@ get_header(); ?>
 					<ul class="tab-links">
 						<li><a href="<?php echo home_url( 'cricket/fixtures' ); ?>">Fixtures</a></li>
 						<li><a href="<?php echo home_url( 'cricket/results' ); ?>">Results</a></li>
-						<!-- <li class="active"><a href="<?php echo home_url( 'cricket/highlights' ); ?>">Highlights</a></li> -->
+						<li class="active"><a href="<?php echo home_url( 'cricket/highlights' ); ?>">Highlights</a></li>
 					</ul>
 
 					<div class="tab-content">
@@ -178,7 +178,7 @@ get_header(); ?>
 
 							 <nvplay 
 
-					            customer-id="6860c067-d421-4b6f-a131-18a8e60e08ee "
+					            customer-id="6860c067-d421-4b6f-a131-18a8e60e08ee"
 
 					            widget="match-list"
 

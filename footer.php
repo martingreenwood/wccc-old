@@ -59,7 +59,7 @@
 					<?php wp_nav_menu( array( 'theme_location' => 'menu-4', 'menu_id' => 'footer-comercial' ) ); ?>
 				</div>
 				<div class="menu span2half">
-					<h3>Footer</h3>
+					<h3>Shop</h3>
 					<?php wp_nav_menu( array( 'theme_location' => 'menu-5', 'menu_id' => 'footer-shop' ) ); ?>
 				</div>
 				<div class="menu span2half">

@@ -134,7 +134,7 @@ get_header();
 		<div class="overlay" style="background-image: url(<?php echo $bannerimage; ?>)"></div>
 
 		<div class="news" style="background-image: url(<?php echo $top_image; ?>)">
-			<div class="table"><div class="cell middle">
+			<div class="table"><div class="cell bottom">
 				<div class="container">
 					<div class="span8 game-title">
 						<?php 

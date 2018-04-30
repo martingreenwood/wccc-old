@@ -30,7 +30,7 @@ if ( ! is_active_sidebar( 'sidebar-3' ) ) {
 	</div>
 	<?php endif; ?>
 
-	<div class="tabs widget">
+	<!-- <div class="tabs widget">
 		<ul class="tab-links">
 			<li class="active"><a href="#tab1">Specsavers County Championship Division Two 2017</a></li>
 			<li><a href="#tab2">Royal London One-Day Cup 2017</a></li>
@@ -53,6 +53,6 @@ if ( ! is_active_sidebar( 'sidebar-3' ) ) {
 				<opta-widget sport="cricket" widget="standings" template="normal" live="false" competition="1971" season="0" team="56" navigation="none" default_nav="1" show_key="true" show_crests="false" points_in_first_column="true" competition_naming="full" team_naming="full" sorting="false" show_live="true" show_logo="false" show_title="false" breakpoints="400, 700"></opta-widget>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 </aside>

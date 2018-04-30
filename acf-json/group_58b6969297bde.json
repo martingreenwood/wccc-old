@@ -22,6 +22,7 @@
                 "wicket-keeper": "Wicket Keeper",
                 "captain": "Captain",
                 "physiotherapist": "Physiotherapist",
+                "head-coach": "Head Coach",
                 "academy-coach": "Academy Coach",
                 "2nd-xi-coach": "Second XI Coach",
                 "2nd-xi-physiotherapist": "Second XI Physiotherapist",
@@ -224,7 +225,7 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "eg: 5ft 11in",
+            "placeholder": "5ft 11in",
             "prepend": "",
             "append": "",
             "maxlength": ""
@@ -243,7 +244,7 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "eg: 9st 7lbs",
+            "placeholder": "9st 7lbs",
             "prepend": "",
             "append": "",
             "maxlength": ""
@@ -346,5 +347,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1501762645
+    "modified": 1525077558
 }

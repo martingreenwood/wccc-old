@@ -18,25 +18,23 @@
 			<div class="row" style="padding-top: 30px">
 				<div class="span12">
 
-
-
 					<h3>Sign Up to our Newsletter</h3>
 
-					<div id="mc_embed_signup">
-						<form action="//wccc.us16.list-manage.com/subscribe/post?u=a86308683637e5d7bf8d84cfc&amp;id=004757c1c4" method="post" id="subForm" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-							<p>
-								<input placeholder="First Name" type="text" value="" name="FAME" class="" id="mce-FNAME">
-							</p>
-							<p>
-								<input placeholder="Email" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-							</p>
-					    	<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a86308683637e5d7bf8d84cfc_004757c1c4" tabindex="-1" value=""></div>
-							<p>
-								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-							</p>
-						</form>
-					</div>
-					<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+					<form id="subForm" class="js-cm-form" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="5B5E7037DA78A748374AD499497E309E4408B1CCA2E1C43D5855F3C79FFA38E2797762376BA377990ACC74A88078A37D9CDEA3353051ACA2060E352E31ACE3CF">
+
+						<p>
+							<input id="fieldName" name="cm-name" placeholder="Your Name" type="text" />
+						</p>
+						<p>
+							<input id="fieldEmail" class="js-cm-email-input" name="cm-tdtiuui-tdtiuui" type="email" placeholder="Your Email" required /> 
+						</p>
+						<p>
+							<button class="js-cm-submit-button button" type="submit">Subscribe</button> 
+						</p>
+
+					</form>
+					<script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
+
 				</div>
 			</div>
 		</div>

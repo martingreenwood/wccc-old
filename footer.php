@@ -20,20 +20,36 @@
 
 					<h3>Sign Up to our Newsletter</h3>
 
-					<form id="subForm" class="js-cm-form" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="5B5E7037DA78A748374AD499497E309E4408B1CCA2E1C43D5855F3C79FFA38E2797762376BA377990ACC74A88078A37D9CDEA3353051ACA2060E352E31ACE3CF">
+					<!-- Begin MailChimp Signup Form -->
+					<div id="mc_embed_signup">
+						<form action="https://wccc.us16.list-manage.com/subscribe/post?u=a86308683637e5d7bf8d84cfc&amp;id=59abcaddea" method="post" id="subForm" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+							<div id="mc_embed_signup_scroll">
 
-						<p>
-							<input id="fieldName" name="cm-name" placeholder="Your Name" type="text" />
-						</p>
-						<p>
-							<input id="fieldEmail" class="js-cm-email-input" name="cm-tdtiuui-tdtiuui" type="email" placeholder="Your Email" required /> 
-						</p>
-						<p>
-							<button class="js-cm-submit-button button" type="submit">Subscribe</button> 
-						</p>
+								<!-- <div class="indicates-required"><span class="asterisk">*</span> indicates required</div> -->
+								<div id="mce-responses" class="clear">
+									<div class="response" id="mce-error-response" style="display:none"></div>
+									<div class="response" id="mce-success-response" style="display:none"></div>
+								</div>
 
-					</form>
-					<script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a86308683637e5d7bf8d84cfc_59abcaddea" tabindex="-1" value=""></div>
+
+								<p class="mc-field-group">
+									<input type="text" value="" placeholder="First Name" name="FNAME" class="" id="mce-FNAME">
+								</p><!--
+								--><p class="mc-field-group">
+									<input type="text" value="" placeholder="Last Name" name="LNAME" class="" id="mce-LNAME">
+								</p><!--
+								--><p class="mc-field-group">
+									<input type="email" value="" placeholder="Email Address" name="EMAIL" class="required email" id="mce-EMAIL">
+								</p><!--
+								--><p>
+									<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+								</p><!--
+							--></div>
+						</form>
+					</div>
+
+					<!--End mc_embed_signup-->
 
 				</div>
 			</div>

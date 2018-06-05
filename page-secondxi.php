@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Highlights
+ * Template Name: Second XI Results
  *
  * The template for displaying fixtures
  *
@@ -170,21 +170,22 @@ get_header(); ?>
 					<ul class="tab-links">
 						<li><a href="<?php echo home_url( 'cricket/fixtures' ); ?>">Fixtures</a></li>
 						<li><a href="<?php echo home_url( 'cricket/results' ); ?>">1st XI Results</a></li>
-						<li><a href="<?php echo home_url( 'cricket/secondxi' ); ?>">2ns XI Results</a></li>
-						<li class="active"><a href="<?php echo home_url( 'cricket/highlights' ); ?>">Video Highlights</a></li>
+						<li class="active"><a href="<?php echo home_url( 'cricket/secondxi' ); ?>">2nd XI Results</a></li>
+						<li ><a href="<?php echo home_url( 'cricket/highlights' ); ?>">Video Highlights</a></li>
 					</ul>
 
 					<div class="tab-content">
 						<div class="tab active">
 
-							 <nvplay 
-					            customer-id="6860c067-d421-4b6f-a131-18a8e60e08ee"
-					            widget="match-list"
-					            days="180"
-					            poll-seconds="60"
-					       >
-					       </nvplay>
-						
+							<nvplay 
+							customer-id="6860C067-D421-4B6F-A131-18A8E60E08EE"
+							widget="match-list"
+							days="180"
+							poll-seconds="60"      
+							source="nvplay"
+							> 
+							</nvplay>
+						 
 						</div>
 					</div>
 				</div>

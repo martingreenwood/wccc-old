@@ -167,8 +167,9 @@ get_header(); ?>
 				<div class="tabs">
 					<ul class="tab-links">
 						<li><a href="<?php echo home_url( 'cricket/fixtures' ); ?>">Fixtures</a></li>
-						<li class="active"><a href="<?php echo home_url( 'cricket/results' ); ?>">Results</a></li>
-						<li><a href="<?php echo home_url( 'cricket/highlights' ); ?>">Highlights</a></li>
+						<li class="active"><a href="<?php echo home_url( 'cricket/results' ); ?>">1st XI Results</a></li>
+						<li><a href="<?php echo home_url( 'cricket/secondxi' ); ?>">2nd XI Results</a></li>
+						<li><a href="<?php echo home_url( 'cricket/highlights' ); ?>">Video Highlights</a></li>
 					</ul>
 
 					<div class="tab-content">
@@ -337,7 +338,7 @@ get_header(); ?>
 
 									<?php if (get_field( 'match_link' )): ?>
 										<a class="matchlink" target="_blank" href="<?php echo get_field( 'match_link' ); ?>">Match Report</a>
-									<?php else: ?>
+									<?php else: //if (file_exists(FEED_DIR . '/crml-'.$match_id.'.xml')): ?>
 										<a class="matchlink" href="<?php echo get_the_permalink(  ); ?>">Match Report</a>
 									<?php endif; ?>
 

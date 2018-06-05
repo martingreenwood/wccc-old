@@ -243,6 +243,7 @@
 --------------------------------------------------------------*/
 
 .page-template-page-fixtures,
+.page-template-page-secondxi,
 .page-template-page-highlights,
 .page-template-page-results {
 
@@ -273,6 +274,118 @@
 			}
 		}
 
+		.nvp-match-list-header__title {
+			display: none;
+		}
+
+		.nvp-match-list {
+			margin: 0;
+		}
+
+		.nvp-widget-wrapper {
+
+			.nvp-match {
+				margin: 0 !important;
+				padding: 20px;
+
+				.nv-g-flex {
+					margin: 0;
+				
+					[class*=gi] {
+						display: block;
+						float: left;
+						padding: 0;
+					}
+
+					.nvp-match__time {
+						// position: absolute;
+						// padding: 0;
+						// bottom: 0;
+					}
+
+					.nvp-match__details {
+						width: 100%;
+					}
+
+					.nvp-match__matchup {
+						color: #202020 !important;
+						font-weight: 900 !important;
+						line-height: 1;
+						width: 100%;
+						font-size: 21px !important;
+						font-family: "proxima-nova",sans-serif;
+					}
+
+					.nvp-match__team-name, .nvp-match__vs {
+						font-weight: 900!important;
+						font-size: 21px!important;
+						color: #202020!important;
+						text-transform: uppercase!important;
+					}
+
+					.nvp-match__outcome {
+						font-size: 19px !important;
+						color: #1ac036;
+						position: relative;
+						text-transform: uppercase;
+						margin: 0 0 10px 0 !important;
+					}
+
+					.nvp-match__competition-name,
+					.nvp-match__venue-name {
+						display: inline-block !important;
+						width: auto;
+						margin-right: 5px;
+						padding-right: 5px;
+						border-right: 1px solid #ccc;
+						line-height: 1 !important;
+					}
+
+					.nvp-match__venue-name {
+						border-right: 0;
+					}
+				}
+
+				.nvp-match__links {
+					margin: 0 !important;
+
+					a {
+						margin: 10px 0;
+					}
+
+					@include media($medium-screen-up) { 
+						a {
+							background-color: $brand-primary;
+							font-weight: 500 !important;
+							padding: 9px 35px !important;
+							border: 0 !important;
+							font-size: 16px !important;
+							position: absolute;
+							right: 20px;
+							top: 20px;
+							margin: 0;
+						}
+					}
+				}
+			}
+		}
+
+		.nvp-layout-grid .nvp-vh-filters__list-item a, .nvp-match__links a, .nvp-playall-btn {
+			font-weight: 500!important;
+		}
+
+		.nvp-media__title {
+			line-height: inherit;
+			font-weight: 600 !important;
+			margin: 0;
+		}
+
+		.nvp-load-more {
+			background-color: $brand-primary;
+			color: white;
+			font-weight: 500;
+		}
+
 		.tab-content {
 			padding: 0;
 			border: 0;
@@ -291,7 +404,7 @@
 				width: 100%;
 
 				@include media($medium-screen-up) { 
-					width: 33.333%;
+					width: 25%;
 				}
 
 				a {

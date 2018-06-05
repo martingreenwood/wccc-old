@@ -653,6 +653,22 @@
 
 	#fixres {
 
+		.nvp-match__links a, .nvp-playall-btn, .nvp-load-more {
+			background: $brand-primary-t20 !important;	
+		}
+
+		.nvp-layout-grid .nvp-vh-filters__list-item a {
+			background: $brand-primary-t20 !important;
+		}
+
+		.nvp-layout-grid .nvp-vh-filters__list-item.nvp-i-active a {
+			background: $brand-primary-dark-t20 !important;
+		}
+
+		.nvp-widget-wrapper .nvp-match .nv-g-flex .nvp-match__outcome {
+			color: $brand-primary-t20 !important;
+		}
+
 		.tab-links {
 
 			li {

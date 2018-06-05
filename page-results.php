@@ -91,6 +91,7 @@ get_header(); ?>
 		</div>
 	</section>
 
+	<?php /*
 	<div id="filter">
 		<div class="container">
 			<div class="row">
@@ -150,6 +151,7 @@ get_header(); ?>
 			</div>
 		</div>
 	</div>
+	*/ ?>
 
 	<div id="primary" class="content-area container">
 		<main id="main" class="site-main span12" role="main">

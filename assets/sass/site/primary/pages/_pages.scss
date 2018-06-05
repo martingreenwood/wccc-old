@@ -353,7 +353,7 @@
 						margin: 10px 0;
 					}
 
-					@include media($medium-screen-up) { 
+					@include media($large-screen-up) { 
 						a {
 							background-color: $brand-primary;
 							font-weight: 500 !important;

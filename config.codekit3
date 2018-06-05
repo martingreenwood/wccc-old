@@ -582,6 +582,28 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/assets\/images\/badges\/indiaa-logo.png": {
+		"ft": 32768,
+		"iS": 30787,
+		"oA": 0,
+		"oAP": "\/assets\/images\/badges\/indiaa-logo.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/images\/badges\/indiab-logo.png": {
+		"ft": 32768,
+		"iS": 30787,
+		"oA": 0,
+		"oAP": "\/assets\/images\/badges\/indiab-logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/assets\/images\/badges\/indiau19-logo.png": {
 		"ft": 32768,
 		"iS": 41091,
@@ -807,6 +829,28 @@
 		"iS": 48261,
 		"oA": 0,
 		"oAP": "\/assets\/images\/badges\/warwickshire-logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/images\/badges\/westindiesa-logo.png": {
+		"ft": 32768,
+		"iS": 21875,
+		"oA": 0,
+		"oAP": "\/assets\/images\/badges\/westindiesa-logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/images\/badges\/westindiesb-logo.png": {
+		"ft": 32768,
+		"iS": 21875,
+		"oA": 0,
+		"oAP": "\/assets\/images\/badges\/westindiesb-logo.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

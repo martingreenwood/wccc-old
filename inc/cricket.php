@@ -159,6 +159,7 @@ function team_image($teamname) {
 
 	$teamname = strtolower(str_replace(" ","", $teamname));
 	$teamname = strtolower(str_replace("2ndxi","", $teamname));
+	$teamname = strtolower(str_replace("women","", $teamname));
 	$image = get_template_directory_uri() . '/assets/images/badges/' . $teamname . '-logo.png';
 
 	if (!file_exists(get_template_directory() . '/assets/images/badges/' . $teamname . '-logo.png')) {

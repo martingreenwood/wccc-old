@@ -31,17 +31,6 @@ if (get_field( 'enable_classic_mode', 'option' )): $enable_alt_mode = 'classic';
 
 <div id="page" class="site <?php echo $pagename; ?>">
 
-	<div id="turnmeon">
-		<div class="table">
-			<div class="cell middle">
-				<center>
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/rotate-phone.svg">
-					Please Use Portrait Mode
-				</center>
-			</div>
-		</div>
-	</div> 
-
 	<header id="masthead">
 
 		<div class="site-header container">

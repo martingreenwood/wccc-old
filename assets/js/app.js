@@ -34,19 +34,19 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 
 // DETECT ORIENTATION CHANGE
 
-window.addEventListener("orientationchange", function() {
-	if (window.matchMedia("(orientation: portrait)").matches) {
-		// you're in PORTRAIT mode
-		var link = document.getElementById('turnmeon');
-		link.style.display = 'none';
-	}
+// window.addEventListener("orientationchange", function() {
+// 	if (window.matchMedia("(orientation: portrait)").matches) {
+// 		// you're in PORTRAIT mode
+// 		var link = document.getElementById('turnmeon');
+// 		link.style.display = 'none';
+// 	}
 
-	if (window.matchMedia("(orientation: landscape)").matches) {
-		// you're in LANDSCAPE mode
-		var link = document.getElementById('turnmeon');
-		link.style.display = 'block';
-	}
-}, false);
+// 	if (window.matchMedia("(orientation: landscape)").matches) {
+// 		// you're in LANDSCAPE mode
+// 		var link = document.getElementById('turnmeon');
+// 		link.style.display = 'block';
+// 	}
+// }, false);
 
 
 // PAGE LOADER

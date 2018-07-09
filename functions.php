@@ -423,7 +423,7 @@ function coooooookies() {
 	<?php
 
 }
-add_action('wp_head', 'coooooookies');
+// add_action('wp_head', 'coooooookies');
 
 /*==============================================
 =            ADD PHP TO TEXT WIDETS            =

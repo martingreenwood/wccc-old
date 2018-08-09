@@ -64,7 +64,7 @@ get_header(); ?>
 			?>
 
 			<div class="embed-container">
-				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/live_stream?channel=UC1QY09CJun0Z_WubRUC3Wew&autoplay=1"></iframe>
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Ud74LrUlxcc"></iframe>
 			</div>
 
 		</main><!-- #main -->

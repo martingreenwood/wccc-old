@@ -64,7 +64,7 @@ get_header(); ?>
 			?>
 
 			<div class="embed-container">
-				<iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=T46n_yd7Ty0"></iframe>
+				<iframe class="embed-responsive-item" src="<?php the_field( 'live-vid-url' ); ?>"></iframe>
 			</div>
 
 		</main><!-- #main -->

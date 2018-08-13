@@ -64,7 +64,7 @@ get_header(); ?>
 			?>
 
 			<div class="embed-container">
-				<iframe class="embed-responsive-item" src="<?php the_field( 'live-vid-url' ); ?>"></iframe>
+				<iframe class="embed-responsive-item" src="<?php the_field( 'stream' ); ?>"></iframe>
 			</div>
 
 		</main><!-- #main -->
